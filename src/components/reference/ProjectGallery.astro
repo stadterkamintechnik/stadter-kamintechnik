@@ -1,0 +1,170 @@
+---
+interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+---
+
+<section class="project-gallery-section" aria-labelledby="project-gallery-heading">
+  <div class="project-gallery-container">
+    <header class="project-gallery-header">
+      <p>Einblicke</p>
+      <h2 id="project-gallery-heading">
+        Die Anlage im Detail.
+      </h2>
+    </header>
+
+    <div class="project-gallery-grid">
+      {
+        images.map((image, index) => (
+          <figure
+            class:list={[
+              "project-gallery-item",
+              index === 0 && "project-gallery-item--large",
+            ]}
+          >
+            <div class="project-gallery-media">
+              <img
+                src={image.src}
+                alt={image.alt}
+                width="1400"
+                height="1050"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            {
+              image.caption && (
+                <figcaption>{image.caption}</figcaption>
+              )
+            }
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-gallery-section {
+    padding: clamp(5rem, 9vw, 8.5rem) 1.25rem;
+    background: #ffffff;
+  }
+
+  .project-gallery-container {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+  }
+
+  .project-gallery-header {
+    max-width: 740px;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .project-gallery-header p {
+    margin: 0 0 1rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .project-gallery-header h2 {
+    margin: 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: clamp(2.1rem, 4.5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1.04;
+  }
+
+  .project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .project-gallery-item {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .project-gallery-item--large {
+    grid-column: 1 / -1;
+  }
+
+  .project-gallery-media {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    background: #eeeeec;
+  }
+
+  .project-gallery-item--large .project-gallery-media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-gallery-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+
+  .project-gallery-item:hover img {
+    transform: scale(1.02);
+  }
+
+  .project-gallery-item figcaption {
+    margin-top: 0.85rem;
+    color: #6a6a6a;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 700px) {
+    .project-gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-gallery-item--large {
+      grid-column: auto;
+    }
+
+    .project-gallery-item--large .project-gallery-media,
+    .project-gallery-media {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .project-gallery-section {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .project-gallery-media {
+      border-radius: 8px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-gallery-media img {
+      transition: none;
+    }
+
+    .project-gallery-item:hover img {
+      transform: none;
+    }
+  }
+</style>

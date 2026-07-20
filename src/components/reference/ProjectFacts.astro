@@ -1,0 +1,124 @@
+---
+interface Fact {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  kicker?: string;
+  title?: string;
+  facts: Fact[];
+}
+
+const {
+  kicker = "Projektdaten",
+  title = "Das Projekt im Überblick.",
+  facts,
+} = Astro.props;
+---
+
+<section class="project-facts-section">
+  <div class="project-facts-container">
+    <header class="project-facts-header">
+      <p>{kicker}</p>
+      <h2>{title}</h2>
+    </header>
+
+    <dl class="project-facts-grid">
+      {
+        facts.map((fact) => (
+          <div class="project-fact">
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  .project-facts-section {
+    padding: clamp(5rem, 9vw, 8rem) 1.25rem;
+    background: var(--color-primary, #971f25);
+    color: #ffffff;
+  }
+
+  .project-facts-container {
+    width: min(100%, 1120px);
+    margin: 0 auto;
+  }
+
+  .project-facts-header {
+    max-width: 720px;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .project-facts-header p {
+    margin: 0 0 1rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .project-facts-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2.1rem, 4.5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1.04;
+  }
+
+  .project-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .project-fact {
+    min-width: 0;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .project-fact dt {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .project-fact dd {
+    margin: 0.75rem 0 0;
+    color: #ffffff;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 800px) {
+    .project-facts-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 520px) {
+    .project-facts-section {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .project-facts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

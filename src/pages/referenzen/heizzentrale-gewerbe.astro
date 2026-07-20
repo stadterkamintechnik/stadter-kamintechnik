@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Zwei Hackschnitzelanlagen als funktionierendes Gesamtsystem.",
+    paragraphs: [
+      "Für den Neubau einer gewerblichen Heizzentrale im Raum Pegnitz wurde eine komplette Abgasführung für zwei Hackschnitzelanlagen benötigt.",
+      "Neben den beiden Heizkesseln musste auch der nachgeschaltete Schräder-Wärmetauscher technisch sauber in die gesamte Abgasanlage eingebunden werden.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Sauber geplant. Präzise umgesetzt.",
+    paragraphs: [
+      "Die Verbindungsleitungen innerhalb der Heizzentrale wurden mit einem einwandigen Jeremias-EW-System ausgeführt. Für die senkrechte Abgasführung kam ein doppelwandiges Jeremias-DW-System zum Einsatz.",
+      "Die gesamte Leitungsführung wurde frühzeitig mit dem beteiligten Heizungsbauer abgestimmt. Dadurch konnten die Komponenten optimal in den Neubau integriert und die Montage ohne unnötige Schnittstellenprobleme umgesetzt werden.",
+    ],
+    points: [
+      "Abgasführung für zwei Hackschnitzelanlagen",
+      "Integration eines Schräder-Wärmetauschers",
+      "Jeremias EW als Verbindungsleitung",
+      "Jeremias DW als senkrechte Abgasanlage",
+      "Enge Abstimmung mit dem Heizungsbauer",
+      "Montage innerhalb eines Neubaus",
+    ],
+  },
+];
+
+const facts = [
+  {
+    label: "Standort",
+    value: "Raum Pegnitz",
+  },
+  {
+    label: "Einsatzbereich",
+    value: "Gewerbliche Heizzentrale",
+  },
+  {
+    label: "Heizsystem",
+    value: "Zwei Hackschnitzelanlagen",
+  },
+  {
+    label: "Wärmetauscher",
+    value: "Schräder-Wärmetauscher",
+  },
+  {
+    label: "Senkrechte Anlage",
+    value: "Jeremias DW",
+  },
+  {
+    label: "Verbindungsleitung",
+    value: "Jeremias EW",
+  },
+  {
+    label: "Gebäude",
+    value: "Neubau",
+  },
+  {
+    label: "Zusammenarbeit",
+    value: "Abstimmung mit dem Heizungsbauer",
+  },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/heizzentrale-pegnitz/heizzentrale-gesamt.jpg",
+    alt: "Gesamtansicht der neu errichteten Hackschnitzel-Heizzentrale im Raum Pegnitz",
+    caption:
+      "Die beiden Hackschnitzelanlagen mit Wärmetauscher und vollständig montierter Abgasführung.",
+  },
+  {
+    src: "/images/referenzen/heizzentrale-pegnitz/abgasanlage-senkrecht.jpg",
+    alt: "Senkrechte doppelwandige Jeremias-DW-Abgasanlage innerhalb der Heizzentrale",
+    caption:
+      "Die senkrechte Abgasführung wurde mit einem doppelwandigen Jeremias-DW-System ausgeführt.",
+  },
+  {
+    src: "/images/referenzen/heizzentrale-pegnitz/aussenansicht.jpg",
+    alt: "Außenansicht des Neubaus mit den fertig montierten Edelstahl-Abgasanlagen",
+    caption:
+      "Die fertig montierten Abgasanlagen fügen sich sauber in den Neubau ein.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgasanlage für Hackschnitzel-Heizzentrale | Stadter Kamintechnik"
+  description="Planung und Montage einer Abgasanlage für zwei Hackschnitzelanlagen mit Schräder-Wärmetauscher im Raum Pegnitz. Jeremias DW und EW."
+>
+  <Header />
+
+  <main>
+    <ProjectHero
+      category="Gewerbe"
+      title="Neue Abgasanlage für eine Hackschnitzel-Heizzentrale"
+      location="Raum Pegnitz"
+      intro="Komplette Abgasführung für zwei Hackschnitzelanlagen mit Schräder-Wärmetauscher – geplant und montiert in enger Zusammenarbeit mit dem Heizungsbauer."
+      image="/images/referenzen/heizzentrale-pegnitz/heizzentrale-detail.jpg"
+      imageAlt="Detailaufnahme der Edelstahl-Abgasleitungen einer Hackschnitzel-Heizzentrale"
+    />
+
+    <ProjectContent sections={contentSections} />
+
+    <ProjectFacts facts={facts} />
+
+    <ProjectGallery images={galleryImages} />
+
+    <ProjectCTA
+      title="Sie planen eine neue Heizzentrale?"
+      text="Wir planen und montieren Abgasanlagen für Biomasseanlagen, Heizungszentralen und technisch anspruchsvolle gewerbliche Anwendungen."
+      buttonText="Projekt besprechen"
+      buttonHref="/kontakt"
+    />
+  </main>
+</BaseLayout>

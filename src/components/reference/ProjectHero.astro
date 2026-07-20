@@ -1,0 +1,180 @@
+---
+interface Props {
+  category: string;
+  title: string;
+  location: string;
+  intro: string;
+  image: string;
+  imageAlt: string;
+}
+
+const {
+  category,
+  title,
+  location,
+  intro,
+  image,
+  imageAlt,
+} = Astro.props;
+---
+
+<section class="project-hero">
+  <div class="project-hero-container">
+    <nav class="project-breadcrumb" aria-label="Brotkrümelnavigation">
+      <a href="/">Startseite</a>
+      <span aria-hidden="true">/</span>
+      <a href="/referenzen">Referenzen</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{title}</span>
+    </nav>
+
+    <div class="project-hero-layout">
+      <div class="project-hero-content">
+        <p class="project-hero-category">{category}</p>
+
+        <h1>{title}</h1>
+
+        <p class="project-hero-location">
+          {location}
+        </p>
+
+        <p class="project-hero-intro">
+          {intro}
+        </p>
+      </div>
+
+      <figure class="project-hero-media">
+        <img
+          src={image}
+          alt={imageAlt}
+          width="1400"
+          height="1050"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-hero {
+    padding: 2rem 1.25rem clamp(4.5rem, 8vw, 7rem);
+    background: #ffffff;
+  }
+
+  .project-hero-container {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+  }
+
+  .project-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    color: #777777;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .project-breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .project-breadcrumb a:hover {
+    color: var(--color-primary, #971f25);
+  }
+
+  .project-hero-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+  }
+
+  .project-hero-content {
+    min-width: 0;
+  }
+
+  .project-hero-category {
+    margin: 0 0 1rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .project-hero h1 {
+    max-width: 720px;
+    margin: 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: clamp(2.5rem, 5.8vw, 5.25rem);
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  .project-hero-location {
+    margin: 1.5rem 0 0;
+    color: var(--color-primary, #971f25);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .project-hero-intro {
+    max-width: 600px;
+    margin: 1.5rem 0 0;
+    color: #5f5f5f;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.75;
+  }
+
+  .project-hero-media {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    background: #eeeeec;
+  }
+
+  .project-hero-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .project-hero-layout {
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
+    }
+
+    .project-hero-content {
+      max-width: 760px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .project-hero {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .project-breadcrumb {
+      margin-bottom: 2.25rem;
+    }
+
+    .project-hero-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+    }
+  }
+</style>
