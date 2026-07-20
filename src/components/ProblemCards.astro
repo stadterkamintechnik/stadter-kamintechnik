@@ -1,0 +1,414 @@
+---
+const solutions = [
+  {
+    title: "Schornstein nachrüsten",
+    description:
+      "Sie möchten einen Kamin oder Ofen installieren und benötigen den passenden Schornstein? Wir planen und realisieren die geeignete Lösung.",
+    href: "/leistungen/schornstein-nachruesten",
+    icon: "chimney",
+  },
+  {
+    title: "Schornstein sanieren",
+    description:
+      "Feuchtigkeit, Versottung oder Schäden? Wir sanieren bestehende Schornsteine dauerhaft und fachgerecht.",
+    href: "/leistungen/schornstein-sanieren",
+    icon: "renovation",
+  },
+  {
+    title: "Vorgaben des Schornsteinfegers umsetzen",
+    description:
+      "Ihr Schornsteinfeger fordert Änderungen oder Nachrüstungen? Wir setzen die erforderlichen Maßnahmen fachgerecht um.",
+    href: "/leistungen/schornsteinfeger-vorgaben",
+    icon: "checklist",
+  },
+  {
+    title: "Zugprobleme beheben",
+    description:
+      "Der Schornstein zieht nicht richtig oder Rauch tritt aus? Wir analysieren die Ursache und entwickeln eine dauerhafte Lösung.",
+    href: "/leistungen/zugprobleme",
+    icon: "airflow",
+  },
+  {
+    title: "Bauliche Herausforderungen lösen",
+    description:
+      "Schwierige Dachführungen, wenig Platz oder besondere Anforderungen? Wir entwickeln Lösungen auch für komplexe Einbausituationen.",
+    href: "/leistungen/bauliche-herausforderungen",
+    icon: "planning",
+  },
+  {
+    title: "Gewerbe & Industrie",
+    description:
+      "Abgasanlagen für Heizungsanlagen, BHKW, Produktionsbetriebe und individuelle gewerbliche oder industrielle Anwendungen.",
+    href: "/gewerbe-industrie",
+    icon: "industry",
+  },
+];
+---
+
+<section class="solutions-section" aria-labelledby="solutions-heading">
+  <div class="solutions-container">
+    <header class="solutions-header">
+      <p class="solutions-kicker">Lösungen</p>
+
+      <h2 id="solutions-heading">
+        Die passende Lösung für Ihr Projekt.
+      </h2>
+
+      <p class="solutions-intro">
+        Ob Neubau, Sanierung oder besondere bauliche Anforderungen:
+        Wir planen und realisieren Schornstein- und Abgasanlagen für
+        unterschiedlichste Ausgangssituationen.
+      </p>
+    </header>
+
+    <div class="solutions-grid">
+      {
+        solutions.map((solution) => (
+          <a class="solutions-card" href={solution.href}>
+            <span class="solutions-card-icon" aria-hidden="true">
+              {
+                solution.icon === "chimney" && (
+                  <svg viewBox="0 0 64 64">
+                    <path d="M24 54V25h16v29" />
+                    <path d="M20 25h24" />
+                    <path d="M26 25V13h12v12" />
+                    <path d="M23 13h18" />
+                    <path d="M18 41 8 47" />
+                    <path d="M46 41 56 47" />
+                    <path d="M14 47v7" />
+                    <path d="M50 47v7" />
+                    <path d="M22 54h20" />
+                  </svg>
+                )
+              }
+
+              {
+                solution.icon === "renovation" && (
+                  <svg viewBox="0 0 64 64">
+                    <path d="M24 54V24h16v30" />
+                    <path d="M20 24h24" />
+                    <path d="M26 24V12h12v12" />
+                    <path d="M23 12h18" />
+                    <path d="M18 41 8 47" />
+                    <path d="M46 41 56 47" />
+                    <path d="M14 47v7" />
+                    <path d="M50 47v7" />
+                    <path d="M27 33h10" />
+                    <path d="M27 40h10" />
+                    <path d="M28 47h8" />
+                    <path d="M14 22l2 2" />
+                    <path d="M12 28h4" />
+                    <path d="M50 22l-2 2" />
+                    <path d="M48 28h4" />
+                  </svg>
+                )
+              }
+
+              {
+                solution.icon === "checklist" && (
+                  <svg viewBox="0 0 64 64">
+                    <path d="M20 14h24v36H20z" />
+                    <path d="M27 10h10a3 3 0 0 1 3 3v3H24v-3a3 3 0 0 1 3-3Z" />
+                    <path d="m25 25 3 3 5-6" />
+                    <path d="M36 25h5" />
+                    <path d="m25 35 3 3 5-6" />
+                    <path d="M36 35h5" />
+                    <path d="m25 45 3 3 5-6" />
+                    <path d="M36 45h5" />
+                    <circle cx="46" cy="46" r="10" />
+                    <path d="m42 46 3 3 5-6" />
+                  </svg>
+                )
+              }
+
+              {
+                solution.icon === "airflow" && (
+                  <svg viewBox="0 0 64 64">
+                    <path d="M8 20h27c7 0 7-10 0-10-4 0-6 2-6 5" />
+                    <path d="M8 31h39c8 0 8 12 0 12-4 0-6-2-6-5" />
+                    <path d="M8 42h24c8 0 8 12 0 12-4 0-6-2-6-5" />
+                  </svg>
+                )
+              }
+
+              {
+                solution.icon === "planning" && (
+                  <svg viewBox="0 0 64 64">
+                    <path d="M10 34 32 14l22 20" />
+                    <path d="M16 31v23h32V31" />
+                    <path d="M24 54V38h16v16" />
+                    <path class="solutions-dashed-line" d="M20 42h24" />
+                    <path d="M52 16v12" />
+                    <path d="M48 16h8" />
+                    <path d="M48 28h8" />
+                    <path d="M10 56h44" />
+                  </svg>
+                )
+              }
+
+              {
+                solution.icon === "industry" && (
+                  <svg viewBox="0 0 64 64">
+                    <path d="M10 54V31l14 8V31l14 8V20h8v34" />
+                    <path d="M8 54h48" />
+                    <path d="M17 46h6v8h-6z" />
+                    <path d="M30 46h6v8h-6z" />
+                    <path d="M43 43h7v11h-7z" />
+                    <path d="M42 20v-8h6v8" />
+                    <path d="M45 12V8" />
+                  </svg>
+                )
+              }
+            </span>
+
+            <div class="solutions-card-content">
+              <h3>{solution.title}</h3>
+
+              <p>{solution.description}</p>
+
+              <span class="solutions-card-link">
+                Mehr erfahren
+
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M4 10h11" />
+                  <path d="m11 6 4 4-4 4" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .solutions-section {
+    padding: clamp(5rem, 9vw, 8rem) 1.25rem;
+    background: var(--color-surface, #f7f7f7);
+  }
+
+  .solutions-container {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+  }
+
+  .solutions-header {
+    max-width: 760px;
+    margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
+  }
+
+  .solutions-kicker {
+    margin: 0 0 1rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .solutions-header h2 {
+    margin: 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+  }
+
+  .solutions-intro {
+    max-width: 680px;
+    margin: 1.5rem 0 0;
+    color: #5c5c5c;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.75;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .solutions-card {
+    display: flex;
+    min-width: 0;
+    min-height: 370px;
+    flex-direction: column;
+    padding: clamp(1.75rem, 3vw, 2.25rem);
+    border: 0;
+    border-radius: 10px;
+    background: var(--color-primary, #971f25);
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: none;
+    transition:
+      background-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  .solutions-card:hover {
+    background: var(--color-primary-hover, #7c181d);
+    box-shadow: 0 16px 38px rgba(31, 31, 31, 0.16);
+    transform: translateY(-3px);
+  }
+
+  .solutions-card:focus-visible {
+    outline: 3px solid rgba(151, 31, 37, 0.3);
+    outline-offset: 4px;
+  }
+
+  .solutions-card-icon {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent !important;
+    color: #ffffff;
+  }
+
+  .solutions-card-icon svg {
+    display: block;
+    width: 58px;
+    height: 58px;
+    overflow: visible;
+    fill: none !important;
+    stroke: #ffffff !important;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .solutions-card-icon svg path,
+  .solutions-card-icon svg circle,
+  .solutions-card-icon svg rect,
+  .solutions-card-icon svg line,
+  .solutions-card-icon svg polyline,
+  .solutions-card-icon svg polygon {
+    fill: none !important;
+    stroke: #ffffff !important;
+    stroke-width: 1.9 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+  }
+
+  .solutions-dashed-line {
+    stroke-dasharray: 4 4 !important;
+  }
+
+  .solutions-card-content {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 1.4rem;
+  }
+
+  .solutions-card h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+  }
+
+  .solutions-card-content > p {
+    margin: 1rem 0 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .solutions-card-link {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 1.75rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .solutions-card-link svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    overflow: visible;
+    fill: none !important;
+    stroke: #ffffff !important;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 180ms ease;
+  }
+
+  .solutions-card-link svg path {
+    fill: none !important;
+    stroke: #ffffff !important;
+  }
+
+  .solutions-card:hover .solutions-card-link svg {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 900px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .solutions-card {
+      min-height: 350px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .solutions-section {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .solutions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .solutions-card {
+      min-height: 330px;
+    }
+
+    .solutions-card-icon {
+      width: 54px;
+      height: 54px;
+      flex-basis: 54px;
+    }
+
+    .solutions-card-icon svg {
+      width: 54px;
+      height: 54px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .solutions-card,
+    .solutions-card-link svg {
+      transition: none;
+    }
+
+    .solutions-card:hover {
+      transform: none;
+    }
+  }
+</style>

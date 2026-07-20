@@ -8,6 +8,7 @@
 
   --color-background: #ffffff;
   --color-surface: #f7f7f7;
+  --color-surface-dark: #202020;
   --color-border: #e6e6e6;
 
   /* Layout */
@@ -30,7 +31,7 @@
 
   /* Schatten */
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 18px 45px rgba(0, 0, 0, 0.13);
 
   /* Animation */
   --transition: 200ms ease;
@@ -61,11 +62,17 @@ body {
     "Segoe UI",
     sans-serif;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+svg {
+  display: block;
 }
 
 a {
@@ -129,7 +136,8 @@ select {
   transition: color var(--transition);
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a:focus-visible {
   color: var(--color-primary);
 }
 
@@ -151,7 +159,8 @@ select {
     transform var(--transition);
 }
 
-.header-cta:hover {
+.header-cta:hover,
+.header-cta:focus-visible {
   background: var(--color-primary-dark);
   transform: translateY(-1px);
 }
@@ -250,7 +259,8 @@ select {
   color: #ffffff;
 }
 
-.hero-primary:hover {
+.hero-primary:hover,
+.hero-primary:focus-visible {
   background: var(--color-primary-dark);
   transform: translateY(-1px);
 }
@@ -260,7 +270,8 @@ select {
   color: #ffffff;
 }
 
-.hero-secondary:hover {
+.hero-secondary:hover,
+.hero-secondary:focus-visible {
   background: rgba(255, 255, 255, 0.12);
   border-color: #ffffff;
   transform: translateY(-1px);
@@ -272,6 +283,252 @@ select {
   gap: 28px;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
+}
+
+/* Allgemeine Abschnittsüberschrift */
+
+.section-intro {
+  max-width: 760px;
+  margin-bottom: var(--space-6);
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-intro h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.section-intro > p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+/* Problemlösungen */
+
+.problem-section {
+  padding-block: var(--space-8);
+  background: var(--color-background);
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.problem-card {
+  position: relative;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 34px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+  isolation: isolate;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.problem-card::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -110px;
+  z-index: -1;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: rgba(151, 31, 37, 0.055);
+  transition:
+    transform 350ms ease,
+    background 350ms ease;
+}
+
+.problem-card:hover,
+.problem-card:focus-visible {
+  border-color: rgba(151, 31, 37, 0.28);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+
+.problem-card:hover::before,
+.problem-card:focus-visible::before {
+  background: rgba(151, 31, 37, 0.1);
+  transform: scale(1.25);
+}
+
+.problem-card:focus-visible {
+  outline: 3px solid rgba(151, 31, 37, 0.3);
+  outline-offset: 3px;
+}
+
+.problem-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 46px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  color: var(--color-primary);
+}
+
+.problem-icon svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.problem-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.problem-number {
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.problem-card h3 {
+  margin: 0 0 16px;
+  font-size: 1.65rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.problem-card p {
+  margin: 0 0 28px;
+  color: var(--color-text-light);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.problem-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.problem-link span {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform var(--transition);
+}
+
+.problem-card:hover .problem-link span,
+.problem-card:focus-visible .problem-link span {
+  transform: translateX(5px);
+}
+
+/* Dunkle Gewerbekarte */
+
+.problem-card-dark {
+  border-color: var(--color-surface-dark);
+  background: var(--color-surface-dark);
+  color: #ffffff;
+}
+
+.problem-card-dark::before {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.problem-card-dark:hover,
+.problem-card-dark:focus-visible {
+  border-color: #343434;
+}
+
+.problem-card-dark:hover::before,
+.problem-card-dark:focus-visible::before {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.problem-card-dark .problem-icon {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.problem-card-dark .problem-number,
+.problem-card-dark .problem-link {
+  color: #ffffff;
+}
+
+.problem-card-dark p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Rote Beratungskarte */
+
+.problem-card-primary {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.problem-card-primary::before {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.problem-card-primary:hover,
+.problem-card-primary:focus-visible {
+  border-color: var(--color-primary-dark);
+  background: var(--color-primary-dark);
+}
+
+.problem-card-primary:hover::before,
+.problem-card-primary:focus-visible::before {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.problem-card-primary .problem-icon {
+  background: rgba(255, 255, 255, 0.13);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.problem-card-primary .problem-number,
+.problem-card-primary .problem-link {
+  color: #ffffff;
+}
+
+.problem-card-primary p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 /* Tablet */
@@ -296,6 +553,10 @@ select {
   .header-cta {
     padding-inline: 16px;
     font-size: 14px;
+  }
+
+  .problem-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -324,11 +585,11 @@ select {
   }
 
   .hero {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100svh - 80px);
   }
 
   .hero-overlay {
-    background: rgba(0, 0, 0, 0.58);
+    background: rgba(0, 0, 0, 0.6);
   }
 
   .hero-content {
@@ -347,7 +608,7 @@ select {
 
   .hero-buttons {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .hero-primary,
@@ -358,5 +619,90 @@ select {
   .hero-facts {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .problem-section {
+    padding-block: var(--space-7);
+  }
+
+  .section-intro {
+    margin-bottom: var(--space-5);
+  }
+
+  .section-intro > p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .problem-card {
+    min-height: 0;
+    padding: 28px;
+  }
+
+  .problem-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 38px;
+  }
+
+  .problem-icon svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .problem-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Sehr kleine Smartphones */
+
+@media (max-width: 390px) {
+  .container {
+    width: min(100% - 24px, var(--container-width));
+  }
+
+  .header-cta {
+    min-height: 44px;
+    padding-inline: 13px;
+    font-size: 13px;
+  }
+
+  .logo img {
+    height: 36px;
+  }
+
+  .hero h1 {
+    font-size: 2.65rem;
+  }
+
+  .hero-content {
+    padding-block: 48px;
+  }
+
+  .problem-card {
+    padding: 24px;
+  }
+}
+
+/* Nutzer wünschen reduzierte Bewegung */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

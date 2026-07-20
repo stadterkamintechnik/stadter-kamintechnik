@@ -1,0 +1,392 @@
+---
+const trustPoints = [
+  "Meisterbetrieb seit 2009",
+  "Eigene Montageteams",
+  "Wohnhäuser · Gewerbe · Industrie",
+  "Planung bis Abnahme",
+];
+
+const statistics = [
+  {
+    value: 10000,
+    suffix: "+",
+    decimals: 0,
+    label: "Abgeschlossene Projekte",
+  },
+  {
+    value: 8000,
+    suffix: "+",
+    decimals: 0,
+    label: "Zufriedene Kunden",
+  },
+  {
+    value: 18,
+    suffix: "",
+    decimals: 0,
+    label: "Mitarbeitende",
+  },
+  {
+    value: 4.9,
+    suffix: "",
+    decimals: 1,
+    prefix: "★ ",
+    label: "Google-Bewertung",
+  },
+];
+---
+
+<section class="trust-section" aria-labelledby="trust-heading">
+  <div class="trust-container">
+    <header class="trust-header">
+      <p class="trust-kicker">Stadter Kamintechnik</p>
+
+      <h2 id="trust-heading">
+        Darauf können Sie sich verlassen.
+      </h2>
+
+      <p class="trust-intro">
+        Seit 2009 steht Stadter Kamintechnik für zuverlässige
+        Schornstein- und Abgastechnik in Nordbayern. Mit Erfahrung,
+        eigenen Montageteams und einem hohen Qualitätsanspruch begleiten
+        wir Projekte vom Einfamilienhaus bis zur Industrieanlage.
+      </p>
+    </header>
+
+    <div class="statistics" data-statistics>
+      {
+        statistics.map((statistic) => (
+          <article class="statistic">
+            <p
+              class="statistic-value"
+              data-counter
+              data-value={statistic.value}
+              data-prefix={statistic.prefix ?? ""}
+              data-suffix={statistic.suffix}
+              data-decimals={statistic.decimals}
+            >
+              {statistic.prefix ?? ""}
+              {statistic.value.toLocaleString("de-DE", {
+                minimumFractionDigits: statistic.decimals,
+                maximumFractionDigits: statistic.decimals,
+              })}
+              {statistic.suffix}
+            </p>
+
+            <p class="statistic-label">
+              {statistic.label}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <ul class="trust-points" aria-label="Unsere Qualitätsmerkmale">
+      {
+        trustPoints.map((point) => (
+          <li>
+            <span class="trust-check" aria-hidden="true">
+              <svg
+                viewBox="0 0 20 20"
+                width="20"
+                height="20"
+                fill="none"
+              >
+                <path
+                  d="M4 10.5 8 14.5 16 5.5"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+
+            <span>{point}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  const sections = document.querySelectorAll<HTMLElement>("[data-statistics]");
+
+  const formatNumber = (
+    value: number,
+    decimals: number,
+    prefix: string,
+    suffix: string,
+  ) => {
+    const formattedValue = value.toLocaleString("de-DE", {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
+
+    return `${prefix}${formattedValue}${suffix}`;
+  };
+
+  const animateCounter = (element: HTMLElement) => {
+    const target = Number(element.dataset.value ?? 0);
+    const decimals = Number(element.dataset.decimals ?? 0);
+    const prefix = element.dataset.prefix ?? "";
+    const suffix = element.dataset.suffix ?? "";
+    const duration = 1100;
+    const startTime = performance.now();
+
+    const update = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const currentValue = target * easedProgress;
+
+      element.textContent = formatNumber(
+        currentValue,
+        decimals,
+        prefix,
+        suffix,
+      );
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = formatNumber(
+          target,
+          decimals,
+          prefix,
+          suffix,
+        );
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  sections.forEach((section) => {
+    const counters =
+      section.querySelectorAll<HTMLElement>("[data-counter]");
+
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    counters.forEach((counter) => {
+      counter.textContent = formatNumber(
+        0,
+        Number(counter.dataset.decimals ?? 0),
+        counter.dataset.prefix ?? "",
+        counter.dataset.suffix ?? "",
+      );
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        counters.forEach(animateCounter);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.35,
+      },
+    );
+
+    observer.observe(section);
+  });
+</script>
+
+<style>
+  .trust-section {
+    padding: clamp(5rem, 9vw, 8.5rem) 1.25rem;
+    background: #ffffff;
+    color: var(--color-text, #1f1f1f);
+  }
+
+  .trust-container {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+  }
+
+  .trust-header {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .trust-kicker {
+    margin: 0 0 1rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .trust-header h2 {
+    margin: 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+  }
+
+  .trust-intro {
+    max-width: 690px;
+    margin: 1.5rem auto 0;
+    color: #5c5c5c;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.75;
+  }
+
+  .statistics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: clamp(3.5rem, 7vw, 6rem);
+    border-top: 1px solid var(--color-border, #e6e6e6);
+    border-bottom: 1px solid var(--color-border, #e6e6e6);
+  }
+
+  .statistic {
+    position: relative;
+    padding: clamp(2rem, 4vw, 3.25rem) 1.5rem;
+    text-align: center;
+  }
+
+  .statistic:not(:last-child)::after {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    width: 1px;
+    height: 50%;
+    background: var(--color-border, #e6e6e6);
+    content: "";
+  }
+
+  .statistic-value {
+    margin: 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: clamp(2.25rem, 4.5vw, 4.25rem);
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .statistic-label {
+    margin: 1rem 0 0;
+    color: #686868;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .trust-points {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+    margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .trust-points li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    color: #363636;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: left;
+  }
+
+  .trust-check {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary, #971f25);
+  }
+
+  @media (max-width: 900px) {
+    .statistics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .statistic:nth-child(2)::after {
+      display: none;
+    }
+
+    .statistic:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--color-border, #e6e6e6);
+    }
+
+    .trust-points {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trust-points li {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .trust-section {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .trust-header {
+      text-align: left;
+    }
+
+    .trust-intro {
+      margin-left: 0;
+    }
+
+    .statistics {
+      grid-template-columns: 1fr;
+      margin-top: 3rem;
+    }
+
+    .statistic {
+      padding: 2rem 1rem;
+      text-align: left;
+    }
+
+    .statistic:not(:last-child) {
+      border-bottom: 1px solid var(--color-border, #e6e6e6);
+    }
+
+    .statistic:not(:last-child)::after {
+      display: none;
+    }
+
+    .statistic-value {
+      font-size: clamp(2.6rem, 13vw, 3.5rem);
+    }
+
+    .statistic-label {
+      margin-top: 0.65rem;
+    }
+
+    .trust-points {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+  }
+</style>

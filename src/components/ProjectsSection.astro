@@ -1,0 +1,488 @@
+---
+const projects = [
+  {
+    category: "Privat",
+    title: "Edelstahl-Außenkamin am Einfamilienhaus",
+    description:
+      "Planung und Montage eines doppelwandigen Edelstahl-Außenkamins – sauber in die bestehende Architektur integriert und auf die Feuerstätte abgestimmt.",
+    location: "Bayreuth",
+    building: "Einfamilienhaus",
+    solution: "Edelstahl-Außenkamin",
+    href: "/referenzen/edelstahl-aussenkamin-bayreuth",
+    image: "",
+    imageAlt:
+      "Montierter Edelstahl-Außenkamin an einem Einfamilienhaus in Bayreuth",
+  },
+  {
+    category: "Sanierung",
+    title: "Bestehenden Schornstein dauerhaft saniert",
+    description:
+      "Der vorhandene Schornstein wurde technisch überprüft, fachgerecht saniert und für den sicheren weiteren Betrieb der Feuerstätte vorbereitet.",
+    location: "Coburg",
+    building: "Wohngebäude",
+    solution: "Schornsteinsanierung",
+    href: "/referenzen/schornsteinsanierung-coburg",
+    image: "",
+    imageAlt:
+      "Sanierter Schornstein an einem Wohngebäude in Coburg",
+  },
+  {
+    category: "Gewerbe",
+    title: "Abgasanlage für eine gewerbliche Heizungsanlage",
+    description:
+      "Individuell geplante Abgasanlage für eine technisch anspruchsvolle Einbausituation – von der Abstimmung bis zur fertigen Montage.",
+    location: "Bamberg",
+    building: "Gewerbeobjekt",
+    solution: "Individuelle Abgasanlage",
+    href: "/referenzen/abgasanlage-gewerbe-bamberg",
+    image: "",
+    imageAlt:
+      "Abgasanlage an einem Gewerbeobjekt im Raum Bamberg",
+  },
+];
+---
+
+<section class="projects-section" aria-labelledby="projects-heading">
+  <div class="projects-container">
+    <header class="projects-header">
+      <div>
+        <p class="projects-kicker">Aus unserer Arbeit</p>
+
+        <h2 id="projects-heading">
+          Ausgewählte Projekte.
+        </h2>
+      </div>
+
+      <p class="projects-intro">
+        Seit 2009 realisieren wir Schornstein- und Abgassysteme für
+        Wohnhäuser, Gewerbe und Industrie. Hier zeigen wir einige Lösungen,
+        die wir für unsere Kunden umgesetzt haben.
+      </p>
+    </header>
+
+    <div class="projects-list">
+      {
+        projects.map((project, index) => (
+          <article
+            class:list={[
+              "project",
+              index % 2 === 1 && "project--reversed",
+            ]}
+          >
+            <a
+              class="project-media"
+              href={project.href}
+              aria-label={`${project.title} ansehen`}
+            >
+              {
+                project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div class="project-placeholder" aria-hidden="true">
+                    <span>Projektfoto folgt</span>
+                  </div>
+                )
+              }
+            </a>
+
+            <div class="project-content">
+              <p class="project-category">{project.category}</p>
+
+              <h3>
+                <a href={project.href}>
+                  {project.title}
+                </a>
+              </h3>
+
+              <p class="project-description">
+                {project.description}
+              </p>
+
+              <dl class="project-facts">
+                <div>
+                  <dt>Ort</dt>
+                  <dd>{project.location}</dd>
+                </div>
+
+                <div>
+                  <dt>Objekt</dt>
+                  <dd>{project.building}</dd>
+                </div>
+
+                <div>
+                  <dt>Lösung</dt>
+                  <dd>{project.solution}</dd>
+                </div>
+              </dl>
+
+              <a class="project-link" href={project.href}>
+                Mehr über dieses Projekt
+
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M4 10h11" />
+                  <path d="m11 6 4 4-4 4" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="projects-footer">
+      <p>
+        Von der privaten Nachrüstung bis zur komplexen Industrieanlage:
+        Entscheidend ist immer eine Lösung, die technisch funktioniert und
+        sauber umgesetzt wird.
+      </p>
+
+      <a class="projects-overview-link" href="/referenzen">
+        Alle Projekte ansehen
+
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M4 10h11" />
+          <path d="m11 6 4 4-4 4" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    padding: clamp(5rem, 9vw, 8.5rem) 1.25rem;
+    background: #ffffff;
+  }
+
+  .projects-container {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+  }
+
+  .projects-header {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
+    gap: clamp(2rem, 7vw, 7rem);
+    align-items: end;
+    margin-bottom: clamp(3.5rem, 7vw, 6.5rem);
+  }
+
+  .projects-kicker {
+    margin: 0 0 1rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .projects-header h2 {
+    max-width: 700px;
+    margin: 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  .projects-intro {
+    max-width: 560px;
+    margin: 0;
+    color: #5f5f5f;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.75;
+  }
+
+  .projects-list {
+    display: grid;
+    gap: clamp(5rem, 10vw, 9rem);
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
+    gap: clamp(2.5rem, 7vw, 7rem);
+    align-items: center;
+  }
+
+  .project--reversed {
+    grid-template-columns: minmax(340px, 0.75fr) minmax(0, 1.25fr);
+  }
+
+  .project--reversed .project-media {
+    grid-column: 2;
+  }
+
+  .project--reversed .project-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .project-media {
+    position: relative;
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    border-radius: 10px;
+    background: #e9e9e9;
+    text-decoration: none;
+  }
+
+  .project-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+  }
+
+  .project-media:hover img {
+    transform: scale(1.025);
+  }
+
+  .project-placeholder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(151, 31, 37, 0.06),
+        rgba(31, 31, 31, 0.02)
+      ),
+      #eeeeec;
+  }
+
+  .project-placeholder span {
+    color: #858585;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .project-content {
+    min-width: 0;
+  }
+
+  .project-category {
+    margin: 0 0 1rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .project-content h3 {
+    max-width: 580px;
+    margin: 0;
+    font-size: clamp(1.75rem, 3.4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  .project-content h3 a {
+    color: var(--color-text, #1f1f1f);
+    text-decoration: none;
+  }
+
+  .project-content h3 a:hover {
+    color: var(--color-primary, #971f25);
+  }
+
+  .project-description {
+    max-width: 570px;
+    margin: 1.5rem 0 0;
+    color: #606060;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .project-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2rem 0 0;
+  }
+
+  .project-facts div {
+    min-width: 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border, #e6e6e6);
+  }
+
+  .project-facts dt {
+    margin: 0;
+    color: #8a8a8a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .project-facts dd {
+    margin: 0.45rem 0 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: 0.93rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .project-link,
+  .projects-overview-link {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .project-link {
+    margin-top: 2rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid rgba(151, 31, 37, 0.4);
+  }
+
+  .project-link svg,
+  .projects-overview-link svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 180ms ease;
+  }
+
+  .project-link:hover svg,
+  .projects-overview-link:hover svg {
+    transform: translateX(3px);
+  }
+
+  .projects-footer {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: clamp(5rem, 9vw, 8rem);
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border, #e6e6e6);
+  }
+
+  .projects-footer p {
+    max-width: 720px;
+    margin: 0;
+    color: #676767;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .projects-overview-link {
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 980px) {
+    .projects-header {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .project,
+    .project--reversed {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .project--reversed .project-media,
+    .project--reversed .project-content {
+      grid-column: auto;
+      grid-row: auto;
+    }
+
+    .project-media {
+      aspect-ratio: 16 / 9;
+    }
+
+    .project-content {
+      max-width: 720px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .projects-section {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .projects-header {
+      margin-bottom: 3rem;
+    }
+
+    .projects-list {
+      gap: 4.5rem;
+    }
+
+    .project {
+      gap: 2rem;
+    }
+
+    .project-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+    }
+
+    .project-facts {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    .project-facts div {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .project-facts dd {
+      margin-top: 0;
+    }
+
+    .projects-footer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-media img,
+    .project-link svg,
+    .projects-overview-link svg {
+      transition: none;
+    }
+
+    .project-media:hover img {
+      transform: none;
+    }
+  }
+</style>

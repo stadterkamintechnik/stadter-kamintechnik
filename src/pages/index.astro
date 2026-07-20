@@ -2,9 +2,21 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import ProblemCards from "../components/ProblemCards.astro";
+import TrustSection from "../components/TrustSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
 ---
 
-<BaseLayout title="Stadter Kamintechnik">
+<BaseLayout
+  title="Stadter Kamintechnik | Schornsteine, die funktionieren."
+  description="Schornstein- und Abgassysteme für Wohnhäuser, Gewerbe und Industrie. Planung und Montage durch Stadter Kamintechnik."
+>
   <Header />
-  <Hero />
+
+  <main>
+    <Hero />
+    <ProblemCards />
+    <TrustSection />
+    <ProjectsSection />
+  </main>
 </BaseLayout>
