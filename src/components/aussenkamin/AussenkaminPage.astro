@@ -1,0 +1,691 @@
+---
+import "../../styles/aussenkamin.css";
+
+
+const situations = [
+  {
+    icon: "stove",
+    title: "Sie möchten einen Ofen anschließen, aber es fehlt der Schornstein.",
+    text: "Ein Außenkamin schafft den benötigten Abgasweg, ohne dass ein neuer Schornstein durch das Gebäude geführt werden muss.",
+  },
+  {
+    icon: "heating",
+    title: "Ihre Heizung wird erneuert und benötigt eine neue Abgasführung.",
+    text: "Wir planen den Außenkamin passend zur Heizungsanlage, zum Gebäude und zu den technischen Anforderungen.",
+  },
+  {
+    icon: "existing",
+    title: "Der vorhandene Schornstein kann nicht genutzt werden.",
+    text: "Wenn eine Nutzung oder Sanierung nicht sinnvoll ist, kann ein Außenkamin die passende Alternative sein.",
+  },
+  {
+    icon: "additional",
+    title: "Sie benötigen einen zusätzlichen Anschluss.",
+    text: "Auch für eine weitere Feuerstätte oder einen neuen Aufstellort lässt sich ein eigener Abgasweg außen am Gebäude schaffen.",
+  },
+];
+
+const benefits = [
+  "Nachträglich montierbar",
+  "Wenig Eingriff in das Gebäude",
+  "Langlebige Edelstahlkonstruktion",
+  "Individuell auf Gebäude und Feuerstätte abgestimmt",
+  "In verschiedenen Oberflächen und RAL-Farben möglich",
+  "Für Kaminöfen, Heizungen und weitere Feuerstätten geeignet",
+];
+
+const planningPoints = [
+  {
+    number: "01",
+    title: "Schornsteinhöhe",
+    text: "Die erforderliche Höhe wird für jedes Gebäude individuell ermittelt. Dabei berücksichtigen wir die Feuerstätte, die Dachform, die Lage der Mündung sowie die Anforderungen der 1. BImSchV und – sofern erforderlich – der VDI 3781 Blatt 4.",
+  },
+  {
+    number: "02",
+    title: "Gebäude und Feuerstätte",
+    text: "Durchmesser, Höhe und Ausführung des Außenkamins müssen zur angeschlossenen Feuerstätte und zur baulichen Situation passen. Nur so entsteht ein sicherer und dauerhaft funktionierender Abgasweg.",
+  },
+  {
+    number: "03",
+    title: "Abstimmung mit dem Bezirksschornsteinfeger",
+    text: "Wir stimmen die geplante Ausführung frühzeitig mit dem bevollmächtigten Bezirksschornsteinfeger ab. Dadurch lassen sich offene Fragen vor der Montage klären und unnötige Nacharbeiten vermeiden.",
+  },
+  {
+    number: "04",
+    title: "Sichere Befestigung",
+    text: "Wandaufbau, Gebäudehöhe, Dachüberstände und die erforderlichen Abstände bestimmen die Befestigung. Wir planen die Halterungen passend zum Gebäude und zur tatsächlichen Belastung.",
+  },
+];
+
+const commonMistakes = [
+  {
+    title: "Schornstein zu niedrig geplant",
+    text: "Die Mündungshöhe muss die aktuellen technischen und gesetzlichen Anforderungen erfüllen. Eine zu geringe Höhe kann die Abnahme verhindern und spätere Änderungen erforderlich machen.",
+  },
+  {
+    title: "Falscher Schornsteindurchmesser",
+    text: "Der Querschnitt muss zur Feuerstätte und zum geplanten Betrieb passen. Zu kleine oder zu große Dimensionen können die Funktion der Abgasanlage beeinträchtigen.",
+  },
+  {
+    title: "Feuerstätte und Schornstein getrennt geplant",
+    text: "In der Praxis wird häufig zuerst der Kaminofen gekauft. Sinnvoller ist es, Feuerstätte und Schornsteinsystem von Anfang an gemeinsam zu planen.",
+  },
+  {
+    title: "Befestigung nicht auf das Gebäude abgestimmt",
+    text: "Nicht jede Fassade und nicht jeder Wandaufbau eignen sich für dieselbe Befestigung. Die Konstruktion muss individuell geplant werden.",
+  },
+];
+
+const knowledgeFacts = [
+  "Ein Außenkamin wird in der Regel als doppelwandiger Edelstahlschornstein ausgeführt.",
+  "Die erforderliche Schornsteinhöhe wird nicht geschätzt, sondern anhand technischer und gesetzlicher Vorgaben geplant.",
+  "Schwarze und farbig beschichtete Ausführungen sind bei vielen Systemen möglich.",
+  "Ein Außenkamin kann nicht nur für Kaminöfen, sondern auch für Heizungsanlagen und weitere Feuerstätten eingesetzt werden.",
+];
+
+const process = [
+  ["01", "Beratung", "Wir klären Ihr Vorhaben, die Feuerstätte und die bauliche Situation."],
+  ["02", "Technische Planung", "Wir legen Verlauf, Höhe, Befestigung und technische Ausführung fest."],
+  ["03", "Abstimmung mit dem Schornsteinfeger", "Wir stimmen die geplante Ausführung frühzeitig mit dem bevollmächtigten Bezirksschornsteinfeger ab."],
+  ["04", "Angebot", "Sie erhalten ein nachvollziehbares Angebot für die passende Lösung."],
+  ["05", "Montage", "Unsere eigenen Montageteams setzen die Anlage sauber und fachgerecht um."],
+  ["06", "Abnahme und Inbetriebnahme", "Nach der Montage erfolgt die abschließende Prüfung und Abnahme durch den bevollmächtigten Bezirksschornsteinfeger."],
+];
+
+const faqs = [
+  {
+    q: "Was kostet ein Außenkamin?",
+    a: "Die meisten Außenkamine liegen – abhängig von Höhe, Ausführung, Oberfläche und Montagesituation – zwischen ca. 2.500 € und 6.000 € inklusive Montage. Größere oder technisch anspruchsvollere Anlagen können darüber liegen. Nach der Beratung erhalten Sie ein transparentes, auf Ihr Projekt abgestimmtes Angebot.",
+  },
+  {
+    q: "Kann ein Außenkamin nachträglich montiert werden?",
+    a: "Ja. Außenkamine werden häufig an bestehenden Wohnhäusern nachgerüstet. Entscheidend sind die bauliche Situation, die geplante Feuerstätte, die Befestigungsmöglichkeiten und die erforderliche Mündungshöhe.",
+  },
+  {
+    q: "Wie lange dauert die Montage?",
+    a: "Viele typische Anlagen an Einfamilienhäusern können innerhalb eines Arbeitstages montiert werden. Bei komplexeren Gebäuden, besonderen Befestigungen oder umfangreichen Dacharbeiten kann die Ausführung länger dauern.",
+  },
+  {
+    q: "Brauche ich eine Genehmigung?",
+    a: "Je nach Bundesland, Gebäude und konkreter Ausführung können baurechtliche Vorgaben oder eine Genehmigung zu beachten sein. Wir prüfen die Rahmenbedingungen und stimmen die geplante Ausführung frühzeitig mit dem bevollmächtigten Bezirksschornsteinfeger ab.",
+  },
+  {
+    q: "Wann wird der Bezirksschornsteinfeger eingebunden?",
+    a: "Der bevollmächtigte Bezirksschornsteinfeger wird bereits während der Planung eingebunden. So können Verlauf, Höhe und Anschluss vor der Montage abgestimmt werden. Nach der Fertigstellung erfolgt die Prüfung und Abnahme.",
+  },
+  {
+    q: "Wie hoch muss der Außenkamin sein?",
+    a: "Die erforderliche Höhe wird für jedes Projekt individuell ermittelt. Dabei berücksichtigen wir die Feuerstätte, die Dachform, die Lage der Mündung sowie die Vorgaben der 1. BImSchV. Sofern erforderlich, fließt zusätzlich die VDI 3781 Blatt 4 in die Berechnung ein.",
+  },
+  {
+    q: "Muss der Schornstein über den First geführt werden?",
+    a: "Die Mündung muss nach den heute geltenden Anforderungen über den Dachfirst geführt werden. Die konkrete Ausführung hängt von Dachform, Gebäude und Lage der Feuerstätte ab und wird projektbezogen geplant.",
+  },
+  {
+    q: "Kann ein Außenkamin schwarz oder farbig ausgeführt werden?",
+    a: "Ja. Neben klassischem Edelstahl sind je nach System schwarze oder farbig beschichtete Ausführungen in passenden RAL-Farben möglich.",
+  },
+  {
+    q: "Welcher Durchmesser ist erforderlich?",
+    a: "Der erforderliche Schornsteindurchmesser richtet sich nach der angeschlossenen Feuerstätte, ihrer Leistung, den Abgastemperaturen und der geplanten Schornsteinhöhe. Wir legen den Querschnitt anhand der technischen Daten fest.",
+  },
+  {
+    q: "Wie wird der Außenkamin an der Fassade befestigt?",
+    a: "Die Befestigung wird auf den vorhandenen Wandaufbau, die Gebäudehöhe und die auftretenden Lasten abgestimmt. Je nach Situation kommen unterschiedliche Wandhalter, Konsolen und statische Lösungen zum Einsatz.",
+  },
+  {
+    q: "Brauche ich für die Montage ein Gerüst?",
+    a: "Das hängt von Gebäudehöhe, Dachform und Zugänglichkeit ab. Bei vielen Projekten wird für die sichere Montage eine geeignete Arbeitsbühne oder ein Gerüst benötigt. Das berücksichtigen wir bereits bei der Planung und im Angebot.",
+  },
+  {
+    q: "Wie lange hält ein Edelstahlschornstein?",
+    a: "Ein fachgerecht geplanter und montierter Edelstahlschornstein ist auf eine lange Nutzungsdauer ausgelegt. Voraussetzung sind ein geeignetes System, der bestimmungsgemäße Betrieb und die regelmäßige Überprüfung und Reinigung.",
+  },
+  {
+    q: "Muss ein Außenkamin gereinigt werden?",
+    a: "Ja. Auch ein Außenkamin unterliegt den vorgeschriebenen Kehr- und Überprüfungsarbeiten. Umfang und Häufigkeit richten sich nach der angeschlossenen Feuerstätte und der Nutzung.",
+  },
+  {
+    q: "Kann der Außenkamin später verlängert oder angepasst werden?",
+    a: "Viele modulare Edelstahlschornsteinsysteme lassen sich später anpassen oder verlängern. Ob das im konkreten Fall möglich und zulässig ist, muss technisch geprüft und mit dem bevollmächtigten Bezirksschornsteinfeger abgestimmt werden.",
+  },
+];
+---
+
+<main class="ak-page">
+  <section class="ak-hero" aria-labelledby="ak-hero-title">
+    <img
+      class="ak-hero__image"
+      src="/images/aussenkamin-hero.png"
+      alt="Schwarzer Außenkamin an einem Wohnhaus im Abendlicht"
+      width="1664"
+      height="936"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="ak-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container ak-hero__inner">
+      <div class="ak-hero__content">
+        <p class="ak-eyebrow ak-eyebrow--light">Außenkamin nachträglich montieren</p>
+        <h1 id="ak-hero-title">
+          <span>Kein Schornstein vorhanden?</span>
+          Wir schaffen die Voraussetzung für Ihren Kaminofen.
+        </h1>
+        <p class="ak-hero__lead">
+          Ein nachträglich montierter Außenkamin ermöglicht den Anschluss Ihres
+          Kaminofens – individuell geplant, fachgerecht montiert und passend zu
+          Ihrem Gebäude ausgeführt.
+        </p>
+
+        <div class="ak-hero__actions">
+          <a class="ak-button ak-button--primary" href="/projekt-starten/?projekt=aussenkamin">
+            Jetzt Projekt anfragen
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="ak-button ak-button--ghost" href="#beispiele">
+            Referenzprojekte ansehen
+          </a>
+        </div>
+
+        <ul class="ak-hero__facts" aria-label="Vertrauensmerkmale">
+          <li><strong>Seit 2009</strong> Meisterbetrieb</li>
+          <li><strong>Eigene Teams</strong> Keine Subunternehmer</li>
+          <li><strong>10.000+</strong> realisierte Projekte</li>
+          <li><strong>Persönlich</strong> von Planung bis Montage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ak-fit" aria-labelledby="ak-fit-title">
+    <div class="container ak-fit__inner">
+      <div>
+        <p class="ak-eyebrow">Schnelle Orientierung</p>
+        <h2 id="ak-fit-title">Ist ein Außenkamin die richtige Lösung?</h2>
+      </div>
+      <ul class="ak-checklist">
+        <li>Sie möchten einen Kaminofen anschließen.</li>
+        <li>Ihr Haus besitzt keinen geeigneten Schornstein.</li>
+        <li>Sie modernisieren Ihre Heizung.</li>
+        <li>Sie möchten größere Umbauten im Gebäude vermeiden.</li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <section class="ak-section ak-situations" aria-labelledby="ak-situations-title">
+    <div class="container">
+      <div class="ak-intro ak-intro--wide">
+        <p class="ak-eyebrow">Typische Ausgangssituationen</p>
+        <h2 id="ak-situations-title">Vielleicht erkennen Sie sich hier wieder.</h2>
+        <p>
+          Ein Außenkamin kommt immer dann infrage, wenn ein sicherer Abgasweg benötigt
+          wird und im Gebäude kein geeigneter Schornstein zur Verfügung steht.
+        </p>
+      </div>
+
+      <div class="ak-situation-grid">
+        {situations.map((item) => (
+          <article class="ak-situation-card">
+            <span class="ak-situation-card__icon" aria-hidden="true">
+              {item.icon === "stove" && (
+                <svg viewBox="0 0 64 64">
+                  <rect x="19" y="16" width="26" height="34" rx="2" />
+                  <path d="M24 16V9h16v7" />
+                  <path d="M25 24h14v15H25z" />
+                  <path d="M24 50v5M40 50v5" />
+                  <path d="M30 35c-3-4 2-6 1-10 5 4 6 7 3 11" />
+                </svg>
+              )}
+              {item.icon === "heating" && (
+                <svg viewBox="0 0 64 64">
+                  <rect x="13" y="14" width="38" height="38" rx="3" />
+                  <circle cx="32" cy="31" r="10" />
+                  <path d="M32 21v20M22 31h20M18 20h8M18 46h8M38 20h8M38 46h8" />
+                </svg>
+              )}
+              {item.icon === "existing" && (
+                <svg viewBox="0 0 64 64">
+                  <path d="M12 34 32 16l20 18" />
+                  <path d="M17 31v23h30V31" />
+                  <path d="M37 23V9h9v22" />
+                  <path d="m39 38 5 5 8-10" />
+                </svg>
+              )}
+              {item.icon === "additional" && (
+                <svg viewBox="0 0 64 64">
+                  <path d="M12 35 30 18l18 17" />
+                  <path d="M17 32v22h26V32" />
+                  <path d="M37 25V10h8v23" />
+                  <circle cx="49" cy="48" r="10" />
+                  <path d="M49 43v10M44 48h10" />
+                </svg>
+              )}
+            </span>
+            <div class="ak-situation-card__content">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ak-benefits" aria-labelledby="ak-benefits-title">
+    <div class="container ak-benefits__inner">
+      <div class="ak-benefits__copy">
+        <p class="ak-eyebrow ak-eyebrow--light">Warum außen?</p>
+        <h2 id="ak-benefits-title">Eine klare Lösung mit wenig Eingriff in Ihr Zuhause.</h2>
+        <p>
+          Der Außenkamin wird passend zu Fassade, Dach und Feuerstätte geplant. So entsteht
+          kein Standardprodukt, sondern eine technische Lösung, die dauerhaft funktioniert
+          und sich sauber in das Gebäude einfügt.
+        </p>
+      </div>
+
+      <ul class="ak-benefits__list">
+        {benefits.map((benefit) => (
+          <li>{benefit}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="ak-section ak-planning" aria-labelledby="ak-planning-title">
+    <div class="container">
+      <div class="ak-intro ak-intro--wide">
+        <p class="ak-eyebrow">Technisch richtig geplant</p>
+        <h2 id="ak-planning-title">Darauf kommt es bei der Planung eines Außenkamins an.</h2>
+        <p>
+          Ein Außenkamin ist mehr als ein Edelstahlrohr an der Fassade. Damit Kaminofen,
+          Heizung oder eine andere Feuerstätte später sicher und zuverlässig funktionieren,
+          müssen Gebäude, Feuerstätte und gesetzliche Anforderungen gemeinsam betrachtet werden.
+        </p>
+      </div>
+
+      <div class="ak-planning__grid">
+        {planningPoints.map((item) => (
+          <article class="ak-planning-card">
+            <span class="ak-planning-card__number" aria-hidden="true">{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ak-section ak-mistakes" aria-labelledby="ak-mistakes-title">
+    <div class="container">
+      <div class="ak-intro ak-intro--wide">
+        <p class="ak-eyebrow">Aus der Praxis</p>
+        <h2 id="ak-mistakes-title">Häufige Fehler bei Außenkaminen.</h2>
+        <p>
+          Viele Probleme entstehen nicht bei der Montage, sondern bereits in der Planung.
+          Mit einer frühzeitigen technischen Abstimmung lassen sich spätere Änderungen häufig vermeiden.
+        </p>
+      </div>
+
+      <div class="ak-mistakes__grid">
+        {commonMistakes.map((item) => (
+          <article class="ak-mistake-card">
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <aside class="ak-master-tip" aria-labelledby="ak-master-tip-title">
+        <div class="ak-master-tip__label">Unser Rat vom Meisterbetrieb</div>
+        <div>
+          <h3 id="ak-master-tip-title">Schornstein und Feuerstätte gemeinsam planen.</h3>
+          <p>
+            Sprechen Sie möglichst vor dem Kauf Ihres Kaminofens mit uns. Wenn Feuerstätte
+            und Schornsteinsystem von Anfang an aufeinander abgestimmt werden, vermeiden Sie
+            unnötige Änderungen und schaffen die Grundlage für eine reibungslose Abstimmung
+            mit dem bevollmächtigten Bezirksschornsteinfeger.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="beispiele" class="ak-section ak-projects" aria-labelledby="ak-projects-title">
+    <div class="container">
+      <div class="ak-intro">
+        <p class="ak-eyebrow">Echte Möglichkeiten</p>
+        <h2 id="ak-projects-title">So könnte Ihr Haus aussehen.</h2>
+        <p>
+          Oberfläche, Verlauf und Befestigung werden individuell geplant. Diese erste
+          Vorschau zeigt die Bandbreite – später ersetzen wir die Flächen durch Ihre besten
+          realen Projektbilder.
+        </p>
+      </div>
+
+      <div class="ak-project-grid">
+        <article class="ak-project">
+          <img
+            class="ak-project__image ak-project__image--ref1"
+            src="/images/aussenkamin-referenz-1-korrigiert.webp"
+            alt="Doppelwandiger Edelstahl-Außenkamin an der Giebelseite eines Wohnhauses"
+            width="1024"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="ak-project__caption">
+            <p>Altbau · Nachrüstung</p>
+            <h3>Edelstahl-Außenkamin auf einer Dachfläche montiert</h3>
+          </div>
+        </article>
+
+        <article class="ak-project">
+          <img
+            class="ak-project__image ak-project__image--ref2"
+            src="/images/aussenkamin-referenz-2-korrigiert.webp"
+            alt="Doppelwandiger Edelstahlschornstein an einem Wohnhaus mit roter Giebelfassade"
+            width="1024"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="ak-project__caption">
+            <p>Wohnhaus · Nachrüstung</p>
+            <h3>Edelstahl-Außenkamin an der Giebelfassade</h3>
+          </div>
+        </article>
+
+        <article class="ak-project">
+          <img
+            class="ak-project__image ak-project__image--ref3"
+            src="/images/aussenkamin-referenz-3-korrigiert.webp"
+            alt="Farblich an das Fachwerk angepasster Außenkamin für ein kleines Blockheizkraftwerk"
+            width="1024"
+            height="1365"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="ak-project__caption">
+            <p>Fachwerkhaus · kleines BHKW</p>
+            <h3>Farblich an das Fachwerk angepasster Außenkamin</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ak-section ak-process" aria-labelledby="ak-process-title">
+    <div class="container">
+      <div class="ak-intro">
+        <p class="ak-eyebrow">Klarer Ablauf</p>
+        <h2 id="ak-process-title">So wird aus Ihrer Idee ein funktionierender Schornstein.</h2>
+      </div>
+
+      <ol class="ak-process__list">
+        {process.map(([number, title, text]) => (
+          <li>
+            <span class="ak-process__number">{number}</span>
+            <div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="ak-proof" aria-labelledby="ak-proof-title">
+    <div class="container ak-proof__inner">
+      <div>
+        <p class="ak-eyebrow ak-eyebrow--light">Warum Stadter?</p>
+        <h2 id="ak-proof-title">Weniger Versprechen. Mehr Beweise.</h2>
+      </div>
+      <div class="ak-proof__grid">
+        <div><strong>Seit 2009</strong><span>Schornstein- und Abgastechnik</span></div>
+        <div><strong>10.000+</strong><span>realisierte Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>technische Planung mit Verantwortung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage durch erfahrene Fachkräfte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ak-section ak-knowledge" aria-labelledby="ak-knowledge-title">
+    <div class="container ak-knowledge__inner">
+      <div>
+        <p class="ak-eyebrow">Wussten Sie schon?</p>
+        <h2 id="ak-knowledge-title">Vier wichtige Fakten zum Außenkamin.</h2>
+      </div>
+      <ul class="ak-knowledge__list">
+        {knowledgeFacts.map((fact) => (
+          <li>{fact}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="ak-section ak-faq" aria-labelledby="ak-faq-title">
+    <div class="container ak-faq__inner">
+      <div class="ak-intro">
+        <p class="ak-eyebrow">Gut zu wissen</p>
+        <h2 id="ak-faq-title">Häufige Fragen zum Außenkamin.</h2>
+      </div>
+      <div class="ak-faq__list">
+        {faqs.map((faq, index) => (
+          <details open={index === 0}>
+            <summary>
+              <span>{faq.q}</span>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ak-cta" aria-labelledby="ak-cta-title">
+    <div class="container ak-cta__inner">
+      <div>
+        <p class="ak-eyebrow ak-eyebrow--light">Ihr nächster Schritt</p>
+        <h2 id="ak-cta-title">Lassen Sie uns die passende Lösung für Ihr Gebäude finden.</h2>
+        <p>
+          Senden Sie uns einige Informationen und Fotos. Unser Projektteam prüft Ihr
+          Vorhaben persönlich und meldet sich bei Ihnen.
+        </p>
+      </div>
+      <div class="ak-cta__actions">
+        <a class="ak-button ak-button--white" href="/projekt-starten/?projekt=aussenkamin">
+          Außenkamin anfragen
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="ak-cta__phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .ak-planning__grid,
+  .ak-mistakes__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .ak-planning-card {
+    min-height: 100%;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid rgba(20, 24, 28, 0.1);
+    border-radius: 1rem;
+    background: #fff;
+  }
+
+  .ak-planning-card__number {
+    display: block;
+    margin-bottom: 1.25rem;
+    color: var(--color-primary, #8f1d22);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .ak-planning-card h3,
+  .ak-mistake-card h3,
+  .ak-master-tip h3 {
+    margin: 0 0 0.75rem;
+  }
+
+  .ak-planning-card p,
+  .ak-mistake-card p,
+  .ak-master-tip p {
+    margin: 0;
+  }
+
+  .ak-mistakes,
+  .ak-knowledge {
+    background: #f5f4f2;
+  }
+
+  .ak-mistake-card {
+    padding: clamp(1.35rem, 3vw, 2rem);
+    border-left: 0.25rem solid var(--color-primary, #8f1d22);
+    border-radius: 0 1rem 1rem 0;
+    background: #fff;
+  }
+
+  .ak-master-tip {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.7fr) minmax(0, 2fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+    padding: clamp(1.75rem, 4vw, 3rem);
+    border-left: 0.35rem solid var(--color-primary, #8f1d22);
+    border-radius: 0 1rem 1rem 0;
+    background: #fff;
+  }
+
+  .ak-master-tip__label {
+    color: var(--color-primary, #8f1d22);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .ak-knowledge__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+
+  .ak-knowledge__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ak-knowledge__list li {
+    position: relative;
+    padding: 1rem 1.25rem 1rem 3.25rem;
+    border-radius: 0.85rem;
+    background: #fff;
+  }
+
+  .ak-knowledge__list li::before {
+    position: absolute;
+    top: 1rem;
+    left: 1.15rem;
+    content: "✓";
+    color: var(--color-primary, #8f1d22);
+    font-weight: 900;
+  }
+
+  @media (max-width: 760px) {
+    .ak-planning__grid,
+    .ak-mistakes__grid,
+    .ak-master-tip,
+    .ak-knowledge__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .ak-master-tip {
+      gap: 1rem;
+    }
+  }
+</style>
+
+
+<style>
+  /* Referenzen: drei gleichwertige, ruhige Karten */
+  .ak-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    align-items: stretch;
+  }
+
+  .ak-project {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: #fff;
+  }
+
+  .ak-project img.ak-project__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .ak-project__image--ref1 {
+    object-position: 50% 8%;
+  }
+
+  .ak-project__image--ref2 {
+    object-position: 50% 8%;
+  }
+
+  .ak-project__image--ref3 {
+    object-position: 50% 5%;
+  }
+
+  .ak-project__caption {
+    min-height: 8.75rem;
+  }
+
+  @media (max-width: 960px) {
+    .ak-project-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .ak-project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ak-project img.ak-project__image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .ak-project__caption {
+      min-height: 0;
+    }
+  }
+</style>

@@ -1,4 +1,6 @@
 ---
+import "../../styles/project-content.css";
+
 interface ContentSection {
   kicker?: string;
   title: string;
@@ -13,44 +15,41 @@ interface Props {
 const { sections } = Astro.props;
 ---
 
-<section class="project-content-section">
-  <div class="project-content-container">
+<section class="stk-reference-story">
+  <div class="stk-reference-story__container">
     {
-      sections.map((section, index) => (
-        <article
-          class:list={[
-            "project-content-block",
-            index % 2 === 1 && "project-content-block--offset",
-          ]}
-        >
-          <div class="project-content-heading">
+      sections.map((section) => (
+        <article class="stk-reference-story__block">
+          <header class="stk-reference-story__heading">
             {section.kicker && (
-              <p class="project-content-kicker">
+              <p class="stk-reference-story__kicker">
                 {section.kicker}
               </p>
             )}
 
-            <h2>{section.title}</h2>
-          </div>
+            <h2 class="stk-reference-story__title">
+              {section.title}
+            </h2>
+          </header>
 
-          <div class="project-content-copy">
+          <div class="stk-reference-story__content">
             {
               section.paragraphs.map((paragraph) => (
-                <p>{paragraph}</p>
+                <p class="stk-reference-story__paragraph">
+                  {paragraph}
+                </p>
               ))
             }
 
             {
               section.points && section.points.length > 0 && (
-                <ul>
+                <ul class="stk-reference-story__list">
                   {
                     section.points.map((point) => (
-                      <li>
-                        <svg viewBox="0 0 20 20" aria-hidden="true">
-                          <path d="m4 10 4 4 8-9" />
-                        </svg>
-
-                        <span>{point}</span>
+                      <li class="stk-reference-story__list-item">
+                        <span class="stk-reference-story__list-text">
+                          {point}
+                        </span>
                       </li>
                     ))
                   }
@@ -63,118 +62,3 @@ const { sections } = Astro.props;
     }
   </div>
 </section>
-
-<style>
-  .project-content-section {
-    padding: clamp(5rem, 9vw, 8rem) 1.25rem;
-    background: var(--color-surface, #f7f7f7);
-  }
-
-  .project-content-container {
-    width: min(100%, 1120px);
-    margin: 0 auto;
-  }
-
-  .project-content-block {
-    display: grid;
-    grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
-    gap: clamp(2.5rem, 8vw, 8rem);
-    padding: clamp(3.5rem, 7vw, 6rem) 0;
-    border-top: 1px solid var(--color-border, #e6e6e6);
-  }
-
-  .project-content-block:first-child {
-    padding-top: 0;
-    border-top: 0;
-  }
-
-  .project-content-block:last-child {
-    padding-bottom: 0;
-  }
-
-  .project-content-block--offset .project-content-heading {
-    padding-left: clamp(0rem, 4vw, 3rem);
-  }
-
-  .project-content-kicker {
-    margin: 0 0 1rem;
-    color: var(--color-primary, #971f25);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .project-content-heading h2 {
-    max-width: 440px;
-    margin: 0;
-    color: var(--color-text, #1f1f1f);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 1.05;
-  }
-
-  .project-content-copy {
-    max-width: 680px;
-  }
-
-  .project-content-copy > p {
-    margin: 0;
-    color: #5f5f5f;
-    font-size: clamp(1rem, 1.4vw, 1.1rem);
-    line-height: 1.8;
-  }
-
-  .project-content-copy > p + p {
-    margin-top: 1.25rem;
-  }
-
-  .project-content-copy ul {
-    display: grid;
-    gap: 0.9rem;
-    margin: 2rem 0 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .project-content-copy li {
-    display: flex;
-    gap: 0.85rem;
-    align-items: flex-start;
-    color: var(--color-text, #1f1f1f);
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.55;
-  }
-
-  .project-content-copy li svg {
-    width: 20px;
-    height: 20px;
-    flex: 0 0 20px;
-    margin-top: 0.15rem;
-    fill: none;
-    stroke: var(--color-primary, #971f25);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  @media (max-width: 800px) {
-    .project-content-block {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-
-    .project-content-block--offset .project-content-heading {
-      padding-left: 0;
-    }
-  }
-
-  @media (max-width: 620px) {
-    .project-content-section {
-      padding-right: 1rem;
-      padding-left: 1rem;
-    }
-  }
-</style>

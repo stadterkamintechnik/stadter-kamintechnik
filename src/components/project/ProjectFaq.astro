@@ -1,0 +1,59 @@
+---
+import "../../styles/components/project-faq.css";
+
+const faqs = [
+  {
+    question: "Muss ich bereits alle Maße und technischen Daten kennen?",
+    answer:
+      "Nein. Beschreiben Sie uns Ihr Vorhaben so gut wie möglich. Fehlende Maße und technische Angaben klären wir gemeinsam im persönlichen Gespräch.",
+  },
+  {
+    question: "Kann ich Fotos zu meinem Projekt mitsenden?",
+    answer:
+      "Ja. Fotos vom Gebäude, vom vorhandenen Schornstein oder vom geplanten Aufstellort helfen uns, Ihr Projekt schneller und besser einzuschätzen.",
+  },
+  {
+    question: "Wie schnell erhalte ich eine Rückmeldung?",
+    answer:
+      "Unser Projektteam prüft Ihre Anfrage und meldet sich in der Regel innerhalb eines Werktages persönlich bei Ihnen.",
+  },
+  {
+    question: "Betreuen Sie auch Gewerbe- und Industrieprojekte?",
+    answer:
+      "Ja. Wir planen und realisieren Schornstein- und Abgasanlagen für private Gebäude, Gewerbebetriebe und industrielle Anwendungen.",
+  },
+  {
+    question: "Erhalte ich sofort ein Angebot?",
+    answer:
+      "Ein seriöses Angebot setzt voraus, dass wir die bauliche und technische Situation verstanden haben. Deshalb beginnt jedes Projekt mit einer persönlichen Beratung und technischen Einschätzung.",
+  },
+];
+---
+
+<section class="project-faq" aria-labelledby="project-faq-title">
+  <div class="project-faq__inner">
+    <div class="project-faq__intro">
+      <p class="project-faq__eyebrow">Häufige Fragen</p>
+      <h2 id="project-faq-title">Gut zu wissen.</h2>
+      <p>
+        Die wichtigsten Antworten rund um Ihre Projektanfrage.
+      </p>
+    </div>
+
+    <div class="project-faq__list">
+      {
+        faqs.map((faq, index) => (
+          <details class="project-faq__item" open={index === 0}>
+            <summary>
+              <span>{faq.question}</span>
+              <span class="project-faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="project-faq__answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

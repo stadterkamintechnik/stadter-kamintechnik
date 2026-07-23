@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import ReferenceOverview from "../../components/reference/ReferenceOverview.astro";
+
+const projects = [
+  {
+    title:
+      "Neue Abgasanlage für eine Hackschnitzel-Heizzentrale",
+    category: "Gewerbe",
+    location: "Raum Pegnitz",
+    description:
+      "Komplette Abgasführung für zwei Hackschnitzelanlagen mit Schräder-Wärmetauscher, umgesetzt mit Jeremias EW und DW.",
+    image:
+      "/images/referenzen/heizzentrale-pegnitz/heizzentrale-detail.jpg",
+    imageAlt:
+      "Edelstahl-Abgasleitungen einer Hackschnitzel-Heizzentrale im Raum Pegnitz",
+    href:
+      "/referenzen/heizzentrale-gewerbe",
+    tags: [
+      "Hackschnitzel",
+      "Biomasse",
+      "Heizzentrale",
+      "Jeremias",
+    ],
+    featured: true,
+  },
+];
+---
+
+<BaseLayout
+  title="Referenzen: Schornstein- und Abgasanlagen | Stadter Kamintechnik"
+  description="Ausgewählte Referenzprojekte von Stadter Kamintechnik: Edelstahl-Außenkamine, Schornsteinsanierungen sowie Abgasanlagen für Gewerbe und Industrie."
+>
+  <Header />
+
+  <main>
+    <ReferenceOverview projects={projects} />
+  </main>
+</BaseLayout>

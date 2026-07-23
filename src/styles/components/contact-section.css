@@ -1,0 +1,151 @@
+.contact-section {
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  background: #ffffff;
+}
+
+.contact-section__inner {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
+  width: min(1380px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.contact-section__sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.section-label,
+.contact-hours__label,
+.contact-team__label,
+.contact-card__label {
+  display: block;
+  color: var(--color-primary, #971f25);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-section__sidebar h2 {
+  max-width: 28rem;
+  margin: 1rem 0 1.5rem;
+  color: #1d1d1b;
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.contact-section__intro {
+  max-width: 34rem;
+  margin: 0 0 2.5rem;
+  color: #64645e;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.contact-card-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-card {
+  display: flex;
+  min-height: 5.6rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--color-border, #e6e6e6);
+  background: #ffffff;
+  color: #1d1d1b;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+  border-color: var(--color-primary, #971f25);
+  background: #fbf7f7;
+  transform: translateY(-2px);
+}
+
+.contact-card strong {
+  overflow-wrap: anywhere;
+  color: #1d1d1b;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.contact-hours,
+.contact-team {
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border, #e6e6e6);
+}
+
+.contact-hours {
+  margin-bottom: 1.75rem;
+}
+
+.contact-hours__label,
+.contact-team__label {
+  margin-bottom: 0.65rem;
+  color: #777770;
+  letter-spacing: 0.08em;
+}
+
+.contact-hours strong {
+  color: #1d1d1b;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.contact-team p {
+  margin: 0;
+  color: #64645e;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.contact-section__form {
+  min-width: 0;
+}
+
+@media (max-width: 980px) {
+  .contact-section__inner {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .contact-section__sidebar {
+    position: static;
+  }
+
+  .contact-card-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  .contact-section__inner {
+    width: min(100% - 2rem, 1380px);
+    gap: 3rem;
+  }
+
+  .contact-card-list {
+    grid-template-columns: 1fr;
+  }
+}

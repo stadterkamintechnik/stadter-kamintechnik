@@ -14,12 +14,6 @@ const statistics = [
     label: "Abgeschlossene Projekte",
   },
   {
-    value: 8000,
-    suffix: "+",
-    decimals: 0,
-    label: "Zufriedene Kunden",
-  },
-  {
     value: 18,
     suffix: "",
     decimals: 0,
@@ -251,7 +245,7 @@ const statistics = [
 
   .statistics {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: clamp(3.5rem, 7vw, 6rem);
     border-top: 1px solid var(--color-border, #e6e6e6);
     border-bottom: 1px solid var(--color-border, #e6e6e6);
@@ -323,15 +317,7 @@ const statistics = [
 
   @media (max-width: 900px) {
     .statistics {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .statistic:nth-child(2)::after {
-      display: none;
-    }
-
-    .statistic:nth-child(-n + 2) {
-      border-bottom: 1px solid var(--color-border, #e6e6e6);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .trust-points {
@@ -340,6 +326,25 @@ const statistics = [
 
     .trust-points li {
       justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .statistics {
+      grid-template-columns: 1fr;
+    }
+
+    .statistic {
+      padding: 2rem 1rem;
+      text-align: left;
+    }
+
+    .statistic:not(:last-child) {
+      border-bottom: 1px solid var(--color-border, #e6e6e6);
+    }
+
+    .statistic:not(:last-child)::after {
+      display: none;
     }
   }
 
@@ -358,21 +363,7 @@ const statistics = [
     }
 
     .statistics {
-      grid-template-columns: 1fr;
       margin-top: 3rem;
-    }
-
-    .statistic {
-      padding: 2rem 1rem;
-      text-align: left;
-    }
-
-    .statistic:not(:last-child) {
-      border-bottom: 1px solid var(--color-border, #e6e6e6);
-    }
-
-    .statistic:not(:last-child)::after {
-      display: none;
     }
 
     .statistic-value {

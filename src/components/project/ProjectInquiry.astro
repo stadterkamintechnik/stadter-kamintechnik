@@ -1,0 +1,713 @@
+---
+import "../../styles/components/project-inquiry.css";
+
+const projectTypes = [
+  { value: "aussenkamin", label: "Edelstahl-Außenkamin", icon: "chimney" },
+  { value: "sanierung", label: "Schornsteinsanierung", icon: "renovation" },
+  { value: "nachruesten", label: "Schornstein nachrüsten", icon: "plus" },
+  { value: "verlaengern", label: "Schornstein verlängern", icon: "arrow" },
+  { value: "gewerbe", label: "Gewerbe", icon: "building" },
+  { value: "industrie", label: "Industrie", icon: "factory" },
+  { value: "sonstiges", label: "Sonstiges", icon: "question" },
+];
+---
+
+<section class="project-inquiry" aria-labelledby="project-inquiry-title">
+  <div class="container">
+    <header class="project-inquiry__intro">
+      <span class="section-kicker">Projekt starten</span>
+      <h1 id="project-inquiry-title">Erzählen Sie uns von Ihrem Vorhaben.</h1>
+      <p>
+        Ob Edelstahl-Außenkamin, Schornsteinsanierung oder eine individuelle Lösung
+        für Ihr Gebäude – wir nehmen uns Zeit für Ihr Projekt.
+      </p>
+      <p class="project-inquiry__promise">
+        Nach Eingang Ihrer Anfrage prüfen wir Ihr Projekt und melden uns anschließend
+        persönlich bei Ihnen.
+      </p>
+    </header>
+
+    <div class="project-inquiry__layout">
+      <form
+        class="project-form"
+        method="POST"
+        action="/api/project-request"
+        enctype="multipart/form-data"
+      >
+        <fieldset class="project-form__section">
+          <legend>Welches Projekt planen Sie? <span aria-hidden="true">*</span></legend>
+          <p class="project-form__hint">Wählen Sie die passende Kategorie aus.</p>
+
+          <div class="project-type-grid" data-project-selector>
+            {projectTypes.map((project) => (
+              <label class="project-type-card">
+                <input type="radio" name="projectType" value={project.value} required />
+                <span class="project-type-card__content">
+                  <span class="project-type-card__icon" aria-hidden="true">
+                    {project.icon === "chimney" && <svg viewBox="0 0 24 24"><path d="M6 21h12M8 21V9h8v12M10 9V4h4v5M5 9h14" /></svg>}
+                    {project.icon === "renovation" && <svg viewBox="0 0 24 24"><path d="M4 20h16M7 20V6h10v14M9 10h6M9 14h6" /><path d="M16.5 3.5 20 7l-3 3.1-3.6.5.5-3.6 2.6-3.5Z" /></svg>}
+                    {project.icon === "plus" && <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /><path d="M4 21h16M7 21V8h10v13" /></svg>}
+                    {project.icon === "arrow" && <svg viewBox="0 0 24 24"><path d="M12 20V5M7 10l5-5 5 5" /><path d="M5 21h14" /></svg>}
+                    {project.icon === "building" && <svg viewBox="0 0 24 24"><path d="M4 21h16M6 21V5h8v16M14 9h4v12M9 8h2M9 12h2M9 16h2M16 12h1M16 16h1" /></svg>}
+                    {project.icon === "factory" && <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l5 3v-3l5 3V6h4v15M8 17h1M12 17h1M17 17h1" /></svg>}
+                    {project.icon === "question" && <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M9.8 9a2.3 2.3 0 1 1 3.3 2.1c-.8.4-1.1.9-1.1 1.9M12 17h.01" /></svg>}
+                  </span>
+                  <span class="project-type-card__label">{project.label}</span>
+                  <span class="project-type-card__check" aria-hidden="true">✓</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset class="project-form__section">
+          <legend>Ihre Kontaktdaten</legend>
+          <div class="form-grid form-grid--two">
+            <label class="form-field">
+              <span>Vorname <b>*</b></span>
+              <input type="text" name="firstName" autocomplete="given-name" required />
+            </label>
+            <label class="form-field">
+              <span>Nachname <b>*</b></span>
+              <input type="text" name="lastName" autocomplete="family-name" required />
+            </label>
+            <label class="form-field">
+              <span>Telefonnummer <b>*</b></span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required />
+              <small>Wir besprechen jedes Projekt persönlich. Ein kurzes Telefonat ist der schnellste Weg zur passenden Lösung.</small>
+            </label>
+            <label class="form-field">
+              <span>E-Mail <em>(optional)</em></span>
+              <input type="email" name="email" autocomplete="email" inputmode="email" />
+              <small>Falls Sie zusätzlich eine schriftliche Rückmeldung wünschen.</small>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="project-form__section">
+          <legend>Wo befindet sich das Projekt?</legend>
+          <div class="form-grid form-grid--location">
+            <label class="form-field">
+              <span>PLZ <b>*</b></span>
+              <input type="text" name="postalCode" autocomplete="postal-code" inputmode="numeric" maxlength="5" pattern="[0-9]{5}" required />
+            </label>
+            <label class="form-field">
+              <span>Ort <b>*</b></span>
+              <input type="text" name="city" autocomplete="address-level2" required />
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="project-form__section">
+          <legend>Worum geht es?</legend>
+          <label class="form-field">
+            <span class="sr-only">Projektbeschreibung</span>
+            <textarea name="message" rows="7" placeholder="Beschreiben Sie kurz Ihr Projekt. Was möchten Sie umsetzen oder welches Problem möchten Sie lösen?"></textarea>
+            <small>Je mehr Informationen Sie uns geben, desto besser können wir Ihr Projekt bereits im ersten Gespräch einschätzen.</small>
+          </label>
+        </fieldset>
+
+        <fieldset class="project-form__section">
+          <legend>Fotos und Unterlagen</legend>
+
+          <label class="upload-field" data-upload-field>
+            <input
+              type="file"
+              name="photos"
+              accept="image/jpeg,image/png,image/webp,application/pdf"
+              multiple
+              data-upload-input
+            />
+            <span class="upload-field__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h4l1.5-2h5L16 7h4v12H4V7Z" /><circle cx="12" cy="13" r="3.5" /></svg>
+            </span>
+            <strong>Dateien hier hineinziehen oder auswählen</strong>
+            <span>JPG, PNG, WEBP oder PDF · maximal 5 Dateien</span>
+            <span class="upload-field__files" data-upload-summary></span>
+          </label>
+
+          <div class="upload-feedback" data-upload-feedback aria-live="polite"></div>
+          <div class="upload-preview" data-upload-preview></div>
+
+          <p class="project-form__hint">
+            Fotos helfen uns, Ihr Projekt schneller technisch einzuschätzen.
+            Bilder werden vor dem Versand automatisch verkleinert.
+          </p>
+        </fieldset>
+
+        <div class="project-form__consent">
+          <label class="checkbox-field">
+            <input type="checkbox" name="privacy" required />
+            <span>
+              Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. <b>*</b>
+            </span>
+          </label>
+        </div>
+
+        <div class="project-form__finish">
+          <p><strong>Fast geschafft.</strong> Prüfen Sie Ihre Angaben kurz – wir melden uns anschließend persönlich bei Ihnen.</p>
+          <button class="project-form__submit" type="submit">Projektanfrage senden <span aria-hidden="true">→</span></button>
+          <small>* Pflichtfelder</small>
+        </div>
+      </form>
+
+      <aside class="project-sidebar" aria-label="Ablauf nach Ihrer Anfrage">
+        <div class="project-sidebar__card">
+          <span class="section-kicker">So geht es weiter</span>
+          <ol class="project-steps">
+            <li>
+              <span>1</span>
+              <div><strong>Anfrage senden</strong><p>Erzählen Sie uns von Ihrem Projekt.</p></div>
+            </li>
+            <li>
+              <span>2</span>
+              <div><strong>Projektprüfung</strong><p>Wir prüfen Ihre Angaben und verschaffen uns einen ersten Überblick.</p></div>
+            </li>
+            <li>
+              <span>3</span>
+              <div><strong>Persönliche Beratung</strong><p>Wir melden uns persönlich und besprechen gemeinsam das weitere Vorgehen.</p></div>
+            </li>
+          </ol>
+          <div class="project-sidebar__contact">
+            <small>Fragen vorab?</small>
+            <a href="tel:+4992289989000">09228 998900-0</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="project-contact" aria-labelledby="project-contact-title">
+      <header class="project-contact__intro">
+        <span class="section-kicker">Persönlicher Kontakt</span>
+        <h2 id="project-contact-title">Sie möchten lieber direkt mit uns sprechen?</h2>
+        <p>
+          Natürlich erreichen Sie uns auch telefonisch, per WhatsApp oder E-Mail.
+          Wir beraten Sie persönlich und kümmern uns um Ihr Projekt.
+        </p>
+      </header>
+
+      <div class="project-contact__grid">
+        <article class="project-contact__card">
+          <span class="project-contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7.2 3.5 4.7 5.4c-.6.5-.9 1.3-.7 2.1 1.1 5.7 5.7 10.3 11.4 11.4.8.2 1.6-.1 2.1-.7l1.9-2.5c.4-.6.3-1.4-.2-1.9l-2.8-2.1c-.5-.4-1.2-.4-1.7 0l-1.4 1.1a13.4 13.4 0 0 1-4.1-4.1l1.1-1.4c.4-.5.4-1.2 0-1.7L8.2 3.7c-.2-.3-.7-.4-1-.2Z" /></svg>
+          </span>
+          <span class="project-contact__label">Telefon</span>
+          <h3>Persönlich für Sie erreichbar</h3>
+          <p>Sie möchten Ihr Projekt direkt mit uns besprechen? Unser Team ist Montag bis Freitag von 07:00 bis 13:00 Uhr telefonisch persönlich für Sie erreichbar.</p>
+          <a class="project-contact__main-link" href="tel:+4992289989000">09228 998900-0</a>
+          <p class="project-contact__note">
+            Außerhalb dieser Zeiten sind unsere Projektleiter und Montageteams häufig bei Kunden oder auf Baustellen im Einsatz. Nutzen Sie gerne unser Projektformular, schreiben Sie uns eine E-Mail oder senden Sie uns Fotos bequem per WhatsApp.
+          </p>
+          <a class="project-contact__button" href="tel:+4992289989000">
+            Jetzt anrufen <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="project-contact__card">
+          <span class="project-contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.2A8.5 8.5 0 1 0 12 3.5Z" /><path d="M8.8 8.5c.4 3.1 2.7 5.5 5.8 6.1l1.2-1.7-2.1-1-1.1 1c-1.3-.6-2.4-1.6-3-3l.9-1.1-.9-2.1-1.8 1.1 1 2.7" /></svg>
+          </span>
+          <span class="project-contact__label">WhatsApp</span>
+          <h3>Fotos einfach senden</h3>
+          <p>
+            Senden Sie uns Fotos Ihres Schornsteins, Ihres Gebäudes oder Ihrer
+            Einbausituation direkt per WhatsApp.
+          </p>
+          <p class="project-contact__note">
+            Oft können wir Ihr Projekt dadurch bereits vor dem ersten Gespräch deutlich besser einschätzen.
+          </p>
+          <a
+            class="project-contact__button"
+            href="https://wa.me/4915170661702?text=Guten%20Tag%2C%20ich%20m%C3%B6chte%20ein%20Projekt%20bei%20Stadter%20Kamintechnik%20anfragen."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp öffnen <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="project-contact__card">
+          <span class="project-contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" /><path d="m4.5 7 7.5 5.5L19.5 7" /></svg>
+          </span>
+          <span class="project-contact__label">E-Mail</span>
+          <h3>Schriftliche Anfrage</h3>
+          <p>
+            Sie möchten Unterlagen, Pläne oder weitere Informationen senden?
+            Schreiben Sie uns einfach eine E-Mail.
+          </p>
+          <a class="project-contact__main-link" href="mailto:info@stadter-kamin.de">info@stadter-kamin.de</a>
+          <p class="project-contact__note">
+            Wir melden uns schnellstmöglich persönlich bei Ihnen.
+          </p>
+          <a class="project-contact__button" href="mailto:info@stadter-kamin.de">
+            E-Mail schreiben <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>
+
+<script>
+  const MAX_FILES = 5;
+  const MAX_FILE_BYTES = 2_500_000;
+  const MAX_TOTAL_BYTES = 3_000_000;
+  const MAX_IMAGE_EDGE = 1600;
+  const IMAGE_QUALITY = 0.78;
+  const ACCEPTED_TYPES = new Set<string>([
+    "image/jpeg",
+    "image/png",
+    "image/webp",
+    "application/pdf",
+  ]);
+
+  const uploadField = document.querySelector<HTMLElement>("[data-upload-field]");
+  const uploadInput = document.querySelector<HTMLInputElement>("[data-upload-input]");
+  const uploadSummary = document.querySelector<HTMLElement>("[data-upload-summary]");
+  const uploadFeedback = document.querySelector<HTMLElement>("[data-upload-feedback]");
+  const uploadPreview = document.querySelector<HTMLElement>("[data-upload-preview]");
+
+  let selectedFiles: File[] = [];
+
+  const formatBytes = (bytes: number): string => {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+    return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+  };
+
+  const setFeedback = (message = "", isError = false): void => {
+    if (!uploadFeedback) return;
+    uploadFeedback.textContent = message;
+    uploadFeedback.classList.toggle("upload-feedback--error", isError);
+  };
+
+  const syncInput = (): void => {
+    if (!uploadInput) return;
+
+    const transfer = new DataTransfer();
+    selectedFiles.forEach((file) => transfer.items.add(file));
+    uploadInput.files = transfer.files;
+  };
+
+  const createFileIcon = (file: File): HTMLSpanElement => {
+    const icon = document.createElement("span");
+    icon.className = "upload-preview__icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = file.type === "application/pdf" ? "PDF" : "IMG";
+    return icon;
+  };
+
+  const renderFiles = (): void => {
+    if (!uploadPreview) return;
+
+    uploadPreview.replaceChildren();
+
+    selectedFiles.forEach((file, index) => {
+      const item = document.createElement("article");
+      item.className = "upload-preview__item";
+
+      const visual = createFileIcon(file);
+
+      const info = document.createElement("div");
+      info.className = "upload-preview__info";
+
+      const name = document.createElement("strong");
+      name.textContent = file.name;
+
+      const size = document.createElement("span");
+      size.textContent = formatBytes(file.size);
+
+      info.append(name, size);
+
+      const removeButton = document.createElement("button");
+      removeButton.type = "button";
+      removeButton.className = "upload-preview__remove";
+      removeButton.setAttribute("aria-label", `${file.name} entfernen`);
+      removeButton.textContent = "Entfernen";
+      removeButton.addEventListener("click", () => {
+        selectedFiles.splice(index, 1);
+        syncInput();
+        renderFiles();
+        setFeedback();
+      });
+
+      item.append(visual, info, removeButton);
+      uploadPreview.append(item);
+    });
+
+    if (uploadSummary) {
+      const total = selectedFiles.reduce((sum, file) => sum + file.size, 0);
+      uploadSummary.textContent = selectedFiles.length
+        ? `${selectedFiles.length} Datei${selectedFiles.length === 1 ? "" : "en"} · ${formatBytes(total)}`
+        : "";
+    }
+  };
+
+  const compressImage = async (file: File): Promise<File> => {
+    if (!['image/jpeg', 'image/webp'].includes(file.type)) return file;
+    if (file.size < 700_000) return file;
+
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, MAX_IMAGE_EDGE / Math.max(bitmap.width, bitmap.height));
+    const width = Math.max(1, Math.round(bitmap.width * scale));
+    const height = Math.max(1, Math.round(bitmap.height * scale));
+
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+
+    const context = canvas.getContext("2d");
+    if (!context) {
+      bitmap.close();
+      return file;
+    }
+
+    context.drawImage(bitmap, 0, 0, width, height);
+    bitmap.close();
+
+    const blob = await new Promise<Blob | null>((resolve) => {
+      canvas.toBlob(resolve, file.type, IMAGE_QUALITY);
+    });
+
+    if (!blob || blob.size >= file.size) return file;
+
+    return new File([blob], file.name, {
+      type: file.type,
+      lastModified: file.lastModified,
+    });
+  };
+
+  const addFiles = async (incoming: FileList | readonly File[]): Promise<void> => {
+    setFeedback("Dateien werden vorbereitet …");
+
+    const candidates = Array.from(incoming);
+
+    if (selectedFiles.length + candidates.length > MAX_FILES) {
+      setFeedback(`Es können maximal ${MAX_FILES} Dateien angehängt werden.`, true);
+      return;
+    }
+
+    const prepared: File[] = [];
+
+    for (const file of candidates) {
+      if (!ACCEPTED_TYPES.has(file.type)) {
+        setFeedback(`„${file.name}“ hat ein nicht unterstütztes Dateiformat.`, true);
+        return;
+      }
+
+      let processed: File;
+      try {
+        processed = await compressImage(file);
+      } catch {
+        processed = file;
+      }
+
+      if (processed.size > MAX_FILE_BYTES) {
+        setFeedback(
+          `„${file.name}“ ist zu groß. Maximal erlaubt sind ${formatBytes(MAX_FILE_BYTES)} pro Datei.`,
+          true,
+        );
+        return;
+      }
+
+      prepared.push(processed);
+    }
+
+    const nextFiles = [...selectedFiles, ...prepared];
+    const totalBytes = nextFiles.reduce((sum, file) => sum + file.size, 0);
+
+    if (totalBytes > MAX_TOTAL_BYTES) {
+      setFeedback(
+        `Die Anhänge sind zusammen zu groß. Maximal erlaubt sind ${formatBytes(MAX_TOTAL_BYTES)}.`,
+        true,
+      );
+      return;
+    }
+
+    selectedFiles = nextFiles;
+    syncInput();
+    renderFiles();
+    setFeedback("Dateien sind bereit.");
+  };
+
+  uploadInput?.addEventListener("change", async () => {
+    if (!uploadInput.files) return;
+    await addFiles(uploadInput.files);
+  });
+
+  if (uploadField) {
+    ["dragenter", "dragover"].forEach((eventName) => {
+      uploadField.addEventListener(eventName, (event: Event) => {
+        event.preventDefault();
+        uploadField.classList.add("upload-field--active");
+      });
+    });
+
+    ["dragleave", "drop"].forEach((eventName) => {
+      uploadField.addEventListener(eventName, (event: Event) => {
+        event.preventDefault();
+        uploadField.classList.remove("upload-field--active");
+      });
+    });
+
+    uploadField.addEventListener("drop", async (event: DragEvent) => {
+      event.preventDefault();
+      const files = event.dataTransfer?.files;
+      if (!files?.length) return;
+      await addFiles(files);
+    });
+  }
+</script>
+
+<style>
+  .upload-field--active {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  .upload-feedback {
+    min-height: 1.4em;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .upload-feedback--error {
+    color: #8f1d24;
+    font-weight: 700;
+  }
+
+  .upload-preview {
+    display: grid;
+    margin-top: 0.9rem;
+    border-top: 1px solid #dedede;
+  }
+
+  .upload-preview__item {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 62px;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #dedede;
+  }
+
+  .upload-preview__icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d5d5d5;
+    border-radius: 7px;
+    background: #f7f7f7;
+    color: #8f1d24;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+
+  .upload-preview__info {
+    min-width: 0;
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .upload-preview__info strong {
+    overflow: hidden;
+    color: #171717;
+    font-size: 0.94rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .upload-preview__info span {
+    color: #6f6f73;
+    font-size: 0.82rem;
+  }
+
+  .upload-preview__remove {
+    border: 0;
+    padding: 0.35rem;
+    background: transparent;
+    color: #8f1d24;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  @media (max-width: 560px) {
+    .upload-preview__item {
+      grid-template-columns: 40px minmax(0, 1fr);
+    }
+
+    .upload-preview__icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    .upload-preview__remove {
+      grid-column: 2;
+      justify-self: start;
+      padding-left: 0;
+    }
+  }
+
+  .project-contact {
+    margin-top: clamp(4rem, 7vw, 7rem);
+    padding-top: clamp(3.5rem, 6vw, 5.5rem);
+    border-top: 1px solid #dedede;
+  }
+
+  .project-contact__intro {
+    max-width: 760px;
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+  }
+
+  .project-contact__intro h2 {
+    margin: 0.7rem 0 1rem;
+    color: #171717;
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  .project-contact__intro p {
+    margin: 0 auto;
+    max-width: 650px;
+    color: #66666b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .project-contact__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project-contact__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: clamp(1.6rem, 3vw, 2.25rem);
+    border: 1px solid #dddddf;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(20, 20, 20, 0.055);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .project-contact__card:hover {
+    transform: translateY(-4px);
+    border-color: #c9c9cc;
+    box-shadow: 0 18px 44px rgba(20, 20, 20, 0.085);
+  }
+
+  .project-contact__icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1.35rem;
+    border: 1px solid #dedede;
+    border-radius: 13px;
+    background: #f7f7f7;
+    color: #8f1d24;
+  }
+
+  .project-contact__icon svg {
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.65;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .project-contact__label {
+    margin-bottom: 0.5rem;
+    color: #8f1d24;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .project-contact__card h3 {
+    margin: 0 0 1rem;
+    color: #171717;
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .project-contact__card p {
+    margin: 0;
+    color: #55555a;
+    line-height: 1.7;
+  }
+
+  .project-contact__main-link {
+    display: inline-block;
+    align-self: flex-start;
+    margin: 1.25rem 0;
+    color: #8f1d24;
+    font-size: clamp(1.05rem, 2vw, 1.28rem);
+    font-weight: 800;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .project-contact__main-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .project-contact__note {
+    margin-top: 1.15rem !important;
+    color: #747479 !important;
+    font-size: 0.92rem;
+  }
+
+  .project-contact__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-top: auto;
+    padding: 0.9rem 1rem;
+    border: 1px solid #d5d5d7;
+    border-radius: 9px;
+    background: #f7f7f7;
+    color: #202024;
+    font-weight: 750;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+
+  .project-contact__note + .project-contact__button,
+  .project-contact__main-link + .project-contact__note + .project-contact__button {
+    margin-top: 1.75rem;
+  }
+
+  .project-contact__button:hover {
+    border-color: #8f1d24;
+    background: #fff;
+    color: #8f1d24;
+  }
+
+  @media (max-width: 980px) {
+    .project-contact__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-contact__card {
+      min-height: auto;
+    }
+  }
+
+</style>

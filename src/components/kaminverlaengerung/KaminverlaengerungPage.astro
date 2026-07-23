@@ -1,0 +1,277 @@
+---
+const reasons = [
+  {
+    number: "01",
+    title: "Zu schwacher Schornsteinzug",
+    text: "Fehlt die wirksame Höhe, kann der notwendige Unterdruck für den sicheren Betrieb der Feuerstätte zu gering sein. Eine fachgerecht geplante Verlängerung kann den Zug verbessern.",
+    image: "/images/kaminverlaengerung/schwacher-zug.webp",
+    alt: "Rauchentwicklung an einer Feuerstätte bei zu schwachem Schornsteinzug",
+    position: "50% 50%",
+  },
+  {
+    number: "02",
+    title: "Gebäude wurde verändert",
+    text: "Aufstockungen, neue Dachformen oder Anbauten können die ursprünglichen Strömungsverhältnisse verändern. Dann muss die Mündungshöhe erneut technisch beurteilt werden.",
+    image: "/images/kaminverlaengerung/gebaeude-veraendert.webp",
+    alt: "Gebäude mit verändertem Dach und bestehendem Schornstein",
+    position: "50% 46%",
+  },
+  {
+    number: "03",
+    title: "Störende Dach- und Windverhältnisse",
+    text: "First, Gauben, Nachbargebäude oder ungünstige Windzonen können zu Rückströmungen und Druckschwankungen führen. Die richtige Mündungshöhe ist dann entscheidend.",
+    image: "/images/kaminverlaengerung/windverhaeltnisse.webp",
+    alt: "Schornsteinmündung im Einflussbereich von Dachfirst und Wind",
+    position: "50% 44%",
+  },
+  {
+    number: "04",
+    title: "Neue Feuerstätte oder Heizung",
+    text: "Nach einem Gerätewechsel können sich Abgasmenge, Temperatur und Förderdruck ändern. Die vorhandene Höhe muss deshalb zur neuen Feuerstätte passen.",
+    image: "/images/kaminverlaengerung/neue-feuerstaette.webp",
+    alt: "Neue Feuerstätte mit Anforderungen an den Schornsteinzug",
+    position: "50% 50%",
+  },
+];
+
+const systems = [
+  {
+    number: "01",
+    name: "Doppelwandige Edelstahl-Kaminverlängerung",
+    subtitle: "Die fachgerechte Lösung oberhalb des Daches",
+    description:
+      "Für die Verlängerung eines bestehenden Schornsteins setzen wir ein zugelassenes, gedämmtes und doppelwandiges Edelstahlsystem ein. Die Verlängerung wird über eine passende Edelstahlplatte sicher auf dem vorhandenen Kaminkopf befestigt. Höhe, Durchmesser und Befestigung werden für den jeweiligen Schornstein technisch geplant.",
+    image: "/images/kaminverlaengerung/doppelwandige-verlaengerung.webp",
+    alt: "Doppelwandige Edelstahl-Kaminverlängerung auf einem gemauerten Schornstein",
+    facts: [
+      ["Ausführung", "gedämmt und doppelwandig"],
+      ["Werkstoff", "hochwertiger Edelstahl"],
+      ["Befestigung", "über eine passende Edelstahlplatte"],
+      ["Planung", "Höhe und Standsicherheit werden geprüft"],
+    ],
+  },
+];
+
+const planning = [
+  {
+    number: "01",
+    title: "Ursache klären",
+    text: "Nicht jedes Zugproblem entsteht durch eine zu geringe Höhe. Wir prüfen zuerst Feuerstätte, Schornstein, Verbrennungsluft und die bauliche Umgebung.",
+  },
+  {
+    number: "02",
+    title: "Wirksame Höhe berechnen",
+    text: "Die erforderliche Höhe wird nicht geschätzt. Querschnitt, Leistung, Abgastemperatur und Druckverhältnisse müssen zusammenpassen.",
+  },
+  {
+    number: "03",
+    title: "Mündung und Umgebung bewerten",
+    text: "Dachfirst, Gauben, Nachbargebäude, Fenster und lokale Windverhältnisse beeinflussen die sichere Abgasabführung.",
+  },
+  {
+    number: "04",
+    title: "Befestigung und Standsicherheit planen",
+    text: "Je größer die Verlängerung, desto wichtiger sind Montageplatte, Abspannung und die sichere Lastabtragung in den Bestand.",
+  },
+];
+
+const process = [
+  ["01", "Erstprüfung", "Wir klären Feuerstätte, Schornstein, Problem und vorhandene Unterlagen."],
+  ["02", "Besichtigung", "Wir prüfen Kaminkopf, Dachumgebung, Zugänglichkeit und Befestigungsmöglichkeiten."],
+  ["03", "Berechnung", "Wir bestimmen die technisch erforderliche Höhe und die passende Ausführung."],
+  ["04", "Abstimmung", "Die Lösung wird bei Bedarf mit dem bevollmächtigten Bezirksschornsteinfeger abgestimmt."],
+  ["05", "Angebot", "Sie erhalten ein transparentes Angebot mit klar beschriebenem Leistungsumfang."],
+  ["06", "Montage", "Unsere eigenen Teams montieren die Verlängerung sicher und fachgerecht."],
+];
+
+const faqs = [
+  {
+    q: "Wann ist eine Kaminverlängerung sinnvoll?",
+    a: "Eine Kaminverlängerung kann sinnvoll sein, wenn die wirksame Schornsteinhöhe für den benötigten Förderdruck nicht ausreicht, wenn sich durch Umbauten die Strömungsverhältnisse verändert haben oder wenn die Mündung in einem ungünstigen Wind- beziehungsweise Dachbereich liegt. Vorher muss geprüft werden, ob die Höhe tatsächlich die Ursache ist.",
+  },
+  {
+    q: "Verbessert eine Kaminverlängerung immer den Zug?",
+    a: "Eine größere wirksame Höhe kann den natürlichen Auftrieb verbessern. Sie hilft jedoch nur, wenn das Zugproblem tatsächlich mit der Höhe oder den Mündungsverhältnissen zusammenhängt. Falsche Querschnitte, fehlende Verbrennungsluft, Verschmutzungen oder technische Fehler an der Feuerstätte müssen separat betrachtet werden.",
+  },
+  {
+    q: "Wie hoch muss ein Schornstein verlängert werden?",
+    a: "Die erforderliche Höhe hängt von Feuerstätte, Leistung, Brennstoff, Schornsteinquerschnitt, wirksamer Höhe, Dachform und Umgebung ab. Eine pauschale Standardhöhe gibt es nicht. Die Verlängerung muss technisch berechnet und auf das konkrete Gebäude abgestimmt werden.",
+  },
+  {
+    q: "Welche Arten von Kaminverlängerungen gibt es?",
+    a: "Für die Verlängerung eines bestehenden Schornsteins wird ein zugelassenes, gedämmtes und doppelwandiges Edelstahlsystem verwendet. Entscheidend sind die richtige Dimensionierung, die passende Befestigung und die sichere Lastabtragung am vorhandenen Kaminkopf.",
+  },
+  {
+    q: "Kann eine Kaminverlängerung auf jeden Schornstein gesetzt werden?",
+    a: "Nein. Der Kaminkopf und die vorhandene Konstruktion müssen tragfähig sein. Außerdem müssen Querschnitt, System, Anschluss, Befestigung und Windlasten berücksichtigt werden. Bei einem geschädigten Kaminkopf kann zunächst eine Sanierung erforderlich sein.",
+  },
+  {
+    q: "Ist eine Abspannung notwendig?",
+    a: "Das hängt von Höhe, Durchmesser, System, Windlast und Befestigung am Bestand ab. Kürzere Verlängerungen können häufig direkt auf einer geeigneten Montageplatte befestigt werden. Größere freie Höhen benötigen gegebenenfalls zusätzliche Halterungen oder Abspannungen.",
+  },
+  {
+    q: "Was kostet eine Kaminverlängerung?",
+    a: "Die Kosten richten sich nach Höhe, Durchmesser, System, Befestigung, Dachzugang und Montageaufwand. Nach Prüfung des Bestands erhalten Sie ein nachvollziehbares Angebot mit der technisch erforderlichen Ausführung.",
+  },
+  {
+    q: "Wann ist eine Schornsteinhöhenberechnung erforderlich?",
+    a: "Eine rechnerische Bestimmung der erforderlichen Mündungshöhe kann notwendig sein, wenn eine Feuerungsanlage neu errichtet oder wesentlich geändert wird, sich die Gebäudesituation verändert hat oder ein entsprechender Nachweis verlangt wird. Je nach Anwendungsfall werden dabei die Vorgaben des § 19 der 1. BImSchV und die VDI 3781 Blatt 4 berücksichtigt. Ergibt die Berechnung eine größere erforderliche Höhe, kann eine fachgerecht geplante Kaminverlängerung die passende bauliche Lösung sein.",
+  },
+  {
+    q: "Muss der Schornsteinfeger eingebunden werden?",
+    a: "Ja, insbesondere wenn sich Mündungshöhe, Abgasführung oder Betriebsbedingungen ändern. Wir stimmen die geplante Ausführung frühzeitig mit dem bevollmächtigten Bezirksschornsteinfeger ab.",
+  },
+];
+---
+
+<div class="kv-page">
+  <section class="kv-hero" aria-labelledby="kv-hero-title">
+    <img class="kv-hero__image" src="/images/kaminverlaengerung/hero.webp" alt="Edelstahl-Kaminverlängerung auf einem bestehenden Schornstein" width="1664" height="936" loading="eager" fetchpriority="high" decoding="async" />
+    <div class="kv-hero__overlay" aria-hidden="true"></div>
+    <div class="container kv-hero__inner">
+      <div class="kv-hero__content">
+        <p class="kv-eyebrow kv-eyebrow--light">Kaminverlängerung vom Meisterbetrieb</p>
+        <h1 id="kv-hero-title"><span>Zu wenig Zug oder zu geringe Höhe?</span> Wir bringen Ihren Schornstein auf die richtige Höhe.</h1>
+        <p class="kv-hero__lead">Eine Kaminverlängerung kann Zugprobleme lösen und die sichere Abgasabführung verbessern. Wir prüfen die Ursache, berechnen die erforderliche Höhe und montieren die technisch passende Lösung.</p>
+        <div class="kv-hero__actions">
+          <a class="kv-button kv-button--primary" href="/projekt-starten/?projekt=kaminverlaengerung">Kaminverlängerung anfragen <span aria-hidden="true">→</span></a>
+          <a class="kv-button kv-button--ghost" href="#systeme">Lösungen ansehen</a>
+        </div>
+        <ul class="kv-hero__facts" aria-label="Vertrauensmerkmale">
+          <li><strong>Technisch geprüft</strong> statt pauschal erhöht</li>
+          <li><strong>Eigene Teams</strong> keine Subunternehmer</li>
+          <li><strong>Seit 2009</strong> Meisterbetrieb</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="kv-fit" aria-labelledby="kv-fit-title">
+    <div class="container kv-fit__inner">
+      <div><p class="kv-eyebrow">Schnelle Orientierung</p><h2 id="kv-fit-title">Wann sollte die Schornsteinhöhe geprüft werden?</h2></div>
+      <ul class="kv-checklist">
+        <li>Rauch tritt beim Anheizen oder Nachlegen aus.</li>
+        <li>Die Feuerstätte erreicht keinen stabilen Zug.</li>
+        <li>Das Gebäude oder die Dachlandschaft wurde verändert.</li>
+        <li>Der Schornstein liegt ungünstig zu First, Gaube oder Nachbargebäude.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="kv-section" aria-labelledby="kv-reasons-title">
+    <div class="container">
+      <div class="kv-intro kv-intro--wide"><p class="kv-eyebrow">Typische Situationen</p><h2 id="kv-reasons-title">Wann eine Kaminverlängerung infrage kommt.</h2><p>Eine Verlängerung ist keine pauschale Lösung für jedes Schornsteinproblem. Sie ist dann sinnvoll, wenn die wirksame Höhe oder die Lage der Mündung tatsächlich die Ursache ist.</p></div>
+      <div class="kv-card-grid">
+        {reasons.map((item) => (
+          <article class="kv-info-card"><div class="kv-info-card__visual"><img src={item.image} alt={item.alt} width="900" height="675" loading="lazy" decoding="async" style={`object-position:${item.position};`} /></div><div class="kv-info-card__body"><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></div></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kv-dark" aria-labelledby="kv-function-title">
+    <div class="container kv-dark__inner">
+      <div><p class="kv-eyebrow kv-eyebrow--light">Technik verstehen</p><h2 id="kv-function-title">Warum die wirksame Höhe den Schornsteinzug beeinflusst.</h2></div>
+      <div class="kv-dark__copy"><p>Warme Abgase sind leichter als die kühlere Außenluft. Durch den Höhenunterschied zwischen Feuerstätte und Schornsteinmündung entsteht natürlicher Auftrieb. Dieser Unterdruck transportiert die Abgase sicher nach außen.</p><p>Ist die wirksame Höhe zu gering oder liegt die Mündung in einer ungünstigen Druckzone, kann der Förderdruck fehlen. Eine richtig dimensionierte Verlängerung verbessert dann die Strömungsverhältnisse – vorausgesetzt, Querschnitt, Feuerstätte und Verbrennungsluft passen ebenfalls.</p></div>
+    </div>
+  </section>
+
+  <section id="systeme" class="kv-section kv-systems" aria-labelledby="kv-systems-title">
+    <div class="container">
+      <div class="kv-intro kv-intro--wide"><p class="kv-eyebrow">Ausführungen</p><h2 id="kv-systems-title">Die fachgerechte Lösung für den vorhandenen Schornstein.</h2><p>Entscheidend sind nicht verschiedene Bauarten, sondern die technisch richtige Dimensionierung und eine sichere Befestigung am vorhandenen Kaminkopf.</p></div>
+      <div class="kv-system-grid">
+        {systems.map((system) => (
+          <article class="kv-system-card"><div class="kv-system-card__visual"><span>_{system.number}</span><img src={system.image} alt={system.alt} width="900" height="900" loading="lazy" decoding="async" /></div><div class="kv-system-card__content"><p class="kv-system-card__subtitle">{system.subtitle}</p><h3>{system.name}</h3><p class="kv-system-card__description">{system.description}</p><dl>{system.facts.map(([label,value]) => (<div><dt>{label}</dt><dd>{value}</dd></div>))}</dl></div></article>
+        ))}
+      </div>
+      <aside class="kv-system-note"><div class="kv-system-note__label">Wichtig</div><div><h3>Die richtige Höhe muss berechnet werden.</h3><p>Eine Kaminverlängerung wird nur so hoch ausgeführt, wie es technisch erforderlich ist. Mit zunehmender Höhe steigen Windlasten und die Anforderungen an Befestigung und Standsicherheit. Deshalb planen wir jede Verlängerung passend zur Feuerstätte, zum Schornstein und zum Gebäude.</p></div></aside>
+    </div>
+  </section>
+
+  <section class="kv-section kv-planning" aria-labelledby="kv-planning-title">
+    <div class="container"><div class="kv-intro kv-intro--wide"><p class="kv-eyebrow">Sauber geplant</p><h2 id="kv-planning-title">Vier Punkte entscheiden über eine funktionierende Lösung.</h2><p>Die sichtbare Verlängerung ist nur das Ergebnis. Entscheidend sind vorher die technische Diagnose und eine sichere Planung.</p></div><div class="kv-planning-grid">{planning.map((item) => (<article><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
+  </section>
+
+  <section class="kv-standards" aria-labelledby="kv-standards-title">
+    <div class="container kv-standards__inner">
+      <div class="kv-standards__content">
+        <p class="kv-eyebrow">Kaminverlängerung</p>
+        <h2 id="kv-standards-title">Schornsteinhöhen- berechnung nach VDI 3781 Blatt 4 und 1. BImSchV.</h2>
+        <p>
+          Nicht jede erforderliche Schornsteinhöhe lässt sich allein anhand einer pauschalen
+          Mindesthöhe bestimmen. Je nach Feuerungsanlage, Gebäudeform und Umgebung kann eine
+          rechnerische Bestimmung der Mündungshöhe erforderlich sein.
+        </p>
+        <p>
+          Bei Bedarf berücksichtigen wir die Vorgaben des § 19 der 1. BImSchV und der
+          VDI 3781 Blatt 4. Ergibt die Berechnung, dass die vorhandene Austrittsöffnung zu niedrig
+          liegt, planen wir eine technisch passende Kaminverlängerung.
+        </p>
+      </div>
+      <div class="kv-standards__points">
+        <article>
+          <span>01</span>
+          <h3>Gebäude und Umgebung erfassen</h3>
+          <p>Dachform, First, Nachbargebäude sowie Fenster und Lüftungsöffnungen werden berücksichtigt.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Berechnung durchführen</h3>
+          <p>Wir führen die Schornsteinhöhenberechnung nach VDI 3781 Blatt 4 und den Vorgaben der 1. BImSchV fachgerecht durch.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Erforderliche Mündungshöhe bestimmen</h3>
+          <p>Die notwendige Austrittshöhe wird anhand der für den Anwendungsfall maßgeblichen Vorgaben ermittelt.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Kaminverlängerung planen</h3>
+          <p>Aus dem Berechnungsergebnis leiten wir Höhe, Ausführung, Befestigung und Standsicherheit der Verlängerung ab.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Fachgerechte Montage</h3>
+          <p>Unsere eigenen Montageteams setzen die geplante Kaminverlängerung fachgerecht um und sorgen für eine sichere, langlebige Lösung.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="kv-project" aria-labelledby="kv-project-title">
+    <div class="container kv-project__inner"><div class="kv-project__image"><img src="/images/kaminverlaengerung/referenz.webp" alt="Fertig montierte Kaminverlängerung aus Edelstahl" width="1200" height="900" loading="lazy" decoding="async" /></div><div class="kv-project__content"><p class="kv-eyebrow">Fachgerecht umgesetzt</p><h2 id="kv-project-title">Sicher befestigt. Passend dimensioniert. Dauerhaft funktional.</h2><p>Wir betrachten die Kaminverlängerung nicht als einzelnes Bauteil, sondern als Teil der gesamten Abgasanlage. So entstehen Lösungen, die technisch funktionieren, sicher montiert sind und optisch zum Gebäude passen.</p><ul><li>passendes zugelassenes System</li><li>stabile Montage am vorhandenen Kaminkopf</li><li>Berücksichtigung von Windlast und Dachzugang</li><li>Abstimmung mit dem Schornsteinfeger</li></ul></div></div>
+  </section>
+
+  <section class="kv-section kv-process" aria-labelledby="kv-process-title"><div class="container"><div class="kv-intro"><p class="kv-eyebrow">Klarer Ablauf</p><h2 id="kv-process-title">Von der Zugprüfung bis zur Montage.</h2></div><ol>{process.map(([number,title,text]) => (<li><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></li>))}</ol></div></section>
+
+  <section class="kv-proof" aria-labelledby="kv-proof-title"><div class="container kv-proof__inner"><div><p class="kv-eyebrow kv-eyebrow--light">Warum Stadter?</p><h2 id="kv-proof-title">Prüfen. Berechnen. Sicher montieren.</h2></div><div class="kv-proof__grid"><div><strong>Seit 2009</strong><span>Schornstein- und Abgastechnik</span></div><div><strong>10.000+</strong><span>realisierte Projekte</span></div><div><strong>Meisterbetrieb</strong><span>technische Planung mit Verantwortung</span></div><div><strong>Eigene Teams</strong><span>Montage durch erfahrene Fachkräfte</span></div></div></div></section>
+
+  <section class="kv-section kv-faq" aria-labelledby="kv-faq-title"><div class="container kv-faq__inner"><div class="kv-intro"><p class="kv-eyebrow">Gut zu wissen</p><h2 id="kv-faq-title">Häufige Fragen zur Kaminverlängerung.</h2></div><div class="kv-faq__list">{faqs.map((faq,index) => (<details open={index === 0}><summary><span>{faq.q}</span><span aria-hidden="true">+</span></summary><p>{faq.a}</p></details>))}</div></div></section>
+
+  <section class="kv-cta" aria-labelledby="kv-cta-title"><div class="container kv-cta__inner"><div><p class="kv-eyebrow kv-eyebrow--light">Ihr nächster Schritt</p><h2 id="kv-cta-title">Lassen Sie prüfen, ob eine Kaminverlängerung Ihr Problem löst.</h2><p>Senden Sie uns Fotos, Angaben zur Feuerstätte und Informationen zum Gebäude. Unser Projektteam prüft Ihr Vorhaben persönlich.</p></div><div class="kv-cta__actions"><a class="kv-button kv-button--white" href="/projekt-starten/?projekt=kaminverlaengerung">Kaminverlängerung anfragen <span aria-hidden="true">→</span></a><a class="kv-cta__phone" href="tel:+4992289989000">09228 998900-0</a></div></div></section>
+</div>
+
+<style>
+  .kv-page{--kv-red:var(--color-primary,#971f25);--kv-dark:#202020;color:#202020}.kv-section{padding:clamp(4.5rem,9vw,8rem) 0}.kv-eyebrow{margin:0 0 .9rem;color:var(--kv-red);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.kv-eyebrow--light{color:rgba(255,255,255,.8)}.kv-intro{max-width:50rem;margin-bottom:clamp(2.5rem,5vw,4.5rem)}.kv-intro--wide{max-width:59rem}.kv-intro h2,.kv-dark h2,.kv-proof h2,.kv-cta h2,.kv-project h2{margin:0 0 1.25rem;font-size:clamp(2rem,4.2vw,3.8rem);line-height:1.02;letter-spacing:-.045em}.kv-intro>p:last-child{max-width:49rem;margin:0;color:#666;font-size:1.08rem}
+  .kv-hero{position:relative;min-height:min(54rem,calc(100svh - 5rem));display:flex;align-items:center;overflow:hidden;color:#fff}.kv-hero__image,.kv-hero__overlay{position:absolute;inset:0;width:100%;height:100%}.kv-hero__image{object-fit:cover;object-position:62% 45%}.kv-hero__overlay{background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.58) 42%,rgba(0,0,0,.16) 72%,rgba(0,0,0,.02) 100%)}.kv-hero__inner{position:relative;z-index:1;width:100%;padding-block:clamp(5rem,11vw,9rem)}.kv-hero__content{max-width:47rem;margin-left:clamp(2rem,5vw,5rem)}.kv-hero h1{margin:0 0 1.5rem;font-size:clamp(3rem,6.4vw,5.6rem);line-height:.98;letter-spacing:-.055em}.kv-hero h1 span{display:block;color:rgba(255,255,255,.68)}.kv-hero__lead{max-width:43rem;margin:0 0 2rem;font-size:clamp(1.05rem,2vw,1.28rem);color:rgba(255,255,255,.9)}.kv-hero__actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.2rem}.kv-button{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:3.5rem;padding:0 1.5rem;border-radius:.45rem;font-weight:800;text-decoration:none}.kv-button--primary{background:var(--kv-red);color:#fff}.kv-button--ghost{border:1px solid rgba(255,255,255,.65);color:#fff}.kv-button--white{background:#fff;color:var(--kv-dark)}.kv-hero__facts{display:flex;flex-wrap:wrap;gap:1.25rem 2rem;margin:0;padding:0;list-style:none;color:rgba(255,255,255,.76);font-size:.9rem}.kv-hero__facts strong{display:block;color:#fff}
+  .kv-fit{padding:clamp(2.5rem,5vw,4.5rem) 0;border-bottom:1px solid #e6e6e6}.kv-fit__inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,6rem);align-items:start}.kv-fit h2{margin:0;font-size:clamp(1.8rem,4vw,3rem);line-height:1.08}.kv-checklist{display:grid;gap:.9rem;margin:0;padding:0;list-style:none}.kv-checklist li{position:relative;padding-left:2rem;font-weight:650}.kv-checklist li:before{position:absolute;left:0;content:"✓";color:var(--kv-red);font-weight:900}
+  .kv-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.kv-info-card{overflow:hidden;border:1px solid rgba(0,0,0,.1);border-radius:1rem;background:#fff}.kv-info-card__visual{aspect-ratio:4/3;overflow:hidden;background:#e9e7e4}.kv-info-card__visual img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.65,.3,1)}.kv-info-card:hover img{transform:scale(1.035)}.kv-info-card__body{padding:clamp(1.5rem,3vw,2.4rem)}.kv-info-card__body>span{display:block;margin-bottom:1.2rem;color:var(--kv-red);font-size:.78rem;font-weight:900;letter-spacing:.13em}.kv-info-card h3{margin:0 0 .8rem;font-size:1.4rem}.kv-info-card p{margin:0;color:#666}
+  .kv-dark{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--kv-dark);color:#fff}.kv-dark__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(2rem,7vw,7rem)}.kv-dark__copy{color:rgba(255,255,255,.76);font-size:1.08rem}.kv-dark__copy p:first-child{margin-top:0}
+  .kv-systems,.kv-faq{background:#f5f4f2}.kv-system-grid{display:grid;gap:1.5rem}.kv-system-grid>.kv-system-card{width:100%}.kv-system-card{display:grid;grid-template-columns:minmax(18rem,.85fr) minmax(0,1.15fr);min-height:31rem;overflow:hidden;border-radius:1rem;background:#fff}.kv-system-card__visual{position:relative;min-height:28rem;overflow:hidden;background:#e7e6e4}.kv-system-card__visual>span{position:absolute;z-index:2;top:1.5rem;left:1.5rem;color:var(--kv-red);font-size:.82rem;font-weight:900;letter-spacing:.14em}.kv-system-card__visual img{width:100%;height:100%;min-height:28rem;object-fit:cover}.kv-system-card__content{align-self:center;padding:clamp(2rem,5vw,4.5rem)}.kv-system-card__subtitle{margin:0 0 .65rem;color:var(--kv-red);font-weight:800}.kv-system-card h3{margin:0 0 1.25rem;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em}.kv-system-card__description{max-width:43rem;margin:0 0 2rem;color:#666;font-size:1.04rem;line-height:1.65}.kv-system-card dl{margin:0}.kv-system-card dl div{display:grid;grid-template-columns:minmax(9rem,.8fr) minmax(0,1.2fr);gap:1rem;padding:.8rem 0;border-top:1px solid #e5e5e5}.kv-system-card dt{color:#666}.kv-system-card dd{margin:0;font-weight:750}.kv-system-note{display:grid;grid-template-columns:minmax(12rem,.65fr) minmax(0,2fr);gap:2rem;margin-top:2rem;padding:clamp(1.6rem,4vw,3rem);border-left:.35rem solid var(--kv-red);border-radius:0 1rem 1rem 0;background:var(--kv-dark);color:#fff}.kv-system-note__label{color:rgba(255,255,255,.7);font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.kv-system-note h3{margin:0 0 .75rem}.kv-system-note p{margin:0;color:rgba(255,255,255,.72)}
+  .kv-planning{background:#fff}.kv-planning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.kv-planning-grid article{padding:clamp(1.5rem,3vw,2.4rem);border:1px solid rgba(0,0,0,.1);border-radius:1rem}.kv-planning-grid span{display:block;margin-bottom:1.2rem;color:var(--kv-red);font-size:.78rem;font-weight:900;letter-spacing:.13em}.kv-planning-grid h3{margin:0 0 .75rem}.kv-planning-grid p{margin:0;color:#666}
+  .kv-standards{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--kv-dark);color:#fff}
+  .kv-standards__inner{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(2.5rem,7vw,7rem);align-items:start}
+  .kv-standards__content h2{margin:0 0 1.5rem;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.02;letter-spacing:-.045em}
+  .kv-standards__content>p:not(.kv-eyebrow){max-width:44rem;color:rgba(255,255,255,.74);font-size:1.06rem}
+  .kv-standards__points{display:grid;gap:1px;background:rgba(255,255,255,.15)}
+  .kv-standards__points article{padding:1.7rem;background:var(--kv-dark)}
+  .kv-standards__points span{display:block;margin-bottom:.9rem;color:var(--kv-red);font-size:.78rem;font-weight:900;letter-spacing:.13em}
+  .kv-standards__points h3{margin:0 0 .55rem}
+  .kv-standards__points p{margin:0;color:rgba(255,255,255,.67)}
+  .kv-project{padding:clamp(4.5rem,9vw,8rem) 0;background:#f5f4f2}.kv-project__inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,6vw,6rem);align-items:center}.kv-project__image{overflow:hidden;border-radius:1rem}.kv-project__image img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.kv-project__content>p{color:#666;font-size:1.06rem}.kv-project__content ul{display:grid;gap:.75rem;margin:1.5rem 0 0;padding:0;list-style:none}.kv-project__content li{position:relative;padding-left:1.7rem;font-weight:700}.kv-project__content li:before{position:absolute;left:0;content:"✓";color:var(--kv-red)}
+  .kv-process ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem;margin:0;padding:0;list-style:none}.kv-process li{display:grid;grid-template-columns:3.5rem 1fr;gap:1rem;padding:1.5rem 0;border-top:1px solid #ddd}.kv-process li>span{color:var(--kv-red);font-weight:900}.kv-process h3{margin:0 0 .35rem}.kv-process p{margin:0;color:#666}
+  .kv-proof{padding:clamp(4rem,8vw,7rem) 0;background:var(--kv-dark);color:#fff}.kv-proof__inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,6rem);align-items:center}.kv-proof__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.16)}.kv-proof__grid div{padding:1.6rem;background:var(--kv-dark)}.kv-proof__grid strong,.kv-proof__grid span{display:block}.kv-proof__grid strong{margin-bottom:.35rem;font-size:1.25rem}.kv-proof__grid span{color:rgba(255,255,255,.68);font-size:.9rem}
+  .kv-faq__inner{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:clamp(2rem,6vw,6rem)}.kv-faq .kv-intro h2{font-size:clamp(2.1rem,4.2vw,3.7rem);overflow-wrap:anywhere}.kv-faq__list details{border-top:1px solid #d8d8d8}.kv-faq__list details:last-child{border-bottom:1px solid #d8d8d8}.kv-faq__list summary{display:flex;justify-content:space-between;gap:1rem;padding:1.35rem 0;cursor:pointer;font-weight:800;list-style:none}.kv-faq__list summary::-webkit-details-marker{display:none}.kv-faq__list details p{margin:-.25rem 0 1.5rem;color:#666}
+  .kv-cta{padding:clamp(4rem,8vw,7rem) 0;background:var(--kv-red);color:#fff}.kv-cta__inner{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(18rem,.7fr);gap:3rem;align-items:center}.kv-cta p{max-width:44rem;color:rgba(255,255,255,.82)}.kv-cta__actions{display:grid;gap:1rem;justify-items:start}.kv-cta__phone{color:#fff;font-size:1.15rem;font-weight:850;text-decoration:none}
+  @media(prefers-reduced-motion:reduce){.kv-info-card__visual img{transition:none}.kv-info-card:hover img{transform:none}}@media(max-width:900px){.kv-fit__inner,.kv-dark__inner,.kv-proof__inner,.kv-faq__inner,.kv-cta__inner,.kv-project__inner,.kv-standards__inner{grid-template-columns:1fr}.kv-system-card{grid-template-columns:1fr}.kv-system-card__visual,.kv-system-card__visual img{min-height:22rem}.kv-faq .kv-intro h2{max-width:14ch}}@media(max-width:680px){.kv-hero__content{margin-left:0}.kv-hero__image{object-position:69% 50%}.kv-card-grid,.kv-planning-grid,.kv-process ol,.kv-proof__grid{grid-template-columns:1fr}.kv-hero__actions{flex-direction:column;align-items:stretch}.kv-system-card dl div,.kv-system-note{grid-template-columns:1fr}.kv-faq .kv-intro h2{max-width:none;font-size:clamp(2rem,11vw,3.1rem)}}
+</style>

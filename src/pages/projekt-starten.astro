@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectInquiry from "../components/project/ProjectInquiry.astro";
+import ProjectFaq from "../components/project/ProjectFaq.astro";
+import { actions } from "astro:actions";
+
+export const prerender = false;
+
+const result = Astro.getActionResult(actions.projectRequest);
+
+if (result && !result.error && result.data?.success) {
+  return Astro.redirect("/danke");
+}
+
+const hasError = Boolean(result?.error);
+---
+
+<BaseLayout
+  title="Projekt starten | Stadter Kamintechnik"
+  description="Erzählen Sie uns von Ihrem Projekt. Wir prüfen Ihre Anfrage persönlich und entwickeln die passende technische Lösung."
+>
+  <ProjectInquiry hasError={hasError} />
+  <ProjectFaq />
+</BaseLayout>

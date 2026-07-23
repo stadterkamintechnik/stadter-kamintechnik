@@ -1,0 +1,630 @@
+---
+const symptoms = [
+  {
+    number: "01",
+    title: "Versottung und Feuchtigkeit",
+    text: "Braune Flecken, feuchtes Mauerwerk oder unangenehme Gerüche sind typische Anzeichen einer Versottung. Ursache ist häufig Kondensat in einem nicht mehr passenden Schornsteinsystem.",
+    image: "/images/kaminsanierung-versottung.webp",
+    alt: "Versotteter gemauerter Schornstein mit Feuchtigkeit und Verfärbungen im Dachgeschoss",
+    position: "50% 42%",
+  },
+  {
+    number: "02",
+    title: "Beschädigtes Schamotterohr",
+    text: "Ausgebrochene oder beschädigte Schamotterohre können die sichere Abgasführung beeinträchtigen. Vor einer Sanierung prüfen wir den Zustand des gesamten Schornsteins.",
+    image: "/images/kaminsanierung-schamotterohr-beschaedigt.webp",
+    alt: "Innenansicht eines Schornsteins mit ausgebrochenem Schamotterohr",
+    position: "50% 50%",
+  },
+  {
+    number: "03",
+    title: "Fehlende Fugen und undichtes Mauerwerk",
+    text: "Fehlende Fugen oder undichtes Mauerwerk können dazu führen, dass Abgase oder Feuchtigkeit in die Bausubstanz gelangen. Die Ursache muss fachgerecht beurteilt werden.",
+    image: "/images/kaminsanierung-undichtes-mauerwerk.webp",
+    alt: "Innenansicht eines gemauerten Schornsteins mit fehlenden Fugen und undichtem Mauerwerk",
+    position: "50% 48%",
+  },
+  {
+    number: "04",
+    title: "Neue Heizung – passt der Schornstein noch?",
+    text: "Moderne Heizsysteme arbeiten mit anderen Abgastemperaturen. Häufig muss der bestehende Schornstein mit einer passenden Abgasleitung an die neue Heizung angepasst werden.",
+    image: "/images/kaminsanierung-neue-heizung.webp",
+    alt: "Sanierter bestehender Schornstein mit neuer Edelstahl-Abgasleitung für eine Heizungsanlage",
+    position: "50% 44%",
+  },
+];
+
+const systems = [
+  {
+    number: "01",
+    name: "Edelstahlrohr",
+    subtitle: "Die vielseitige Lösung",
+    description:
+      "Edelstahl eignet sich für viele Feuerstätten und Brennstoffe. Das geringe Gewicht, die flexible Verarbeitung und die große Auswahl an zugelassenen Systemen machen es zu einer häufig eingesetzten Lösung bei der Kaminsanierung.",
+    image: "/images/kaminsanierung-edelstahlrohr.webp",
+    alt: "Edelstahlrohr für eine Kaminsanierung",
+    imageMode: "contain",
+    facts: [
+      ["Geeignet für", "viele Heizungen und Feuerstätten"],
+      ["Betriebsweise", "trocken und feucht"],
+      ["Brennstoffe", "fest, flüssig und gasförmig"],
+      ["Besonderheit", "vielseitig und flexibel einsetzbar"],
+    ],
+  },
+  {
+    number: "02",
+    name: "Kunststoffrohr",
+    subtitle: "Für moderne Brennwerttechnik",
+    description:
+      "Kunststoff-Abgasleitungen werden vor allem bei Öl- und Gas-Brennwertgeräten eingesetzt. Sie sind für feuchte Betriebsweise und niedrige Abgastemperaturen ausgelegt und werden passend zur jeweiligen Heizungsanlage dimensioniert.",
+    image: "/images/kaminsanierung-kunststoffrohr.webp",
+    alt: "Kunststoffrohr für die Abgasführung einer Brennwertheizung",
+    imageMode: "contain",
+    facts: [
+      ["Geeignet für", "Öl- und Gas-Brennwertgeräte"],
+      ["Betriebsweise", "feucht"],
+      ["Temperatur", "niedrige Abgastemperaturen"],
+      ["Besonderheit", "leicht und korrosionsbeständig"],
+    ],
+  },
+  {
+    number: "03",
+    name: "Keramische Systeme",
+    subtitle: "Für hohe Beanspruchung und lange Lebensdauer",
+    description:
+      "Keramische Innenrohre umfassen je nach System Keramik- oder Schamottewerkstoffe. Sie sind korrosionsbeständig, temperaturfest und für viele Brennstoffe geeignet. Welche Ausführung eingesetzt wird, richtet sich nach Feuerstätte, Betriebsweise und Zulassung.",
+    image: "/images/kaminsanierung-keramikrohr.webp",
+    alt: "Keramisches Innenrohr aus Keramik oder Schamotte für eine Schornsteinsanierung",
+    imageMode: "contain",
+    facts: [
+      ["Werkstoff", "Keramik oder Schamotte"],
+      ["Betriebsweise", "trocken und feucht, je nach System"],
+      ["Brennstoffe", "fest, flüssig und gasförmig"],
+      ["Besonderheit", "hohe Beständigkeit und lange Lebensdauer"],
+    ],
+  },
+  {
+    number: "04",
+    name: "Kaminfräsen",
+    subtitle: "Wenn alte Innenabdichtungen oder Innenrohre entfernt werden müssen",
+    description:
+      "Beim Kaminfräsen wird nicht der gemauerte Schornsteinschacht oder der Mantelstein bearbeitet. Diese Bauteile bilden die brandschutztechnisch erforderliche Schornsteinhülle und dürfen nicht geschwächt werden. Gefräst werden ausschließlich vorhandene Innenabdichtungen oder alte Innenrohre, um den ursprünglichen Mauerwerksquerschnitt wieder freizulegen. Anschließend kann ein neues, technisch passendes Innenrohr eingebaut werden.",
+    image: "/images/kaminsanierung-kaminfraesen.webp",
+    alt: "Fräswerkzeug zum Entfernen einer alten Innenabdichtung oder eines bestehenden Innenrohrs",
+    imageMode: "cover",
+    facts: [
+      ["Einsatz", "alte Innenabdichtungen oder Innenrohre entfernen"],
+      ["Ziel", "ursprünglichen Mauerwerksquerschnitt wiederherstellen"],
+      ["Brandschutz", "Schacht und Mantelstein bleiben unberührt"],
+      ["Anschließend", "Einbau eines neuen Innenrohrs"],
+    ],
+  },
+  {
+    number: "05",
+    name: "Innenabdichtung",
+    subtitle: "Heute nur noch in Ausnahmefällen",
+    description:
+      "Bei einer Innenabdichtung werden undichte Fugen und poröse Flächen im Schornstein von innen mit Leichtbeton verpresst. Das Verfahren eignet sich nur für trockene Betriebsweise. Bei modernen Feuerstätten mit niedrigen Abgastemperaturen kann erneut Feuchtigkeit entstehen. Deshalb empfehlen wir heute überwiegend Edelstahl- oder keramische Systeme.",
+    image: "/images/kaminsanierung-innenabdichtung.webp",
+    alt: "Geglättete Innenfläche eines Schornsteins nach einer Kamininnenabdichtung",
+    imageMode: "cover",
+    warning: true,
+    facts: [
+      ["Einsatz", "undichte Fugen und poröses Mauerwerk"],
+      ["Betriebsweise", "nur trocken"],
+      ["Grenze", "nicht für dauerhaft feuchten Betrieb"],
+      ["Empfehlung", "nur nach sorgfältiger Einzelfallprüfung"],
+    ],
+  },
+];
+
+const planningPoints = [
+  {
+    number: "01",
+    title: "Bestand prüfen",
+    text: "Wir betrachten Schacht, Mauerwerk, Anschlüsse und Kaminkopf. Bei Bedarf schafft eine Kamerabefahrung Klarheit über den inneren Zustand.",
+  },
+  {
+    number: "02",
+    title: "Feuerstätte und Betrieb erfassen",
+    text: "Brennstoff, Leistung, Abgastemperatur und Betriebsweise bestimmen, welches Rohrsystem technisch geeignet ist.",
+  },
+  {
+    number: "03",
+    title: "Querschnitt berechnen",
+    text: "Der neue Abgasweg wird nicht nach Gefühl dimensioniert. Querschnitt und Ausführung müssen zur Feuerstätte und zur wirksamen Höhe passen.",
+  },
+  {
+    number: "04",
+    title: "Schornsteinfeger einbinden",
+    text: "Wir stimmen die geplante Ausführung frühzeitig mit dem bevollmächtigten Bezirksschornsteinfeger ab.",
+  },
+];
+
+const alternatives = [
+  {
+    title: "Kaminkopf erneuern",
+    text: "Liegt der Schaden vor allem oberhalb des Daches, kann die Erneuerung des Kaminkopfes die richtige Maßnahme sein.",
+  },
+  {
+    title: "Kaminverlängerung",
+    text: "Bei reinen Zugproblemen ist nicht automatisch eine vollständige Sanierung erforderlich. Manchmal hilft eine fachgerecht geplante Verlängerung.",
+  },
+  {
+    title: "Anschlüsse anpassen",
+    text: "Bei einem Wechsel der Feuerstätte können neue Anschlüsse oder Reinigungsöffnungen erforderlich sein, ohne dass der gesamte Schornstein erneuert werden muss.",
+  },
+];
+
+const process = [
+  ["01", "Erstgespräch", "Wir klären Schadensbild, Nutzung und geplante Feuerstätte oder Heizung."],
+  ["02", "Besichtigung", "Wir prüfen den Schornstein vor Ort und bei Bedarf mit der Kaminkamera."],
+  ["03", "Technische Planung", "Wir legen Verfahren, Material, Querschnitt und Anschlüsse fest."],
+  ["04", "Abstimmung", "Die geplante Ausführung wird mit dem bevollmächtigten Bezirksschornsteinfeger abgestimmt."],
+  ["05", "Angebot", "Sie erhalten eine nachvollziehbare Lösung mit klar beschriebenem Leistungsumfang."],
+  ["06", "Sanierung", "Unsere eigenen Montageteams setzen die Arbeiten sauber und fachgerecht um."],
+];
+
+const faqs = [
+  {
+    q: "Wann ist eine Kaminsanierung notwendig?",
+    a: "Typische Gründe sind Undichtigkeiten, Risse, beschädigte Innenrohre, Versottung, Feuchtigkeit oder die Anpassung an eine neue Feuerstätte beziehungsweise Heizungsanlage. Ob eine vollständige Sanierung nötig ist, entscheidet sich erst nach Prüfung des Bestands.",
+  },
+  {
+    q: "Was kostet eine Kaminsanierung?",
+    a: "Die Kosten hängen unter anderem vom Zustand des Schornsteins, der Höhe, dem benötigten Sanierungssystem und dem Aufwand vor Ort ab. Eine einfache Kaminsanierung mit einem neuen Innenrohr beginnt häufig bei etwa 2.000 €. Umfangreichere Sanierungen mit zusätzlichen Arbeiten am Schornstein oder Kaminkopf liegen oft im Bereich von 3.000 bis 5.000 € oder darüber. Nach einer Besichtigung erstellen wir Ihnen ein transparentes und nachvollziehbares Angebot.",
+  },
+  {
+    q: "Wie wird ein Schornstein saniert?",
+    a: "Häufig wird ein passendes Abgasrohr aus Edelstahl, Kunststoff oder einem keramischen Werkstoff in den vorhandenen Schacht eingebracht. Muss eine alte Innenabdichtung oder ein bestehendes Innenrohr entfernt werden, kann dies unter bestimmten Voraussetzungen durch Ausfräsen erfolgen. Der gemauerte Schacht beziehungsweise der Mantelstein selbst wird dabei nicht bearbeitet. Eine Innenabdichtung kommt heute nur noch in geeigneten Ausnahmefällen infrage.",
+  },
+  {
+    q: "Welches Sanierungssystem ist das richtige?",
+    a: "Das hängt von Feuerstätte, Brennstoff, Abgastemperatur, Betriebsweise, Druckklasse und Zustand des Schachtes ab. Es gibt keine Standardlösung für jeden Schornstein, sondern nur das technisch passende System für den konkreten Einsatz.",
+  },
+  {
+    q: "Wann muss ein Schornstein aufgefräst werden?",
+    a: "Kaminfräsen kann erforderlich sein, wenn eine vorhandene Leichtbetonschale bzw. Innenabdichtung oder ein altes Innenrohr entfernt werden muss, um den ursprünglichen Mauerwerksquerschnitt wiederherzustellen. Der gemauerte Schornsteinschacht beziehungsweise der Mantelstein selbst wird dabei nicht bearbeitet, da diese Bauteile die brandschutztechnisch erforderliche Schornsteinhülle bilden. Anschließend kann ein neues, passend dimensioniertes Innenrohr eingebaut werden.",
+  },
+  {
+    q: "Warum wird eine Innenabdichtung heute nur noch selten empfohlen?",
+    a: "Eine Innenabdichtung ist grundsätzlich nur für trockene Betriebsweise geeignet. Moderne Heizungen und Feuerstätten arbeiten häufig mit niedrigeren Abgastemperaturen, wodurch Feuchtigkeit oder Kondensat entstehen kann. In solchen Fällen sind Edelstahl- oder keramische Systeme meist die dauerhaft sicherere Lösung.",
+  },
+  {
+    q: "Wie lange dauert eine Kaminsanierung?",
+    a: "Eine typische Rohrsanierung kann häufig innerhalb eines Arbeitstages ausgeführt werden. Umfangreichere Arbeiten am Schacht, an Anschlüssen oder am Kaminkopf benötigen entsprechend mehr Zeit.",
+  },
+  {
+    q: "Kann eine neue Heizung an einen alten Schornstein angeschlossen werden?",
+    a: "Oft ja, allerdings muss der vorhandene Schornstein auf die niedrigeren Abgastemperaturen und die entstehende Feuchtigkeit abgestimmt werden. Häufig ist dafür eine geeignete Abgasleitung im bestehenden Schacht erforderlich.",
+  },
+  {
+    q: "Was ist Versottung?",
+    a: "Versottung entsteht, wenn Feuchtigkeit und Verbrennungsrückstände in den Schornsteinquerschnitt oder das Mauerwerk eindringen. Mögliche Folgen sind braune Flecken, unangenehmer Geruch und Schäden an der Bausubstanz.",
+  },
+  {
+    q: "Muss der Schornsteinfeger eingebunden werden?",
+    a: "Ja. Die geplante Abgasanlage sollte vor der Ausführung mit dem bevollmächtigten Bezirksschornsteinfeger abgestimmt werden. Nach Fertigstellung erfolgt die erforderliche Prüfung und Abnahme.",
+  },
+];
+---
+
+<main class="ks-page">
+  <section class="ks-hero" aria-labelledby="ks-hero-title">
+    <img
+      class="ks-hero__image"
+      src="/images/kaminsanierung-hero.webp"
+      alt="Fachgerechte Kaminsanierung in einem bestehenden Schornstein"
+      width="1664"
+      height="936"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="ks-hero__overlay" aria-hidden="true"></div>
+    <div class="container ks-hero__inner">
+      <div class="ks-hero__content">
+        <p class="ks-eyebrow ks-eyebrow--light">Kaminsanierung vom Meisterbetrieb</p>
+        <h1 id="ks-hero-title">
+          <span>Ihr Schornstein zeigt Schäden?</span>
+          Wir finden die technisch richtige Lösung.
+        </h1>
+        <p class="ks-hero__lead">
+          Wir prüfen den Bestand, klären die Ursache und sanieren Ihren Schornstein passend
+          zur Feuerstätte, zur Heizungsanlage und zum Gebäude.
+        </p>
+        <div class="ks-hero__actions">
+          <a class="ks-button ks-button--primary" href="/projekt-starten/?projekt=kaminsanierung">
+            Kaminsanierung anfragen <span aria-hidden="true">→</span>
+          </a>
+          <a class="ks-button ks-button--ghost" href="#sanierungsverfahren">Verfahren ansehen</a>
+        </div>
+        <ul class="ks-hero__facts" aria-label="Vertrauensmerkmale">
+          <li><strong>Seit 2009</strong> Meisterbetrieb</li>
+          <li><strong>Eigene Teams</strong> Keine Subunternehmer</li>
+          <li><strong>10.000+</strong> realisierte Projekte</li>
+          <li><strong>Persönlich</strong> von Prüfung bis Montage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ks-fit" aria-labelledby="ks-fit-title">
+    <div class="container ks-fit__inner">
+      <div>
+        <p class="ks-eyebrow">Schnelle Orientierung</p>
+        <h2 id="ks-fit-title">Wann sollte ein Schornstein genauer geprüft werden?</h2>
+      </div>
+      <ul class="ks-checklist">
+        <li>Braune Flecken oder Feuchtigkeit werden sichtbar.</li>
+        <li>Der Schornstein riecht unangenehm.</li>
+        <li>Risse, lose Fugen oder Schäden wurden festgestellt.</li>
+        <li>Eine neue Heizung oder Feuerstätte ist geplant.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ks-section" aria-labelledby="ks-symptoms-title">
+    <div class="container">
+      <div class="ks-intro ks-intro--wide">
+        <p class="ks-eyebrow">Typische Gründe</p>
+        <h2 id="ks-symptoms-title">Typische Gründe für eine Kaminsanierung.</h2>
+        <p>
+          Ein auffälliger Schornstein braucht zuerst eine saubere Diagnose. Nicht jedes
+          Schadensbild verlangt automatisch dieselbe Sanierung.
+        </p>
+      </div>
+      <div class="ks-card-grid">
+        {symptoms.map((item) => (
+          <article class="ks-info-card ks-info-card--image">
+            <div class="ks-info-card__visual">
+              <img
+                src={item.image}
+                alt={item.alt}
+                width="900"
+                height="675"
+                loading="lazy"
+                decoding="async"
+                style={`object-position: ${item.position};`}
+              />
+            </div>
+            <div class="ks-info-card__body">
+              <span class="ks-info-card__number">{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ks-dark" aria-labelledby="ks-cause-title">
+    <div class="container ks-dark__inner">
+      <div>
+        <p class="ks-eyebrow ks-eyebrow--light">Ursache verstehen</p>
+        <h2 id="ks-cause-title">Warum alte Schornsteine mit moderner Technik Probleme bekommen können.</h2>
+      </div>
+      <div class="ks-dark__copy">
+        <p>
+          Moderne Heizungsanlagen arbeiten häufig mit deutlich niedrigeren Abgastemperaturen.
+          Ist der vorhandene Schornsteinquerschnitt dafür zu groß, kühlen die Abgase stärker ab.
+          Feuchtigkeit und Kondensat können in den Schacht und das Mauerwerk eindringen.
+        </p>
+        <p>
+          Aber auch Alterung, thermische Belastungen, Rußbrände, beschädigte Fugen oder defekte
+          Innenrohre können eine Sanierung erforderlich machen. Deshalb prüfen wir zuerst die
+          Ursache – und wählen erst danach das Verfahren.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sanierungsverfahren" class="ks-section ks-systems" aria-labelledby="ks-systems-title">
+    <div class="container">
+      <div class="ks-intro ks-intro--wide">
+        <p class="ks-eyebrow">Sanierungsverfahren und Systeme</p>
+        <h2 id="ks-systems-title">Es gibt nicht die eine Lösung. Es gibt die technisch richtige Lösung.</h2>
+        <p>
+          Nicht jeder Schornstein benötigt dieselbe Maßnahme. Je nach Zustand, Feuerstätte,
+          Brennstoff und Betriebsweise wählen wir das passende Sanierungssystem oder Verfahren.
+          Entscheidend ist nicht das Produkt, sondern eine dauerhaft sichere Funktion.
+        </p>
+      </div>
+
+      <div class="ks-system-grid">
+        {systems.map((system) => (
+          <article class:list={["ks-system-card", { "ks-system-card--warning": system.warning }]}>
+            <div class:list={["ks-system-card__visual", `ks-system-card__visual--${system.imageMode}`]}>
+              <span class="ks-system-card__number">_{system.number}</span>
+              {system.warning && <span class="ks-system-card__badge">Ausnahmeverfahren</span>}
+              <img
+                src={system.image}
+                alt={system.alt}
+                width="900"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="ks-system-card__content">
+              <p class="ks-system-card__subtitle">{system.subtitle}</p>
+              <h3>{system.name}</h3>
+              <p class="ks-system-card__description">{system.description}</p>
+              <dl>
+                {system.facts.map(([label, value]) => (
+                  <div>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <aside class="ks-system-note">
+        <div class="ks-system-note__label">Unser Grundsatz</div>
+        <div>
+          <h3>Nicht das System bestimmt die Lösung – sondern Ihr Schornstein.</h3>
+          <p>
+            Welches Verfahren richtig ist, entscheidet sich erst nach der technischen Prüfung.
+            Unser Ziel ist nicht der Verkauf eines bestimmten Systems, sondern eine dauerhaft
+            sichere und wirtschaftlich sinnvolle Lösung für Ihr Gebäude.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="ks-section ks-planning" aria-labelledby="ks-planning-title">
+    <div class="container">
+      <div class="ks-intro ks-intro--wide">
+        <p class="ks-eyebrow">Technisch richtig geplant</p>
+        <h2 id="ks-planning-title">So entsteht eine Sanierung, die dauerhaft funktioniert.</h2>
+        <p>
+          Ein Rohr einzuziehen ist nur der sichtbare Teil. Entscheidend ist, dass Bestand,
+          Feuerstätte, Querschnitt und Betriebsweise zusammenpassen.
+        </p>
+      </div>
+      <div class="ks-card-grid">
+        {planningPoints.map((item) => (
+          <article class="ks-info-card">
+            <span class="ks-info-card__number">{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+      <aside class="ks-master-tip">
+        <div class="ks-master-tip__label">Unser Rat vom Meisterbetrieb</div>
+        <div>
+          <h3>Nicht vorschnell nur ein Sanierungsrohr einbauen.</h3>
+          <p>
+            Ein neues Innenrohr löst nicht automatisch jeden baulichen Schaden. Sind Mauerwerk,
+            Fugen oder Kaminkopf beschädigt, müssen auch diese Bereiche berücksichtigt werden.
+            Erst die Bestandsprüfung zeigt, welche Maßnahmen wirklich erforderlich sind.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="ks-section ks-alternatives" aria-labelledby="ks-alternatives-title">
+    <div class="container">
+      <div class="ks-intro">
+        <p class="ks-eyebrow">Gezielt statt pauschal</p>
+        <h2 id="ks-alternatives-title">Manchmal reicht eine ergänzende Maßnahme.</h2>
+      </div>
+      <div class="ks-alternative-grid">
+        {alternatives.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ks-section ks-process" aria-labelledby="ks-process-title">
+    <div class="container">
+      <div class="ks-intro">
+        <p class="ks-eyebrow">Klarer Ablauf</p>
+        <h2 id="ks-process-title">Von der Ursache zur passenden Sanierung.</h2>
+      </div>
+      <ol class="ks-process__list">
+        {process.map(([number, title, text]) => (
+          <li>
+            <span>{number}</span>
+            <div><h3>{title}</h3><p>{text}</p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="ks-proof" aria-labelledby="ks-proof-title">
+    <div class="container ks-proof__inner">
+      <div>
+        <p class="ks-eyebrow ks-eyebrow--light">Warum Stadter?</p>
+        <h2 id="ks-proof-title">Prüfen. Planen. Sauber umsetzen.</h2>
+      </div>
+      <div class="ks-proof__grid">
+        <div><strong>Seit 2009</strong><span>Schornstein- und Abgastechnik</span></div>
+        <div><strong>10.000+</strong><span>realisierte Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>technische Planung mit Verantwortung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage durch erfahrene Fachkräfte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ks-section ks-faq" aria-labelledby="ks-faq-title">
+    <div class="container ks-faq__inner">
+      <div class="ks-intro">
+        <p class="ks-eyebrow">Gut zu wissen</p>
+        <h2 id="ks-faq-title">Häufige Fragen zur Kaminsanierung.</h2>
+      </div>
+      <div class="ks-faq__list">
+        {faqs.map((faq, index) => (
+          <details open={index === 0}>
+            <summary><span>{faq.q}</span><span aria-hidden="true">+</span></summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="ks-cta" aria-labelledby="ks-cta-title">
+    <div class="container ks-cta__inner">
+      <div>
+        <p class="ks-eyebrow ks-eyebrow--light">Ihr nächster Schritt</p>
+        <h2 id="ks-cta-title">Lassen Sie uns zuerst klären, was Ihr Schornstein wirklich braucht.</h2>
+        <p>Senden Sie uns einige Informationen und Fotos. Unser Projektteam prüft Ihr Vorhaben persönlich.</p>
+      </div>
+      <div class="ks-cta__actions">
+        <a class="ks-button ks-button--white" href="/projekt-starten/?projekt=kaminsanierung">
+          Kaminsanierung anfragen <span aria-hidden="true">→</span>
+        </a>
+        <a class="ks-cta__phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .ks-page { --ks-red: var(--color-primary, #971f25); --ks-dark: #202020; color: #202020; }
+  .ks-section { padding: clamp(4.5rem, 9vw, 8rem) 0; }
+  .ks-eyebrow { margin: 0 0 .9rem; color: var(--ks-red); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .ks-eyebrow--light { color: rgba(255,255,255,.8); }
+  .ks-intro { max-width: 50rem; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+  .ks-intro--wide { max-width: 58rem; }
+  .ks-intro h2, .ks-dark h2, .ks-proof h2, .ks-cta h2 { margin: 0 0 1.25rem; font-size: clamp(2.2rem, 5vw, 4.2rem); line-height: 1.02; letter-spacing: -.045em; }
+  .ks-intro > p:last-child { max-width: 48rem; margin: 0; color: #666; font-size: 1.08rem; }
+
+  .ks-hero { position: relative; min-height: min(52rem, calc(100svh - 5rem)); display: flex; align-items: center; overflow: hidden; color: #fff; }
+  .ks-hero__image, .ks-hero__overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .ks-hero__image { object-fit: cover; }
+  .ks-hero__overlay { background: linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.48) 42%, rgba(0,0,0,.10) 68%, rgba(0,0,0,0) 100%); }
+  .ks-hero__inner { position: relative; z-index: 1; width: 100%; padding-block: clamp(5rem, 11vw, 9rem); }
+  .ks-hero__content { max-width: 42rem; margin-left: clamp(2rem, 5vw, 5rem); }
+  .ks-hero h1 { margin: 0 0 1.5rem; font-size: clamp(3rem, 6.8vw, 5.8rem); line-height: .98; letter-spacing: -.055em; }
+  .ks-hero h1 span { display: block; color: rgba(255,255,255,.68); }
+  .ks-hero__lead { max-width: 43rem; margin: 0 0 2rem; font-size: clamp(1.05rem, 2vw, 1.28rem); color: rgba(255,255,255,.9); }
+  .ks-hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 2.2rem; }
+  .ks-button { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-height: 3.5rem; padding: 0 1.5rem; border-radius: .45rem; font-weight: 800; text-decoration: none; }
+  .ks-button--primary { background: var(--ks-red); color: #fff; }
+  .ks-button--ghost { border: 1px solid rgba(255,255,255,.65); color: #fff; }
+  .ks-button--white { background: #fff; color: var(--ks-dark); }
+  .ks-hero__facts { display: flex; flex-wrap: wrap; gap: 1.25rem 2rem; margin: 0; padding: 0; list-style: none; color: rgba(255,255,255,.76); font-size: .9rem; }
+  .ks-hero__facts strong { display: block; color: #fff; }
+
+  .ks-fit { padding: clamp(2.5rem, 5vw, 4.5rem) 0; border-bottom: 1px solid #e6e6e6; }
+  .ks-fit__inner { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .ks-fit h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.08; }
+  .ks-checklist { display: grid; gap: .9rem; margin: 0; padding: 0; list-style: none; }
+  .ks-checklist li { position: relative; padding-left: 2rem; font-weight: 650; }
+  .ks-checklist li::before { position: absolute; left: 0; content: "✓"; color: var(--ks-red); font-weight: 900; }
+
+  .ks-card-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.25rem; }
+  .ks-info-card { padding: clamp(1.5rem, 3vw, 2.4rem); border: 1px solid rgba(0,0,0,.1); border-radius: 1rem; background: #fff; }
+  .ks-info-card--image { padding: 0; overflow: hidden; }
+  .ks-info-card__visual { aspect-ratio: 4 / 3; overflow: hidden; background: #e9e7e4; }
+  .ks-info-card__visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.65,.3,1); }
+  .ks-info-card--image:hover .ks-info-card__visual img { transform: scale(1.035); }
+  .ks-info-card__body { padding: clamp(1.5rem, 3vw, 2.4rem); }
+  .ks-info-card__number { display: block; margin-bottom: 1.2rem; color: var(--ks-red); font-size: .78rem; font-weight: 900; letter-spacing: .13em; }
+  .ks-info-card h3 { margin: 0 0 .8rem; font-size: 1.4rem; }
+  .ks-info-card p { margin: 0; color: #666; }
+
+  .ks-dark { padding: clamp(4.5rem, 9vw, 8rem) 0; background: var(--ks-dark); color: #fff; }
+  .ks-dark__inner { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.9fr); gap: clamp(2rem, 7vw, 7rem); }
+  .ks-dark__copy { color: rgba(255,255,255,.76); font-size: 1.08rem; }
+  .ks-dark__copy p:first-child { margin-top: 0; }
+
+  .ks-systems { background: #f5f4f2; }
+  .ks-system-grid { display: grid; gap: 1.5rem; }
+  .ks-system-card { display: grid; grid-template-columns: minmax(18rem,.85fr) minmax(0,1.15fr); min-height: 31rem; overflow: hidden; border-radius: 1rem; background: #fff; }
+  .ks-system-card--warning { box-shadow: inset 0 0 0 1px rgba(151,31,37,.22); }
+  .ks-system-card__visual { position: relative; display: grid; place-items: center; min-height: 28rem; background: #ecebea; overflow: hidden; }
+  .ks-system-card__visual--contain { padding: 2rem; }
+  .ks-system-card__visual--contain img { width: min(100%, 27rem); height: 24rem; object-fit: contain; }
+  .ks-system-card__visual--cover img { width: 100%; height: 100%; min-height: 28rem; object-fit: cover; }
+  .ks-system-card__number { position: absolute; z-index: 2; top: 1.5rem; left: 1.5rem; color: var(--ks-red); font-size: .82rem; font-weight: 900; letter-spacing: .14em; }
+  .ks-system-card__badge { position: absolute; z-index: 2; top: 1.15rem; right: 1.15rem; padding: .55rem .75rem; border-radius: 999px; background: var(--ks-red); color: #fff; font-size: .72rem; font-weight: 850; letter-spacing: .05em; text-transform: uppercase; }
+  .ks-system-card__content { align-self: center; padding: clamp(2rem, 5vw, 4.5rem); }
+  .ks-system-card__subtitle { margin: 0 0 .65rem; color: var(--ks-red); font-weight: 800; }
+  .ks-system-card h3 { margin: 0 0 1.25rem; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.04em; }
+  .ks-system-card__description { max-width: 43rem; margin: 0 0 2rem; color: #666; font-size: 1.04rem; line-height: 1.65; }
+  .ks-system-card dl { margin: 0; }
+  .ks-system-card dl div { display: grid; grid-template-columns: minmax(9rem,.8fr) minmax(0,1.2fr); gap: 1rem; padding: .8rem 0; border-top: 1px solid #e5e5e5; }
+  .ks-system-card dt { color: #666; }
+  .ks-system-card dd { margin: 0; font-weight: 750; }
+  .ks-system-note { display: grid; grid-template-columns: minmax(12rem,.65fr) minmax(0,2fr); gap: 2rem; margin-top: 2rem; padding: clamp(1.6rem,4vw,3rem); border-left: .35rem solid var(--ks-red); border-radius: 0 1rem 1rem 0; background: var(--ks-dark); color: #fff; }
+  .ks-system-note__label { color: rgba(255,255,255,.7); font-size: .8rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+  .ks-system-note h3 { margin: 0 0 .75rem; }
+  .ks-system-note p { margin: 0; color: rgba(255,255,255,.72); }
+
+  .ks-planning, .ks-faq { background: #f5f4f2; }
+  .ks-master-tip { display: grid; grid-template-columns: minmax(12rem,.65fr) minmax(0,2fr); gap: 2rem; margin-top: 2rem; padding: clamp(1.6rem,4vw,3rem); border-left: .35rem solid var(--ks-red); border-radius: 0 1rem 1rem 0; background: #fff; }
+  .ks-master-tip__label { color: var(--ks-red); font-size: .8rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+  .ks-master-tip h3 { margin: 0 0 .75rem; }
+  .ks-master-tip p { margin: 0; color: #666; }
+
+  .ks-alternative-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.25rem; }
+  .ks-alternative-grid article { padding: 2rem; border-top: .25rem solid var(--ks-red); background: #f5f4f2; }
+  .ks-alternative-grid h3 { margin-top: 0; }
+  .ks-alternative-grid p { margin-bottom: 0; color: #666; }
+
+  .ks-process__list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 2rem; margin: 0; padding: 0; list-style: none; }
+  .ks-process__list li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid #ddd; }
+  .ks-process__list > li > span { color: var(--ks-red); font-weight: 900; }
+  .ks-process__list h3 { margin: 0 0 .35rem; }
+  .ks-process__list p { margin: 0; color: #666; }
+
+  .ks-proof { padding: clamp(4rem,8vw,7rem) 0; background: var(--ks-dark); color: #fff; }
+  .ks-proof__inner { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(2rem,6vw,6rem); align-items: center; }
+  .ks-proof__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.16); }
+  .ks-proof__grid div { padding: 1.6rem; background: var(--ks-dark); }
+  .ks-proof__grid strong, .ks-proof__grid span { display: block; }
+  .ks-proof__grid strong { margin-bottom: .35rem; font-size: 1.25rem; }
+  .ks-proof__grid span { color: rgba(255,255,255,.68); font-size: .9rem; }
+
+  .ks-faq__inner { display: grid; grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); gap: clamp(2rem,6vw,6rem); }
+  .ks-faq__list details { border-top: 1px solid #d8d8d8; }
+  .ks-faq__list details:last-child { border-bottom: 1px solid #d8d8d8; }
+  .ks-faq__list summary { display: flex; justify-content: space-between; gap: 1rem; padding: 1.35rem 0; cursor: pointer; font-weight: 800; list-style: none; }
+  .ks-faq__list summary::-webkit-details-marker { display: none; }
+  .ks-faq__list details p { margin: -.25rem 0 1.5rem; color: #666; }
+
+  .ks-cta { padding: clamp(4rem,8vw,7rem) 0; background: var(--ks-red); color: #fff; }
+  .ks-cta__inner { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(18rem,.7fr); gap: 3rem; align-items: center; }
+  .ks-cta p { max-width: 44rem; color: rgba(255,255,255,.82); }
+  .ks-cta__actions { display: grid; gap: 1rem; justify-items: start; }
+  .ks-cta__phone { color: #fff; font-size: 1.15rem; font-weight: 850; text-decoration: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ks-info-card__visual img { transition: none; }
+    .ks-info-card--image:hover .ks-info-card__visual img { transform: none; }
+  }
+
+  @media (max-width: 900px) {
+    .ks-fit__inner, .ks-dark__inner, .ks-proof__inner, .ks-faq__inner, .ks-cta__inner { grid-template-columns: 1fr; }
+    .ks-system-card { grid-template-columns: 1fr; }
+    .ks-system-card__visual { min-height: 22rem; }
+    .ks-system-card__visual--contain img { height: 19rem; }
+    .ks-system-card__visual--cover img { min-height: 22rem; max-height: 30rem; }
+    .ks-alternative-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 680px) {
+    .ks-hero__content { margin-left: 0; }
+    .ks-card-grid, .ks-process__list, .ks-proof__grid { grid-template-columns: 1fr; }
+    .ks-hero__actions { flex-direction: column; align-items: stretch; }
+    .ks-system-card dl div { grid-template-columns: 1fr; gap: .15rem; }
+    .ks-master-tip, .ks-system-note { grid-template-columns: 1fr; }
+    .ks-system-card__badge { top: auto; right: 1rem; bottom: 1rem; }
+  }
+</style>

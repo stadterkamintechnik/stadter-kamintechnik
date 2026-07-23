@@ -1,0 +1,441 @@
+---
+const damages = [
+  {
+    number: "01",
+    title: "Ausgewaschene Fugen",
+    text: "Regen, Frost und jahrelange Witterung greifen den Fugenmörtel an. Offene oder ausgewaschene Fugen lassen Feuchtigkeit eindringen und schwächen das Mauerwerk.",
+    image: "/images/kaminkopf-sanieren/schaden-fugen.webp",
+    alt: "Ausgewaschene Fugen an einem gemauerten Kaminkopf",
+    position: "50% 45%",
+  },
+  {
+    number: "02",
+    title: "Risse im Mauerwerk",
+    text: "Temperaturwechsel, Feuchtigkeit und Frost können Risse verursachen. Bleiben sie unbehandelt, vergrößert sich der Schaden häufig von Winter zu Winter.",
+    image: "/images/kaminkopf-sanieren/schaden-risse.webp",
+    alt: "Risse im Mauerwerk eines Schornsteinkopfes",
+    position: "50% 48%",
+  },
+  {
+    number: "03",
+    title: "Abplatzende Ziegel",
+    text: "Dringt Wasser in geschädigte Steine ein, können bei Frost Teile des Ziegels absprengen. Der Kaminkopf verliert dadurch zunehmend seine Schutzfunktion.",
+    image: "/images/kaminkopf-sanieren/schaden-ziegel.webp",
+    alt: "Abgeplatzte Ziegel an einem verwitterten Kaminkopf",
+    position: "50% 48%",
+  },
+  {
+    number: "04",
+    title: "Feuchtigkeit im Dachbereich",
+    text: "Ein undichter Kaminkopf oder ein beschädigter Dachanschluss kann Feuchtigkeit in den Dachaufbau oder das angrenzende Mauerwerk leiten.",
+    image: "/images/kaminkopf-sanieren/schaden-feuchtigkeit.webp",
+    alt: "Feuchtigkeitsschaden im Dachbereich neben einem Schornstein",
+    position: "50% 50%",
+  },
+];
+
+const loads = [
+  ["Regen", "Wasser dringt in poröse Fugen und Steine ein."],
+  ["Schnee", "Lange Feuchtebelastung setzt dem Mauerwerk zu."],
+  ["Frost", "Gefrierendes Wasser kann Ziegel und Fugen sprengen."],
+  ["Sonne", "Starke Erwärmung belastet das Bauteil zusätzlich."],
+  ["Temperaturwechsel", "Ständiges Ausdehnen und Zusammenziehen fördert Risse."],
+  ["Abgase", "Wärme und Feuchtigkeit wirken auch von innen auf den Kaminkopf."],
+];
+
+const solutions = [
+  {
+    number: "01",
+    title: "Fugen erneuern",
+    text: "Ist das Mauerwerk noch tragfähig und sind vor allem die Fugen geschädigt, kann eine fachgerechte Neuverfugung ausreichen.",
+  },
+  {
+    number: "02",
+    title: "Teilweise neu aufmauern",
+    text: "Sind nur einzelne Bereiche beschädigt, tragen wir den schadhaften Teil kontrolliert ab und bauen ihn fachgerecht neu auf.",
+  },
+  {
+    number: "03",
+    title: "Komplett erneuern",
+    text: "Bei starken Schäden, losem Mauerwerk oder beeinträchtigter Standsicherheit kann ein vollständiger Neuaufbau erforderlich sein.",
+  },
+  {
+    number: "04",
+    title: "Abdeckplatte erneuern",
+    text: "Eine passende Abdeckplatte schützt die obere Mauerwerksfläche und leitet Niederschlagswasser zuverlässig ab.",
+  },
+  {
+    number: "05",
+    title: "Dachanschluss berücksichtigen",
+    text: "Der Anschluss zwischen Dach und Schornstein wird bei der Planung mit betrachtet. Erforderliche Arbeiten stimmen wir mit den beteiligten Gewerken ab.",
+  },
+  {
+    number: "06",
+    title: "Mit Kaminsanierung kombinieren",
+    text: "Wird gleichzeitig ein neues Innenrohr eingebaut, lassen sich beide Maßnahmen häufig sinnvoll miteinander verbinden.",
+  },
+];
+
+const process = [
+  ["01", "Bestand prüfen", "Wir beurteilen Mauerwerk, Fugen, Abdeckung und den sichtbaren Dachanschluss."],
+  ["02", "Schadensursache klären", "Wir unterscheiden zwischen begrenzten Oberflächenschäden und einem tiefergehenden baulichen Problem."],
+  ["03", "Sanierung planen", "Wir legen fest, welche Bereiche erhalten, instand gesetzt oder neu aufgebaut werden."],
+  ["04", "Zugang vorbereiten", "Gerüst, Hubarbeitsbühne oder ein anderer geeigneter Dachzugang werden sicher eingeplant."],
+  ["05", "Fachgerecht ausführen", "Unsere Montageteams sanieren den Kaminkopf sauber, dauerhaft und passend zum Gebäude."],
+  ["06", "Abschluss kontrollieren", "Nach Fertigstellung prüfen wir Mauerwerk, Abdeckung und alle ausgeführten Anschlüsse."],
+];
+
+const faqs = [
+  {
+    q: "Wann muss ein Kaminkopf saniert werden?",
+    a: "Eine Sanierung ist sinnvoll, wenn Fugen ausgewaschen sind, Ziegel reißen oder abplatzen, Bauteile locker werden oder Feuchtigkeit in angrenzende Bereiche eindringt. Wie umfangreich die Maßnahme sein muss, entscheidet sich nach der Prüfung vor Ort.",
+  },
+  {
+    q: "Kann man nur die Fugen erneuern?",
+    a: "Ja, wenn die Ziegel beziehungsweise Steine noch tragfähig sind und der Schaden überwiegend die Verfugung betrifft. Sind bereits größere Bereiche lose, gerissen oder stark verwittert, reicht eine reine Neuverfugung meist nicht mehr aus.",
+  },
+  {
+    q: "Wann muss der Kaminkopf neu aufgemauert werden?",
+    a: "Ein teilweiser oder vollständiger Neuaufbau wird erforderlich, wenn das Mauerwerk seine Tragfähigkeit verloren hat, größere Bereiche schadhaft sind oder eine dauerhafte Instandsetzung mit Einzelreparaturen nicht mehr möglich ist.",
+  },
+  {
+    q: "Was kostet eine Kaminkopfsanierung?",
+    a: "Die Kosten hängen von Höhe, Zugänglichkeit, Schadensumfang, Material, Gerüstaufwand und notwendigen Nebenarbeiten ab. Nach Besichtigung erhalten Sie ein nachvollziehbares Angebot mit klar beschriebenem Leistungsumfang.",
+  },
+  {
+    q: "Wie lange dauern die Arbeiten?",
+    a: "Kleinere Instandsetzungen können häufig innerhalb eines Arbeitstages erfolgen. Ein teilweiser oder vollständiger Neuaufbau benötigt je nach Umfang, Zugänglichkeit und Witterung entsprechend mehr Zeit.",
+  },
+  {
+    q: "Ist immer ein Gerüst notwendig?",
+    a: "Nicht in jedem Fall. Entscheidend sind Gebäudehöhe, Dachneigung, Lage des Schornsteins und der sichere Zugang. Je nach Situation kommen Gerüst, Hubarbeitsbühne oder andere geeignete Schutzmaßnahmen infrage.",
+  },
+  {
+    q: "Kann die Kaminkopfsanierung mit einer Kaminsanierung kombiniert werden?",
+    a: "Ja. Wird ohnehin ein neues Innenrohr eingebaut oder der obere Schornsteinbereich geöffnet, können beide Maßnahmen oft sinnvoll zusammen ausgeführt werden. Das reduziert doppelte Arbeiten und ermöglicht eine technisch abgestimmte Gesamtlösung.",
+  },
+  {
+    q: "Muss der Schornsteinfeger eingebunden werden?",
+    a: "Bei rein baulichen Arbeiten am Kaminkopf ist eine Abstimmung nicht immer erforderlich. Werden jedoch Abgasführung, Mündung, Höhe oder eine Innenrohrsanierung verändert, sollte der bevollmächtigte Bezirksschornsteinfeger frühzeitig eingebunden werden.",
+  },
+];
+---
+
+<main class="kk-page">
+  <section class="kk-hero" aria-labelledby="kk-hero-title">
+    <img
+      class="kk-hero__image"
+      src="/images/kaminkopf-sanieren/hero.webp"
+      alt="Verwitterter gemauerter Kaminkopf auf einem Ziegeldach"
+      width="1664"
+      height="936"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="kk-hero__overlay" aria-hidden="true"></div>
+    <div class="container kk-hero__inner">
+      <div class="kk-hero__content">
+        <p class="kk-eyebrow kk-eyebrow--light">Schornsteinsanierung vom Meisterbetrieb</p>
+        <h1 id="kk-hero-title"><span>Schäden am Kaminkopf?</span> Wir sanieren dauerhaft.</h1>
+        <p class="kk-hero__lead">
+          Frost, Regen und jahrzehntelange Witterung setzen jedem Schornstein zu. Wir prüfen den
+          Zustand Ihres Kaminkopfes und sanieren ihn fachgerecht – von der gezielten Instandsetzung
+          bis zum vollständigen Neuaufbau.
+        </p>
+        <div class="kk-hero__actions">
+          <a class="kk-button kk-button--primary" href="/projekt-starten/?projekt=kaminkopf-sanieren">
+            Kaminkopf prüfen lassen <span aria-hidden="true">→</span>
+          </a>
+          <a class="kk-button kk-button--ghost" href="#loesungen">Lösungen ansehen</a>
+        </div>
+        <ul class="kk-hero__facts" aria-label="Vertrauensmerkmale">
+          <li><strong>Seit 2009</strong> Meisterbetrieb</li>
+          <li><strong>Eigene Teams</strong> Keine Subunternehmer</li>
+          <li><strong>10.000+</strong> realisierte Projekte</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="kk-fit" aria-labelledby="kk-fit-title">
+    <div class="container kk-fit__inner">
+      <div>
+        <p class="kk-eyebrow">Schnelle Orientierung</p>
+        <h2 id="kk-fit-title">Wann sollte der Kaminkopf genauer geprüft werden?</h2>
+      </div>
+      <ul class="kk-checklist">
+        <li>Fugen sind offen, ausgewaschen oder fehlen.</li>
+        <li>Ziegel oder Mauerwerk reißen und platzen ab.</li>
+        <li>Bauteile am Kaminkopf wirken locker oder instabil.</li>
+        <li>Im Dachgeschoss zeigen sich Feuchtigkeitsspuren.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="kk-section" aria-labelledby="kk-damages-title">
+    <div class="container">
+      <div class="kk-intro kk-intro--wide">
+        <p class="kk-eyebrow">Typische Schäden</p>
+        <h2 id="kk-damages-title">So zeigt sich ein sanierungsbedürftiger Kaminkopf.</h2>
+        <p>
+          Schäden oberhalb des Daches beginnen oft klein. Werden sie früh erkannt, lässt sich der
+          notwendige Eingriff häufig begrenzen und die Bausubstanz dauerhaft schützen.
+        </p>
+      </div>
+      <div class="kk-card-grid">
+        {damages.map((item) => (
+          <article class="kk-info-card kk-info-card--image">
+            <div class="kk-info-card__visual">
+              <img src={item.image} alt={item.alt} width="900" height="675" loading="lazy" decoding="async" style={`object-position:${item.position};`} />
+            </div>
+            <div class="kk-info-card__body">
+              <span class="kk-info-card__number">{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kk-dark" aria-labelledby="kk-loads-title">
+    <div class="container">
+      <div class="kk-dark__head">
+        <div>
+          <p class="kk-eyebrow kk-eyebrow--light">Warum entstehen diese Schäden?</p>
+          <h2 id="kk-loads-title">Der Kaminkopf ist der am stärksten beanspruchte Teil des Schornsteins.</h2>
+        </div>
+        <p>
+          Oberhalb des Daches treffen Witterung und starke Temperaturwechsel unmittelbar auf das
+          Mauerwerk. Gleichzeitig wirken warme Abgase von innen. Diese dauerhafte Belastung führt
+          mit den Jahren zu Verschleiß an Fugen, Steinen, Abdeckung und Anschlüssen.
+        </p>
+      </div>
+      <div class="kk-load-grid">
+        {loads.map(([title, text]) => (
+          <article><span aria-hidden="true">+</span><h3>{title}</h3><p>{text}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="loesungen" class="kk-section kk-solutions" aria-labelledby="kk-solutions-title">
+    <div class="container">
+      <div class="kk-intro kk-intro--wide">
+        <p class="kk-eyebrow">Unsere Lösungen</p>
+        <h2 id="kk-solutions-title">Für jeden Schaden die passende Maßnahme.</h2>
+        <p>
+          Nicht jeder Kaminkopf muss vollständig erneuert werden. Wir prüfen, welche Bauteile noch
+          erhalten werden können und wo eine dauerhafte Erneuerung wirtschaftlich sinnvoller ist.
+        </p>
+      </div>
+      <div class="kk-solution-grid">
+        {solutions.map((item) => (
+          <article>
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <aside class="kk-master-tip">
+        <div class="kk-master-tip__image">
+          <img src="/images/kaminkopf-sanieren/detail-neuaufmauern.webp" alt="Fachgerecht neu aufgemauerter Kaminkopf mit Abdeckplatte" width="900" height="675" loading="lazy" decoding="async" />
+        </div>
+        <div class="kk-master-tip__content">
+          <p class="kk-eyebrow">Unser Rat vom Meisterbetrieb</p>
+          <h3>Nicht jeder Kaminkopf muss komplett neu aufgebaut werden.</h3>
+          <p>
+            Kleine Schäden lassen sich häufig gezielt instand setzen. Erst wenn Mauerwerk, Fugen
+            oder Standsicherheit stärker beeinträchtigt sind, ist ein teilweiser oder vollständiger
+            Neuaufbau erforderlich. Wir empfehlen die technisch und wirtschaftlich sinnvolle Lösung.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="kk-section kk-process" aria-labelledby="kk-process-title">
+    <div class="container">
+      <div class="kk-intro">
+        <p class="kk-eyebrow">So gehen wir vor</p>
+        <h2 id="kk-process-title">Schritt für Schritt zur sicheren Lösung.</h2>
+      </div>
+      <ol class="kk-process__list">
+        {process.map(([number, title, text]) => (
+          <li><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="kk-before-after" aria-labelledby="kk-before-after-title">
+    <div class="container">
+      <div class="kk-intro kk-intro--wide">
+        <p class="kk-eyebrow kk-eyebrow--light">Vorher / Nachher</p>
+        <h2 id="kk-before-after-title">Ein sichtbarer Unterschied – und ein dauerhaft geschütztes Bauteil.</h2>
+      </div>
+      <div class="kk-before-after__grid">
+        <figure><span>Vorher</span><img src="/images/kaminkopf-sanieren/vorher.webp" alt="Stark verwitterter Kaminkopf vor der Sanierung" width="1000" height="750" loading="lazy" decoding="async" /></figure>
+        <figure><span>Nachher</span><img src="/images/kaminkopf-sanieren/nachher.webp" alt="Fachgerecht sanierter Kaminkopf nach Abschluss der Arbeiten" width="1000" height="750" loading="lazy" decoding="async" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="kk-proof" aria-labelledby="kk-proof-title">
+    <div class="container kk-proof__inner">
+      <div><p class="kk-eyebrow kk-eyebrow--light">Warum Stadter?</p><h2 id="kk-proof-title">Prüfen. Planen. Sauber sanieren.</h2></div>
+      <div class="kk-proof__grid">
+        <div><strong>Seit 2009</strong><span>Schornstein- und Abgastechnik</span></div>
+        <div><strong>10.000+</strong><span>realisierte Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>fachgerechte technische Planung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage durch erfahrene Fachkräfte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kk-section kk-faq" aria-labelledby="kk-faq-title">
+    <div class="container kk-faq__inner">
+      <div class="kk-intro"><p class="kk-eyebrow">Gut zu wissen</p><h2 id="kk-faq-title">Häufige Fragen zur <span>Kaminkopfsanierung.</span></h2></div>
+      <div class="kk-faq__list">
+        {faqs.map((faq, index) => (
+          <details open={index === 0}><summary><span>{faq.q}</span><span aria-hidden="true">+</span></summary><p>{faq.a}</p></details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kk-cta" aria-labelledby="kk-cta-title">
+    <div class="container kk-cta__inner">
+      <div>
+        <p class="kk-eyebrow kk-eyebrow--light">Ihr nächster Schritt</p>
+        <h2 id="kk-cta-title">Lassen Sie Ihren Kaminkopf fachgerecht prüfen.</h2>
+        <p>Senden Sie uns Fotos und einige Angaben zum Gebäude. Unser Projektteam prüft Ihr Vorhaben persönlich.</p>
+      </div>
+      <div class="kk-cta__actions">
+        <a class="kk-button kk-button--white" href="/projekt-starten/?projekt=kaminkopf-sanieren">Kaminkopf prüfen lassen <span aria-hidden="true">→</span></a>
+        <a class="kk-cta__phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .kk-page { --kk-red: var(--color-primary,#971f25); --kk-dark:#202020; color:#202020; }
+  .kk-section { padding:clamp(4.5rem,9vw,8rem) 0; }
+  .kk-eyebrow { margin:0 0 .9rem; color:var(--kk-red); font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+  .kk-eyebrow--light { color:rgba(255,255,255,.78); }
+  .kk-intro { max-width:50rem; margin-bottom:clamp(2.5rem,5vw,4.5rem); }
+  .kk-intro--wide { max-width:59rem; }
+  .kk-intro h2,.kk-dark h2,.kk-proof h2,.kk-cta h2,.kk-before-after h2 { margin:0 0 1.25rem; font-size:clamp(2.2rem,5vw,4.2rem); line-height:1.02; letter-spacing:-.045em; }
+  .kk-intro > p:last-child { max-width:49rem; margin:0; color:#666; font-size:1.08rem; }
+
+  .kk-hero { position:relative; min-height:min(56rem,calc(100svh - 4rem)); display:flex; align-items:center; overflow:hidden; color:#fff; }
+  .kk-hero__image,.kk-hero__overlay { position:absolute; inset:0; width:100%; height:100%; }
+  .kk-hero__image { object-fit:cover; object-position:62% 45%; }
+  .kk-hero__overlay { background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.58) 40%,rgba(0,0,0,.18) 70%,rgba(0,0,0,.04) 100%); }
+  .kk-hero__inner { position:relative; z-index:1; width:100%; padding-block:clamp(5rem,11vw,9rem); }
+  .kk-hero__content { max-width:47rem; margin-left:clamp(1.5rem,4vw,4rem); }
+  .kk-hero h1 { margin:0 0 1.5rem; font-size:clamp(3rem,6.8vw,5.8rem); line-height:.98; letter-spacing:-.055em; }
+  .kk-hero h1 span { display:block; color:rgba(255,255,255,.68); }
+  .kk-hero__lead { max-width:43rem; margin:0 0 2rem; font-size:clamp(1.05rem,2vw,1.28rem); color:rgba(255,255,255,.9); }
+  .kk-hero__actions { display:flex; flex-wrap:wrap; gap:.9rem; margin-bottom:2.2rem; }
+  .kk-button { display:inline-flex; align-items:center; justify-content:center; gap:.7rem; min-height:3.5rem; padding:0 1.5rem; border-radius:.45rem; font-weight:800; text-decoration:none; }
+  .kk-button--primary { background:var(--kk-red); color:#fff; }
+  .kk-button--ghost { border:1px solid rgba(255,255,255,.65); color:#fff; }
+  .kk-button--white { background:#fff; color:var(--kk-dark); }
+  .kk-hero__facts { display:flex; flex-wrap:wrap; gap:1.25rem 2rem; margin:0; padding:0; list-style:none; color:rgba(255,255,255,.76); font-size:.9rem; }
+  .kk-hero__facts strong { display:block; color:#fff; }
+
+  .kk-fit { padding:clamp(2.5rem,5vw,4.5rem) 0; border-bottom:1px solid #e6e6e6; }
+  .kk-fit__inner { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(2rem,6vw,6rem); align-items:start; }
+  .kk-fit h2 { margin:0; font-size:clamp(1.8rem,4vw,3rem); line-height:1.08; }
+  .kk-checklist { display:grid; gap:.9rem; margin:0; padding:0; list-style:none; }
+  .kk-checklist li { position:relative; padding-left:2rem; font-weight:650; }
+  .kk-checklist li::before { position:absolute; left:0; content:"✓"; color:var(--kk-red); font-weight:900; }
+
+  .kk-card-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
+  .kk-info-card { border:1px solid rgba(0,0,0,.1); border-radius:1rem; background:#fff; overflow:hidden; }
+  .kk-info-card__visual { aspect-ratio:4/3; overflow:hidden; background:#e9e7e4; }
+  .kk-info-card__visual img { width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.2,.65,.3,1); }
+  .kk-info-card:hover img { transform:scale(1.035); }
+  .kk-info-card__body { padding:clamp(1.5rem,3vw,2.4rem); }
+  .kk-info-card__number { display:block; margin-bottom:1.2rem; color:var(--kk-red); font-size:.78rem; font-weight:900; letter-spacing:.13em; }
+  .kk-info-card h3 { margin:0 0 .8rem; font-size:1.4rem; }
+  .kk-info-card p { margin:0; color:#666; }
+
+  .kk-dark { padding:clamp(4.5rem,9vw,8rem) 0; background:var(--kk-dark); color:#fff; }
+  .kk-dark__head { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:clamp(2rem,7vw,7rem); margin-bottom:3rem; }
+  .kk-dark__head > p { margin:0; color:rgba(255,255,255,.72); font-size:1.08rem; }
+  .kk-load-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:rgba(255,255,255,.16); }
+  .kk-load-grid article { padding:1.7rem; background:var(--kk-dark); }
+  .kk-load-grid span { color:var(--kk-red); font-size:1.6rem; font-weight:900; }
+  .kk-load-grid h3 { margin:.75rem 0 .4rem; }
+  .kk-load-grid p { margin:0; color:rgba(255,255,255,.65); }
+
+  .kk-solutions,.kk-faq { background:#f5f4f2; }
+  .kk-solution-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; }
+  .kk-solution-grid article { padding:2rem; border-top:.25rem solid var(--kk-red); background:#fff; }
+  .kk-solution-grid span { color:var(--kk-red); font-size:.78rem; font-weight:900; letter-spacing:.13em; }
+  .kk-solution-grid h3 { margin:1.2rem 0 .7rem; font-size:1.35rem; }
+  .kk-solution-grid p { margin:0; color:#666; }
+  .kk-master-tip { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); margin-top:2rem; overflow:hidden; border-radius:1rem; background:#fff; }
+  .kk-master-tip__image img { width:100%; height:100%; min-height:26rem; object-fit:cover; }
+  .kk-master-tip__content { align-self:center; padding:clamp(2rem,5vw,4rem); }
+  .kk-master-tip h3 { margin:0 0 1rem; font-size:clamp(2rem,4vw,3.3rem); line-height:1.02; letter-spacing:-.04em; }
+  .kk-master-tip p:last-child { margin:0; color:#666; }
+
+  .kk-process__list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 2rem; margin:0; padding:0; list-style:none; }
+  .kk-process__list li { display:grid; grid-template-columns:3.5rem 1fr; gap:1rem; padding:1.5rem 0; border-top:1px solid #ddd; }
+  .kk-process__list > li > span { color:var(--kk-red); font-weight:900; }
+  .kk-process__list h3 { margin:0 0 .35rem; }
+  .kk-process__list p { margin:0; color:#666; }
+
+  .kk-before-after { padding:clamp(4.5rem,9vw,8rem) 0; background:#2a2a2a; color:#fff; }
+  .kk-before-after__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
+  .kk-before-after figure { position:relative; margin:0; overflow:hidden; border-radius:1rem; background:#111; }
+  .kk-before-after figure span { position:absolute; z-index:2; top:1rem; left:1rem; padding:.55rem .75rem; border-radius:999px; background:rgba(0,0,0,.72); color:#fff; font-size:.72rem; font-weight:850; text-transform:uppercase; }
+  .kk-before-after figure:last-child span { background:var(--kk-red); }
+  .kk-before-after img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
+
+  .kk-proof { padding:clamp(4rem,8vw,7rem) 0; background:var(--kk-dark); color:#fff; }
+  .kk-proof__inner { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(2rem,6vw,6rem); align-items:center; }
+  .kk-proof__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:rgba(255,255,255,.16); }
+  .kk-proof__grid div { padding:1.6rem; background:var(--kk-dark); }
+  .kk-proof__grid strong,.kk-proof__grid span { display:block; }
+  .kk-proof__grid strong { margin-bottom:.35rem; font-size:1.25rem; }
+  .kk-proof__grid span { color:rgba(255,255,255,.68); font-size:.9rem; }
+
+  .kk-faq__inner { display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); gap:clamp(2rem,5vw,5rem); }
+  .kk-faq .kk-intro { min-width:0; max-width:32rem; }
+  .kk-faq .kk-intro h2 { font-size:clamp(2.2rem,3.5vw,3rem); overflow-wrap:normal; }
+  .kk-faq .kk-intro h2 span { display:block; }
+  .kk-faq__list { min-width:0; }
+  .kk-faq__list details { border-top:1px solid #d8d8d8; }
+  .kk-faq__list details:last-child { border-bottom:1px solid #d8d8d8; }
+  .kk-faq__list summary { display:flex; justify-content:space-between; gap:1rem; padding:1.35rem 0; cursor:pointer; font-weight:800; list-style:none; }
+  .kk-faq__list summary::-webkit-details-marker { display:none; }
+  .kk-faq__list details p { margin:-.25rem 0 1.5rem; color:#666; }
+
+  .kk-cta { padding:clamp(4rem,8vw,7rem) 0; background:var(--kk-red); color:#fff; }
+  .kk-cta__inner { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(18rem,.7fr); gap:3rem; align-items:center; }
+  .kk-cta p { max-width:44rem; color:rgba(255,255,255,.82); }
+  .kk-cta__actions { display:grid; gap:1rem; justify-items:start; }
+  .kk-cta__phone { color:#fff; font-size:1.15rem; font-weight:850; text-decoration:none; }
+
+  @media (prefers-reduced-motion:reduce) { .kk-info-card__visual img { transition:none; } .kk-info-card:hover img { transform:none; } }
+  @media (max-width:900px) {
+    .kk-fit__inner,.kk-dark__head,.kk-proof__inner,.kk-faq__inner,.kk-cta__inner,.kk-master-tip { grid-template-columns:1fr; }
+    .kk-load-grid,.kk-solution-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .kk-master-tip__image img { min-height:22rem; max-height:30rem; }
+  }
+  @media (max-width:680px) {
+    .kk-hero__content { margin-left:0; }
+    .kk-hero__image { object-position:64% 50%; }
+    .kk-card-grid,.kk-process__list,.kk-before-after__grid,.kk-proof__grid,.kk-load-grid,.kk-solution-grid { grid-template-columns:1fr; }
+    .kk-hero__actions { flex-direction:column; align-items:stretch; }
+  }
+</style>

@@ -1,0 +1,344 @@
+---
+const situations = [
+  {
+    number: "01",
+    title: "Kein Schornstein vorhanden",
+    text: "Für einen Kaminofen oder eine neue Feuerstätte fehlt die passende Abgasführung im Gebäude.",
+  },
+  {
+    number: "02",
+    title: "Außenkamin nicht gewünscht",
+    text: "Die Fassade soll frei bleiben oder ein außenliegender Edelstahlkamin passt optisch nicht zum Gebäude.",
+  },
+  {
+    number: "03",
+    title: "Neue Position der Feuerstätte",
+    text: "Die Feuerstätte soll dort stehen, wo der vorhandene Schornstein nicht erreichbar oder technisch ungeeignet ist.",
+  },
+  {
+    number: "04",
+    title: "Umbau oder Erweiterung",
+    text: "Anbau, Dachgeschossausbau oder eine neue Heizungsanlage erfordern einen zusätzlichen Schornsteinzug.",
+  },
+];
+
+const systems = [
+  {
+    number: "01",
+    name: "Leichtbauschornstein",
+    subtitle: "Die flexible Lösung für bestehende Gebäude",
+    description:
+      "Leichtbauschornsteine bestehen aus einem geprüften Schachtsystem mit gedämmter Abgasführung. Durch das geringe Eigengewicht und die kompakte Bauweise eignen sie sich besonders für die nachträgliche Montage im Bestand.",
+    image: "/images/schornstein-im-gebaeude/leichtbauschornstein.jpg",
+    alt: "Querschnitt eines Leichtbauschornsteins mit gedämmtem Edelstahl-Innenrohr",
+    facts: [
+      ["Einsatz", "vor allem im Bestand"],
+      ["Gewicht", "gering"],
+      ["Montage", "schnell und trocken"],
+      ["Innenrohr", "systemabhängig, häufig Edelstahl"],
+    ],
+  },
+  {
+    number: "02",
+    name: "Massivschornstein",
+    subtitle: "Die robuste, dauerhaft integrierte Bauweise",
+    description:
+      "Massivschornsteine werden aus Mantelsteinen aufgebaut und enthalten eine gedämmte Abgasführung, häufig mit keramischem Innenrohr. Sie eignen sich besonders für Neubauten und Situationen, in denen eine massive Konstruktion gewünscht ist.",
+    image: "/images/schornstein-im-gebaeude/massivschornstein.jpg",
+    alt: "Querschnitt eines Massivschornsteins mit Mantelstein, Dämmung und Keramikrohr",
+    facts: [
+      ["Einsatz", "vor allem im Neubau"],
+      ["Bauweise", "massiv aufgebaut"],
+      ["Integration", "dauerhaft in das Gebäude"],
+      ["Innenrohr", "systemabhängig, häufig Keramik"],
+    ],
+  },
+];
+
+const planning = [
+  {
+    number: "01",
+    title: "Verlauf im Gebäude",
+    text: "Der Schornstein muss durch die Geschosse und das Dach geführt werden, ohne tragende Bauteile oder die Nutzung der Räume unnötig zu beeinträchtigen.",
+  },
+  {
+    number: "02",
+    title: "Abstände und Brandschutz",
+    text: "Zu brennbaren Bauteilen, Decken, Wänden und Dachkonstruktionen müssen die Vorgaben des gewählten Systems eingehalten werden.",
+  },
+  {
+    number: "03",
+    title: "Feuerstätte und Querschnitt",
+    text: "Durchmesser, wirksame Höhe und System müssen zur geplanten Feuerstätte und deren Betriebsweise passen.",
+  },
+  {
+    number: "04",
+    title: "Dachdurchführung und Mündung",
+    text: "Die Dachdurchführung wird dauerhaft dicht ausgeführt. Die erforderliche Mündungshöhe wird passend zu Dachform und Umgebung geplant.",
+  },
+];
+
+const process = [
+  ["01", "Projekt prüfen", "Wir klären Feuerstätte, Gebäude, gewünschten Standort und vorhandene Unterlagen."],
+  ["02", "Verlauf festlegen", "Gemeinsam bestimmen wir den technisch sinnvollen Weg durch Geschosse und Dach."],
+  ["03", "System auswählen", "Wir legen Leichtbau- oder Massivsystem, Querschnitt und erforderliche Höhe fest."],
+  ["04", "Ausführung abstimmen", "Bei Bedarf stimmen wir die geplante Lösung mit dem bevollmächtigten Bezirksschornsteinfeger ab."],
+  ["05", "Fachgerecht montieren", "Unsere eigenen Teams montieren den Schornstein sauber, sicher und systemgerecht."],
+];
+
+const faqs = [
+  {
+    q: "Kann man einen Schornstein nachträglich im Gebäude einbauen?",
+    a: "Ja. Mit einem geeigneten Leichtbau- oder Massivschornstein kann auch in bestehenden Gebäuden eine neue Abgasführung geschaffen werden. Entscheidend sind ein geeigneter Verlauf, die statischen Gegebenheiten, der Brandschutz und eine passende Dachdurchführung.",
+  },
+  {
+    q: "Leichtbauschornstein oder Massivschornstein – was ist besser?",
+    a: "Das hängt vom Gebäude und vom Bauvorhaben ab. Im Bestand ist ein Leichtbauschornstein häufig die flexiblere Lösung, weil er weniger Gewicht einbringt und trocken montiert wird. Im Neubau kann ein Massivschornstein sinnvoll sein, wenn er von Anfang an in die Gebäudestruktur integriert wird.",
+  },
+  {
+    q: "Müssen Decken und das Dach geöffnet werden?",
+    a: "In der Regel ja. Der Schornstein verläuft durch die betroffenen Geschosse und benötigt fachgerecht ausgeführte Decken- und Dachdurchführungen. Der Umfang hängt vom gewählten Verlauf und von der Bauweise des Gebäudes ab.",
+  },
+  {
+    q: "Kann der Schornstein später verkleidet werden?",
+    a: "Ja. Je nach System und Einbausituation kann die Oberfläche gespachtelt, verputzt oder in die Innenraumgestaltung integriert werden. Die Reinigungs- und Prüföffnungen müssen dabei zugänglich bleiben.",
+  },
+  {
+    q: "Welche Feuerstätten können angeschlossen werden?",
+    a: "Das hängt vom verwendeten Schornsteinsystem, dem Innenrohr und der Dimensionierung ab. Möglich sind beispielsweise Kaminöfen, Heizkamine oder andere zugelassene Feuerstätten. Die konkrete Eignung wird technisch geprüft.",
+  },
+  {
+    q: "Muss der Schornsteinfeger eingebunden werden?",
+    a: "Ja. Ein neuer Schornstein und die angeschlossene Feuerstätte müssen vor der Inbetriebnahme abgenommen werden. Eine frühzeitige Abstimmung hilft, spätere Änderungen zu vermeiden.",
+  },
+  {
+    q: "Was kostet ein Schornstein im Gebäude?",
+    a: "Die Kosten richten sich nach System, Höhe, Anzahl der Geschoss- und Deckendurchführungen, Dachdurchführung, Zugänglichkeit und Montageaufwand. Nach Prüfung des Gebäudes erhalten Sie ein transparentes Angebot.",
+  },
+];
+---
+
+<div class="sg-page">
+  <section class="sg-hero" aria-labelledby="sg-hero-title">
+    <img
+      class="sg-hero__image"
+      src="/images/schornstein-im-gebaeude/hero.webp"
+      alt="Fertig verkleideter Systemschornstein auf einem Wohnhausdach"
+      width="1536"
+      height="1024"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="sg-hero__overlay" aria-hidden="true"></div>
+    <div class="container sg-hero__inner">
+      <div class="sg-hero__content">
+        <p class="sg-eyebrow sg-eyebrow--light">Schornstein nachrüsten</p>
+        <h1 id="sg-hero-title">
+          <span>Kein Schornstein vorhanden?</span>
+          Wir rüsten ihn im Gebäude nach.
+        </h1>
+        <p class="sg-hero__lead">
+          Mit einem Leichtbau- oder Massivschornstein lässt sich eine sichere Abgasführung auch innerhalb bestehender Gebäude nachträglich realisieren. Wir planen den passenden Verlauf und montieren das geeignete System fachgerecht.
+        </p>
+        <div class="sg-hero__actions">
+          <a class="sg-button sg-button--primary" href="/projekt-starten/?projekt=schornstein-im-gebaeude">
+            Schornstein planen lassen <span aria-hidden="true">→</span>
+          </a>
+          <a class="sg-button sg-button--ghost" href="#systeme">Systeme vergleichen</a>
+        </div>
+        <ul class="sg-hero__facts" aria-label="Vertrauensmerkmale">
+          <li><strong>Leichtbau &amp; Massiv</strong> passend zum Gebäude</li>
+          <li><strong>Eigene Teams</strong> keine Subunternehmer</li>
+          <li><strong>Seit 2009</strong> Meisterbetrieb</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-fit" aria-labelledby="sg-fit-title">
+    <div class="container sg-fit__inner">
+      <div>
+        <p class="sg-eyebrow">Schnelle Orientierung</p>
+        <h2 id="sg-fit-title">Wann ist ein Schornstein im Gebäude die richtige Lösung?</h2>
+      </div>
+      <ul class="sg-checklist">
+        <li>Ein Kaminofen oder eine neue Feuerstätte ist geplant.</li>
+        <li>Im Gebäude gibt es keinen passenden Schornstein.</li>
+        <li>Ein Außenkamin soll an der Fassade vermieden werden.</li>
+        <li>Der Schornstein soll dauerhaft in das Gebäude integriert werden.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-situations-title">
+    <div class="container">
+      <div class="sg-intro sg-intro--wide">
+        <p class="sg-eyebrow">Typische Ausgangssituationen</p>
+        <h2 id="sg-situations-title">Wenn der vorhandene Schornstein fehlt oder nicht passt.</h2>
+        <p>Ein neuer Schornstein im Gebäude schafft eine dauerhaft integrierte Abgasführung. Entscheidend ist, dass Verlauf, Querschnitt, Brandschutz und Dachdurchführung von Anfang an zusammen geplant werden.</p>
+      </div>
+      <div class="sg-card-grid">
+        {situations.map((item) => (
+          <article class="sg-info-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-dark" aria-labelledby="sg-principle-title">
+    <div class="container sg-dark__inner">
+      <div>
+        <p class="sg-eyebrow sg-eyebrow--light">Technik verstehen</p>
+        <h2 id="sg-principle-title">Mehrschalig aufgebaut. Sicher durch das Gebäude geführt.</h2>
+      </div>
+      <div class="sg-dark__copy">
+        <p>Leichtbau- und Massivschornsteine sind mehrschalig aufgebaute Systeme. Der äußere Schacht bildet die schützende Hülle. Im Inneren führt ein geeignetes Rohr die Abgase sicher nach außen; eine Wärmedämmung ergänzt den Systemaufbau.</p>
+        <p>Welche Ausführung geeignet ist, hängt von Gebäude, Feuerstätte, Verlauf und baulichen Anforderungen ab. Wir wählen nicht pauschal ein Produkt, sondern planen das System passend zum Projekt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="systeme" class="sg-section sg-systems" aria-labelledby="sg-systems-title">
+    <div class="container">
+      <div class="sg-intro sg-intro--wide">
+        <p class="sg-eyebrow">Zwei Bauarten</p>
+        <h2 id="sg-systems-title">Leichtbauschornstein oder Massivschornstein?</h2>
+        <p>Beide Systeme erfüllen dieselbe Aufgabe, unterscheiden sich jedoch bei Gewicht, Montage, Aufbau und typischem Einsatzbereich.</p>
+      </div>
+      <div class="sg-system-grid">
+        {systems.map((system) => (
+          <article class="sg-system-card">
+            <div class="sg-system-card__visual">
+              <span>_{system.number}</span>
+              <img src={system.image} alt={system.alt} width="900" height="675" loading="lazy" decoding="async" />
+            </div>
+            <div class="sg-system-card__content">
+              <p class="sg-system-card__subtitle">{system.subtitle}</p>
+              <h3>{system.name}</h3>
+              <p class="sg-system-card__description">{system.description}</p>
+              <dl>
+                {system.facts.map(([label, value]) => (
+                  <div><dt>{label}</dt><dd>{value}</dd></div>
+                ))}
+              </dl>
+            </div>
+          </article>
+        ))}
+      </div>
+      <aside class="sg-system-note">
+        <div class="sg-system-note__label">Unsere Empfehlung</div>
+        <div>
+          <h3>Die Bauweise folgt dem Gebäude – nicht umgekehrt.</h3>
+          <p>Im Bestand ist ein Leichtbauschornstein häufig besonders flexibel. Im Neubau kann ein Massivschornstein frühzeitig in die Planung integriert werden. Entscheidend ist immer die konkrete Einbausituation.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sg-section sg-planning" aria-labelledby="sg-planning-title">
+    <div class="container">
+      <div class="sg-intro sg-intro--wide">
+        <p class="sg-eyebrow">Sauber geplant</p>
+        <h2 id="sg-planning-title">Vier Punkte entscheiden über eine sichere Ausführung.</h2>
+        <p>Der Schornstein wird Bestandteil des Gebäudes. Deshalb müssen System, Verlauf und alle Durchführungen technisch zusammenpassen.</p>
+      </div>
+      <div class="sg-planning-grid">
+        {planning.map((item) => (
+          <article><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-project" aria-labelledby="sg-project-title">
+    <div class="container sg-project__inner">
+      <div class="sg-project__images">
+        <img src="/images/schornstein-im-gebaeude/montage-erdgeschoss.png" alt="Massiver Systemschornstein innerhalb eines Gebäudes im Ausbau" width="1024" height="1536" loading="lazy" decoding="async" />
+        <img src="/images/schornstein-im-gebaeude/montage-dachgeschoss.png" alt="Systemschornstein im Dachgeschoss mit fachgerechter Befestigung" width="1024" height="1536" loading="lazy" decoding="async" />
+      </div>
+      <div class="sg-project__content">
+        <p class="sg-eyebrow">Im Gebäude integriert</p>
+        <h2 id="sg-project-title">Von der Bodenplatte bis über das Dach.</h2>
+        <p>Der Schornstein wird geschossweise aufgebaut und sicher durch Decken und Dach geführt. Reinigungsöffnungen, Anschlüsse und Befestigungen werden so angeordnet, dass die Anlage dauerhaft zugänglich und funktionsfähig bleibt.</p>
+        <ul>
+          <li>klar geplanter Verlauf durch das Gebäude</li>
+          <li>systemgerechte Decken- und Dachdurchführungen</li>
+          <li>zugängliche Reinigungs- und Prüföffnungen</li>
+          <li>Abstimmung mit dem Schornsteinfeger</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section sg-process" aria-labelledby="sg-process-title">
+    <div class="container">
+      <div class="sg-intro">
+        <p class="sg-eyebrow">Klarer Ablauf</p>
+        <h2 id="sg-process-title">Von der ersten Idee bis zum fertigen Schornstein.</h2>
+      </div>
+      <ol>
+        {process.map(([number, title, text]) => (
+          <li><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="sg-proof" aria-labelledby="sg-proof-title">
+    <div class="container sg-proof__inner">
+      <div><p class="sg-eyebrow sg-eyebrow--light">Warum Stadter?</p><h2 id="sg-proof-title">Planen. Integrieren. Sicher montieren.</h2></div>
+      <div class="sg-proof__grid">
+        <div><strong>Seit 2009</strong><span>Schornstein- und Abgastechnik</span></div>
+        <div><strong>10.000+</strong><span>realisierte Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>technische Planung mit Verantwortung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage durch erfahrene Fachkräfte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section sg-faq" aria-labelledby="sg-faq-title">
+    <div class="container sg-faq__inner">
+      <div class="sg-intro"><p class="sg-eyebrow">Gut zu wissen</p><h2 id="sg-faq-title">Häufige Fragen zum Schornstein im Gebäude.</h2></div>
+      <div class="sg-faq__list">
+        {faqs.map((faq, index) => (
+          <details open={index === 0}><summary><span>{faq.q}</span><span aria-hidden="true">+</span></summary><p>{faq.a}</p></details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-cta" aria-labelledby="sg-cta-title">
+    <div class="container sg-cta__inner">
+      <div>
+        <p class="sg-eyebrow sg-eyebrow--light">Ihr nächster Schritt</p>
+        <h2 id="sg-cta-title">Lassen Sie Ihren neuen Schornstein fachgerecht planen.</h2>
+        <p>Senden Sie uns Grundrisse, Fotos und Angaben zur geplanten Feuerstätte. Unser Projektteam prüft, welcher Verlauf und welches System zu Ihrem Gebäude passen.</p>
+      </div>
+      <div class="sg-cta__actions">
+        <a class="sg-button sg-button--white" href="/projekt-starten/?projekt=schornstein-im-gebaeude">Projekt anfragen <span aria-hidden="true">→</span></a>
+        <a class="sg-cta__phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .sg-page{--sg-red:var(--color-primary,#971f25);--sg-dark:#202020;color:#202020}.sg-section{padding:clamp(4.5rem,9vw,8rem) 0}.sg-eyebrow{margin:0 0 .9rem;color:var(--sg-red);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.sg-eyebrow--light{color:rgba(255,255,255,.8)}.sg-intro{max-width:50rem;margin-bottom:clamp(2.5rem,5vw,4.5rem)}.sg-intro--wide{max-width:59rem}.sg-intro h2,.sg-dark h2,.sg-proof h2,.sg-cta h2,.sg-project h2{margin:0 0 1.25rem;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.02;letter-spacing:-.045em}.sg-intro>p:last-child{max-width:49rem;margin:0;color:#666;font-size:1.08rem}
+  .sg-hero{position:relative;min-height:min(54rem,calc(100svh - 5rem));display:flex;align-items:center;overflow:hidden;color:#fff}.sg-hero__image,.sg-hero__overlay{position:absolute;inset:0;width:100%;height:100%}.sg-hero__image{object-fit:cover;object-position:58% 48%}.sg-hero__overlay{background:linear-gradient(90deg,rgba(0,0,0,.84) 0%,rgba(0,0,0,.6) 42%,rgba(0,0,0,.15) 74%,rgba(0,0,0,.02) 100%)}.sg-hero__inner{position:relative;z-index:1;width:100%;padding-block:clamp(5rem,11vw,9rem)}.sg-hero__content{max-width:48rem;margin-left:clamp(2rem,5vw,5rem)}.sg-hero h1{margin:0 0 1.5rem;font-size:clamp(3rem,6.4vw,5.6rem);line-height:.98;letter-spacing:-.055em}.sg-hero h1 span{display:block;color:rgba(255,255,255,.68)}.sg-hero__lead{max-width:43rem;margin:0 0 2rem;font-size:clamp(1.05rem,2vw,1.28rem);color:rgba(255,255,255,.9)}.sg-hero__actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.2rem}.sg-button{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:3.5rem;padding:0 1.5rem;border-radius:.45rem;font-weight:800;text-decoration:none}.sg-button--primary{background:var(--sg-red);color:#fff}.sg-button--ghost{border:1px solid rgba(255,255,255,.65);color:#fff}.sg-button--white{background:#fff;color:var(--sg-dark)}.sg-hero__facts{display:flex;flex-wrap:wrap;gap:1.25rem 2rem;margin:0;padding:0;list-style:none;color:rgba(255,255,255,.76);font-size:.9rem}.sg-hero__facts strong{display:block;color:#fff}
+  .sg-fit{padding:clamp(2.5rem,5vw,4.5rem) 0;border-bottom:1px solid #e6e6e6}.sg-fit__inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,6rem);align-items:start}.sg-fit h2{margin:0;font-size:clamp(1.8rem,4vw,3rem);line-height:1.08}.sg-checklist{display:grid;gap:.9rem;margin:0;padding:0;list-style:none}.sg-checklist li{position:relative;padding-left:2rem;font-weight:650}.sg-checklist li:before{position:absolute;left:0;content:"✓";color:var(--sg-red);font-weight:900}
+  .sg-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.sg-info-card{padding:clamp(1.5rem,3vw,2.4rem);border:1px solid rgba(0,0,0,.1);border-radius:1rem;background:#fff}.sg-info-card>span{display:block;margin-bottom:1.2rem;color:var(--sg-red);font-size:.78rem;font-weight:900;letter-spacing:.13em}.sg-info-card h3{margin:0 0 .8rem;font-size:1.4rem}.sg-info-card p{margin:0;color:#666}
+  .sg-dark{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--sg-dark);color:#fff}.sg-dark__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(2rem,7vw,7rem)}.sg-dark__copy{color:rgba(255,255,255,.76);font-size:1.08rem}.sg-dark__copy p:first-child{margin-top:0}
+  .sg-systems,.sg-faq{background:#f5f4f2}.sg-system-grid{display:grid;gap:1.5rem}.sg-system-card{display:grid;grid-template-columns:minmax(18rem,.85fr) minmax(0,1.15fr);min-height:31rem;overflow:hidden;border-radius:1rem;background:#fff}.sg-system-card:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(18rem,.85fr)}.sg-system-card:nth-child(even) .sg-system-card__visual{order:2}.sg-system-card__visual{position:relative;min-height:28rem;overflow:hidden;background:#e7e6e4}.sg-system-card__visual>span{position:absolute;z-index:2;top:1.5rem;left:1.5rem;color:var(--sg-red);font-size:.82rem;font-weight:900;letter-spacing:.14em}.sg-system-card__visual img{width:100%;height:100%;min-height:28rem;object-fit:cover}.sg-system-card__content{align-self:center;padding:clamp(2rem,5vw,4.5rem)}.sg-system-card__subtitle{margin:0 0 .65rem;color:var(--sg-red);font-weight:800}.sg-system-card h3{margin:0 0 1.25rem;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em}.sg-system-card__description{max-width:43rem;margin:0 0 2rem;color:#666;font-size:1.04rem;line-height:1.65}.sg-system-card dl{margin:0}.sg-system-card dl div{display:grid;grid-template-columns:minmax(9rem,.8fr) minmax(0,1.2fr);gap:1rem;padding:.8rem 0;border-top:1px solid #e5e5e5}.sg-system-card dt{color:#666}.sg-system-card dd{margin:0;font-weight:750}.sg-system-note{display:grid;grid-template-columns:minmax(12rem,.65fr) minmax(0,2fr);gap:2rem;margin-top:2rem;padding:clamp(1.6rem,4vw,3rem);border-left:.35rem solid var(--sg-red);border-radius:0 1rem 1rem 0;background:var(--sg-dark);color:#fff}.sg-system-note__label{color:rgba(255,255,255,.7);font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.sg-system-note h3{margin:0 0 .75rem}.sg-system-note p{margin:0;color:rgba(255,255,255,.72)}
+  .sg-planning{background:#fff}.sg-planning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.sg-planning-grid article{padding:clamp(1.5rem,3vw,2.4rem);border:1px solid rgba(0,0,0,.1);border-radius:1rem}.sg-planning-grid span{display:block;margin-bottom:1.2rem;color:var(--sg-red);font-size:.78rem;font-weight:900;letter-spacing:.13em}.sg-planning-grid h3{margin:0 0 .75rem}.sg-planning-grid p{margin:0;color:#666}
+  .sg-project{padding:clamp(4.5rem,9vw,8rem) 0;background:#f5f4f2}.sg-project__inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,6vw,6rem);align-items:center}.sg-project__images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.sg-project__images img{display:block;width:100%;height:34rem;object-fit:cover;border-radius:1rem}.sg-project__content>p{color:#666;font-size:1.06rem}.sg-project__content ul{display:grid;gap:.75rem;margin:1.5rem 0 0;padding:0;list-style:none}.sg-project__content li{position:relative;padding-left:1.7rem;font-weight:700}.sg-project__content li:before{position:absolute;left:0;content:"✓";color:var(--sg-red)}
+  .sg-process ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem;margin:0;padding:0;list-style:none}.sg-process li{display:grid;grid-template-columns:3.5rem 1fr;gap:1rem;padding:1.5rem 0;border-top:1px solid #ddd}.sg-process li>span{color:var(--sg-red);font-weight:900}.sg-process h3{margin:0 0 .35rem}.sg-process p{margin:0;color:#666}
+  .sg-proof{padding:clamp(4rem,8vw,7rem) 0;background:var(--sg-dark);color:#fff}.sg-proof__inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,6rem);align-items:center}.sg-proof__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.16)}.sg-proof__grid div{padding:1.6rem;background:var(--sg-dark)}.sg-proof__grid strong,.sg-proof__grid span{display:block}.sg-proof__grid strong{margin-bottom:.35rem;font-size:1.25rem}.sg-proof__grid span{color:rgba(255,255,255,.68);font-size:.9rem}
+  .sg-faq__inner{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:clamp(2rem,6vw,6rem)}.sg-faq .sg-intro h2{font-size:clamp(2.1rem,4.2vw,3.7rem);overflow-wrap:anywhere}.sg-faq__list details{border-top:1px solid #d8d8d8}.sg-faq__list details:last-child{border-bottom:1px solid #d8d8d8}.sg-faq__list summary{display:flex;justify-content:space-between;gap:1rem;padding:1.35rem 0;cursor:pointer;font-weight:800;list-style:none}.sg-faq__list summary::-webkit-details-marker{display:none}.sg-faq__list details p{margin:-.25rem 0 1.5rem;color:#666}
+  .sg-cta{padding:clamp(4rem,8vw,7rem) 0;background:var(--sg-red);color:#fff}.sg-cta__inner{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(18rem,.7fr);gap:3rem;align-items:center}.sg-cta p{max-width:44rem;color:rgba(255,255,255,.82)}.sg-cta__actions{display:grid;gap:1rem;justify-items:start}.sg-cta__phone{color:#fff;font-size:1.15rem;font-weight:850;text-decoration:none}
+  @media(max-width:900px){.sg-fit__inner,.sg-dark__inner,.sg-proof__inner,.sg-faq__inner,.sg-cta__inner,.sg-project__inner{grid-template-columns:1fr}.sg-system-card,.sg-system-card:nth-child(even){grid-template-columns:1fr}.sg-system-card:nth-child(even) .sg-system-card__visual{order:0}.sg-system-card__visual,.sg-system-card__visual img{min-height:22rem}.sg-project__images img{height:26rem}.sg-faq .sg-intro h2{max-width:14ch}}@media(max-width:680px){.sg-hero__content{margin-left:0}.sg-hero__image{object-position:64% 50%}.sg-card-grid,.sg-planning-grid,.sg-process ol,.sg-proof__grid,.sg-project__images{grid-template-columns:1fr}.sg-project__images img{height:24rem}.sg-hero__actions{flex-direction:column;align-items:stretch}.sg-system-card dl div,.sg-system-note{grid-template-columns:1fr}.sg-faq .sg-intro h2{max-width:none;font-size:clamp(2rem,11vw,3.1rem)}}
+</style>

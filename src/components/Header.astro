@@ -1,24 +1,462 @@
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="logo" aria-label="Stadter Kamintechnik Startseite">
+---
+import "../styles/components/header.css";
+
+const pathname = Astro.url.pathname;
+
+const privateServices = [
+  { label: "Außenkamin nachrüsten", href: "/aussenkamin" },
+  { label: "Schornstein im Gebäude nachrüsten", href: "/schornstein-im-gebaeude-nachruesten" },
+  { label: "Kaminsanierung", href: "/kaminsanierung" },
+  { label: "Kaminverlängerung", href: "/kaminverlaengerung" },
+  { label: "Kaminkopf sanieren", href: "/kaminkopfsanieren" },
+];
+
+const commercialServices = [
+  { label: "Stahlschornsteine", href: "/gewerbe-industrie/stahlschornsteine" },
+  { label: "Schalldämpfer", href: "/gewerbe-industrie/schalldaempfer" },
+  { label: "Abgassysteme", href: "/gewerbe-industrie/abgassysteme" },
+  { label: "Sonderanlagen", href: "/gewerbe-industrie/sonderanlagen" },
+  { label: "Zustandsüberwachung", href: "/gewerbe-industrie/zustandsueberwachung" },
+];
+
+const navItems = [
+  { label: "Referenzen", href: "/referenzen/" },
+  { label: "Unternehmen", href: "/unternehmen/" },
+  { label: "Wissen", href: "/wissen/" },
+];
+
+const isActive = (href: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+const servicesAreActive = [...privateServices, ...commercialServices].some((item) =>
+  isActive(item.href),
+);
+---
+
+<header class="site-header" data-site-header>
+  <div class="container site-header__inner">
+    <a class="site-header__logo" href="/" aria-label="Stadter Kamintechnik – Startseite">
       <img
         src="/stadter_Kamintechnik_Logo_RGB_1c.png"
-        alt="Stadter Kamintechnik"
+        alt="Stadter Kamintechnik GmbH"
         width="260"
         height="70"
       />
     </a>
 
-    <nav class="main-nav" aria-label="Hauptnavigation">
-      <a href="/loesungen">Lösungen</a>
-      <a href="/leistungen">Leistungen</a>
-      <a href="/projekte">Projekte</a>
-      <a href="/unternehmen">Unternehmen</a>
-      <a href="/wissen">Wissen</a>
+    <nav class="site-header__nav" aria-label="Hauptnavigation">
+      <div class="site-header__dropdown" data-desktop-dropdown>
+        <button
+          class:list={[
+            "site-header__nav-link",
+            "site-header__dropdown-trigger",
+            { "is-active": servicesAreActive },
+          ]}
+          type="button"
+          aria-expanded="false"
+          aria-controls="services-navigation"
+          data-dropdown-button
+        >
+          Leistungen
+        </button>
+
+        <div
+          class="site-header__dropdown-panel"
+          id="services-navigation"
+          data-dropdown-panel
+          hidden
+        >
+          <div class="container site-header__dropdown-inner">
+            <section class="site-header__service-group" aria-labelledby="private-services-title">
+              <p class="site-header__dropdown-heading" id="private-services-title">
+                Leistungen für Privatkunden
+              </p>
+
+              <div class="site-header__dropdown-grid">
+                {privateServices.map((item) => (
+                  <a
+                    class:list={[
+                      "site-header__dropdown-link",
+                      { "is-active": isActive(item.href) },
+                    ]}
+                    href={item.href}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            <section
+              class="site-header__service-group site-header__service-group--commercial"
+              aria-labelledby="commercial-services-title"
+            >
+              <p class="site-header__dropdown-heading" id="commercial-services-title">
+                Leistungen für Gewerbe- & Industriekunden
+              </p>
+
+              <div class="site-header__commercial-grid">
+                {commercialServices.map((item) => (
+                  <a
+                    class:list={[
+                      "site-header__dropdown-link",
+                      { "is-active": isActive(item.href) },
+                    ]}
+                    href={item.href}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      {navItems.map((item) => (
+        <a
+          class:list={["site-header__nav-link", { "is-active": isActive(item.href) }]}
+          href={item.href}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
     </nav>
 
-    <a href="/kontakt" class="header-cta">
-      Projekt anfragen
+    <a
+      class:list={[
+        "site-header__cta",
+        { "is-active": pathname.startsWith("/projekt-starten") },
+      ]}
+      href="/projekt-starten/"
+      aria-current={pathname.startsWith("/projekt-starten") ? "page" : undefined}
+    >
+      Anfrage senden
+      <span aria-hidden="true">→</span>
     </a>
+
+    <button
+      class="site-header__menu-button"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+      data-menu-button
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="site-header__mobile" id="mobile-navigation" data-mobile-menu hidden>
+    <nav class="container site-header__mobile-nav" aria-label="Mobile Navigation">
+      <details class="site-header__mobile-group" open={servicesAreActive}>
+        <summary class:list={["site-header__mobile-link", { "is-active": servicesAreActive }]}>
+          Leistungen
+        </summary>
+
+        <div class="site-header__mobile-services">
+          <p>Leistungen für Privatkunden</p>
+          {privateServices.map((item) => (
+            <a
+              class:list={[
+                "site-header__mobile-service",
+                { "is-active": isActive(item.href) },
+              ]}
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+
+          <p class="site-header__mobile-services-heading--secondary">
+            Leistungen für Gewerbe- & Industriekunden
+          </p>
+          {commercialServices.map((item) => (
+            <a
+              class:list={[
+                "site-header__mobile-service",
+                { "is-active": isActive(item.href) },
+              ]}
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </details>
+
+      {navItems.map((item) => (
+        <a
+          class:list={["site-header__mobile-link", { "is-active": isActive(item.href) }]}
+          href={item.href}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+
+      <a class="site-header__mobile-cta" href="/projekt-starten/">
+        Anfrage senden
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <a class="site-header__phone" href="tel:+4992289989000">
+        09228 998900-0
+      </a>
+    </nav>
   </div>
 </header>
+
+<style>
+  .site-header__dropdown {
+    position: static;
+  }
+
+  .site-header__dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .site-header__dropdown-trigger::after,
+  .site-header__dropdown-trigger.is-active::after {
+    display: none !important;
+    content: none !important;
+  }
+
+
+  .site-header__dropdown-panel {
+    position: absolute;
+    z-index: 40;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 2rem 1.25rem 2.35rem;
+    border: 0;
+    background: var(--color-primary, #971f25);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+  }
+
+  .site-header__dropdown-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(3rem, 8vw, 8rem);
+    width: min(100%, 1120px);
+    margin: 0 auto;
+  }
+
+  .site-header__service-group + .site-header__service-group {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .site-header__dropdown-heading {
+    margin: 0 0 1.2rem;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .site-header__dropdown-grid,
+  .site-header__commercial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .site-header__dropdown-link {
+    display: flex;
+    align-items: center;
+    min-height: 2.55rem;
+    padding: 0.35rem 0;
+    border: 0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .site-header__dropdown-link:hover,
+  .site-header__dropdown-link:focus-visible,
+  .site-header__dropdown-link.is-active {
+    opacity: 0.72;
+  }
+
+  .site-header__dropdown-link:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 3px;
+  }
+
+  .site-header__mobile {
+    background: var(--color-primary, #971f25) !important;
+    color: #fff;
+  }
+
+  .site-header__mobile-nav {
+    background: var(--color-primary, #971f25);
+    color: #fff;
+  }
+
+  .site-header__mobile-group,
+  .site-header__mobile-link {
+    border-color: rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .site-header__mobile-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .site-header__mobile-group summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .site-header__mobile-group summary,
+  .site-header__mobile-link,
+  .site-header__mobile-service,
+  .site-header__phone {
+    color: #fff !important;
+  }
+
+  .site-header__mobile-link.is-active,
+  .site-header__mobile-service.is-active {
+    color: #fff !important;
+    font-weight: 800;
+  }
+
+  .site-header__mobile-services {
+    display: grid;
+    padding: 0 1.35rem 1.3rem;
+  }
+
+  .site-header__mobile-services p {
+    margin: 1rem 0 0.55rem;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .site-header__mobile-services-heading--secondary {
+    margin-top: 1.15rem !important;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .site-header__mobile-service {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.45rem 0;
+    border: 0;
+    font-size: 0.94rem;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  .site-header__mobile-cta {
+    color: #fff !important;
+    background: rgba(0, 0, 0, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  @media (max-width: 900px) {
+    .site-header__dropdown-panel {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header__dropdown-link {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const header = document.querySelector("[data-site-header]");
+  const menuButton = document.querySelector("[data-menu-button]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const desktopDropdown = document.querySelector("[data-desktop-dropdown]");
+  const dropdownButton = document.querySelector("[data-dropdown-button]");
+  const dropdownPanel = document.querySelector("[data-dropdown-panel]");
+
+  const updateHeader = () => {
+    header?.classList.toggle("is-scrolled", window.scrollY > 24);
+  };
+
+  const closeDesktopDropdown = () => {
+    if (!(desktopDropdown instanceof HTMLElement)) return;
+    if (!(dropdownButton instanceof HTMLButtonElement)) return;
+    if (!(dropdownPanel instanceof HTMLElement)) return;
+
+    desktopDropdown.classList.remove("is-open");
+    dropdownButton.setAttribute("aria-expanded", "false");
+    dropdownPanel.hidden = true;
+  };
+
+  const openDesktopDropdown = () => {
+    if (!(desktopDropdown instanceof HTMLElement)) return;
+    if (!(dropdownButton instanceof HTMLButtonElement)) return;
+    if (!(dropdownPanel instanceof HTMLElement)) return;
+
+    desktopDropdown.classList.add("is-open");
+    dropdownButton.setAttribute("aria-expanded", "true");
+    dropdownPanel.hidden = false;
+  };
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  dropdownButton?.addEventListener("click", () => {
+    const isOpen = dropdownButton.getAttribute("aria-expanded") === "true";
+    isOpen ? closeDesktopDropdown() : openDesktopDropdown();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Node)) return;
+    if (!desktopDropdown?.contains(event.target)) closeDesktopDropdown();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDesktopDropdown();
+      if (dropdownButton instanceof HTMLButtonElement) dropdownButton.focus();
+    }
+  });
+
+  menuButton?.addEventListener("click", () => {
+    if (!(mobileMenu instanceof HTMLElement)) return;
+    if (!(menuButton instanceof HTMLButtonElement)) return;
+
+    const open = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!open));
+    menuButton.setAttribute("aria-label", open ? "Menü öffnen" : "Menü schließen");
+    mobileMenu.hidden = open;
+    document.documentElement.classList.toggle("menu-open", !open);
+    closeDesktopDropdown();
+  });
+</script>

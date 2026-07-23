@@ -1,0 +1,128 @@
+.project-faq {
+  padding: 7rem 1.5rem;
+  background: #f5f3ef;
+}
+
+.project-faq__inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
+}
+
+.project-faq__intro {
+  position: sticky;
+  top: 8rem;
+}
+
+.project-faq__eyebrow {
+  margin: 0 0 1rem;
+  color: var(--color-primary, #8f1d24);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-faq__intro h2 {
+  margin: 0;
+  color: #171717;
+  font-size: clamp(2.35rem, 4vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.project-faq__intro > p:last-child {
+  max-width: 30rem;
+  margin: 1.5rem 0 0;
+  color: #656565;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.project-faq__list {
+  border-top: 1px solid rgba(23, 23, 23, 0.17);
+}
+
+.project-faq__item {
+  border-bottom: 1px solid rgba(23, 23, 23, 0.17);
+}
+
+.project-faq__item summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2rem;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.65rem 0;
+  color: #1c1c1c;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.35;
+  cursor: pointer;
+  list-style: none;
+}
+
+.project-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-faq__item summary:hover {
+  color: var(--color-primary, #8f1d24);
+}
+
+.project-faq__icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.project-faq__item[open] .project-faq__icon {
+  transform: rotate(45deg);
+  border-color: var(--color-primary, #8f1d24);
+}
+
+.project-faq__answer {
+  padding: 0 4rem 1.75rem 0;
+}
+
+.project-faq__answer p {
+  max-width: 47rem;
+  margin: 0;
+  color: #606060;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 820px) {
+  .project-faq {
+    padding: 5rem 1.25rem;
+  }
+
+  .project-faq__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .project-faq__intro {
+    position: static;
+  }
+}
+
+@media (max-width: 520px) {
+  .project-faq__item summary {
+    gap: 1rem;
+    padding: 1.35rem 0;
+  }
+
+  .project-faq__answer {
+    padding-right: 0;
+  }
+}

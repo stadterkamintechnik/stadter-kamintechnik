@@ -1,0 +1,63 @@
+---
+import "../styles/process-section.css";
+
+const steps = [
+  {
+    number: "01",
+    title: "Anfrage",
+    text: "Sie schildern uns Ihr Vorhaben und senden uns – wenn vorhanden – erste Fotos, Pläne oder technische Unterlagen.",
+  },
+  {
+    number: "02",
+    title: "Technische Klärung",
+    text: "Wir prüfen die Anforderungen, klären die örtlichen Gegebenheiten und entwickeln eine technisch passende Lösung.",
+  },
+  {
+    number: "03",
+    title: "Planung und Angebot",
+    text: "Sie erhalten ein nachvollziehbares Angebot mit klar definiertem Leistungsumfang und einer belastbaren Planung.",
+  },
+  {
+    number: "04",
+    title: "Fachgerechte Montage",
+    text: "Unsere Montageteams setzen die geplante Anlage sauber, sicher und abgestimmt mit den beteiligten Gewerken um.",
+  },
+];
+---
+
+<section class="process-section" aria-labelledby="process-heading">
+  <div class="process-section__container">
+    <div class="process-section__intro">
+      <p class="process-section__eyebrow">So läuft Ihr Projekt ab</p>
+
+      <h2 id="process-heading" class="process-section__title">
+        Von der ersten Anfrage bis zur fertigen Anlage.
+      </h2>
+
+      <p class="process-section__lead">
+        Klare Abläufe, feste Ansprechpartner und eine technische Lösung, die
+        nicht nur auf dem Papier funktioniert.
+      </p>
+    </div>
+
+    <ol class="process-section__steps">
+      {
+        steps.map((step) => (
+          <li class="process-step">
+            <div class="process-step__top">
+              <span class="process-step__number" aria-hidden="true">
+                {step.number}
+              </span>
+
+              <span class="process-step__line" aria-hidden="true"></span>
+            </div>
+
+            <h3 class="process-step__title">{step.title}</h3>
+
+            <p class="process-step__text">{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,171 @@
+---
+import "../../styles/reference-overview.css";
+
+interface ReferenceProject {
+  title: string;
+  category: "Privat" | "Gewerbe" | "Industrie";
+  location: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  href: string;
+  tags?: string[];
+  featured?: boolean;
+}
+
+interface Props {
+  projects: ReferenceProject[];
+}
+
+const { projects } = Astro.props;
+
+const categories = ["Alle", "Privat", "Gewerbe", "Industrie"];
+---
+
+<section
+  class="stk-reference-overview"
+  aria-labelledby="reference-overview-title"
+>
+  <div class="stk-reference-overview__container">
+    <header class="stk-reference-overview__header">
+      <div class="stk-reference-overview__heading">
+        <p class="stk-reference-overview__kicker">
+          Ausgewählte Projekte
+        </p>
+
+        <h1 id="reference-overview-title">
+          Lösungen, die in der Praxis funktionieren.
+        </h1>
+      </div>
+
+      <div class="stk-reference-overview__intro">
+        <p>
+          Von privaten Edelstahl-Außenkaminen über gewerbliche
+          Heizzentralen bis zu anspruchsvollen Industrieanlagen:
+          Hier zeigen wir ausgewählte Projekte aus Planung,
+          Montage und technischer Umsetzung.
+        </p>
+      </div>
+    </header>
+
+    <nav
+      class="stk-reference-overview__filters"
+      aria-label="Referenzen nach Einsatzbereich"
+    >
+      {
+        categories.map((category, index) => (
+          <a
+            class:list={[
+              "stk-reference-overview__filter",
+              index === 0 &&
+                "stk-reference-overview__filter--active",
+            ]}
+            href={
+              category === "Alle"
+                ? "/referenzen"
+                : `/referenzen#${category.toLowerCase()}`
+            }
+          >
+            {category}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="stk-reference-overview__grid">
+      {
+        projects.map((project, index) => (
+          <article
+            id={project.category.toLowerCase()}
+            class:list={[
+              "stk-reference-card",
+              project.featured &&
+                "stk-reference-card--featured",
+              index % 3 === 2 &&
+                "stk-reference-card--wide",
+            ]}
+          >
+            <a
+              class="stk-reference-card__link"
+              href={project.href}
+              aria-label={`${project.title} ansehen`}
+            >
+              <figure class="stk-reference-card__media">
+                <img
+                  src={project.image}
+                  alt={project.imageAlt}
+                  width="1600"
+                  height="1100"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchpriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
+                />
+
+                <div class="stk-reference-card__overlay">
+                  <span>Projekt ansehen</span>
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m14 7 5 5-5 5" />
+                  </svg>
+                </div>
+              </figure>
+
+              <div class="stk-reference-card__content">
+                <div class="stk-reference-card__meta">
+                  <span>{project.category}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{project.location}</span>
+                </div>
+
+                <h2>{project.title}</h2>
+
+                <p>{project.description}</p>
+
+                {
+                  project.tags &&
+                  project.tags.length > 0 && (
+                    <ul
+                      class="stk-reference-card__tags"
+                      aria-label="Projektmerkmale"
+                    >
+                      {
+                        project.tags.map((tag) => (
+                          <li>{tag}</li>
+                        ))
+                      }
+                    </ul>
+                  )
+                }
+              </div>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+
+    {
+      projects.length < 3 && (
+        <aside class="stk-reference-overview__notice">
+          <div>
+            <p class="stk-reference-overview__notice-kicker">
+              Das Projektarchiv wächst
+            </p>
+
+            <h2>
+              Weitere Referenzen folgen.
+            </h2>
+          </div>
+
+          <p>
+            Wir bereiten derzeit weitere Projekte aus den Bereichen
+            Privat, Gewerbe und Industrie für diese Übersicht auf.
+          </p>
+        </aside>
+      )
+    }
+  </div>
+</section>

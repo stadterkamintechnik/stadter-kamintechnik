@@ -1,0 +1,131 @@
+---
+import "../styles/footer.css";
+
+const currentYear = new Date().getFullYear();
+
+const solutionLinks = [
+  { label: "Edelstahl-Außenkamine", href: "/leistungen/edelstahl-aussenkamine/" },
+  { label: "Schornsteinsanierung", href: "/leistungen/schornsteinsanierung/" },
+  { label: "Schornstein nachrüsten", href: "/leistungen/schornstein-nachruesten/" },
+  { label: "Gewerbliche Abgasanlagen", href: "/leistungen/gewerbe/" },
+  { label: "Industrieanlagen", href: "/leistungen/industrie/" },
+];
+
+const referenceLinks = [
+  { label: "Private Projekte", href: "/referenzen/#privat" },
+  { label: "Gewerbliche Projekte", href: "/referenzen/#gewerbe" },
+  { label: "Industrieprojekte", href: "/referenzen/#industrie" },
+  { label: "Alle Referenzen", href: "/referenzen/" },
+];
+
+const companyLinks = [
+  { label: "Über uns", href: "/ueber-uns/" },
+  { label: "Karriere", href: "/karriere/" },
+  { label: "Kontakt", href: "/kontakt/" },
+];
+
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/stadterkamintechnik/" },
+  { label: "Facebook", href: "https://www.facebook.com/stadterkamintechnik" },
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__container">
+    <div class="site-footer__statement">
+      <div class="site-footer__statement-copy">
+        <p class="site-footer__eyebrow">Stadter Kamintechnik</p>
+        <h2 class="site-footer__headline">Schornsteine, die funktionieren.</h2>
+
+        <div class="site-footer__mark site-footer__mark--mobile" aria-hidden="true">
+          <svg viewBox="0 0 200 200" focusable="false">
+            <circle cx="100" cy="100" r="68"></circle>
+          </svg>
+        </div>
+
+        <p class="site-footer__intro">
+          Seit 2009 planen und montieren wir Schornstein- und Abgasanlagen für
+          private, gewerbliche und industrielle Projekte in Nordbayern.
+        </p>
+      </div>
+
+      <div class="site-footer__mark site-footer__mark--desktop" aria-hidden="true">
+        <svg viewBox="0 0 200 200" focusable="false">
+          <circle cx="100" cy="100" r="68"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <div class="site-footer__navigation">
+      <nav class="site-footer__column" aria-labelledby="footer-solutions-heading">
+        <h2 id="footer-solutions-heading" class="site-footer__column-title">Lösungen</h2>
+        <ul class="site-footer__link-list">
+          {solutionLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <nav class="site-footer__column" aria-labelledby="footer-references-heading">
+        <h2 id="footer-references-heading" class="site-footer__column-title">Referenzen</h2>
+        <ul class="site-footer__link-list">
+          {referenceLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <nav class="site-footer__column" aria-labelledby="footer-company-heading">
+        <h2 id="footer-company-heading" class="site-footer__column-title">Unternehmen</h2>
+        <ul class="site-footer__link-list">
+          {companyLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <div class="site-footer__column site-footer__contact">
+        <h2 class="site-footer__column-title">Kontakt</h2>
+        <a class="site-footer__phone" href="tel:+4992289989000" aria-label="Stadter Kamintechnik unter 09228 9989000 anrufen">09228 / 9989000</a>
+        <a class="site-footer__email" href="mailto:info@stadter-kamin.de">info@stadter-kamin.de</a>
+
+        <div class="site-footer__availability">
+          <p class="site-footer__availability-title">Telefonisch erreichbar</p>
+          <p>Mo – Fr<br />07:00 – 13:00 Uhr</p>
+        </div>
+
+        <a class="site-footer__cta" href="/projekt-starten/">
+          <span>Projekt anfragen</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <div class="site-footer__social">
+          <p class="site-footer__social-title">Aktuelle Projekte &amp; Einblicke</p>
+          <div class="site-footer__social-links">
+            {socialLinks.map((link) => (
+              <a href={link.href} target="_blank" rel="noopener noreferrer">
+                <span>{link.label}</span><span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="site-footer__brand">
+        <p class="site-footer__brand-name">Stadter Kamintechnik GmbH</p>
+        <p class="site-footer__brand-claim">
+          <strong>ÜBERRAGEND.</strong>
+          <span>Schornsteine | Kamin- und Abgastechnik</span>
+        </p>
+      </div>
+
+      <div class="site-footer__legal">
+        <p>© {currentYear} Stadter Kamintechnik GmbH</p>
+        <nav aria-label="Rechtliche Informationen">
+          <ul>
+            <li><a href="/impressum/">Impressum</a></li>
+            <li><a href="/datenschutz/">Datenschutz</a></li>
+            <li><a href="/agb/">AGB</a></li>
+            <li><a href="/widerruf/">Widerrufsbelehrung</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>

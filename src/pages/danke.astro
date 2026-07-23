@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export const prerender = false;
+---
+
+<BaseLayout
+  title="Vielen Dank | Stadter Kamintechnik"
+  description="Ihre Projektanfrage wurde erfolgreich übermittelt."
+>
+  <section class="project-thanks">
+    <div class="container">
+      <span class="section-kicker">Anfrage erhalten</span>
+      <h1>Vielen Dank für Ihre Anfrage.</h1>
+
+      <p>
+        Nach Eingang Ihrer Anfrage prüfen wir Ihr Projekt und melden uns
+        anschließend persönlich bei Ihnen.
+      </p>
+
+      <div class="project-thanks__actions">
+        <a class="project-thanks__primary" href="/">Zur Startseite</a>
+        <a class="project-thanks__phone" href="tel:+4992289989000">
+          Fragen vorab? 09228 998900-0
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .project-thanks {
+    min-height: 72vh;
+    display: grid;
+    align-items: center;
+    padding-block: var(--space-7);
+  }
+
+  .project-thanks .container {
+    max-width: 860px;
+  }
+
+  .project-thanks h1 {
+    max-width: 780px;
+    margin: 0 0 24px;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .project-thanks p {
+    max-width: 680px;
+    margin: 0 0 36px;
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+
+  .project-thanks__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .project-thanks__primary {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    padding-inline: 24px;
+    border-radius: var(--radius-sm);
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .project-thanks__primary:hover,
+  .project-thanks__primary:focus-visible {
+    background: var(--color-primary-dark);
+  }
+
+  .project-thanks__phone {
+    color: var(--color-primary);
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  @media (max-width: 620px) {
+    .project-thanks__actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .project-thanks__primary {
+      justify-content: center;
+    }
+  }
+</style>
