@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Eine neue Heizzentrale in eine bestehende Industrieanlage integrieren.",
+    paragraphs: [
+      "Im Zuge der Kernsanierung eines alten Industrieareals in Schwarzenbach an der Saale sollte eine neue Heizzentrale mit zwei Blockheizkraftwerken und einem Heizkessel an die vorhandene Kaminanlage angeschlossen werden.",
+      "Die besondere Herausforderung lag darin, die neue Anlagentechnik sicher und dauerhaft in die bestehende Gebäudestruktur und Abgasführung zu integrieren.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Sicherer Wechselbetrieb durch gezielte Abgasführung.",
+    paragraphs: [
+      "Für einen zuverlässigen Betrieb wurde ein Konzept entwickelt, das die beiden Blockheizkraftwerke über einen Wärmetauscher miteinander koppelt und einen reibungslosen Wechselbetrieb ermöglicht.",
+      "Die Abgaswege mussten so geplant werden, dass die Betriebszustände der Anlage gezielt geführt und die vorhandenen Kamine weiter genutzt werden konnten.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Geschweißte Bypassleitungen und zwei sanierte Industriekamine.",
+    paragraphs: [
+      "Nach Abschluss der Projektplanung wurden mehrere Bypassleitungen installiert. Die geschweißte Ausführung ermöglicht eine gezielte Abgasleitung und ist auf einen langfristigen Dauerbetrieb ausgelegt.",
+      "Zusätzlich wurden zwei vorhandene Kamine saniert. Mit einer Höhe von jeweils 35 Metern konnten sie ohne größere Eingriffe in die bestehende Architektur weiterhin für die sichere Ableitung der Abgase genutzt werden.",
+    ],
+    points: [
+      "Anbindung von zwei Blockheizkraftwerken und einem Heizkessel",
+      "Kopplung der Blockheizkraftwerke über einen Wärmetauscher",
+      "Mehrere geschweißte Bypassleitungen",
+      "Gezielte Abgasführung für den Wechselbetrieb",
+      "Sanierung von zwei bestehenden Industriekaminen",
+      "Kaminhöhe von jeweils 35 Metern",
+    ],
+  },
+];
+
+const facts = [
+  {
+    label: "Standort",
+    value: "Schwarzenbach an der Saale",
+  },
+  {
+    label: "Einsatzbereich",
+    value: "Industrie",
+  },
+  {
+    label: "Projekt",
+    value: "Kernsanierung eines Industrieareals",
+  },
+  {
+    label: "Heizzentrale",
+    value: "Zwei BHKW und ein Heizkessel",
+  },
+  {
+    label: "Anlagenkonzept",
+    value: "Wechselbetrieb über Wärmetauscher",
+  },
+  {
+    label: "Abgasführung",
+    value: "Geschweißte Bypassleitungen",
+  },
+  {
+    label: "Bestandsanlage",
+    value: "Zwei sanierte Kamine",
+  },
+  {
+    label: "Kaminhöhe",
+    value: "Jeweils 35 Meter",
+  },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/blockheizkraftwerk-schwarzenbach/blockheizkraftwerk-vorher.jpg",
+    alt: "Bestehendes Industrieareal in Schwarzenbach an der Saale vor der Sanierung",
+    caption:
+      "Das bestehende Industrieareal bildete den baulichen Rahmen für die neue Heizzentrale.",
+  },
+  {
+    src: "/images/referenzen/blockheizkraftwerk-schwarzenbach/blockheizkraftwerk-anlage.jpg",
+    alt: "Technische Anlage des Blockheizkraftwerks mit Abgasleitungen",
+    caption:
+      "Die neue Anlagentechnik wurde in die vorhandene Gebäudestruktur integriert.",
+  },
+  {
+    src: "/images/referenzen/blockheizkraftwerk-schwarzenbach/blockheizkraftwerk-detail.jpg",
+    alt: "Detailansicht der geschweißten Abgas- und Bypassleitungen",
+    caption:
+      "Geschweißte Bypassleitungen ermöglichen die gezielte Führung der Abgase im Wechselbetrieb.",
+  },
+  {
+    src: "/images/referenzen/blockheizkraftwerk-schwarzenbach/blockheizkraftwerk-kamine.jpg",
+    alt: "Sanierte Industriekamine am Werksgebäude in Schwarzenbach an der Saale",
+    caption:
+      "Die beiden 35 Meter hohen Bestandskamine wurden saniert und weiter in die Anlage eingebunden.",
+  },
+];
+---
+
+<BaseLayout
+  title="BHKW-Abgasanlage und Kaminsanierung | Stadter Kamintechnik"
+  description="Kernsanierung einer industriellen Heizzentrale in Schwarzenbach an der Saale: zwei Blockheizkraftwerke, geschweißte Bypassleitungen und zwei sanierte 35-Meter-Kamine."
+>
+  <ProjectHero
+    category="Industrie"
+    title="Kernsanierung einer Heizzentrale mit zwei Blockheizkraftwerken"
+    location="Schwarzenbach an der Saale"
+    intro="Zwei Blockheizkraftwerke, ein Heizkessel, geschweißte Bypassleitungen und zwei sanierte Bestandskamine – als abgestimmtes Gesamtsystem in ein bestehendes Industrieareal integriert."
+    image="/images/referenzen/blockheizkraftwerk-schwarzenbach/blockheizkraftwerk-anlage.jpg"
+    imageAlt="Blockheizkraftwerk mit neu installierter industrieller Abgasführung"
+  />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Sie modernisieren eine industrielle Heizzentrale?"
+    text="Wir planen und montieren Abgasleitungen, Bypasslösungen und Kaminanlagen für Blockheizkraftwerke, Heizkessel und technisch anspruchsvolle Industrieprojekte."
+    buttonText="Industrieprojekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieanlage"
+  />
+</BaseLayout>

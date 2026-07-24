@@ -1,0 +1,376 @@
+---
+import "../../styles/pages/unternehmen.css";
+
+const strengths = [
+  {
+    number: "01",
+    title: "Eigene Montageteams",
+    text: "Unsere Anlagen werden von eigenen, erfahrenen Mitarbeitern montiert – mit klaren Qualitätsstandards und Verantwortung bis zur Fertigstellung.",
+  },
+  {
+    number: "02",
+    title: "Feste Ansprechpartner",
+    text: "Ein Projektleiter begleitet Ihr Vorhaben von der technischen Klärung bis zur Montage und bleibt auch danach erreichbar.",
+  },
+  {
+    number: "03",
+    title: "Technisch durchdacht",
+    text: "Wir betrachten Gebäude, Feuerstätte und Abgasanlage als Gesamtsystem und entwickeln daraus eine dauerhaft funktionierende Lösung.",
+  },
+  {
+    number: "04",
+    title: "Regional verwurzelt",
+    text: "Von Kasendorf aus betreuen wir private, gewerbliche und industrielle Projekte in ganz Nordbayern.",
+  },
+];
+
+const process = [
+  ["01", "Anfrage & erste Beratung", "Wir klären Ihr Vorhaben, die Ausgangssituation und die wichtigsten technischen Fragen."],
+  ["02", "Vor-Ort-Termin", "Wir prüfen die baulichen Gegebenheiten, nehmen Maße auf und erfassen alle projektrelevanten Details."],
+  ["03", "Planung & Abstimmung", "Wir planen die passende Anlage und stimmen die Ausführung bei Bedarf mit dem zuständigen bevollmächtigten Bezirksschornsteinfeger ab."],
+  ["04", "Angebot & Vorbereitung", "Sie erhalten ein nachvollziehbares Angebot. Anschließend koordinieren wir Material, Termin und Baustellenablauf."],
+  ["05", "Montage", "Unsere eigenen Montageteams setzen die geplante Lösung fachgerecht, sauber und zuverlässig um."],
+  ["06", "Abnahme & Betreuung", "Wir begleiten den Abschluss des Projekts und bleiben auch nach der Montage Ihr Ansprechpartner."],
+];
+
+const officeTeam = [
+  {
+    name: "Johannes Stadter",
+    role: "Gründer · Geschäftsführender Gesellschafter · Kaminkehrermeister · Feuerungs- und Kaminbauer",
+    image: "/images/unternehmen/team/johannes-stadter.jpg",
+  },
+  {
+    name: "Martin Gschwendtner",
+    role: "Betriebsleiter · Projektleiter · Kaminkehrermeister",
+    image: "/images/unternehmen/team/martin-gschwendtner.jpg",
+  },
+  {
+    name: "Alexander Kreutzer",
+    role: "Projektleiter · Zentralheizungs- und Lüftungsbauer · Feuerungs- und Kaminbauer",
+    image: "/images/unternehmen/team/alexander-kreutzer.jpg",
+  },
+  {
+    name: "Alexander Jacobs",
+    role: "Projektleiter · Metallbauer Fachrichtung Konstruktionstechnik",
+    image: "/images/unternehmen/team/alexander-jacobs.jpg",
+  },
+  {
+    name: "Verena Hacker",
+    role: "Büroleitung",
+    image: "/images/unternehmen/team/verena-hacker.jpg",
+  },
+  {
+    name: "Anja Zwosta",
+    role: "Angebotsabteilung · Backoffice",
+    image: "/images/unternehmen/team/anja-zwosta.jpg",
+  },
+  {
+    name: "Kathrin Gschwendtner",
+    role: "Leitung Kundenbetreuung",
+    image: "/images/unternehmen/team/kathrin-gschwendtner.jpg",
+  },
+];
+
+const qualityItems = [
+  ["Meisterbetrieb", "Fachliche Verantwortung und fundierte Planung gehören bei uns zusammen."],
+  ["RAL-Gütezeichen", "Wir sind berechtigt, das RAL-Gütezeichen für Schornsteinsanierungen und Abgasanlagen zu führen."],
+  ["Fachverband Schornsteintechnik", "Als Mitglied verpflichten wir uns zu fachgerechter Ausführung und zur Beachtung der geltenden Bestimmungen."],
+  ["Eigene Mitarbeiter", "Planung, Organisation und Montage greifen bei uns direkt ineinander."],
+  ["Regelmäßige Schulungen", "Technik, Systeme und Vorschriften entwickeln sich weiter – unser Wissen ebenso."],
+  ["Hochwertige Systeme", "Wir setzen auf langlebige Materialien und bewährte Komponenten namhafter Hersteller."],
+];
+
+
+---
+
+<div class="company-page">
+  <section class="company-hero" aria-labelledby="company-hero-title">
+    <img
+      class="company-hero__image"
+      src="/images/unternehmen/hero-team.webp"
+      alt="Team von Stadter Kamintechnik vor dem Firmenstandort"
+      width="1920"
+      height="1080"
+      decoding="async"
+    />
+    <div class="company-hero__overlay"></div>
+    <div class="container company-hero__content">
+      <p class="company-eyebrow company-eyebrow--light">Stadter Kamintechnik · seit 2009</p>
+      <h1 id="company-hero-title">Schornsteine sind Vertrauenssache.</h1>
+      <p class="company-hero__intro">
+        Wir planen und montieren Schornstein- und Abgasanlagen für Wohnhäuser,
+        Gewerbe und Industrie – mit eigenen Montageteams, festen Ansprechpartnern
+        und dem Anspruch, dass jede Lösung dauerhaft funktioniert.
+      </p>
+      <a class="company-button company-button--light" href="#menschen">
+        Unternehmen kennenlernen <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="company-intro company-section" aria-labelledby="company-intro-title">
+    <div class="container company-intro__grid">
+      <div>
+        <p class="company-eyebrow">Unser Anspruch</p>
+        <h2 id="company-intro-title">Gute Arbeit beginnt lange vor der Montage.</h2>
+      </div>
+      <div class="company-intro__copy">
+        <p class="company-intro__lead">
+          Ein Schornstein ist kein Produkt von der Stange. Gebäude, Feuerstätte,
+          Nutzung und bauliche Situation stellen jedes Mal andere Anforderungen.
+        </p>
+        <p>
+          Deshalb verbinden wir persönliche Beratung mit sorgfältiger technischer
+          Planung und handwerklicher Ausführung. Wir suchen nicht die schnellste
+          Standardantwort, sondern eine Lösung, die zum Gebäude passt, sicher
+          betrieben werden kann und auch nach vielen Jahren zuverlässig funktioniert.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-strengths" aria-labelledby="company-strengths-title">
+    <div class="container">
+      <div class="company-heading company-heading--light">
+        <p class="company-eyebrow company-eyebrow--light">Was uns auszeichnet</p>
+        <h2 id="company-strengths-title">Verantwortung aus einer Hand.</h2>
+      </div>
+      <div class="company-strengths__grid">
+        {strengths.map((item) => (
+          <article class="company-strength-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="company-section company-process" aria-labelledby="company-process-title">
+    <div class="container">
+      <div class="company-heading">
+        <p class="company-eyebrow">So arbeiten wir</p>
+        <h2 id="company-process-title">Von der ersten Frage bis zur fertigen Anlage.</h2>
+        <p>
+          Hinter einer sauberen Montage steht ein klarer Ablauf. Planung,
+          Abstimmung und Ausführung greifen bei uns direkt ineinander.
+        </p>
+      </div>
+      <ol class="company-process__list">
+        {process.map(([number, title, text]) => (
+          <li>
+            <span class="company-process__number">{number}</span>
+            <div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="company-team-feature" id="menschen" aria-labelledby="company-team-title">
+    <div class="company-team-feature__image-wrap">
+      <img
+        src="/images/unternehmen/montageteam.webp"
+        alt="Montageteam von Stadter Kamintechnik bei der Arbeit"
+        width="1400"
+        height="1100"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <div class="company-team-feature__content">
+      <p class="company-eyebrow">Die Menschen hinter der Arbeit</p>
+      <h2 id="company-team-title">Ein Team. Ein gemeinsamer Anspruch.</h2>
+      <p class="company-team-feature__lead">
+        Projektleitung, Innendienst und Montage arbeiten bei uns eng zusammen.
+        So gehen Informationen nicht auf dem Weg von der Beratung zur Baustelle verloren.
+      </p>
+      <p>
+        Unsere Montageteams sind täglich in ganz Nordbayern unterwegs. Sie setzen
+        die geplanten Anlagen mit Erfahrung, Sorgfalt und professionellem Equipment um.
+        Einzelportraits brauchen sie dafür nicht – ihre Arbeit spricht für sie.
+      </p>
+      <blockquote>
+        „Wir bauen Schornsteine so, dass wir auch Jahre später noch gerne daran vorbeifahren.“
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="company-section company-office" aria-labelledby="company-office-title">
+    <div class="container">
+      <div class="company-heading company-heading--center">
+        <p class="company-eyebrow">Ihre Ansprechpartner</p>
+        <h2 id="company-office-title">Das Büroteam.</h2>
+        <p>
+          Diese Menschen beraten, planen, koordinieren und begleiten Ihr Projekt.
+        </p>
+      </div>
+      <div class="company-office__grid">
+        {officeTeam.map((person) => (
+          <article class="company-person-card">
+            <div class="company-person-card__image-wrap">
+              <img
+                src={person.image}
+                alt={`Portrait von ${person.name}`}
+                width="720"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="company-person-card__content">
+              <h3>{person.name}</h3>
+              <p>{person.role}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="company-behind" aria-labelledby="company-behind-title">
+    <div class="container">
+      <div class="company-heading company-heading--light">
+        <p class="company-eyebrow company-eyebrow--light">Ein Blick hinter die Kulissen</p>
+        <h2 id="company-behind-title">So sieht Kamintechnik bei Stadter aus.</h2>
+        <p>
+          Planung im Büro, Materialvorbereitung am Standort und präzise Arbeit auf
+          der Baustelle – viele einzelne Schritte ergeben am Ende eine sichere Anlage.
+        </p>
+      </div>
+      <div class="company-behind__grid">
+        <figure class="company-behind__item company-behind__item--large">
+          <img src="/images/unternehmen/einblicke-planung.webp" alt="Technische Planung einer Schornsteinanlage" width="1200" height="900" loading="lazy" decoding="async" />
+          <figcaption><span>Planung</span> Technische Details frühzeitig klären.</figcaption>
+        </figure>
+        <figure class="company-behind__item">
+          <img src="/images/unternehmen/einblicke-vorbereitung.webp" alt="Vorbereitung von Material und Werkzeug" width="900" height="900" loading="lazy" decoding="async" />
+          <figcaption><span>Vorbereitung</span> Material, Werkzeug und Ablauf passend zum Projekt.</figcaption>
+        </figure>
+        <figure class="company-behind__item">
+          <img src="/images/unternehmen/einblicke-montage.webp" alt="Fachgerechte Montage einer Schornsteinanlage" width="900" height="900" loading="lazy" decoding="async" />
+          <figcaption><span>Montage</span> Sauber, sicher und fachgerecht ausgeführt.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-section company-quality" aria-labelledby="company-quality-title">
+    <div class="container company-quality__layout">
+      <div class="company-quality__intro">
+        <p class="company-eyebrow">Qualität mit Substanz</p>
+        <h2 id="company-quality-title">Nicht nur behauptet. Im Alltag verankert.</h2>
+        <p>
+          Qualität entsteht durch Wissen, Verantwortung und nachvollziehbare Abläufe.
+          Verbandsmitgliedschaft und RAL-Gütezeichen ergänzen das, was unsere
+          Mitarbeiter jeden Tag praktisch umsetzen.
+        </p>
+      </div>
+      <div class="company-quality__grid">
+        {qualityItems.map(([title, text], index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="company-region" aria-labelledby="company-region-title">
+    <div class="container company-region__grid">
+      <div class="company-region__content">
+        <p class="company-eyebrow company-eyebrow--light">Regional verwurzelt · bundesweit im Einsatz</p>
+        <h2 id="company-region-title">Privat in Nordbayern. Gewerbe und Industrie deutschlandweit.</h2>
+        <p>
+          Private Bauherren betreuen wir in unserem Kerngebiet Nordbayern. So bleiben
+          Anfahrt, Beratung und Betreuung persönlich und wirtschaftlich sinnvoll.
+        </p>
+        <p>
+          Für gewerbliche und industrielle Abgasanlagen sind unsere Projektteams
+          in ganz Deutschland im Einsatz – von der technischen Planung bis zur Montage.
+        </p>
+        <div class="company-map__legend" aria-label="Legende der Einsatzgebiete">
+          <span><i class="company-map__legend-dot company-map__legend-dot--private"></i>Private Projekte · Nordbayern</span>
+          <span><i class="company-map__legend-dot company-map__legend-dot--business"></i>Gewerbe &amp; Industrie · deutschlandweit</span>
+        </div>
+      </div>
+      <div class="company-map" role="img" aria-label="Deutschlandkarte: private Projekte in Nordbayern, Gewerbe- und Industrieprojekte deutschlandweit">
+        <div class="company-map__visual">
+          <img
+            src="/images/unternehmen/deutschland-einsatzgebiet.webp"
+            alt="Deutschlandkarte mit markiertem Einsatzgebiet Nordbayern"
+            width="929"
+            height="1137"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="company-map__country-label">DEUTSCHLANDWEIT</span>
+          <span class="company-map__region-label">NORDBAYERN</span>
+          <span class="company-map__hq-marker" aria-hidden="true"></span>
+          <span class="company-map__hq-label">Kasendorf</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-history company-section" aria-labelledby="company-history-title">
+    <div class="container company-history__grid">
+      <div>
+        <p class="company-eyebrow">Unsere Entwicklung</p>
+        <h2 id="company-history-title">Aus dem Handwerk gewachsen.</h2>
+      </div>
+      <div class="company-history__timeline">
+        <article>
+          <span>Von der Pike an</span>
+          <h3>Kaminkehrerhandwerk als Grundlage</h3>
+          <p>
+            Johannes Stadter lernte den fachmännischen Umgang mit Schornsteinen
+            früh kennen und absolvierte später die Ausbildung bis zum Kaminkehrermeister.
+          </p>
+        </article>
+        <article>
+          <span>2009</span>
+          <h3>Gründung des Unternehmens</h3>
+          <p>
+            Mit der Gründung begann der konsequente Aufbau eines spezialisierten
+            Betriebs für Kamin- und Abgastechnik.
+          </p>
+        </article>
+        <article>
+          <span>2018</span>
+          <h3>Stadter Kamintechnik in Kasendorf</h3>
+          <p>
+            Umfirmierung zur Stadter Kamintechnik GmbH und Einzug in den heutigen
+            Firmenstandort in der Industriestraße.
+          </p>
+        </article>
+        <article>
+          <span>Heute</span>
+          <h3>Privat, Gewerbe und Industrie</h3>
+          <p>
+            Ein Team aus Projektleitung, Innendienst und eigenen Montageteams
+            realisiert Schornstein- und Abgasanlagen in ganz Nordbayern.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-closing" aria-labelledby="company-closing-title">
+    <img src="/images/unternehmen/abschluss-team.webp" alt="Team von Stadter Kamintechnik" width="1920" height="900" loading="lazy" decoding="async" />
+    <div class="company-closing__overlay"></div>
+    <div class="container company-closing__content">
+      <p class="company-eyebrow company-eyebrow--light">Stadter Kamintechnik</p>
+      <h2 id="company-closing-title">Persönlich geplant. Sauber gebaut. Dauerhaft funktional.</h2>
+      <a class="company-button company-button--primary" href="/projekt-starten/">
+        Projekt anfragen <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</div>

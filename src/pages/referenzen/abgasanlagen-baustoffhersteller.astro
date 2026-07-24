@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectVideo from "../../components/reference/ProjectVideo.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Die komplette Abgasanlage erneuern – bei minimalem Produktionsausfall.",
+    paragraphs: [
+      "Für einen großen Baustoffhersteller in Niederwinkling mussten die bestehenden Abgasanlagen vollständig ersetzt werden. Die intensive Belastung im Produktionsbetrieb hatte eine umfassende Erneuerung erforderlich gemacht.",
+      "Da die Abgasanlage unmittelbar für den Produktionsprozess benötigt wird, war ein längerer Stillstand keine Option. Die zentrale Vorgabe lautete deshalb: vollständiger Austausch mit nur einem Tag Produktionsausfall.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Alles vorbereiten, bevor die Produktion stoppt.",
+    paragraphs: [
+      "Die neue Anlage wurde frühzeitig hinsichtlich Auslegung, Leistung, Fertigung und Montageablauf geplant. Sämtliche Bauteile und Arbeitsschritte wurden so vorbereitet, dass während des eigentlichen Produktionsstillstands ausschließlich die zwingend notwendigen Rückbau-, Montage- und Anschlussarbeiten ausgeführt werden mussten.",
+      "Der Ablauf wurde bis ins Detail aufeinander abgestimmt. Zwei Autokrane ermöglichten den kontrollierten Rückbau der alten Anlage in möglichst wenigen Teilen und die unmittelbar anschließende Montage der neuen Komponenten.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Rückbau und kompletter Austausch innerhalb eines exakt getakteten Zeitfensters.",
+    paragraphs: [
+      "Nach dem Stillsetzen der Produktion wurde die bestehende Kaminanlage mit zwei Autokranen zurückgebaut. Unmittelbar danach erfolgte die Montage der neuen, 20 Meter hohen Abluftanlage.",
+      "Die neue Anlage besteht aus einem Stahlkamin, einer Deflektorhaube und einem Kulissenschalldämpfer. Durch die umfassende Vorfertigung und den präzise koordinierten Montageablauf konnte die Anlage nach nur einem Tag Produktionsstillstand wieder in Betrieb genommen werden.",
+    ],
+    points: [
+      "Kompletter Austausch der bestehenden Abgasanlagen",
+      "20 Meter hohe neue Abluftanlage",
+      "Stahlkamin mit Deflektorhaube",
+      "Integrierter Kulissenschalldämpfer",
+      "Rückbau und Montage mit zwei Autokranen",
+      "Nur ein Tag Produktionsausfall",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Nach einem Tag wieder produktionsbereit.",
+    paragraphs: [
+      "Die vollständige Erneuerung der Abgasanlage wurde im vorgesehenen Zeitfenster abgeschlossen. Bereits nach einem einzigen Tag Produktionsstillstand konnte die Anlage wieder in Betrieb gehen.",
+      "Das Projekt zeigt, wie entscheidend technische Planung, Vorfertigung und eine minutiös abgestimmte Montage für Industrieprojekte sind, bei denen jede zusätzliche Stillstandsstunde direkte wirtschaftliche Folgen hat.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Standort", value: "Niederwinkling" },
+  { label: "Einsatzbereich", value: "Baustoffindustrie" },
+  { label: "Leistung", value: "Kompletter Austausch der Abgasanlagen" },
+  { label: "Anlagenhöhe", value: "20 Meter" },
+  { label: "Ausführung", value: "Stahlkamin mit Deflektorhaube" },
+  { label: "Schallschutz", value: "Kulissenschalldämpfer" },
+  { label: "Montage", value: "Rückbau und Aufrichtung mit zwei Autokranen" },
+  { label: "Produktionsausfall", value: "Nur 1 Tag" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/abgasanlagen-baustoffhersteller/bestandsanlage.jpg",
+    alt: "Bestehende Abgasanlage des Baustoffherstellers vor dem vollständigen Austausch",
+    caption: "Die bestehende Anlage musste vollständig zurückgebaut und ersetzt werden.",
+  },
+  {
+    src: "/images/referenzen/abgasanlagen-baustoffhersteller/rueckbau-autokrane.jpg",
+    alt: "Rückbau der alten Industrie-Abgasanlage mit zwei Autokranen",
+    caption: "Der Rückbau erfolgte mit zwei Autokranen in möglichst wenigen Teilen.",
+  },
+  {
+    src: "/images/referenzen/abgasanlagen-baustoffhersteller/montage-stahlkamin.jpg",
+    alt: "Montage des neuen Stahlkamins am Produktionsstandort in Niederwinkling",
+    caption: "Die vorgefertigten Komponenten wurden unmittelbar nach dem Rückbau montiert.",
+  },
+  {
+    src: "/images/referenzen/abgasanlagen-baustoffhersteller/abgasanlage-fertig.jpg",
+    alt: "Fertig montierte 20 Meter hohe Abgasanlage mit Deflektorhaube",
+    caption: "Die neue 20 Meter hohe Abluftanlage mit Stahlkamin, Deflektorhaube und Schalldämpfer.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgasanlagen komplett erneuert | Baustoffindustrie"
+  description="Kompletter Austausch einer 20 Meter hohen Industrie-Abgasanlage in Niederwinkling. Stahlkamin, Deflektorhaube und Kulissenschalldämpfer – bei nur einem Tag Produktionsausfall."
+>
+  <ProjectHero
+    category="Industrie"
+    title="Erneuerung der kompletten Abgasanlagen eines Baustoffherstellers"
+    location="Niederwinkling"
+    intro="Vollständiger Austausch einer 20 Meter hohen Abluftanlage – minutiös vorbereitet und innerhalb eines einzigen Tages Produktionsstillstand umgesetzt."
+    image="/images/referenzen/abgasanlagen-baustoffhersteller/abgasanlage-fertig.jpg"
+    imageAlt="Neue 20 Meter hohe Industrie-Abgasanlage eines Baustoffherstellers in Niederwinkling"
+  />
+
+  <ProjectVideo
+    title="Projektfilm"
+    text="Der Film zeigt den Ablauf vom Rückbau der Bestandsanlage bis zur Montage des neuen Stahlkamins. Die gesamte Umstellung war so vorbereitet, dass die Produktion nach nur einem Tag Stillstand wieder aufgenommen werden konnte."
+    youtubeId="yCcn0XsDbno"
+    facts={[
+      "Kompletter Austausch der Abgasanlage",
+      "Nur ein Tag Produktionsstillstand",
+      "Direkte Wiederinbetriebnahme nach der Montage",
+    ]}
+  />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Ihre Produktion darf nur kurz stillstehen?"
+    text="Wir planen Austausch, Vorfertigung, Rückbau und Montage als abgestimmten Gesamtprozess – mit dem Ziel, Stillstandszeiten auf das technisch notwendige Minimum zu reduzieren."
+    buttonText="Industrieprojekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieanlage"
+  />
+</BaseLayout>

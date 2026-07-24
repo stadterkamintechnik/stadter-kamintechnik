@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectVideo from "../../components/reference/ProjectVideo.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Produktionskapazitäten erweitern – ohne den laufenden Betrieb zu unterbrechen.",
+    paragraphs: [
+      "Für die Tenowo GmbH in Hof sollte im Zuge einer Werkserweiterung eine neue industrielle Abgasanlage entstehen. Neben einem neuen Industriekamin musste dafür eine komplexe Abgasführung in die vorhandene Produktionsumgebung integriert werden.",
+      "Die zentrale Anforderung bestand darin, die zusätzlichen Produktionskapazitäten sicher anzubinden und den laufenden Betrieb während der Umsetzung nicht zu beeinträchtigen.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Ein durchdachtes Integrationskonzept für die bestehende Produktion.",
+    paragraphs: [
+      "Gemeinsam mit der hauseigenen technischen Produktionsplanung der Tenowo GmbH entstand ein softwarebasiert geplantes Integrationskonzept für Kamin, Abgasleitung und Befestigungssysteme.",
+      "Bereits in der Planungsphase wurden Montageabläufe, Leitungsführung und Anschlusspunkte so aufeinander abgestimmt, dass die Arbeiten bei laufender Produktion ausgeführt werden konnten.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "26 Meter Industriekamin und eine sicher geführte Abgasleitung auf dem Dach.",
+    paragraphs: [
+      "Stadter Kamintechnik errichtete einen 26 Meter hohen Industriekamin und installierte die zugehörige, über das Dach geführte Abgasleitung. Die Befestigung wurde für hohe Betriebssicherheit und die dauerhafte Beanspruchung im industriellen Umfeld ausgelegt.",
+      "Trotz klirrender Kälte konnte das Projekt dank präziser Vorbereitung, abgestimmter Arbeitsabläufe und vorausschauender Planung termingerecht umgesetzt werden.",
+    ],
+    points: [
+      "26 Meter hoher Industriekamin",
+      "Komplexe Abgasführung über das Dach",
+      "Softwarebasierte Planung und Integration",
+      "Ausführung während des laufenden Betriebs",
+      "Befestigung für höchste Betriebssicherheit",
+      "Termingerechte Montage trotz winterlicher Bedingungen",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Prozesssichere Abgasableitung für die erweiterte Produktion.",
+    paragraphs: [
+      "Die neue Anlage ermöglicht einen umweltgerechten und energieeffizienten Betrieb. Hochleistungswerkstoffe, normgerechte Ausführung und eine wirksame Schallisolierung sorgen für eine dauerhaft zuverlässige Abgasableitung.",
+      "Damit sind die erweiterten Produktionsprozesse am Standort Hof für viele Jahre technisch abgesichert. Das Projekt ist zugleich Teil einer langfristigen Zusammenarbeit, in deren Rahmen bereits mehrere Werkserweiterungen und Sanierungen realisiert wurden.",
+    ],
+  },
+];
+
+const facts = [
+  {
+    label: "Standort",
+    value: "Hof",
+  },
+  {
+    label: "Kunde",
+    value: "Tenowo GmbH",
+  },
+  {
+    label: "Branche",
+    value: "Automobilzulieferindustrie",
+  },
+  {
+    label: "Projekt",
+    value: "Werkserweiterung und neue Abgasanlage",
+  },
+  {
+    label: "Industriekamin",
+    value: "26 Meter Höhe",
+  },
+  {
+    label: "Abgasführung",
+    value: "Über das Dach geführte Abgasleitung",
+  },
+  {
+    label: "Betriebsplanung",
+    value: "Montage im laufenden Produktionsbetrieb",
+  },
+  {
+    label: "Leistungsumfang",
+    value: "Planung, Fertigung, Montage und Integration",
+  },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/automobilzulieferer-hof/industriekamin-gesamtansicht.jpg",
+    alt: "26 Meter hoher Industriekamin bei einem Automobilzulieferer in Hof",
+    caption:
+      "Der neue 26 Meter hohe Industriekamin wurde in die bestehende Produktionsumgebung integriert.",
+  },
+  {
+    src: "/images/referenzen/automobilzulieferer-hof/kaminaufrichtung.jpg",
+    alt: "Aufrichtung des neuen Industriekamins am Produktionsstandort in Hof",
+    caption:
+      "Die Kaminaufrichtung erfolgte nach einem exakt abgestimmten Montageplan.",
+  },
+  {
+    src: "/images/referenzen/automobilzulieferer-hof/abgasleitung-dach.jpg",
+    alt: "Über das Hallendach geführte industrielle Abgasleitung",
+    caption:
+      "Die komplexe Abgasleitung wurde sicher über das Dach bis zum neuen Industriekamin geführt.",
+  },
+  {
+    src: "/images/referenzen/automobilzulieferer-hof/abgasanlage-fertig.jpg",
+    alt: "Fertiggestellte industrielle Abgasanlage der Tenowo GmbH in Hof",
+    caption:
+      "Die fertige Anlage sichert die ordnungsgemäße Abgasableitung der erweiterten Produktion.",
+  },
+];
+---
+
+<BaseLayout
+  title="Industriekamin und Abgasanlage für Automobilzulieferer | Stadter Kamintechnik"
+  description="Industrieprojekt in Hof: 26 Meter hoher Industriekamin und komplexe Abgasführung für die Tenowo GmbH – geplant und montiert während des laufenden Produktionsbetriebs."
+>
+  <ProjectHero
+    category="Industrie"
+    title="Neue Abgasanlage für einen Hofer Automobilzulieferer"
+    location="Hof"
+    intro="Ein 26 Meter hoher Industriekamin und eine komplexe Abgasführung erweitern die Produktionskapazitäten der Tenowo GmbH – präzise geplant und während des laufenden Betriebs umgesetzt."
+    image="/images/referenzen/automobilzulieferer-hof/gesamtansicht.jpg"
+    imageAlt="Neue Industrie-Abgasanlage mit 26 Meter hohem Kamin bei der Tenowo GmbH in Hof"
+  />
+
+  <ProjectVideo
+    title="Projektfilm"
+    text="Der Film zeigt die Planung, Montage und Aufrichtung des 26 Meter hohen Industriekamins sowie die Integration der neuen Abgasführung in den laufenden Produktionsbetrieb."
+    youtubeId="uX6AAqBHiJ0"
+    facts={[
+      "26 Meter hoher Industriekamin",
+      "Montage im laufenden Betrieb",
+      "Komplexe Abgasführung über das Dach",
+    ]}
+  />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Sie erweitern Ihre industrielle Produktion?"
+    text="Wir planen und realisieren Industriekamine und komplexe Abgasführungen als abgestimmtes Gesamtsystem – auch bei laufender Produktion und unter anspruchsvollen Einbaubedingungen."
+    buttonText="Industrieprojekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieanlage"
+  />
+</BaseLayout>

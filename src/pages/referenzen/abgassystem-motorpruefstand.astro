@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Die Abgasabsaugung eines Motorprüfstands sicher regeln.",
+    paragraphs: [
+      "Für einen Motorprüfstand musste eine vollständige Abgasführung geschaffen werden, die die entstehenden Abgase sicher aufnimmt und zuverlässig ableitet.",
+      "Besondere Anforderungen ergaben sich aus der offenen Bauweise des Prüfstands, den mehreren Prüfzellen sowie der Führung der Anlage durch verschiedene Gebäudeteile.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Freistehende Kaminanlage im Gebäude mit abgestimmtem Brandschutzkonzept.",
+    paragraphs: [
+      "Konzipiert wurde eine freistehende Kaminanlage innerhalb des Gebäudes. Für die offene Bauweise des Motorprüfstands und die Führung durch mehrere Gebäudeteile wurde zugleich ein passendes Brandschutzkonzept entwickelt.",
+      "Die gesamte Anlage wurde so ausgelegt, dass Abgasführung, Druckregelung und Schallschutz als funktionierendes Gesamtsystem zusammenarbeiten.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Abgasgebläse, Schalldämpfer und geregelte Ansaugstellen als Gesamtsystem.",
+    paragraphs: [
+      "Umgesetzt wurde eine freistehende Kaminanlage mit Brandschutzummauerung im Gebäude und einem Abgasgebläse. Dadurch werden die Abgase sicher und zuverlässig in die Kaminanlage geführt.",
+      "Ein Kanalschalldämpfer reduziert die entstehenden Geräusche. Für die verschiedenen Ansaugstellen der mehreren Prüfzellen wurden Abgassperrklappen installiert, die einen zuverlässigen Betrieb und die erforderliche Druckregelung ermöglichen.",
+    ],
+    points: [
+      "Freistehende Kaminanlage innerhalb des Gebäudes",
+      "Brandschutzummauerung für die offene Bauweise",
+      "Abgasgebläse zur sicheren Abgasführung",
+      "Kanalschalldämpfer zur Geräuschreduzierung",
+      "Mehrere Prüfzellen und Ansaugstellen",
+      "Abgassperrklappen zur Druckregelung",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Planung, Dimensionierung und Ausführung aus einer Hand.",
+    paragraphs: [
+      "Die Installation der Abgasanlage konnte dank der umfassenden Konzeption und der abgestimmten technischen Auslegung reibungslos durchgeführt werden.",
+      "Mit Planung, Dimensionierung und Ausführung aus einer Hand erhielt der Kunde eine effiziente und schnell umsetzbare Lösung für die sichere Abgasführung seines Motorprüfstands.",
+    ],
+  },
+];
+
+const facts = [
+  {
+    label: "Einsatzbereich",
+    value: "Motorprüfstand",
+  },
+  {
+    label: "Anlage",
+    value: "Freistehende Kaminanlage im Gebäude",
+  },
+  {
+    label: "Brandschutz",
+    value: "Brandschutzummauerung und abgestimmtes Brandschutzkonzept",
+  },
+  {
+    label: "Abgasführung",
+    value: "Abgasgebläse",
+  },
+  {
+    label: "Schallschutz",
+    value: "Kanalschalldämpfer",
+  },
+  {
+    label: "Prüfstand",
+    value: "Mehrere Prüfzellen",
+  },
+  {
+    label: "Regelung",
+    value: "Abgassperrklappen für unterschiedliche Ansaugstellen",
+  },
+  {
+    label: "Leistungsumfang",
+    value: "Planung, Dimensionierung und Ausführung",
+  },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/motorpruefstand/motorpruefstand-abgasanlage.jpg",
+    alt: "Abgassystem eines Motorprüfstands mit freistehender Kaminanlage im Gebäude",
+    caption:
+      "Die freistehende Kaminanlage wurde innerhalb des Gebäudes mit einer Brandschutzummauerung ausgeführt.",
+  },
+  {
+    src: "/images/referenzen/motorpruefstand/abgasgeblaese.jpg",
+    alt: "Abgasgebläse der Abgasanlage für einen Motorprüfstand",
+    caption:
+      "Das Abgasgebläse führt die Abgase sicher und zuverlässig in die Kaminanlage.",
+  },
+  {
+    src: "/images/referenzen/motorpruefstand/absperrklappe.jpg",
+    alt: "Abgasgebläse im Abgassystem eines Motorprüfstands",
+    caption:
+      "Abgassperrklappen ermöglichen die Druckregelung an den unterschiedlichen Ansaugstellen der Prüfzellen.",
+  },
+  {
+    src: "/images/referenzen/motorpruefstand/montagekran.jpg",
+    alt: "Montage der Abgasanlage für einen Motorprüfstand mit Kran",
+    caption:
+      "Montage der Abgasanlage für einen Motorprüfstand mit Kran.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgassystem für einen Motorprüfstand | Stadter Kamintechnik"
+  description="Freistehende Kaminanlage mit Brandschutzummauerung, Abgasgebläse, Kanalschalldämpfer und geregelten Ansaugstellen für einen Motorprüfstand."
+>
+  <ProjectHero
+    category="Industrie"
+    title="Abgassystem für einen Motorprüfstand"
+    location="Industrieanlage"
+    intro="Eine freistehende Kaminanlage mit Brandschutzummauerung, Abgasgebläse, Kanalschalldämpfer und geregelten Ansaugstellen für mehrere Prüfzellen."
+    image="/images/referenzen/motorpruefstand/motorpruefstand-abgasanlage.jpg"
+    imageAlt="Abgassystem eines Motorprüfstands mit freistehender Kaminanlage im Gebäude"
+  />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Sie planen ein Abgassystem für einen Prüfstand?"
+    text="Wir planen und realisieren technisch anspruchsvolle Abgassysteme für Prüfstände und industrielle Sonderanwendungen – einschließlich Druckregelung, Schallschutz und Brandschutzkonzept."
+    buttonText="Industrieprojekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieanlage"
+  />
+</BaseLayout>

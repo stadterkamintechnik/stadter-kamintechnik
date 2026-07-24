@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectVideo from "../../components/reference/ProjectVideo.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Einen historischen Mauerwerkskamin für moderne Wärmeerzeuger nutzbar machen.",
+    paragraphs: [
+      "Auf dem Gelände der ehemaligen Textilfabrik Benker in Marktredwitz sollte ein über 40 Meter hoher, denkmalgeschützter Mauerwerkskamin wieder in Betrieb genommen werden.",
+      "Dafür musste der historische Kamin mit einem neuen, technisch passenden Abgassystem aus Edelstahl ausgerüstet werden, ohne seine prägende Außenoptik zu verändern.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Moderne Nahwärmeversorgung im historischen Bestand.",
+    paragraphs: [
+      "Im neu entstehenden Stadtquartier am Auenpark versorgt eine Nahwärmeeinrichtung 47 Wohnungen und weitere Gebäude. Der vorhandene Kamin sollte nach seiner baulichen Sanierung als Abgassystem für moderne Wärmeerzeuger dienen.",
+      "Die Abgasführung musste für Gasbrennwert- und Pelletkessel sowie ein Blockheizkraftwerk ausgelegt werden. Gleichzeitig waren Denkmalschutz, Transport, Vormontage und die Montage in großer Höhe exakt aufeinander abzustimmen.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Drei Edelstahl-Abgasrohre, druckdicht verschweißt und in zwei Teilen vormontiert.",
+    paragraphs: [
+      "In den historischen Mauerwerkskamin wurden drei Edelstahlrohre eingebaut: zwei Leitungen mit DN 350 sowie eine Leitung mit DN 130. Alle Rohre wurden verschweißt und druckdicht ausgeführt.",
+      "Die DN-130-Leitung erhielt zusätzlich eine 30 Millimeter starke mineralische Wärmedämmung für die Nutzung mit festen Brennstoffen wie Holz oder Pellets. Um den Straßentransport zu ermöglichen, wurden die Rohrstränge in zwei Teilen geplant und angeliefert. Die Montage erfolgte in rund 60 Metern Höhe.",
+    ],
+    points: [
+      "Drei Edelstahl-Abgasrohre im historischen Mauerwerkskamin",
+      "2 × DN 350 und 1 × DN 130",
+      "Verschweißte und druckdichte Ausführung",
+      "30 mm mineralische Wärmedämmung für die Festbrennstoffleitung",
+      "Planung und Anlieferung in zwei Segmenten",
+      "Montage in rund 60 Metern Höhe",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Außen historisch erhalten, innen technisch auf dem neuesten Stand.",
+    paragraphs: [
+      "Die Außenansicht des denkmalgeschützten Mauerwerkskamins blieb vollständig erhalten. Im Inneren übernimmt nun ein modernes Abgassystem die sichere Abgasführung für die neue Nahwärmeeinrichtung.",
+      "Nach langjähriger gemeinsamer Planung konnte die eigentliche Umsetzung an nur einem Tag erfolgen. Kleinere Nacharbeiten wurden am Folgetag abgeschlossen.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Standort", value: "Marktredwitz" },
+  { label: "Einsatzbereich", value: "Nahwärmeversorgung" },
+  { label: "Bestand", value: "Denkmalgeschützter Mauerwerkskamin" },
+  { label: "Kaminhöhe", value: "Über 40 Meter" },
+  { label: "Abgasrohre", value: "2 × DN 350 und 1 × DN 130" },
+  { label: "Ausführung", value: "Verschweißt und druckdicht" },
+  { label: "Besonderheit", value: "Montage in rund 60 Metern Höhe" },
+  { label: "Umsetzung", value: "1 Tag plus Nacharbeiten am Folgetag" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/denkmalgeschuetzter-mauerwerkskamin/mauerwerkskamin-marktredwitz.jpg",
+    alt: "Denkmalgeschützter Mauerwerkskamin in Marktredwitz",
+    caption: "Der historische Mauerwerkskamin prägt das Gelände der ehemaligen Textilfabrik Benker.",
+  },
+  {
+    src: "/images/referenzen/denkmalgeschuetzter-mauerwerkskamin/edelstahlrohre-vormontage.jpg",
+    alt: "Vormontierte Edelstahl-Abgasrohre für den denkmalgeschützten Kamin",
+    caption: "Die Rohrstränge wurden für Transport und Montage in zwei Segmenten vorbereitet.",
+  },
+  {
+    src: "/images/referenzen/denkmalgeschuetzter-mauerwerkskamin/kranmontage.jpg",
+    alt: "Kranmontage der Edelstahl-Abgasrohre am historischen Mauerwerkskamin",
+    caption: "Die Montage der vorbereiteten Abgasrohre erfolgte in rund 60 Metern Höhe.",
+  },
+  {
+    src: "/images/referenzen/denkmalgeschuetzter-mauerwerkskamin/abgassystem-fertig.jpg",
+    alt: "Fertig installiertes Abgassystem im denkmalgeschützten Mauerwerkskamin",
+    caption: "Außen blieb das historische Erscheinungsbild erhalten, innen arbeitet ein modernes Abgassystem.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgassystem im denkmalgeschützten Mauerwerkskamin | Stadter Kamintechnik"
+  description="Neues Edelstahl-Abgassystem für einen über 40 Meter hohen, denkmalgeschützten Mauerwerkskamin in Marktredwitz – mit drei druckdicht verschweißten Abgasrohren."
+>
+  <ProjectHero
+    category="Industrie"
+    title="Neues Abgassystem für einen denkmalgeschützten Mauerwerkskamin"
+    location="Marktredwitz"
+    intro="Ein historischer Kamin wurde für eine moderne Nahwärmeversorgung nutzbar gemacht – mit drei Edelstahl-Abgasrohren, präziser Vorplanung und Montage in großer Höhe."
+    image="/images/referenzen/denkmalgeschuetzter-mauerwerkskamin/mauerwerkskamin-marktredwitz.jpg"
+    imageAlt="Denkmalgeschützter Mauerwerkskamin mit neuem Abgassystem in Marktredwitz"
+  />
+
+  <ProjectVideo
+    title="Projektfilm"
+    text="Der Film zeigt die Anlieferung, das Einheben und die Montage der vorbereiteten Edelstahl-Abgasrohre im denkmalgeschützten Mauerwerkskamin in Marktredwitz."
+    youtubeId="2sF0E_xRtNA"
+    facts={[
+      "Denkmalgeschützter Mauerwerkskamin",
+      "Montage in rund 60 Metern Höhe",
+      "Umsetzung an nur einem Tag",
+    ]}
+  />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Sie möchten einen Bestandskamin technisch neu nutzen?"
+    text="Wir planen und realisieren maßgeschneiderte Abgassysteme für historische, industrielle und gewerbliche Bestandskamine – einschließlich Auslegung, Vorfertigung und Montage."
+    buttonText="Industrieprojekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieanlage"
+  />
+</BaseLayout>

@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectVideo from "../../components/reference/ProjectVideo.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Einen baufälligen Mauerwerkskamin sicher ersetzen.",
+    paragraphs: [
+      "Für eine Dampfkesselanlage in Kulmbach musste ein alter, baufälliger Mauerwerkskamin zurückgebaut und durch eine neue Kaminanlage ersetzt werden.",
+      "Neben der technischen Auslegung der neuen Anlage war besonders wichtig, den Rückbau und den späteren Umschluss so zu planen, dass der laufende Betrieb möglichst wenig beeinträchtigt wird.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Eine freistehende Kaminanlage für 10 Megawatt Leistung.",
+    paragraphs: [
+      "Die neue Kaminanlage wurde auf eine Leistung von 10 Megawatt dimensioniert und passend zu den Anforderungen der vorhandenen Dampfkesselanlage ausgelegt.",
+      "Parallel dazu wurde ein sicherer Ablauf für den Rückbau des alten Mauerwerkskamins entwickelt. Ziel war eine technisch klare Reihenfolge mit möglichst geringem Risiko für Produktion und umliegende Gebäude.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Neue Kaminanlage aufrichten, Kessel umschließen, Altbestand rückbauen.",
+    paragraphs: [
+      "Stadter Kamintechnik realisierte eine komplett neue freistehende Kaminanlage aus einer Hand. Um einen Produktionsausfall zu vermeiden, wurde der Umschluss des Kessels gezielt während des Betriebsurlaubs durchgeführt.",
+      "Nach der erfolgreichen Inbetriebnahme der neuen Anlage konnte der baufällige Mauerwerkskamin kontrolliert und ohne Schäden oder Beeinträchtigungen an den umliegenden Gebäuden zurückgebaut werden.",
+    ],
+    points: [
+      "Neue freistehende Kaminanlage",
+      "Dimensionierung für eine 10-MW-Dampfkesselanlage",
+      "Geplanter Kesselumschluss im Betriebsurlaub",
+      "Vermeidung eines Produktionsausfalls",
+      "Sicherer Rückbau des alten Mauerwerkskamins",
+      "Ausführung ohne Schäden an den umliegenden Gebäuden",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Kompakter, moderner und für die Zukunft ausgelegt.",
+    paragraphs: [
+      "Durch die passende Dimensionierung, hochwertige Materialien und moderne Verfahrenstechnik ist der Betrieb im Bereich der Abgasführung langfristig neu aufgestellt.",
+      "Die neue Kaminanlage ist deutlich kleiner als der frühere gemauerte Kamin und erfüllt dennoch die technischen Anforderungen der Dampfkesselanlage.",
+    ],
+  },
+];
+
+const facts = [
+  {
+    label: "Standort",
+    value: "Kulmbach",
+  },
+  {
+    label: "Einsatzbereich",
+    value: "Industrie",
+  },
+  {
+    label: "Anlage",
+    value: "Dampfkesselanlage",
+  },
+  {
+    label: "Leistung",
+    value: "10 MW",
+  },
+  {
+    label: "Neue Anlage",
+    value: "Freistehende Kaminanlage",
+  },
+  {
+    label: "Bestand",
+    value: "Baufälliger Mauerwerkskamin",
+  },
+  {
+    label: "Betriebsplanung",
+    value: "Kesselumschluss im Betriebsurlaub",
+  },
+  {
+    label: "Projektumfang",
+    value: "Planung, Aufrichtung, Umschluss und Rückbau",
+  },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/kaminaufrichtung-kulmbach/kaminanlage-neu.jpg",
+    alt: "Neue freistehende Kaminanlage für eine Dampfkesselanlage in Kulmbach",
+    caption:
+      "Die neue freistehende Kaminanlage wurde auf die Anforderungen der 10-MW-Dampfkesselanlage ausgelegt.",
+  },
+  {
+    src: "/images/referenzen/kaminaufrichtung-kulmbach/kaminaufrichtung.jpg",
+    alt: "Aufrichtung einer freistehenden Industriekaminanlage in Kulmbach",
+    caption:
+      "Die neue Kaminanlage wurde vor dem Umschluss des Kessels vollständig aufgerichtet.",
+  },
+  {
+    src: "/images/referenzen/kaminaufrichtung-kulmbach/mauerwerkskamin-alt.jpg",
+    alt: "Alter baufälliger Mauerwerkskamin vor dem Rückbau",
+    caption:
+      "Der baufällige Bestandskamin musste nach der Inbetriebnahme der neuen Anlage kontrolliert zurückgebaut werden.",
+  },
+  {
+    src: "/images/referenzen/kaminaufrichtung-kulmbach/alt-und-neu.jpg",
+    alt: "Alter Mauerwerkskamin und neue freistehende Kaminanlage im Vergleich",
+    caption:
+      "Die moderne Anlage ist trotz gleicher Aufgabe deutlich kompakter als der frühere gemauerte Kamin.",
+  },
+];
+---
+
+<BaseLayout
+  title="Freistehende Kaminanlage für 10-MW-Dampfkessel | Stadter Kamintechnik"
+  description="Industrieprojekt in Kulmbach: neue freistehende Kaminanlage für eine 10-MW-Dampfkesselanlage, geplanter Kesselumschluss und sicherer Rückbau des alten Mauerwerkskamins."
+>
+  <ProjectHero
+    category="Industrie"
+    title="Neue freistehende Kaminanlage für eine 10-MW-Dampfkesselanlage"
+    location="Kulmbach"
+    intro="Ein baufälliger Mauerwerkskamin wurde durch eine moderne, deutlich kompaktere Kaminanlage ersetzt – inklusive Dimensionierung, Aufrichtung, Kesselumschluss und kontrolliertem Rückbau des Bestands."
+    image="/images/referenzen/kaminaufrichtung-kulmbach/kaminanlage-neu.jpg"
+    imageAlt="Neue freistehende Kaminanlage für eine industrielle Dampfkesselanlage in Kulmbach"
+  />
+
+  <ProjectVideo
+    title="Projektfilm"
+    text="Der Film zeigt die Aufrichtung der neuen freistehenden Kaminanlage, den Kesselumschluss während des Betriebsurlaubs sowie den kontrollierten Rückbau des baufälligen Mauerwerkskamins."
+    youtubeId="mLV2DQTYPDo"
+    facts={[
+      "10-MW-Dampfkesselanlage",
+      "Kesselumschluss im Betriebsurlaub",
+      "Kontrollierter Rückbau des Bestandskamins",
+    ]}
+  />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Sie planen eine neue industrielle Kaminanlage?"
+    text="Wir dimensionieren, planen und montieren freistehende Kaminanlagen für Dampfkessel, Heizwerke und industrielle Feuerungsanlagen – einschließlich Umschluss und Rückbau bestehender Systeme."
+    buttonText="Industrieprojekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieanlage"
+  />
+</BaseLayout>
