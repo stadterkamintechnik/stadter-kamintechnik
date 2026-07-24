@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
 import ProjectHero from "../../components/reference/ProjectHero.astro";
 import ProjectContent from "../../components/reference/ProjectContent.astro";
 import ProjectFacts from "../../components/reference/ProjectFacts.astro";
@@ -95,9 +94,6 @@ const galleryImages = [
   title="Abgasanlage für Hackschnitzel-Heizzentrale | Stadter Kamintechnik"
   description="Planung und Montage einer Abgasanlage für zwei Hackschnitzelanlagen mit Schräder-Wärmetauscher im Raum Pegnitz. Jeremias DW und EW."
 >
-  <Header />
-
-  <main>
     <ProjectHero
       category="Gewerbe"
       title="Neue Abgasanlage für eine Hackschnitzel-Heizzentrale"
@@ -119,5 +115,4 @@ const galleryImages = [
       buttonText="Projekt besprechen"
       buttonHref="/kontakt"
     />
-  </main>
 </BaseLayout>
