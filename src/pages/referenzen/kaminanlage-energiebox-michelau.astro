@@ -1,0 +1,207 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Eine sichere Abgasführung für die neue Energiebox.",
+    paragraphs: [
+      "Für die Energiebox von Fröling am Produktionsstandort der KOINOR Polstermöbel GmbH & Co. KG in Michelau sollte eine freistehende Kaminanlage errichtet werden.",
+      "Die beiden Fröling-T4e-Hackschnitzelkessel mit jeweils 350 kW benötigten eine dauerhaft sichere Abgasführung. Neben der statischen Konstruktion waren auch Wartungszugang, Messmöglichkeit und die Anbindung der beiden Feuerstätten zu berücksichtigen.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Freistehender Tragmast mit zwei Edelstahl-Abgaszügen.",
+    paragraphs: [
+      "Die Anlage wurde als freistehender, einteiliger Tragmast mit Fußeinspannung ausgeführt. Zwei Aufnahmen am Tragmast tragen die doppelwandigen Edelstahlkamine.",
+      "Eine Einholm-Sicherheitsleiter mit Fallschutz sowie eine Mess- und Arbeitsbühne ermöglichen den sicheren Zugang für Kontrolle und Messarbeiten.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Zwei Jeremias-DW-SILVER-Kamine bis auf 16 Meter Mündungshöhe.",
+    paragraphs: [
+      "Stadter Kamintechnik lieferte und montierte den Tragmast sowie zwei doppelwandige Edelstahlkamine vom Typ Jeremias DW-SILVER. Die beiden Kaminzüge haben jeweils rund 15 Meter Höhe und einen Querschnitt von 300 Millimetern.",
+      "Die Verbindung zu den Feuerstätten erfolgt über zwei doppelwandige Jeremias-DW-FU-Leitungen mit jeweils rund 3,5 Metern Länge und 250 Millimetern Querschnitt. Reinigungsöffnungen, Reinigungswinkel und Zugbegrenzer wurden in die Leitungsführung integriert.",
+    ],
+    points: [
+      "Freistehender Tragmast nach EN 1993",
+      "Mündungshöhe 16 Meter",
+      "Zwei doppelwandige Edelstahlkamine",
+      "Je Kaminzug rund 15 Meter Höhe",
+      "Querschnitt der Kaminzüge 300 Millimeter",
+      "Zwei Fröling T4e mit jeweils 350 kW",
+      "Sicherheitsleiter mit Fallschutz",
+      "Mess- und Arbeitsbühne",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine kompakte Gesamtanlage mit zugänglicher und klar geführter Technik.",
+    paragraphs: [
+      "Die fertige Kaminanlage bündelt Tragkonstruktion, zwei Abgaszüge und die Verbindungsleitungen in einem abgestimmten System. Die Abgase beider Hackschnitzelkessel werden getrennt und lotrecht über die freistehende Konstruktion abgeführt.",
+      "Wartungs- und Messbereiche sind über die Sicherheitsleiter und die Arbeitsbühne erreichbar. So bleibt die technische Anlage auch nach der Montage kontrollierbar und zugänglich.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Standort", value: "Michelau in Oberfranken" },
+  { label: "Kunde", value: "KOINOR Polstermöbel GmbH & Co. KG" },
+  { label: "Projekt", value: "Kaminanlage für eine Fröling-Energiebox" },
+  { label: "Feuerstätten", value: "2 × Fröling T4e mit jeweils 350 kW" },
+  { label: "Konstruktion", value: "Freistehender Tragmast mit Fußeinspannung" },
+  { label: "Mündungshöhe", value: "16 Meter" },
+  { label: "Kaminzüge", value: "2 × Jeremias DW-SILVER, Ø 300 mm" },
+  { label: "Verbindungsleitungen", value: "2 × Jeremias DW-FU, Ø 250 mm" },
+  { label: "Zugang", value: "Sicherheitsleiter sowie Mess- und Arbeitsbühne" },
+  { label: "Leistungsumfang", value: "Lieferung und Montage" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/kaminanlage-energiebox-michelau/verbindungsleitungen-dach.webp",
+    alt: "Zwei doppelwandige Edelstahl-Verbindungsleitungen auf dem Dach der Energiebox in Michelau",
+    caption:
+      "Die beiden doppelwandigen Verbindungsleitungen führen von der Energiebox zum freistehenden Tragmast.",
+    format: "landscape",
+  },
+  {
+    src: "/images/referenzen/kaminanlage-energiebox-michelau/verbindungsleitung-detail.webp",
+    alt: "Detail einer doppelwandigen Edelstahl-Verbindungsleitung mit Reinigungsöffnung",
+    caption:
+      "Reinigungsöffnungen und abgestimmte Formteile ermöglichen eine zugängliche und klar geführte Abgasanbindung.",
+    format: "landscape",
+  },
+  {
+    src: "/images/referenzen/kaminanlage-energiebox-michelau/anlage-seitenansicht.webp",
+    alt: "Freistehende Kaminanlage neben der Fröling-Energiebox bei KOINOR in Michelau",
+    caption:
+      "Der freistehende Tragmast steht unmittelbar neben der Energiebox und nimmt beide Edelstahlkamine auf.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/kaminanlage-energiebox-michelau/tragmast-arbeitsbuehne.webp",
+    alt: "Oberer Bereich des Tragmasts mit Sicherheitsleiter und Mess- und Arbeitsbühne",
+    caption:
+      "Sicherheitsleiter, Fallschutz und Arbeitsbühne schaffen einen sicheren Zugang zum oberen Anlagenbereich.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/kaminanlage-energiebox-michelau/anlage-gesamtansicht.webp",
+    alt: "Gesamtansicht der Kaminanlage mit Energiebox und Silos am Produktionsstandort in Michelau",
+    caption:
+      "Die Gesamtanlage verbindet die Energiebox über zwei Leitungen mit der 16 Meter hohen freistehenden Kaminanlage.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Freistehende Kaminanlage für Fröling-Energiebox | Stadter Kamintechnik"
+  description="Referenz in Michelau: freistehender Tragmast mit zwei doppelwandigen Edelstahlkaminen für zwei Fröling T4e Hackschnitzelkessel mit jeweils 350 kW."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a>
+        <span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a>
+        <span aria-hidden="true">/</span>
+        <span>Kaminanlage für eine Fröling-Energiebox</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Industrie</p>
+          <h1>Freistehende Kaminanlage für eine Fröling-Energiebox</h1>
+          <p class="reference-hero-portrait__location">Michelau in Oberfranken</p>
+          <p class="reference-hero-portrait__intro">
+            Ein freistehender Tragmast mit zwei doppelwandigen Edelstahlkaminen führt die
+            Abgase von zwei Fröling-T4e-Hackschnitzelkesseln sicher bis auf 16 Meter
+            Mündungshöhe ab.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/kaminanlage-energiebox-michelau/kaminanlage-frontansicht.webp"
+            alt="Frontansicht der freistehenden Kaminanlage für die Fröling-Energiebox in Michelau"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Die Anlage im Detail</p>
+        <h2 id="project-gallery-title">Vom Kesselanschluss bis zur 16 Meter hohen Kaminmündung.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Sie planen eine Energiezentrale oder eine gewerbliche Heizanlage?"
+    text="Wir liefern und montieren freistehende Kaminanlagen und komplette Abgasführungen passend zu Feuerstätte, Gebäude und technischen Anforderungen."
+    buttonText="Projekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieanlage"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 680px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(3rem, 5.2vw, 5.5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 620px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+  .project-gallery-custom__item { margin: 0; }
+  .project-gallery-custom__item--landscape { grid-column: 1 / -1; }
+  .project-gallery-custom__item--portrait { width: min(100%, 430px); }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 12px; background: #e9e9e7; }
+  .project-gallery-custom__media--landscape { aspect-ratio: 16 / 9; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { max-width: 850px; margin-top: 1.1rem; color: #666; font-size: 0.98rem; line-height: 1.65; }
+  @media (max-width: 980px) {
+    .reference-hero-portrait { padding-bottom: 4rem; }
+    .reference-hero-portrait__breadcrumb { margin-bottom: 2.75rem; }
+    .reference-hero-portrait__grid { grid-template-columns: 1fr; gap: 2.75rem; }
+    .reference-hero-portrait__media { width: min(100%, 420px); }
+    .project-gallery-custom { padding: 5rem 0; }
+  }
+  @media (max-width: 720px) {
+    .project-gallery-custom__items { grid-template-columns: 1fr; gap: 3rem; }
+    .project-gallery-custom__item--landscape, .project-gallery-custom__item--portrait { grid-column: auto; width: 100%; }
+  }
+</style>

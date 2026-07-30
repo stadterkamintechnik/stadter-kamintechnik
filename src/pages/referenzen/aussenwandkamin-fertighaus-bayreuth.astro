@@ -1,0 +1,191 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Ausgangssituation",
+    title: "Für den Kaminofen fehlte eine geeignete Abgasführung.",
+    paragraphs: [
+      "An einem Fertighaus in Bayreuth sollte ein Kaminofen nachgerüstet werden. Da kein geeigneter Schornstein zur Verfügung stand, musste eine neue Abgasanlage außen am Gebäude geplant und montiert werden.",
+      "Bei der Wanddurchführung waren die besonderen Anforderungen der Fertighauskonstruktion zu berücksichtigen. Gleichzeitig musste die Schornsteinhöhe an die aktuellen Ableitbedingungen angepasst werden.",
+    ],
+  },
+  {
+    kicker: "Die Planung",
+    title: "Außenwandkamin mit sicherer Brandschutzdurchführung.",
+    paragraphs: [
+      "Als Lösung wurde ein doppelwandiger Edelstahl-Außenwandkamin gewählt. Die Durchführung durch die Außenwand wurde als fachgerechte Brandschutzdurchführung für die vorhandene Fertighauskonstruktion ausgeführt.",
+      "Die erforderliche Mündungshöhe wurde auf Grundlage der Ableitbedingungen nach VDI 3781 Blatt 4 ausgelegt. Dadurch konnte der Schornstein so positioniert und dimensioniert werden, dass die Abgase sicher über das Dachniveau abgeführt werden.",
+    ],
+  },
+  {
+    kicker: "Die Umsetzung",
+    title: "Kompakte Montage entlang der Giebelfassade.",
+    paragraphs: [
+      "Der Edelstahlkamin wurde auf einer tragfähigen Wandkonsole aufgebaut und mit abgestimmten Wandhaltern an der Fassade befestigt. Der Anschluss für den Kaminofen wurde durch die Außenwand geführt und an das doppelwandige Schornsteinsystem angebunden.",
+      "Die senkrechte Führung entlang des Giebels ermöglicht eine klare, platzsparende Lösung, ohne den Innenraum des Gebäudes mit einem zusätzlichen Schornsteinschacht zu belasten.",
+    ],
+    points: [
+      "Planung des doppelwandigen Außenwandkamins",
+      "Auslegung der Schornsteinhöhe nach VDI 3781 Blatt 4",
+      "Brandschutzdurchführung durch die Fertighauswand",
+      "Montage auf einer tragfähigen Wandkonsole",
+      "Befestigung mit abgestimmten Wandhaltern",
+      "Anschlussmöglichkeit für einen Kaminofen",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine sichere Abgasführung ohne Eingriff in den Gebäudegrundriss.",
+    paragraphs: [
+      "Mit dem neuen doppelwandigen Außenwandkamin steht für den geplanten Kaminofen eine vollständige und dauerhaft nutzbare Abgasanlage zur Verfügung.",
+      "Die schlanke Edelstahlkonstruktion fügt sich klar in die Giebelfassade ein. Die Brandschutzdurchführung und die nach den Ableitbedingungen ausgelegte Mündungshöhe bilden gemeinsam eine technisch abgestimmte Gesamtlösung.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Projekt", value: "Nachrüstung eines Außenwandkamins" },
+  { label: "Gebäude", value: "Fertighaus / Einfamilienhaus" },
+  { label: "Standort", value: "Bayreuth" },
+  { label: "Feuerstätte", value: "Kaminofen" },
+  { label: "System", value: "Doppelwandiger Edelstahl-Außenwandkamin" },
+  { label: "Wanddurchführung", value: "Brandschutzdurchführung" },
+  { label: "Höhenauslegung", value: "VDI 3781 Blatt 4" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-frontal.webp",
+    alt: "Frontalansicht des doppelwandigen Edelstahl-Außenwandkamins an einem Fertighaus in Bayreuth",
+    caption: "Der Außenwandkamin wird geradlinig entlang der Giebelfassade bis zur berechneten Mündungshöhe geführt.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-anschluss.webp",
+    alt: "Anschluss des Außenwandkamins durch die Fassade eines Fertighauses",
+    caption: "Der Anschluss für den Kaminofen wird über eine abgestimmte Brandschutzdurchführung durch die Außenwand geführt.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-seitenansicht.webp",
+    alt: "Seitliche Gesamtansicht des Edelstahl-Außenwandkamins am Einfamilienhaus",
+    caption: "Die Außenmontage ermöglicht die Nachrüstung ohne zusätzlichen Schornsteinschacht innerhalb des Hauses.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-gartenansicht.webp",
+    alt: "Außenwandkamin an der Giebelseite eines Fertighauses aus dem Garten gesehen",
+    caption: "Auch aus größerer Entfernung bleibt die schlanke, senkrechte Führung des Schornsteins klar ablesbar.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-detail.webp",
+    alt: "Detailansicht von Wandkonsole und Reinigungsbereich des Edelstahl-Außenwandkamins",
+    caption: "Wandkonsole, Reinigungselement und Halterungen bilden eine kompakte und gut zugängliche Einheit.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Außenwandkamin am Fertighaus in Bayreuth | Stadter Kamintechnik"
+  description="Nachrüstung eines doppelwandigen Edelstahl-Außenwandkamins für einen Kaminofen am Fertighaus in Bayreuth – mit Brandschutzdurchführung und Höhenauslegung nach VDI 3781 Blatt 4."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a><span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a><span aria-hidden="true">/</span>
+        <span>Außenwandkamin am Fertighaus</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Privat</p>
+          <h1>Nachrüstung eines Außenwandkamins für einen Kaminofen am Fertighaus</h1>
+          <p class="reference-hero-portrait__location">Bayreuth</p>
+          <p class="reference-hero-portrait__intro">
+            Für einen Kaminofen wurde ein doppelwandiger Edelstahl-Außenwandkamin nachgerüstet. Die Lösung umfasst eine Brandschutzdurchführung durch die Fertighauswand und eine nach VDI 3781 Blatt 4 ausgelegte Schornsteinhöhe.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-gesamtansicht.webp"
+            alt="Doppelwandiger Edelstahl-Außenwandkamin an einem Fertighaus in Bayreuth"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Außenmontage am Fertighaus</p>
+        <h2 id="project-gallery-title">Brandschutz, Befestigung und Mündungshöhe als abgestimmte Gesamtlösung.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Möchten Sie einen Kaminofen nachrüsten?"
+    text="Wir prüfen die Gebäudesituation und planen Außenwandkamin, Brandschutzdurchführung und erforderliche Schornsteinhöhe als vollständige Lösung."
+    buttonText="Außenwandkamin anfragen"
+    buttonHref="/projekt-starten/?projekt=aussenkamin"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 760px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 650px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+  .project-gallery-custom__item { width: min(100%, 430px); margin: 0; }
+  .project-gallery-custom__item:nth-child(even) { justify-self: end; }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 10px; background: #e9e9e6; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { margin-top: 1rem; color: #696969; font-size: 0.94rem; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .reference-hero-portrait__grid { grid-template-columns: 1fr; }
+    .reference-hero-portrait__media { width: min(100%, 440px); }
+  }
+  @media (max-width: 700px) {
+    .reference-hero-portrait { padding-bottom: 4.5rem; }
+    .reference-hero-portrait__breadcrumb { margin-bottom: 2.5rem; }
+    .project-gallery-custom { padding: 5rem 0; }
+    .project-gallery-custom__items { grid-template-columns: 1fr; gap: 3rem; }
+    .project-gallery-custom__item, .project-gallery-custom__item:nth-child(even) { width: 100%; justify-self: stretch; }
+  }
+</style>

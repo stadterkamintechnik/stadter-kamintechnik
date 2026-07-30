@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Abgas und Abluft für acht Stikkenöfen sicher zusammenführen.",
+    paragraphs: [
+      "Für die Einrichtung einer gewerblichen Backstube wurden zwei Ofengruppen mit jeweils vier Stikkenöfen installiert. Für den sicheren Betrieb musste eine zuverlässige Lösung geschaffen werden, die sowohl die Abgase der Backöfen als auch die entstehenden Backdämpfe und die Prozessluft kontrolliert aus dem Produktionsbereich ableitet.",
+      "Die Anlage sollte mehrere Öfen gleichzeitig bedienen, die Arbeitsbedingungen in der Backstube verbessern und sich trotz enger Platzverhältnisse in die vorhandene Gebäudestruktur integrieren lassen.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Abgas- und Ablufttechnik als abgestimmtes Gesamtsystem.",
+    paragraphs: [
+      "Die Abgasführung der acht Stikkenöfen wurde mit doppelwandigen Abgassystemen geplant. Ergänzend entstand eine Abluftanlage mit Abgasgebläsen und eigener Steuerung für die kontrollierte Ableitung von Backdämpfen und Prozessluft.",
+      "Besondere Aufmerksamkeit galt der Leitungsführung im Bereich der Ofenlinien. Dort mussten Abgassysteme, Abluftkanäle, Elektroinstallationen und weitere technische Gewerke auf engem Raum koordiniert werden.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Präzise Leitungsführung trotz enger Einbausituation.",
+    paragraphs: [
+      "Stadter Kamintechnik übernahm die Planung und Montage der gesamten Abgas- und Abluftanlage. Die Abgase der Stikkenöfen werden über doppelwandige Systeme sicher aus dem Produktionsbereich geführt.",
+      "Die zusätzliche Abluftanlage mit Abgasgebläsen erfasst die entstehenden Backdämpfe und führt sie kontrolliert nach außen ab. Über die integrierte Steuerung lässt sich die Anlage abgestimmt betreiben und an die Produktionsbedingungen der Backstube anpassen.",
+      "Während der Montage liefen Arbeiten mehrerer Gewerke parallel. Die enge Abstimmung mit Ofenlieferanten, Küchentechnik und den weiteren Projektbeteiligten war deshalb ein wesentlicher Bestandteil der Umsetzung.",
+    ],
+    points: [
+      "Abgasführung für acht Stikkenöfen",
+      "Zwei Ofengruppen mit jeweils vier Öfen",
+      "Doppelwandige Abgassysteme",
+      "Abluftanlage mit Abgasgebläsen",
+      "Integrierte Steuerung der Abluftanlage",
+      "Abstimmung mit Ofenlieferanten und weiteren Gewerken",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Sicherer Betrieb und stabile Bedingungen in der Backstube.",
+    paragraphs: [
+      "Mit der neuen Abgas- und Abluftanlage steht für alle acht Stikkenöfen eine zuverlässige und langlebige Gesamtlösung zur Verfügung. Abgase, Backdämpfe und Prozessluft werden kontrolliert aus dem Produktionsbereich abgeführt.",
+      "Trotz der engen Platzverhältnisse und der parallelen Arbeiten verschiedener Gewerke konnte das Projekt termingerecht umgesetzt werden.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Region", value: "Nordbayern" },
+  { label: "Objekt", value: "Gewerbliche Backstube" },
+  { label: "Backöfen", value: "2 × 4 Stikkenöfen" },
+  { label: "Abgasanlage", value: "Doppelwandige Abgassysteme" },
+  { label: "Abluftsystem", value: "Abluftanlage mit Abgasgebläsen" },
+  { label: "Regelung", value: "Integrierte Steuerung" },
+  { label: "Besonderheit", value: "Enge Einbausituation im Ofenbereich" },
+  { label: "Leistungsumfang", value: "Planung, Abstimmung und Montage" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/backstube-stikkenoefen/backstube-stikkenoefen-hero.webp",
+    alt: "Acht Stikkenöfen mit Edelstahl-Abgas- und Abluftleitungen in einer gewerblichen Backstube",
+    caption: "Zwei Ofengruppen mit jeweils vier Stikkenöfen und der vollständig montierten Abgas- und Ablufttechnik.",
+  },
+  {
+    src: "/images/referenzen/backstube-stikkenoefen/abgasanlagen-dach.webp",
+    alt: "Mehrere Edelstahl-Abgasleitungen auf dem Dach einer gewerblichen Backstube",
+    caption: "Die einzelnen Abgasführungen werden sicher über das Dach ins Freie geführt.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgas- und Abluftanlage für acht Stikkenöfen | Stadter Kamintechnik"
+  description="Planung und Montage einer kompletten Abgas- und Abluftanlage für eine gewerbliche Backstube mit acht Stikkenöfen, Abgasgebläsen und Steuerung."
+>
+  <ProjectHero
+    category="Gewerbe"
+    title="Abgas- und Abluftanlage für eine gewerbliche Backstube mit acht Stikkenöfen"
+    location="Nordbayern"
+    intro="Komplette Abgas- und Ablufttechnik für zwei Ofengruppen mit jeweils vier Stikkenöfen – einschließlich doppelwandiger Abgassysteme, Abgasgebläsen und Steuerung."
+    image="/images/referenzen/backstube-stikkenoefen/backstube-stikkenoefen-hero.webp"
+    imageAlt="Acht Stikkenöfen mit Edelstahl-Abgas- und Abluftanlage in einer gewerblichen Backstube"
+  />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Sie planen eine gewerbliche Backstube?"
+    text="Wir planen und montieren Abgas- und Abluftsysteme für Backöfen, Produktionsanlagen und technisch anspruchsvolle gewerbliche Anwendungen."
+    buttonText="Projekt besprechen"
+    buttonHref="/projekt-starten/?projekt=gewerbliche-abgasanlage"
+  />
+</BaseLayout>

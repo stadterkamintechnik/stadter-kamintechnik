@@ -1,0 +1,299 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Eine sichere Abgasführung für eine technische Produktionsmaschine im bestehenden Gewerbegebäude.",
+    paragraphs: [
+      "Für eine technische Produktionsmaschine in einem bestehenden Gewerbegebäude wurde eine komplett neue Abgasanlage benötigt. Da kein geeigneter Schornstein vorhanden war, musste die Abgasführung von der Maschine bis zur sicheren Ableitung über das Gebäude neu geplant und umgesetzt werden.",
+      "Die Position der Maschine, die vorhandene Gebäudestruktur und die Flachdachkonstruktion machten eine technisch präzise Leitungsführung erforderlich. Gleichzeitig sollte der laufende Produktionsbetrieb durch die Montage möglichst wenig beeinträchtigt werden.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Doppelwandiges Edelstahl-Abgassystem mit langer horizontaler Dachverbindung.",
+    paragraphs: [
+      "Die Prozessabgase werden zunächst innerhalb der Produktionshalle aufgenommen und über eine Edelstahl-Abgasleitung durch das Gebäude nach außen geführt.",
+      "Auf dem Flachdach verbindet eine längere horizontale Leitung den Gebäudeaustritt mit der endgültigen Schornsteinposition. Von dort werden die Abgase über einen vertikalen Edelstahlschornstein sicher über Dach abgeleitet.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Planung und komplette Montage mit abgestimmter Dachführung und Befestigung.",
+    paragraphs: [
+      "Stadter Kamintechnik übernahm die Planung der Abgasführung, die Auslegung des doppelwandigen Edelstahl-Abgassystems und die vollständige Montage der Anlage.",
+      "Besonderes Augenmerk lag auf der sicheren Durchführung durch das Gebäude, der statisch belastbaren Befestigung der langen Dachverbindungsleitung und der vertikalen Ableitung über den Schornstein.",
+      "Am Schornsteinkopf wurde eine Deflektorhaube montiert. Durch eine genaue Vorbereitung konnte die Anlage innerhalb kurzer Bauzeit umgesetzt und die Beeinträchtigung des Produktionsbetriebs gering gehalten werden.",
+    ],
+    points: [
+      "Planung der Abgasführung für die Produktionsmaschine",
+      "Auslegung des doppelwandigen Edelstahl-Abgassystems",
+      "Planung der Dachführung und der Befestigungspunkte",
+      "Montage der Abgasleitung innerhalb des Gebäudes",
+      "Installation der langen Verbindungsleitung auf dem Flachdach",
+      "Montage des vertikalen Edelstahlschornsteins",
+      "Ausführung des Schornsteinkopfs mit Deflektorhaube",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine langlebige und wartungsfreundliche Abgaslösung für den zuverlässigen Produktionsbetrieb.",
+    paragraphs: [
+      "Die neue Abgasanlage führt die Prozessabgase der Produktionsmaschine zuverlässig aus dem Gebäude und sicher über Dach ab.",
+      "Das robuste Edelstahl-Abgassystem, die durchdachte Leitungsführung und die dauerhaft sichere Befestigung bilden eine betriebssichere Gesamtlösung. Die kurze Montagezeit begrenzte die Unterbrechung des Produktionsbetriebs auf das notwendige Minimum.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Objekt", value: "Produktionsbetrieb" },
+  { label: "Region", value: "Nordbayern" },
+  { label: "Anwendung", value: "Technische Produktionsmaschine" },
+  { label: "Abgassystem", value: "Doppelwandiges Edelstahl-Abgassystem" },
+  { label: "Leitungsführung", value: "Innenbereich, Flachdach und Außenkamin" },
+  { label: "Besonderheit", value: "Lange horizontale Dachverbindungsleitung" },
+  { label: "Schornsteinkopf", value: "Deflektorhaube" },
+  { label: "Leistungsumfang", value: "Planung und komplette Montage" },
+  { label: "Bauablauf", value: "Kurze Bauzeit bei minimaler Betriebsunterbrechung" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/produktionsmaschine/produktionsmaschine-innen.webp",
+    alt: "Technische Produktionsmaschine mit vertikaler Edelstahl-Abgasleitung in einer Produktionshalle",
+    caption:
+      "Die Abgase werden direkt an der Produktionsmaschine aufgenommen und über das doppelwandige Edelstahl-Abgassystem durch das Gebäude geführt.",
+  },
+  {
+    src: "/images/referenzen/produktionsmaschine/produktionsmaschine-aussen.webp",
+    alt: "Edelstahl-Abgasanlage mit langer horizontaler Dachleitung und vertikalem Schornstein",
+    caption:
+      "Die lange horizontale Verbindungsleitung führt über das Flachdach bis zum außenliegenden Schornstein mit Deflektorhaube.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgasanlage für eine technische Produktionsmaschine | Stadter Kamintechnik"
+  description="Doppelwandige Edelstahl-Abgasanlage für eine technische Produktionsmaschine in Nordbayern: Innenleitung, lange Flachdachführung und vertikaler Schornstein."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a>
+        <span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a>
+        <span aria-hidden="true">/</span>
+        <span>Abgasanlage für eine technische Produktionsmaschine</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Industrie</p>
+          <h1>Abgasanlage für eine technische Produktionsmaschine</h1>
+          <p class="reference-hero-portrait__location">Nordbayern</p>
+          <p class="reference-hero-portrait__intro">
+            Doppelwandiges Edelstahl-Abgassystem mit innenliegender Maschinenanbindung,
+            langer horizontaler Flachdachführung und vertikalem Schornstein.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/produktionsmaschine/produktionsmaschine-aussen.webp"
+            alt="Edelstahl-Abgasanlage mit langer Dachleitung an einem Gewerbegebäude"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectContent sections={contentSections} />
+  <ProjectFacts facts={facts} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Die Anlage im Detail</p>
+        <h2 id="project-gallery-title">Von der Produktionsmaschine bis zur sicheren Ableitung über Dach.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class="project-gallery-custom__item">
+            <div class="project-gallery-custom__media">
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Sie benötigen eine Abgasanlage für eine Produktionsmaschine?"
+    text="Wir planen und montieren abgestimmte Edelstahl-Abgassysteme für Produktionsmaschinen, Industrieanlagen und technische Prozesse."
+    buttonText="Industrieprojekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieabgasanlage"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait {
+    padding: 2rem 0 6rem;
+  }
+
+  .reference-hero-portrait__breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 4rem;
+    color: #777;
+    font-size: 0.9rem;
+  }
+
+  .reference-hero-portrait__breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .reference-hero-portrait__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: center;
+  }
+
+  .reference-hero-portrait__content {
+    max-width: 680px;
+  }
+
+  .reference-hero-portrait__category,
+  .project-gallery-custom__kicker {
+    margin: 0 0 1rem;
+    color: #9d1f24;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .reference-hero-portrait h1 {
+    margin: 0;
+    font-size: clamp(3rem, 5.2vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .reference-hero-portrait__location {
+    margin: 1.65rem 0 0;
+    color: #9d1f24;
+    font-weight: 700;
+  }
+
+  .reference-hero-portrait__intro {
+    max-width: 620px;
+    margin: 1.5rem 0 0;
+    color: #626262;
+    font-size: 1.12rem;
+    line-height: 1.7;
+  }
+
+  .reference-hero-portrait__media {
+    width: 100%;
+    margin: 0;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f2f2f2;
+  }
+
+  .reference-hero-portrait__media img,
+  .project-gallery-custom__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-gallery-custom {
+    padding: 7rem 0;
+    background: #f5f5f3;
+  }
+
+  .project-gallery-custom__header {
+    max-width: 850px;
+    margin-bottom: 3.5rem;
+  }
+
+  .project-gallery-custom h2 {
+    margin: 0;
+    font-size: clamp(2.35rem, 4vw, 4.4rem);
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+  }
+
+  .project-gallery-custom__items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 430px));
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .project-gallery-custom__item {
+    margin: 0;
+  }
+
+  .project-gallery-custom__media {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #e9e9e7;
+  }
+
+  .project-gallery-custom figcaption {
+    margin-top: 1.1rem;
+    color: #666;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 980px) {
+    .reference-hero-portrait {
+      padding-bottom: 4rem;
+    }
+
+    .reference-hero-portrait__breadcrumb {
+      margin-bottom: 2.75rem;
+    }
+
+    .reference-hero-portrait__grid {
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
+    }
+
+    .reference-hero-portrait__media {
+      width: min(100%, 420px);
+    }
+
+    .project-gallery-custom {
+      padding: 5rem 0;
+    }
+
+    .project-gallery-custom__items {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .project-gallery-custom__item {
+      width: min(100%, 420px);
+    }
+  }
+</style>

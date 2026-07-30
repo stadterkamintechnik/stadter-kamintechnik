@@ -1,0 +1,175 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Ausgangssituation",
+    title: "Eine neue Pelletheizung erforderte die Anpassung des bestehenden Schornsteins.",
+    paragraphs: [
+      "Im Zuge der Modernisierung eines Einfamilienhauses in Forchheim wurde eine neue Pelletheizung eingebaut. Der vorhandene gemauerte Schornstein musste dafür technisch an die neue Heizungsanlage angepasst werden.",
+      "Neben der eigentlichen Kaminsanierung war auch die Schornsteinhöhe zu prüfen, da für die neue Feuerungsanlage die aktuellen Ableitbedingungen einzuhalten waren.",
+    ],
+  },
+  {
+    kicker: "Die Lösung",
+    title: "Kaminsanierung und Höhenanpassung in einem Arbeitsschritt.",
+    paragraphs: [
+      "Der bestehende gemauerte Schornstein wurde mit einem passenden Edelstahl-Innenrohr saniert und für den Betrieb der neuen Pelletheizung vorbereitet.",
+      "Zusätzlich wurde die Kaminhöhe mit einer doppelwandigen Edelstahl-Kaminverlängerung angepasst. Damit entspricht die Mündungshöhe den für das Projekt maßgeblichen Ableitbedingungen der Bundes-Immissionsschutzverordnung.",
+    ],
+  },
+  {
+    kicker: "Die Umsetzung",
+    title: "Alle Arbeiten innerhalb eines Tages abgeschlossen.",
+    paragraphs: [
+      "Im Heizraum wurden die erforderlichen Anschluss- und Reinigungsöffnungen fachgerecht hergestellt. Auf dem Dach erfolgte anschließend die Montage der doppelwandigen Kaminverlängerung auf dem vorhandenen Kaminkopf.",
+      "Durch die Kombination aus Edelstahl-Innenrohr und Kaminverlängerung konnte der bestehende Schornstein weiter genutzt und zugleich an die neue Pelletheizung angepasst werden.",
+    ],
+    points: [
+      "Sanierung des bestehenden gemauerten Schornsteins",
+      "Einbau eines Edelstahl-Innenrohrs",
+      "Anpassung an die neue Pelletheizung",
+      "Doppelwandige Edelstahl-Kaminverlängerung",
+      "Anpassung der Mündungshöhe an die Ableitbedingungen",
+      "Fachgerechte Anschluss- und Reinigungsöffnungen",
+      "Umsetzung innerhalb eines Arbeitstages",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Der vorhandene Schornstein bleibt erhalten und ist für die neue Heiztechnik vorbereitet.",
+    paragraphs: [
+      "Nach der Sanierung kann der gemauerte Schornstein weiterhin genutzt werden. Das Edelstahl-Innenrohr übernimmt die sichere Abgasführung der Pelletheizung.",
+      "Die doppelwandige Kaminverlängerung stellt die erforderliche Mündungshöhe her und fügt sich sauber in den modernisierten Dachbereich ein.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Projekt", value: "Kaminsanierung für eine neue Pelletheizung" },
+  { label: "Gebäude", value: "Einfamilienhaus" },
+  { label: "Standort", value: "Forchheim" },
+  { label: "Wärmeerzeuger", value: "Pelletheizung" },
+  { label: "Bestand", value: "Gemauerter Schornstein" },
+  { label: "Sanierung", value: "Edelstahl-Innenrohr" },
+  { label: "Ergänzung", value: "Doppelwandige Kaminverlängerung" },
+  { label: "Montagedauer", value: "1 Arbeitstag" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/kaminsanierung-pelletheizung-forchheim/anschlussbereich-heizraum.webp",
+    alt: "Anschluss- und Reinigungsöffnungen des sanierten Schornsteins im Heizraum",
+    caption: "Die Anschluss- und Reinigungsöffnungen wurden passend zur neuen Pelletheizung hergestellt.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/kaminsanierung-pelletheizung-forchheim/kaminverlaengerung-dach.webp",
+    alt: "Doppelwandige Edelstahl-Kaminverlängerung auf einem gemauerten Schornstein in Forchheim",
+    caption: "Die doppelwandige Kaminverlängerung stellt die erforderliche Mündungshöhe über dem modernisierten Dach her.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Kaminsanierung für Pelletheizung in Forchheim | Stadter Kamintechnik"
+  description="Kaminsanierung eines gemauerten Schornsteins für eine neue Pelletheizung in Forchheim – mit Edelstahl-Innenrohr und doppelwandiger Kaminverlängerung, umgesetzt in einem Arbeitstag."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a><span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a><span aria-hidden="true">/</span>
+        <span>Kaminsanierung für Pelletheizung</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Privat</p>
+          <h1>Kaminsanierung für eine neue Pelletheizung mit Kaminverlängerung</h1>
+          <p class="reference-hero-portrait__location">Forchheim</p>
+          <p class="reference-hero-portrait__intro">
+            Im Zuge der Modernisierung eines Einfamilienhauses wurde der bestehende gemauerte Schornstein saniert und für eine neue Pelletheizung angepasst. Eine doppelwandige Kaminverlängerung stellt zusätzlich die erforderliche Mündungshöhe her.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/kaminsanierung-pelletheizung-forchheim/kaminverlaengerung-dach.webp"
+            alt="Doppelwandige Kaminverlängerung auf einem sanierten Schornstein in Forchheim"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Vom Heizraum bis zur Mündung</p>
+        <h2 id="project-gallery-title">Bestehenden Schornstein erhalten und an die neue Heiztechnik anpassen.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Muss Ihr Schornstein an eine neue Heizungsanlage angepasst werden?"
+    text="Wir prüfen den Bestand und planen Kaminsanierung, Anschluss und erforderliche Kaminverlängerung als technisch abgestimmte Gesamtlösung."
+    buttonText="Kaminsanierung anfragen"
+    buttonHref="/projekt-starten/?projekt=kaminsanierung"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 760px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 650px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+  .project-gallery-custom__item { width: min(100%, 430px); margin: 0; }
+  .project-gallery-custom__item:nth-child(even) { justify-self: end; }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 10px; background: #e9e9e6; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { margin-top: 1rem; color: #696969; font-size: 0.94rem; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .reference-hero-portrait__grid { grid-template-columns: 1fr; }
+    .reference-hero-portrait__media { width: min(100%, 440px); }
+  }
+  @media (max-width: 700px) {
+    .reference-hero-portrait { padding-bottom: 4.5rem; }
+    .reference-hero-portrait__breadcrumb { margin-bottom: 2.5rem; }
+    .project-gallery-custom { padding: 5rem 0; }
+    .project-gallery-custom__items { grid-template-columns: 1fr; gap: 3rem; }
+    .project-gallery-custom__item, .project-gallery-custom__item:nth-child(even) { width: 100%; justify-self: stretch; }
+  }
+</style>

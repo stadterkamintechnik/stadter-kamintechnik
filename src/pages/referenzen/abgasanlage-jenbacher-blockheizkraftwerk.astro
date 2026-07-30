@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/reference/ProjectHero.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectGallery from "../../components/reference/ProjectGallery.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Eine komplette Abgasanlage für einen Jenbacher 12-Zylinder-Gasmotor.",
+    paragraphs: [
+      "Für ein leistungsstarkes Blockheizkraftwerk auf Basis eines Jenbacher 12-Zylinder-Gasmotors sollte eine vollständige industrielle Abgasanlage realisiert werden. Neben der sicheren Ableitung der heißen Motorabgase mussten auch die Anforderungen an Abgasnachbehandlung, Wärmerückgewinnung und Schalldämpfung berücksichtigt werden.",
+      "Die Abgasführung war präzise an die vorhandene Motoranlage und die baulichen Gegebenheiten anzupassen. Gleichzeitig musste die Konstruktion den hohen thermischen Belastungen und den dauerhaften Lastwechseln einer Großmotoranlage zuverlässig standhalten.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Abgasführung, Wärmenutzung und Schallschutz als abgestimmtes System.",
+    paragraphs: [
+      "Die Anlage wurde als vollständig geschweißtes Abgassystem geplant. In die Abgasstrecke wurden die erforderlichen Komponenten für Emissionsminderung, Wärmerückgewinnung und Schalldämpfung integriert.",
+      "Katalysator, Abgaswärmetauscher und industrieller Schalldämpfer bilden gemeinsam mit den Rohrleitungen ein technisch abgestimmtes Gesamtsystem. Kompensatoren nehmen temperaturbedingte Längenänderungen und Bewegungen der Anlage auf und schützen dadurch Rohrleitungen und Anschlüsse vor unzulässigen Spannungen.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Vor Ort gefertigt, angepasst und vollständig verschweißt.",
+    paragraphs: [
+      "Stadter Kamintechnik übernahm die Planung, Dimensionierung und Montage der kompletten Abgasführung. Die einzelnen Rohrabschnitte wurden an die vorhandene Anlagenstruktur angepasst und direkt vor Ort miteinander verschweißt.",
+      "Die hochwertige Schweißausführung sorgt für eine dauerhaft dichte, stabile und temperaturbeständige Abgasstrecke. Sämtliche Komponenten wurden so in die Leitungsführung integriert, dass ein sicherer Anlagenbetrieb und eine zuverlässige Zugänglichkeit für Wartungsarbeiten gewährleistet bleiben.",
+      "Vom Anschluss am Jenbacher-Gasmotor über die Abgaskomponenten bis zur sicheren Ableitung über Dach entstand eine durchgängige Lösung aus einer Hand.",
+    ],
+    points: [
+      "Planung und Dimensionierung der Abgasführung",
+      "Anpassung an die bestehende Motoranlage",
+      "Montage der kompletten Rohrleitungen",
+      "Schweißen der gesamten Abgasstrecke vor Ort",
+      "Integration von Katalysator und Abgaswärmetauscher",
+      "Einbindung von Schalldämpfer und Kompensatoren",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine langlebige Abgasanlage für den zuverlässigen Dauerbetrieb.",
+    paragraphs: [
+      "Die fertige Abgasanlage verbindet hohe Betriebssicherheit mit einer präzise abgestimmten Abgasführung. Die heißen Motorabgase werden sicher abgeleitet, Emissionen reduziert, Abgaswärme nutzbar gemacht und die Geräuschentwicklung wirkungsvoll begrenzt.",
+      "Durch die vollständig geschweißte Ausführung und die sorgfältige Integration aller Komponenten steht für das Blockheizkraftwerk eine robuste und dauerhaft belastbare Lösung zur Verfügung.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Anlage", value: "Blockheizkraftwerk" },
+  { label: "Motor", value: "Jenbacher 12-Zylinder-Gasmotor" },
+  { label: "Betriebsart", value: "Großmotoranlage im Dauerbetrieb" },
+  { label: "Abgassystem", value: "Geschweißte Stahl-Abgasleitung" },
+  { label: "Abgasnachbehandlung", value: "Katalysator" },
+  { label: "Wärmenutzung", value: "Abgaswärmetauscher" },
+  { label: "Schallschutz", value: "Industrieller Schalldämpfer" },
+  { label: "Leistungsumfang", value: "Planung, Fertigung, Montage und Schweißarbeiten" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/jenbacher-bhkw/jenbacher-bhkw-hero.webp",
+    alt: "Zwei Edelstahlmündungen der Abgasanlage eines Jenbacher-Blockheizkraftwerks auf dem Dach",
+    caption: "Die fertige Abgasführung wird über zwei Edelstahlmündungen sicher über Dach abgeleitet.",
+  },
+  {
+    src: "/images/referenzen/jenbacher-bhkw/abgaskomponente-kompensator.webp",
+    alt: "Großer Edelstahlkompensator innerhalb der industriellen Abgasanlage",
+    caption: "Ein groß dimensionierter Kompensator nimmt temperaturbedingte Bewegungen der Abgasstrecke auf.",
+  },
+  {
+    src: "/images/referenzen/jenbacher-bhkw/jenbacher-motor-abgasanschluss.webp",
+    alt: "Jenbacher-Gasmotor mit geschweißtem Edelstahl-Abgasanschluss",
+    caption: "Der geschweißte Abgasanschluss wurde präzise an den Jenbacher 12-Zylinder-Gasmotor angepasst.",
+  },
+  {
+    src: "/images/referenzen/jenbacher-bhkw/abgasleitung-anlagenraum.webp",
+    alt: "Geschweißte Edelstahl-Abgasleitung innerhalb des Anlagenraums eines Blockheizkraftwerks",
+    caption: "Die Rohrführung wurde an die vorhandene Anlagenstruktur und die räumlichen Gegebenheiten angepasst.",
+  },
+  {
+    src: "/images/referenzen/jenbacher-bhkw/kompensator-motoranschluss.webp",
+    alt: "Edelstahlkompensator an der Abgasleitung direkt über einem Jenbacher-Gasmotor",
+    caption: "Kompensator und geschweißte Übergangsstücke sichern den spannungsarmen Anschluss der Motoranlage.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgasanlage für Jenbacher 12-Zylinder-BHKW | Stadter Kamintechnik"
+  description="Planung, Fertigung und Montage einer vollständig geschweißten Abgasanlage für ein Jenbacher 12-Zylinder-Blockheizkraftwerk mit Katalysator, Wärmetauscher und Schalldämpfer."
+>
+  <ProjectHero
+    category="Industrie"
+    title="Abgasanlage für ein Jenbacher 12-Zylinder-Blockheizkraftwerk"
+    location="Industrieanlage"
+    intro="Komplette geschweißte Abgasführung für einen Jenbacher 12-Zylinder-Gasmotor – einschließlich Katalysator, Abgaswärmetauscher, Schalldämpfer und sämtlicher Schweißarbeiten vor Ort."
+    image="/images/referenzen/jenbacher-bhkw/jenbacher-bhkw-hero.webp"
+    imageAlt="Zwei Edelstahlmündungen der Abgasanlage eines Jenbacher-Blockheizkraftwerks auf dem Dach"
+  />
+
+  <ProjectContent sections={contentSections} />
+
+  <ProjectFacts facts={facts} />
+
+  <ProjectGallery images={galleryImages} />
+
+  <ProjectCTA
+    title="Sie planen eine Abgasanlage für ein Blockheizkraftwerk?"
+    text="Wir planen und realisieren geschweißte Abgassysteme für BHKW, Großmotoren, Energiezentralen und industrielle Anlagen – von der Dimensionierung bis zur vollständigen Montage vor Ort."
+    buttonText="Projekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrielle-abgasanlage"
+  />
+</BaseLayout>

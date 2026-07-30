@@ -1,0 +1,334 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Eine leistungsfähige Abgasanlage für zwei Dampfkessel mit insgesamt 20 Megawatt.",
+    paragraphs: [
+      "Für den Neubau einer großen Energie- und Heizzentrale musste die komplette Abgasanlage für zwei leistungsstarke Dampfkessel realisiert werden. Die Kessel verfügen über 8 MW und 12 MW Leistung und stellen entsprechend hohe Anforderungen an Abgasführung, Betriebssicherheit und Dauerhaltbarkeit.",
+      "Die Anlage musste große Abgasmengen zuverlässig ableiten, unterschiedliche Abgasströme getrennt führen und zugleich die thermischen, statischen und schalltechnischen Anforderungen einer industriellen Heizzentrale erfüllen.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Vier getrennte Abgasstränge in einem freistehenden Industrieschornstein.",
+    paragraphs: [
+      "Als zentrale Lösung wurde ein 32 Meter hoher freistehender Stahlschornstein mit vier getrennten Innenrohren geplant. Die Innenrohre mit Durchmessern von 800 mm, 630 mm sowie zweimal 180 mm ermöglichen eine sichere und voneinander getrennte Führung der unterschiedlichen Abgasströme.",
+      "Der Schornstein wurde zweiteilig ausgeführt und für Wartungs- und Inspektionsarbeiten mit zwei umlaufenden 360°-Kopfbühnen sowie einer Sicherheitsleiter ausgestattet. Ergänzend waren rund 35 Meter geschweißte Abgasrohrleitungen und Schalldämpfer in das Gesamtsystem zu integrieren.",
+    ],
+  },
+  {
+    kicker: "Unsere Lösung",
+    title: "Lieferung und vollständige Montage der gesamten Abgasanlage.",
+    paragraphs: [
+      "Stadter Kamintechnik übernahm die komplette Umsetzung der Abgasanlage. Der freistehende Stahlschornstein wurde in zwei Segmenten geliefert und mit geeigneter Hebetechnik vor Ort aufgerichtet und montiert.",
+      "Anschließend wurden die vier Innenrohre eingebunden und die beiden Dampfkessel über rund 35 Meter geschweißte Abgasrohrleitungen mit dem Schornstein verbunden. In die Abgasstrecken integrierte Schalldämpfer reduzieren die Geräuschemissionen und unterstützen den dauerhaft sicheren Anlagenbetrieb.",
+      "Die Montage erfolgte abgestimmt auf die statischen Anforderungen des Schornsteins, die räumlichen Gegebenheiten der Heizzentrale und die technischen Schnittstellen der Kesselanlage.",
+    ],
+    points: [
+      "Planung der Abgasanlage für zwei Dampfkessel",
+      "Lieferung des freistehenden Stahlschornsteins",
+      "Montage des 32 Meter hohen Industrieschornsteins",
+      "Integration von vier getrennten Innenrohren",
+      "Montage von zwei umlaufenden 360°-Kopfbühnen",
+      "Installation einer Sicherheitsleiter",
+      "Montage von rund 35 Metern geschweißter Abgasrohrleitung",
+      "Integration der Schalldämpfer",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine dauerhaft belastbare Abgaslösung für den sicheren Betrieb der Heizzentrale.",
+    paragraphs: [
+      "Mit dem neuen Abgassystem entstand eine leistungsfähige und langlebige Lösung für die 20-MW-Heizzentrale. Der freistehende Stahlschornstein führt die Abgase der beiden Dampfkessel sicher ab und ist für die hohen thermischen und mechanischen Belastungen der Anlage ausgelegt.",
+      "Die Kombination aus groß dimensioniertem Industrieschornstein, vier getrennten Innenrohren, geschweißten Abgasleitungen und integrierten Schalldämpfern schafft die Grundlage für einen zuverlässigen und langfristig sicheren Anlagenbetrieb.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Objekt", value: "Heizzentrale / Energieanlage" },
+  { label: "Wärmeerzeuger", value: "2 Dampfkessel" },
+  { label: "Leistung", value: "8 MW + 12 MW" },
+  { label: "Gesamtleistung", value: "20 MW" },
+  { label: "Schornstein", value: "Freistehender Stahlschornstein" },
+  { label: "Höhe", value: "32 Meter" },
+  { label: "Ausführung", value: "Zweiteilig" },
+  { label: "Innenrohre", value: "1 × Ø 800 mm, 1 × Ø 630 mm, 2 × Ø 180 mm" },
+  { label: "Abgasleitungen", value: "Rund 35 Meter, geschweißt" },
+  { label: "Ausstattung", value: "Schalldämpfer, zwei 360°-Kopfbühnen und Sicherheitsleiter" },
+  { label: "Leistungsumfang", value: "Lieferung und komplette Montage" },
+  { label: "Region", value: "Norddeutschland" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/stahlschornstein-dampfkessel/stahlschornstein-heizzentrale-hero.webp",
+    alt: "32 Meter hoher freistehender Stahlschornstein einer industriellen Heizzentrale",
+    caption: "Der 32 Meter hohe Stahlschornstein wurde zweiteilig geliefert und vollständig vor Ort montiert.",
+  },
+  {
+    src: "/images/referenzen/stahlschornstein-dampfkessel/dampfkessel-heizzentrale.webp",
+    alt: "Zwei große Bosch-Dampfkessel in einer industriellen Heizzentrale",
+    caption: "Die Abgasanlage wurde für zwei Dampfkessel mit 8 MW und 12 MW Leistung ausgelegt.",
+  },
+];
+---
+
+<BaseLayout
+  title="Freistehender Stahlschornstein für 20-MW-Heizzentrale | Stadter Kamintechnik"
+  description="32 Meter hoher freistehender Stahlschornstein mit vier Innenrohren, geschweißten Abgasleitungen und Schalldämpfern für zwei Dampfkessel mit insgesamt 20 MW."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a>
+        <span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a>
+        <span aria-hidden="true">/</span>
+        <span>Freistehender Stahlschornstein für eine 20-MW-Heizzentrale</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Industrie</p>
+          <h1>Freistehender Stahlschornstein für eine 20-MW-Heizzentrale</h1>
+          <p class="reference-hero-portrait__location">Norddeutschland</p>
+          <p class="reference-hero-portrait__intro">
+            Komplette Abgasanlage für zwei Dampfkessel mit 8 MW und 12 MW Leistung – mit 32 Meter hohem Stahlschornstein, vier Innenrohren, geschweißten Abgasleitungen und Schalldämpfern.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/stahlschornstein-dampfkessel/stahlschornstein-heizzentrale-hero.webp"
+            alt="32 Meter hoher freistehender Stahlschornstein einer Heizzentrale mit Dampfkesseln"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectContent sections={contentSections} />
+  <ProjectFacts facts={facts} />
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Einblicke</p>
+        <h2 id="project-gallery-title">Die Anlage im Detail.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        <figure class="project-gallery-custom__item project-gallery-custom__item--portrait">
+          <div class="project-gallery-custom__image project-gallery-custom__image--portrait">
+            <img
+              src={galleryImages[0].src}
+              alt={galleryImages[0].alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption>{galleryImages[0].caption}</figcaption>
+        </figure>
+
+        <figure class="project-gallery-custom__item">
+          <div class="project-gallery-custom__image project-gallery-custom__image--landscape">
+            <img
+              src={galleryImages[1].src}
+              alt={galleryImages[1].alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption>{galleryImages[1].caption}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Sie planen einen Industrieschornstein oder eine Abgasanlage für Ihre Heizzentrale?"
+    text="Wir planen, liefern und montieren freistehende Stahlschornsteine und komplette Abgassysteme für Dampfkessel, Energiezentralen und industrielle Anlagen."
+    buttonText="Projekt besprechen"
+    buttonHref="/projekt-starten/?projekt=industrieschornstein"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait {
+    padding: 2rem 0 6rem;
+  }
+
+  .reference-hero-portrait__breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 4rem;
+    color: #777;
+    font-size: 0.9rem;
+  }
+
+  .reference-hero-portrait__breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .reference-hero-portrait__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: center;
+  }
+
+  .reference-hero-portrait__content {
+    max-width: 640px;
+  }
+
+  .reference-hero-portrait__category {
+    margin: 0 0 1rem;
+    color: #9d1f24;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .reference-hero-portrait h1 {
+    margin: 0;
+    font-size: clamp(3rem, 5.2vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .reference-hero-portrait__location {
+    margin: 1.65rem 0 0;
+    color: #9d1f24;
+    font-weight: 700;
+  }
+
+  .reference-hero-portrait__intro {
+    max-width: 590px;
+    margin: 1.5rem 0 0;
+    color: #626262;
+    font-size: 1.12rem;
+    line-height: 1.7;
+  }
+
+  .reference-hero-portrait__media {
+    width: 100%;
+    margin: 0;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f2f2f2;
+  }
+
+  .reference-hero-portrait__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+
+  .project-gallery-custom {
+    padding: 6rem 0;
+  }
+
+  .project-gallery-custom__header {
+    margin-bottom: 3.5rem;
+  }
+
+  .project-gallery-custom__kicker {
+    margin: 0 0 1rem;
+    color: #9d1f24;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .project-gallery-custom h2 {
+    margin: 0;
+    font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .project-gallery-custom__items {
+    display: grid;
+    gap: 4rem;
+  }
+
+  .project-gallery-custom__item {
+    margin: 0;
+  }
+
+  .project-gallery-custom__item--portrait {
+    width: min(100%, 430px);
+  }
+
+  .project-gallery-custom__image {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f2f2f2;
+  }
+
+  .project-gallery-custom__image--portrait {
+    aspect-ratio: 2 / 3;
+  }
+
+  .project-gallery-custom__image--landscape {
+    width: min(100%, 860px);
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-gallery-custom__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-gallery-custom__image--portrait img {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .project-gallery-custom__image--landscape img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .project-gallery-custom figcaption {
+    margin-top: 0.9rem;
+    color: #6b6b6b;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 980px) {
+    .reference-hero-portrait {
+      padding-bottom: 4rem;
+    }
+
+    .reference-hero-portrait__breadcrumb {
+      margin-bottom: 2.75rem;
+    }
+
+    .reference-hero-portrait__grid {
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
+    }
+
+    .reference-hero-portrait__media {
+      width: min(100%, 420px);
+    }
+  }
+</style>

@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Ausgangssituation",
+    title: "Für zwei neue Heizungsanlagen fehlten geeignete Abgaswege.",
+    paragraphs: [
+      "In diesem Bestandsgebäude wurden zwei neue Heizungsanlagen installiert. Da keine geeigneten Schornsteine vorhanden waren, musste die komplette Abgasführung neu geplant und nachgerüstet werden.",
+      "Aufgrund der Gebäudestruktur und der Lage des Heizungsraums wurde eine außenliegende Lösung gewählt. So konnten größere Eingriffe in das Gebäude vermieden werden.",
+    ],
+  },
+  {
+    kicker: "Die Planung",
+    title: "Zwei getrennte Abgaswege für einen sicheren Betrieb.",
+    paragraphs: [
+      "Für jede Heizungsanlage wurde ein eigener doppelwandiger Edelstahlschornstein vorgesehen. Die Anschlüsse führen über Wanddurchführungen vom Heizungsraum nach außen.",
+      "Die erforderliche Schornsteinhöhe wurde auf einen sicheren Zug ausgelegt. Beide Schornsteine wurden in einer RAL-Sonderfarbe beschichtet, damit sie sich ruhig in die bestehende Fassade einfügen.",
+    ],
+  },
+  {
+    kicker: "Die Umsetzung",
+    title: "Parallele Außenkamine als kompakte und technisch klare Lösung.",
+    paragraphs: [
+      "Nach der Vorbereitung der Wanddurchführungen wurden zunächst die Anschlüsse im Heizungsraum hergestellt. Anschließend erfolgte die Montage der beiden doppelwandigen Edelstahlschornsteine an der Außenfassade.",
+      "Die Systeme wurden mit Wandhaltern befestigt und über das Dach geführt. Durch die parallele Anordnung entstand eine kompakte Abgasanlage mit zwei getrennten Abgaswegen.",
+    ],
+    points: [
+      "Zwei doppelwandige Edelstahlschornsteine",
+      "Montage an der Außenfassade",
+      "Getrennter Abgasweg für jede Heizungsanlage",
+      "Anschluss über Wanddurchführungen",
+      "Ausführung in RAL-Sonderfarbe",
+      "Parallele und platzsparende Anordnung",
+      "Montage innerhalb von zwei Arbeitstagen",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Neue Abgasführung ohne große Eingriffe in den Gebäudebestand.",
+    paragraphs: [
+      "Durch die Nachrüstung können beide neuen Heizungsanlagen sicher und normgerecht betrieben werden. Die außenliegenden Edelstahlschornsteine bieten eine langlebige und wartungsarme Lösung.",
+      "Die dunkle RAL-Ausführung nimmt sich an der bestehenden Backsteinfassade optisch zurück. Die gesamte Montage wurde innerhalb von zwei Arbeitstagen abgeschlossen.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Projekt", value: "Nachrüstung einer Abgasanlage für zwei Heizungsanlagen" },
+  { label: "Gebäude", value: "Bestandsgebäude" },
+  { label: "Leistung", value: "Planung und Montage der Abgasanlage" },
+  { label: "System", value: "Zwei doppelwandige Edelstahlschornsteine" },
+  { label: "Montage", value: "Außen an der Gebäudefassade" },
+  { label: "Oberfläche", value: "RAL-Sonderfarbe" },
+  { label: "Anzahl Schornsteine", value: "2" },
+  { label: "Montagedauer", value: "2 Arbeitstage" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/zwei-edelstahl-aussenkamine/wanddurchfuehrungen-heizraum.webp",
+    alt: "Vorbereitete Wanddurchführungen und Anschlüsse im Heizungsraum eines Bestandsgebäudes",
+    caption: "Die beiden Heizungsanlagen erhielten jeweils einen eigenen Abgasweg durch die Außenwand.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/zwei-edelstahl-aussenkamine/neue-heizungsanlage.webp",
+    alt: "Neue Heizungsanlage im Heizraum des Bestandsgebäudes",
+    caption: "Die neue Abgasanlage wurde passend zu den beiden installierten Heizungsanlagen geplant.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/zwei-edelstahl-aussenkamine/zwei-edelstahl-aussenkamine-fassade.webp",
+    alt: "Zwei parallel montierte schwarze Edelstahlschornsteine an einer Backsteinfassade",
+    caption: "Die beiden doppelwandigen Edelstahlschornsteine wurden parallel an der Außenfassade montiert und in RAL-Sonderfarbe ausgeführt.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Zwei Edelstahl-Außenkamine für neue Heizungsanlagen | Stadter Kamintechnik"
+  description="Nachrüstung von zwei doppelwandigen Edelstahl-Außenkaminen für neue Heizungsanlagen in einem Bestandsgebäude – in RAL-Sonderfarbe und innerhalb von zwei Arbeitstagen montiert."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a><span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a><span aria-hidden="true">/</span>
+        <span>Zwei Edelstahl-Außenkamine</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Gewerbe</p>
+          <h1>Nachrüstung von zwei doppelwandigen Edelstahlschornsteinen für neue Heizungsanlagen</h1>
+          <p class="reference-hero-portrait__location">Bestandsgebäude</p>
+          <p class="reference-hero-portrait__intro">
+            Zwei neue Heizungsanlagen benötigten jeweils einen eigenen Abgasweg. Die Lösung: zwei parallel montierte, doppelwandige Edelstahl-Außenkamine in einer zur Fassade passenden RAL-Sonderfarbe.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/zwei-edelstahl-aussenkamine/zwei-edelstahl-aussenkamine-fassade.webp"
+            alt="Zwei parallel montierte schwarze Edelstahlschornsteine an einer Backsteinfassade"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Vom Heizraum bis über das Dach</p>
+        <h2 id="project-gallery-title">Zwei getrennte Abgaswege als kompakte Außenlösung.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Sie benötigen eine neue Abgasführung für Ihre Heizungsanlage?"
+    text="Wir planen und montieren doppelwandige Edelstahlschornsteine passend zu Gebäude, Heiztechnik und gewünschter Ausführung."
+    buttonText="Abgasanlage anfragen"
+    buttonHref="/projekt-starten/?projekt=edelstahl-aussenkamin"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 760px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 650px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+  .project-gallery-custom__item { width: min(100%, 430px); margin: 0; }
+  .project-gallery-custom__item:nth-child(even) { justify-self: end; }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 12px; background: #e9e9e7; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { margin-top: 1.1rem; color: #666; font-size: 0.98rem; line-height: 1.65; }
+  @media (max-width: 980px) { .reference-hero-portrait { padding-bottom: 4rem; } .reference-hero-portrait__breadcrumb { margin-bottom: 2.75rem; } .reference-hero-portrait__grid { grid-template-columns: 1fr; gap: 2.75rem; } .reference-hero-portrait__media { width: min(100%, 420px); } .project-gallery-custom { padding: 5rem 0; } }
+  @media (max-width: 720px) { .project-gallery-custom__items { grid-template-columns: 1fr; gap: 3rem; } .project-gallery-custom__item { width: 100%; justify-self: stretch !important; } }
+</style>

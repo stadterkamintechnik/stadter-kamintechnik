@@ -2,7 +2,118 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ReferenceOverview from "../../components/reference/ReferenceOverview.astro";
 
-const projects = [
+interface ReferenceProject {
+  title: string;
+  category: "Privat" | "Gewerbe" | "Industrie";
+  location: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  href: string;
+  tags?: string[];
+  featured?: boolean;
+}
+
+const projects: ReferenceProject[] = [
+  {
+    title: "Kaminverlängerung für einen bestehenden Kaminofen",
+    category: "Privat",
+    location: "Pegnitz",
+    description:
+      "Schornsteinhöhe nach VDI 3781 Blatt 4 berechnet und mit einer doppelwandigen Edelstahl-Kaminverlängerung hergestellt – Montage innerhalb eines halben Arbeitstages.",
+    image: "/images/referenzen/kaminverlaengerung-kaminofen-pegnitz/kaminverlaengerung-pegnitz-hero.webp",
+    imageAlt: "Doppelwandige Edelstahl-Kaminverlängerung auf einem bestehenden Schornstein in Pegnitz",
+    href: "/referenzen/kaminverlaengerung-kaminofen-pegnitz",
+    tags: ["Kaminverlängerung", "Kaminofen", "VDI 3781-4", "0,5 Arbeitstage"],
+  },
+  {
+    title: "Edelstahl-Außenkamin für einen Kaminofen nach den aktuellen Ableitbedingungen",
+    category: "Privat",
+    location: "Landkreis Hof",
+    description:
+      "Doppelwandiger Edelstahl-Außenkamin für einen nachgerüsteten Kaminofen, nach § 19 der 1. BImSchV ausgelegt und auf Wunsch des Kunden bis zum First geführt.",
+    image: "/images/referenzen/edelstahl-aussenkamin-landkreis-hof/edelstahl-aussenkamin-landkreis-hof-frontal.webp",
+    imageAlt: "Doppelwandiger Edelstahl-Außenkamin an einem Wohnhaus im Landkreis Hof",
+    href: "/referenzen/edelstahl-aussenkamin-kaminofen-landkreis-hof",
+    tags: ["Außenkamin", "Kaminofen", "§ 19 1. BImSchV", "1 Arbeitstag"],
+  },
+  {
+    title: "Kaminsanierung eines versotteten Schornsteins für eine bestehende Holzheizung",
+    category: "Privat",
+    location: "Nürnberg",
+    description:
+      "Versotteten gemauerten Schornstein mit Edelstahlrohr saniert, Putz im Dachboden erneuert und die gefliesten Anschlussbereiche im Heizraum sauber wiederhergestellt.",
+    image: "/images/referenzen/kaminsanierung-versotteter-schornstein-nuernberg/kaminsanierung-nuernberg-aussen.webp",
+    imageAlt: "Sanierter Schornsteinkopf auf einem Wohnhaus in Nürnberg",
+    href: "/referenzen/kaminsanierung-versotteter-schornstein-holzheizung-nuernberg",
+    tags: ["Kaminsanierung", "Versottung", "Holzheizung", "1 Arbeitstag"],
+  },
+  {
+    title: "Zwei Edelstahl-Abgasanlagen für vier Pelletkessel im Staatsarchiv Bamberg",
+    category: "Gewerbe",
+    location: "Bamberg",
+    description:
+      "Zwei doppelwandige Edelstahlkamine mit langen waagrechten Verbindungsleitungen und doppelwandiger Anbindung an insgesamt vier Pelletkessel – ausgeführt als Nachunternehmer innerhalb einer öffentlichen Ausschreibung.",
+    image: "/images/referenzen/staatsarchiv-bamberg-pelletkessel/staatsarchiv-bamberg-hero.webp",
+    imageAlt: "Zwei doppelwandige Edelstahlkamine am Staatsarchiv Bamberg",
+    href: "/referenzen/abgasanlage-pelletkessel-staatsarchiv-bamberg",
+    tags: ["Staatsarchiv Bamberg", "4 Pelletkessel", "2 Edelstahlkamine", "5 Arbeitstage"],
+  },
+  {
+    title: "Nachrüstung eines Außenwandkamins für einen Kaminofen am Fertighaus",
+    category: "Privat",
+    location: "Bayreuth",
+    description:
+      "Doppelwandiger Edelstahl-Außenwandkamin mit Brandschutzdurchführung am Fertighaus und nach VDI 3781 Blatt 4 ausgelegter Schornsteinhöhe.",
+    image: "/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-gesamtansicht.webp",
+    imageAlt: "Doppelwandiger Edelstahl-Außenwandkamin an einem Fertighaus in Bayreuth",
+    href: "/referenzen/aussenwandkamin-fertighaus-bayreuth",
+    tags: ["Außenwandkamin", "Fertighaus", "Brandschutz", "VDI 3781-4"],
+  },
+  {
+    title: "Kaminsanierung für eine neue Pelletheizung mit Kaminverlängerung",
+    category: "Privat",
+    location: "Forchheim",
+    description:
+      "Sanierung eines gemauerten Schornsteins für eine neue Pelletheizung mit Edelstahl-Innenrohr und doppelwandiger Kaminverlängerung – umgesetzt in einem Arbeitstag.",
+    image: "/images/referenzen/kaminsanierung-pelletheizung-forchheim/kaminverlaengerung-dach.webp",
+    imageAlt: "Doppelwandige Kaminverlängerung auf einem sanierten Schornstein in Forchheim",
+    href: "/referenzen/kaminsanierung-pelletheizung-forchheim",
+    tags: ["Kaminsanierung", "Pelletheizung", "Kaminverlängerung", "1 Arbeitstag"],
+  },
+  {
+    title: "Nachrüstung von zwei Edelstahl-Außenkaminen für neue Heizungsanlagen",
+    category: "Gewerbe",
+    location: "Bestandsgebäude",
+    description:
+      "Zwei doppelwandige Edelstahlschornsteine in RAL-Sonderfarbe für zwei neue Heizungsanlagen – außen montiert und innerhalb von zwei Arbeitstagen umgesetzt.",
+    image: "/images/referenzen/zwei-edelstahl-aussenkamine/zwei-edelstahl-aussenkamine-fassade.webp",
+    imageAlt: "Zwei parallel montierte schwarze Edelstahlschornsteine an einer Backsteinfassade",
+    href: "/referenzen/nachruestung-zwei-edelstahl-aussenkamine-heizungsanlagen",
+    tags: ["2 Außenkamine", "Bestandsgebäude", "RAL-Sonderfarbe", "2 Arbeitstage"],
+  },
+  {
+    title: "Nachrüstung eines Kamins im Neubau – Leichtbaukamin mit Edelstahlschornstein",
+    category: "Privat",
+    location: "Wohngebäude / Neubau",
+    description:
+      "Leichtbaukamin über mehrere Geschosse mit gezieltem Versatz im Dachboden und Systemwechsel auf einen schwarzen doppelwandigen Edelstahlschornstein über Dach.",
+    image: "/images/referenzen/leichtbaukamin-neubau/edelstahlschornstein-schwarz-dach.webp",
+    imageAlt: "Schwarzer doppelwandiger Edelstahlschornstein auf dem Dach eines Neubaus",
+    href: "/referenzen/leichtbaukamin-neubau-edelstahlschornstein",
+    tags: ["Leichtbaukamin", "Pelletofen", "Neubau", "1,5 Arbeitstage"],
+  },
+  {
+    title: "Kaminsanierung eines gemauerten Schornsteins für eine neue Heizungsanlage",
+    category: "Privat",
+    location: "Einfamilienhaus",
+    description:
+      "Sanierung eines älteren gemauerten Schornsteins mit Edelstahl-Innenrohr und Anpassung an eine neue Heizungsanlage – umgesetzt innerhalb eines Arbeitstages.",
+    image: "/images/referenzen/kaminsanierung-gemauerter-schornstein/muendung-edelstahl.webp",
+    imageAlt: "Fertige Edelstahlmündung auf einem sanierten gemauerten Schornstein",
+    href: "/referenzen/kaminsanierung-gemauerter-schornstein-heizungsanlage",
+    tags: ["Kaminsanierung", "Edelstahl-Innenrohr", "Einfamilienhaus", "1 Arbeitstag"],
+  },
   {
     title: "Neue Abgasanlage für eine Hackschnitzel-Heizzentrale",
     category: "Gewerbe",
@@ -13,7 +124,6 @@ const projects = [
     imageAlt: "Edelstahl-Abgasleitungen einer Hackschnitzel-Heizzentrale im Raum Pegnitz",
     href: "/referenzen/heizzentrale-gewerbe",
     tags: ["Hackschnitzel", "Biomasse", "Heizzentrale", "Jeremias"],
-    featured: true,
   },
   {
     title: "Kernsanierung einer Heizzentrale mit zwei Blockheizkraftwerken",
@@ -25,7 +135,6 @@ const projects = [
     imageAlt: "Blockheizkraftwerk mit industrieller Abgasführung in Schwarzenbach an der Saale",
     href: "/referenzen/blockheizkraftwerk-schwarzenbach",
     tags: ["Blockheizkraftwerk", "Bypassleitungen", "Kaminsanierung", "Industrie"],
-    featured: false,
   },
   {
     title: "Neue freistehende Kaminanlage für eine 10-MW-Dampfkesselanlage",
@@ -37,7 +146,6 @@ const projects = [
     imageAlt: "Neue freistehende Kaminanlage für eine Dampfkesselanlage in Kulmbach",
     href: "/referenzen/kaminaufrichtung-kulmbach",
     tags: ["Freistehender Kamin", "Dampfkessel", "10 MW", "Kaminrückbau"],
-    featured: false,
   },
   {
     title: "Erneuerung der kompletten Abgasanlagen eines Baustoffherstellers",
@@ -49,7 +157,6 @@ const projects = [
     imageAlt: "Neue Industrie-Abgasanlage eines Baustoffherstellers in Niederwinkling",
     href: "/referenzen/abgasanlagen-baustoffhersteller",
     tags: ["Komplettaustausch", "Stahlkamin", "Schalldämpfer", "1 Tag Stillstand"],
-    featured: false,
   },
   {
     title: "Neue Abgasanlage für einen Hofer Automobilzulieferer",
@@ -61,7 +168,6 @@ const projects = [
     imageAlt: "Neue industrielle Abgasanlage bei einem Automobilzulieferer in Hof",
     href: "/referenzen/abgasanlage-automobilzulieferer-hof",
     tags: ["Automobilindustrie", "Industriekamin", "26 Meter", "Abgasführung"],
-    featured: false,
   },
   {
     title: "Neues Abgassystem für einen denkmalgeschützten Mauerwerkskamin",
@@ -73,7 +179,6 @@ const projects = [
     imageAlt: "Denkmalgeschützter Mauerwerkskamin mit neuem Abgassystem in Marktredwitz",
     href: "/referenzen/neues-abgassystem-denkmalgeschuetzter-mauerwerkskamin",
     tags: ["Denkmalschutz", "Nahwärme", "Edelstahlrohre", "Marktredwitz"],
-    featured: false,
   },
   {
     title: "Abgassystem für einen Motorprüfstand",
@@ -85,7 +190,83 @@ const projects = [
     imageAlt: "Abgassystem eines Motorprüfstands mit freistehender Kaminanlage im Gebäude",
     href: "/referenzen/abgassystem-motorpruefstand",
     tags: ["Motorprüfstand", "Brandschutz", "Abgasgebläse", "Schallschutz"],
-    featured: false,
+  },
+  {
+    title: "Abgasanlage für ein Jenbacher 12-Zylinder-Blockheizkraftwerk",
+    category: "Industrie",
+    location: "Industrieanlage",
+    description:
+      "Vollständig geschweißte Abgasführung für einen Jenbacher-Gasmotor mit Katalysator, Abgaswärmetauscher, Schalldämpfer und Montage vor Ort.",
+    image: "/images/referenzen/jenbacher-bhkw/jenbacher-bhkw-hero.webp",
+    imageAlt: "Zwei Edelstahlmündungen der Abgasanlage eines Jenbacher-Blockheizkraftwerks auf dem Dach",
+    href: "/referenzen/abgasanlage-jenbacher-blockheizkraftwerk",
+    tags: ["Blockheizkraftwerk", "Jenbacher", "Schweißkonstruktion", "Abgasanlage"],
+  },
+  {
+    title: "Freistehender Stahlschornstein für eine 20-MW-Heizzentrale",
+    category: "Industrie",
+    location: "Norddeutschland",
+    description:
+      "32 Meter hoher freistehender Stahlschornstein mit vier Innenrohren, rund 35 Metern geschweißter Abgasleitung und Schalldämpfern für zwei Dampfkessel.",
+    image: "/images/referenzen/stahlschornstein-dampfkessel/stahlschornstein-heizzentrale-hero.webp",
+    imageAlt: "32 Meter hoher freistehender Stahlschornstein einer industriellen Heizzentrale",
+    href: "/referenzen/freistehender-stahlschornstein-dampfkessel-heizzentrale",
+    tags: ["20 MW", "Dampfkessel", "Stahlschornstein", "Industrie"],
+  },
+  {
+    title: "Abgasanlage für eine Hackschnitzel-Heizzentrale in Heinersreuth",
+    category: "Gewerbe",
+    location: "Heinersreuth bei Bayreuth",
+    description:
+      "Lieferung und Montage von zwei doppelwandigen Keramikschornsteinen mit statischer Kragarmkonstruktion und Edelstahl-Abgasleitungen für zwei Hackschnitzelkessel.",
+    image: "/images/referenzen/heizzentrale-heinersreuth/heizzentrale-heinersreuth-aussen.webp",
+    imageAlt: "Zwei hohe Keramikschornsteine an einer Heizzentrale in Heinersreuth bei Bayreuth",
+    href: "/referenzen/heizzentrale-hackschnitzelkessel-heinersreuth",
+    tags: ["Hackschnitzel", "Heizzentrale", "Keramikschornstein", "Heinersreuth"],
+  },
+  {
+    title: "Abgas- und Abluftanlage für eine gewerbliche Backstube mit acht Stikkenöfen",
+    category: "Gewerbe",
+    location: "Nordbayern",
+    description:
+      "Komplette Abgas- und Ablufttechnik für acht Stikkenöfen mit doppelwandigen Abgassystemen, Abgasgebläsen und integrierter Steuerung.",
+    image: "/images/referenzen/backstube-stikkenoefen/backstube-stikkenoefen-hero.webp",
+    imageAlt: "Acht Stikkenöfen mit Edelstahl-Abgas- und Abluftanlage in einer gewerblichen Backstube",
+    href: "/referenzen/abgas-und-abluftanlage-backstube",
+    tags: ["Stikkenöfen", "Backstube", "Abluftanlage", "Abgasgebläse"],
+  },
+  {
+    title: "Zwei Edelstahl-Abgasanlagen für eine Energiezentrale",
+    category: "Industrie",
+    location: "München",
+    description:
+      "Zwei überdruckdichte, doppelwandige Edelstahlkamine mit jeweils 31 Metern Höhe für zwei Heißwasserkessel mit je 2,7 MW Leistung.",
+    image: "/images/referenzen/heizzentrale-muenchen/edelstahlkamine-muenchen-aussen.webp",
+    imageAlt: "Zwei 31 Meter hohe Edelstahlkamine an einer Energiezentrale in München",
+    href: "/referenzen/edelstahl-abgasanlagen-heisswasserkessel-muenchen",
+    tags: ["Heißwasserkessel", "2,7 MW", "Edelstahlkamin", "München"],
+  },
+  {
+    title: "Abgasanlage für eine technische Produktionsmaschine",
+    category: "Industrie",
+    location: "Nordbayern",
+    description:
+      "Doppelwandiges Edelstahl-Abgassystem mit Maschinenanbindung im Gebäude, langer horizontaler Flachdachführung und vertikalem Schornstein.",
+    image: "/images/referenzen/produktionsmaschine/produktionsmaschine-aussen.webp",
+    imageAlt: "Edelstahl-Abgasanlage mit langer Dachleitung für eine technische Produktionsmaschine",
+    href: "/referenzen/abgasanlage-produktionsmaschine",
+    tags: ["Produktionsmaschine", "Edelstahl", "Flachdachführung", "Industrie"],
+  },
+  {
+    title: "Freistehende Kaminanlage für eine Fröling-Energiebox",
+    category: "Industrie",
+    location: "Michelau in Oberfranken",
+    description:
+      "Freistehender Tragmast mit zwei doppelwandigen Edelstahlkaminen für zwei Fröling-T4e-Hackschnitzelkessel mit jeweils 350 kW.",
+    image: "/images/referenzen/kaminanlage-energiebox-michelau/kaminanlage-frontansicht.webp",
+    imageAlt: "Freistehende Kaminanlage für eine Fröling-Energiebox in Michelau",
+    href: "/referenzen/kaminanlage-energiebox-michelau",
+    tags: ["Fröling", "2 × 350 kW", "Tragmast", "16 Meter"],
   },
 ];
 ---

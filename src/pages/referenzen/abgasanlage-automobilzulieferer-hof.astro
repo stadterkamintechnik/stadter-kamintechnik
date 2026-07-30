@@ -1,10 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ProjectHero from "../../components/reference/ProjectHero.astro";
 import ProjectContent from "../../components/reference/ProjectContent.astro";
 import ProjectFacts from "../../components/reference/ProjectFacts.astro";
-import ProjectGallery from "../../components/reference/ProjectGallery.astro";
-import ProjectVideo from "../../components/reference/ProjectVideo.astro";
 import ProjectCTA from "../../components/reference/ProjectCTA.astro";
 
 const contentSections = [
@@ -29,14 +26,16 @@ const contentSections = [
     title: "26 Meter Industriekamin und eine sicher geführte Abgasleitung auf dem Dach.",
     paragraphs: [
       "Stadter Kamintechnik errichtete einen 26 Meter hohen Industriekamin und installierte die zugehörige, über das Dach geführte Abgasleitung. Die Befestigung wurde für hohe Betriebssicherheit und die dauerhafte Beanspruchung im industriellen Umfeld ausgelegt.",
+      "Die groß dimensionierte Edelstahl-Abgasleitung wurde mit Flanschverbindungen, Mess- und Revisionsmöglichkeiten sowie exakt abgestimmten Befestigungspunkten in die vorhandene Stahlbau- und Produktionsstruktur integriert.",
       "Trotz klirrender Kälte konnte das Projekt dank präziser Vorbereitung, abgestimmter Arbeitsabläufe und vorausschauender Planung termingerecht umgesetzt werden.",
     ],
     points: [
       "26 Meter hoher Industriekamin",
-      "Komplexe Abgasführung über das Dach",
+      "Komplexe Abgasführung über das Hallendach",
+      "Groß dimensionierte Edelstahl-Abgasleitung",
       "Softwarebasierte Planung und Integration",
       "Ausführung während des laufenden Betriebs",
-      "Befestigung für höchste Betriebssicherheit",
+      "Befestigung für hohe industrielle Dauerbeanspruchung",
       "Termingerechte Montage trotz winterlicher Bedingungen",
     ],
   },
@@ -51,97 +50,137 @@ const contentSections = [
 ];
 
 const facts = [
-  {
-    label: "Standort",
-    value: "Hof",
-  },
-  {
-    label: "Kunde",
-    value: "Tenowo GmbH",
-  },
-  {
-    label: "Branche",
-    value: "Automobilzulieferindustrie",
-  },
-  {
-    label: "Projekt",
-    value: "Werkserweiterung und neue Abgasanlage",
-  },
-  {
-    label: "Industriekamin",
-    value: "26 Meter Höhe",
-  },
-  {
-    label: "Abgasführung",
-    value: "Über das Dach geführte Abgasleitung",
-  },
-  {
-    label: "Betriebsplanung",
-    value: "Montage im laufenden Produktionsbetrieb",
-  },
-  {
-    label: "Leistungsumfang",
-    value: "Planung, Fertigung, Montage und Integration",
-  },
+  { label: "Standort", value: "Hof" },
+  { label: "Kunde", value: "Tenowo GmbH" },
+  { label: "Branche", value: "Automobilzulieferindustrie" },
+  { label: "Projekt", value: "Werkserweiterung und neue Abgasanlage" },
+  { label: "Industriekamin", value: "26 Meter Höhe" },
+  { label: "Abgasführung", value: "Über das Hallendach geführte Edelstahl-Abgasleitung" },
+  { label: "Betriebsplanung", value: "Montage im laufenden Produktionsbetrieb" },
+  { label: "Leistungsumfang", value: "Planung, Fertigung, Montage und Integration" },
 ];
 
 const galleryImages = [
   {
-    src: "/images/referenzen/automobilzulieferer-hof/industriekamin-gesamtansicht.jpg",
+    src: "/images/referenzen/automobilzulieferer-hof/dachleitung-panorama.webp",
+    alt: "Lange industrielle Edelstahl-Abgasleitung auf dem Hallendach der Tenowo GmbH in Hof",
+    caption:
+      "Die groß dimensionierte Abgasleitung führt über eine lange Strecke auf dem Hallendach bis zum neuen Industriekamin.",
+    format: "landscape",
+  },
+  {
+    src: "/images/referenzen/automobilzulieferer-hof/abgasleitung-detail.webp",
+    alt: "Detail einer groß dimensionierten Edelstahl-Abgasleitung mit Flanschverbindung und Stellmotor",
+    caption:
+      "Flanschverbindungen, Stelltechnik und abgestimmte Befestigungen zeigen die industrielle Ausführung der Anlage im Detail.",
+    format: "landscape",
+  },
+  {
+    src: "/images/referenzen/automobilzulieferer-hof/gesamtansicht.jpg",
     alt: "26 Meter hoher Industriekamin bei einem Automobilzulieferer in Hof",
     caption:
-      "Der neue 26 Meter hohe Industriekamin wurde in die bestehende Produktionsumgebung integriert.",
+      "Der neue 26 Meter hohe Industriekamin wurde dauerhaft in die bestehende Produktionsumgebung integriert.",
+    format: "portrait",
   },
   {
     src: "/images/referenzen/automobilzulieferer-hof/kaminaufrichtung.jpg",
     alt: "Aufrichtung des neuen Industriekamins am Produktionsstandort in Hof",
     caption:
-      "Die Kaminaufrichtung erfolgte nach einem exakt abgestimmten Montageplan.",
-  },
-  {
-    src: "/images/referenzen/automobilzulieferer-hof/abgasleitung-dach.jpg",
-    alt: "Über das Hallendach geführte industrielle Abgasleitung",
-    caption:
-      "Die komplexe Abgasleitung wurde sicher über das Dach bis zum neuen Industriekamin geführt.",
-  },
-  {
-    src: "/images/referenzen/automobilzulieferer-hof/abgasanlage-fertig.jpg",
-    alt: "Fertiggestellte industrielle Abgasanlage der Tenowo GmbH in Hof",
-    caption:
-      "Die fertige Anlage sichert die ordnungsgemäße Abgasableitung der erweiterten Produktion.",
+      "Die Aufrichtung des Industriekamins erfolgte nach einem exakt abgestimmten Montageplan.",
+    format: "portrait",
   },
 ];
 ---
 
 <BaseLayout
   title="Industriekamin und Abgasanlage für Automobilzulieferer | Stadter Kamintechnik"
-  description="Industrieprojekt in Hof: 26 Meter hoher Industriekamin und komplexe Abgasführung für die Tenowo GmbH – geplant und montiert während des laufenden Produktionsbetriebs."
+  description="Industrieprojekt in Hof: 26 Meter hoher Industriekamin und komplexe Edelstahl-Abgasführung für die Tenowo GmbH – geplant und montiert während des laufenden Produktionsbetriebs."
 >
-  <ProjectHero
-    category="Industrie"
-    title="Neue Abgasanlage für einen Hofer Automobilzulieferer"
-    location="Hof"
-    intro="Ein 26 Meter hoher Industriekamin und eine komplexe Abgasführung erweitern die Produktionskapazitäten der Tenowo GmbH – präzise geplant und während des laufenden Betriebs umgesetzt."
-    image="/images/referenzen/automobilzulieferer-hof/gesamtansicht.jpg"
-    imageAlt="Neue Industrie-Abgasanlage mit 26 Meter hohem Kamin bei der Tenowo GmbH in Hof"
-  />
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a>
+        <span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a>
+        <span aria-hidden="true">/</span>
+        <span>Abgasanlage für einen Hofer Automobilzulieferer</span>
+      </nav>
 
-  <ProjectVideo
-    title="Projektfilm"
-    text="Der Film zeigt die Planung, Montage und Aufrichtung des 26 Meter hohen Industriekamins sowie die Integration der neuen Abgasführung in den laufenden Produktionsbetrieb."
-    youtubeId="uX6AAqBHiJ0"
-    facts={[
-      "26 Meter hoher Industriekamin",
-      "Montage im laufenden Betrieb",
-      "Komplexe Abgasführung über das Dach",
-    ]}
-  />
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Industrie</p>
+          <h1>Neue Abgasanlage für einen Hofer Automobilzulieferer</h1>
+          <p class="reference-hero-portrait__location">Hof</p>
+          <p class="reference-hero-portrait__intro">
+            Ein 26 Meter hoher Industriekamin und eine komplexe Abgasführung erweitern die
+            Produktionskapazitäten der Tenowo GmbH – präzise geplant und während des
+            laufenden Betriebs umgesetzt.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/automobilzulieferer-hof/industriekamin-montage-hochformat.webp"
+            alt="26 Meter hoher Industriekamin während der Montage bei der Tenowo GmbH in Hof"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-video-short" aria-labelledby="project-video-title">
+    <div class="container project-video-short__grid">
+      <div class="project-video-short__content">
+        <p class="project-video-short__kicker">Kundenstimme</p>
+        <h2 id="project-video-title">Der Projektleiter des Kunden über die Zusammenarbeit.</h2>
+        <p>
+          Im kurzen Interview berichtet der verantwortliche Projektleiter der Tenowo GmbH
+          über die Zusammenarbeit mit Stadter Kamintechnik und seine Zufriedenheit mit der
+          Planung und Umsetzung des Projekts.
+        </p>
+        <ul>
+          <li>Persönliche Einschätzung des Projektleiters</li>
+          <li>Erfahrung aus der gemeinsamen Projektumsetzung</li>
+          <li>Kundenstimme zur Zusammenarbeit mit Stadter Kamintechnik</li>
+        </ul>
+      </div>
+
+      <div class="project-video-short__player">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/syPLVkP72MY"
+          title="Kundenstimme des Projektleiters der Tenowo GmbH zur Zusammenarbeit mit Stadter Kamintechnik"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
 
   <ProjectFacts facts={facts} />
-
   <ProjectContent sections={contentSections} />
 
-  <ProjectGallery images={galleryImages} />
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Die Anlage im Detail</p>
+        <h2 id="project-gallery-title">Vom Produktionsanschluss bis zum 26 Meter hohen Industriekamin.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <ProjectCTA
     title="Sie erweitern Ihre industrielle Produktion?"
@@ -150,3 +189,244 @@ const galleryImages = [
     buttonHref="/projekt-starten/?projekt=industrieanlage"
   />
 </BaseLayout>
+
+<style>
+  .reference-hero-portrait {
+    padding: 2rem 0 6rem;
+  }
+
+  .reference-hero-portrait__breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 4rem;
+    color: #777;
+    font-size: 0.9rem;
+  }
+
+  .reference-hero-portrait__breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .reference-hero-portrait__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: center;
+  }
+
+  .reference-hero-portrait__content {
+    max-width: 680px;
+  }
+
+  .reference-hero-portrait__category,
+  .project-video-short__kicker,
+  .project-gallery-custom__kicker {
+    margin: 0 0 1rem;
+    color: #9d1f24;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .reference-hero-portrait h1 {
+    margin: 0;
+    font-size: clamp(3rem, 5.2vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .reference-hero-portrait__location {
+    margin: 1.65rem 0 0;
+    color: #9d1f24;
+    font-weight: 700;
+  }
+
+  .reference-hero-portrait__intro {
+    max-width: 620px;
+    margin: 1.5rem 0 0;
+    color: #626262;
+    font-size: 1.12rem;
+    line-height: 1.7;
+  }
+
+  .reference-hero-portrait__media {
+    width: 100%;
+    margin: 0;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f2f2f2;
+  }
+
+  .reference-hero-portrait__media img,
+  .project-gallery-custom__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-video-short {
+    padding: 7rem 0;
+    background: #f5f5f3;
+  }
+
+  .project-video-short__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
+    gap: clamp(3rem, 7vw, 8rem);
+    align-items: center;
+  }
+
+  .project-video-short__content {
+    max-width: 720px;
+  }
+
+  .project-video-short h2,
+  .project-gallery-custom h2 {
+    margin: 0;
+    font-size: clamp(2.35rem, 4vw, 4.4rem);
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+  }
+
+  .project-video-short__content > p:not(.project-video-short__kicker) {
+    margin: 1.5rem 0 0;
+    color: #626262;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  .project-video-short ul {
+    display: grid;
+    gap: 0.8rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .project-video-short li {
+    position: relative;
+    padding-left: 1.4rem;
+    line-height: 1.55;
+  }
+
+  .project-video-short li::before {
+    position: absolute;
+    top: 0.62em;
+    left: 0;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #9d1f24;
+    content: "";
+  }
+
+  .project-video-short__player {
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #111;
+    box-shadow: 0 24px 65px rgb(0 0 0 / 16%);
+  }
+
+  .project-video-short__player iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .project-gallery-custom {
+    padding: 7rem 0;
+    background: #f5f5f3;
+  }
+
+  .project-gallery-custom__header {
+    max-width: 920px;
+    margin-bottom: 3.5rem;
+  }
+
+  .project-gallery-custom__items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4.5rem clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .project-gallery-custom__item {
+    margin: 0;
+  }
+
+  .project-gallery-custom__item--landscape {
+    grid-column: 1 / -1;
+  }
+
+  .project-gallery-custom__item--portrait {
+    width: min(100%, 430px);
+  }
+
+  .project-gallery-custom__media {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #e9e9e7;
+  }
+
+  .project-gallery-custom__media--landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-gallery-custom__media--portrait {
+    aspect-ratio: 2 / 3;
+  }
+
+  .project-gallery-custom figcaption {
+    max-width: 850px;
+    margin-top: 1.1rem;
+    color: #666;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 980px) {
+    .reference-hero-portrait {
+      padding-bottom: 4rem;
+    }
+
+    .reference-hero-portrait__breadcrumb {
+      margin-bottom: 2.75rem;
+    }
+
+    .reference-hero-portrait__grid,
+    .project-video-short__grid {
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
+    }
+
+    .reference-hero-portrait__media,
+    .project-video-short__player {
+      width: min(100%, 420px);
+    }
+
+    .project-video-short,
+    .project-gallery-custom {
+      padding: 5rem 0;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .project-gallery-custom__items {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .project-gallery-custom__item--landscape,
+    .project-gallery-custom__item--portrait {
+      grid-column: auto;
+      width: 100%;
+    }
+  }
+</style>

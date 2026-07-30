@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Aufgabe",
+    title: "Eine sichere Abgasführung für zwei Hackschnitzelkessel in direkter Nähe zur Wohnbebauung.",
+    paragraphs: [
+      "Für eine neu errichtete Heizzentrale in Heinersreuth bei Bayreuth war die komplette Schornstein- und Abgasanlage für zwei Hackschnitzelkessel auszuführen. Aufgrund der Leistung der Wärmeerzeuger und der umliegenden Wohnbebauung stellte das Projekt hohe Anforderungen an Bauhöhe, Betriebssicherheit und dauerhaft zuverlässige Abgasableitung.",
+      "Die technische Planung der Gesamtanlage erfolgte durch ein Ingenieurbüro. Stadter Kamintechnik führte das Projekt im Rahmen einer öffentlichen Ausschreibung als Nachunternehmer eines Heizungsbauunternehmens aus.",
+    ],
+  },
+  {
+    kicker: "Das Konzept",
+    title: "Zwei außenliegende Keramikschornsteine mit statisch tragfähiger Sonderkonstruktion.",
+    paragraphs: [
+      "Die Abgase der beiden Biomassekessel werden über zwei doppelwandige Keramikschornsteine abgeführt, die außen am Gebäude bis über die erforderliche Ableithöhe geführt sind.",
+      "Zur sicheren Aufnahme der Lasten war eine speziell ausgelegte Kragarmkonstruktion vorgesehen. Sie trägt die beiden hohen Schornsteinsysteme und schafft eine dauerhaft stabile Verbindung mit dem Gebäude.",
+    ],
+  },
+  {
+    kicker: "Unsere Umsetzung",
+    title: "Lieferung und fachgerechte Montage der kompletten Schornstein- und Abgasanlage.",
+    paragraphs: [
+      "Stadter Kamintechnik lieferte die beiden doppelwandigen Keramikschornsteine und montierte die komplette außenliegende Schornsteinanlage einschließlich der statischen Kragarmkonstruktion.",
+      "Im Heizraum wurden die beiden Hackschnitzelkessel über Edelstahl-Abgasleitungen an die Schornsteinsysteme angeschlossen. Die Ausführung erfolgte in enger Abstimmung mit dem beauftragenden Heizungsbauunternehmen und der Bauleitung.",
+      "Damit wurde die durch das Ingenieurbüro geplante Lösung fachgerecht und passend zum Bauablauf auf der Baustelle umgesetzt.",
+    ],
+    points: [
+      "Lieferung der doppelwandigen Keramikschornsteine",
+      "Montage der beiden außenliegenden Schornsteinsysteme",
+      "Montage der statischen Kragarmkonstruktion",
+      "Installation der Edelstahl-Abgasleitungen im Heizraum",
+      "Anschluss der beiden Hackschnitzelkessel",
+      "Abstimmung mit Heizungsbauunternehmen und Bauleitung",
+      "Ausführung als Nachunternehmer im Rahmen einer öffentlichen Ausschreibung",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine langlebige Abgasanlage für den zuverlässigen Betrieb der kommunalen Heizzentrale.",
+    paragraphs: [
+      "Die fertiggestellte Anlage führt die Abgase der beiden Hackschnitzelkessel sicher über die notwendige Höhe ab. Die statisch tragfähige Konstruktion nimmt die Lasten der beiden Keramikschornsteine zuverlässig auf und gewährleistet eine dauerhaft stabile Ausführung.",
+      "Damit steht der Heizzentrale in Heinersreuth eine wartungsfreundliche und betriebssichere Abgaslösung zur Verfügung, die auf die örtlichen Gegebenheiten und die benachbarte Wohnbebauung abgestimmt ist.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Objekt", value: "Neu errichtete Heizzentrale" },
+  { label: "Wärmeerzeuger", value: "2 Hackschnitzelkessel" },
+  { label: "Abgasanlage", value: "2 doppelwandige Keramikschornsteine" },
+  { label: "Innenanschluss", value: "Edelstahl-Abgasleitungen" },
+  { label: "Besonderheit", value: "Statische Kragarmkonstruktion zur Lastaufnahme" },
+  { label: "Vergabe", value: "Öffentliche Ausschreibung" },
+  { label: "Ausführung", value: "Als Nachunternehmer eines Heizungsbauunternehmens" },
+  { label: "Leistungsumfang", value: "Lieferung und komplette Montage" },
+  { label: "Ort", value: "Heinersreuth bei Bayreuth" },
+  { label: "Region", value: "Oberfranken / Nordbayern" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/heizzentrale-heinersreuth/heizzentrale-heinersreuth-aussen.webp",
+    alt: "Zwei außenliegende Keramikschornsteine an einer Heizzentrale in Heinersreuth",
+    caption: "Die beiden Keramikschornsteine werden über eine statisch ausgelegte Kragarmkonstruktion sicher am Gebäude getragen.",
+  },
+  {
+    src: "/images/referenzen/heizzentrale-heinersreuth/hackschnitzelkessel-abgasleitungen.webp",
+    alt: "Zwei Hackschnitzelkessel mit Edelstahl-Abgasleitungen in der Heizzentrale",
+    caption: "Im Heizraum wurden beide Hackschnitzelkessel über Edelstahl-Abgasleitungen an die außenliegenden Schornsteinsysteme angeschlossen.",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgasanlage für Hackschnitzel-Heizzentrale in Heinersreuth | Stadter Kamintechnik"
+  description="Lieferung und Montage von zwei doppelwandigen Keramikschornsteinen mit statischer Kragarmkonstruktion für eine Heizzentrale mit zwei Hackschnitzelkesseln in Heinersreuth bei Bayreuth."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a>
+        <span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a>
+        <span aria-hidden="true">/</span>
+        <span>Heizzentrale mit zwei Hackschnitzelkesseln in Heinersreuth</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Gewerbe &amp; Kommune</p>
+          <h1>Abgasanlage für eine Hackschnitzel-Heizzentrale</h1>
+          <p class="reference-hero-portrait__location">Heinersreuth bei Bayreuth</p>
+          <p class="reference-hero-portrait__intro">
+            Zwei doppelwandige Keramikschornsteine mit statischer Kragarmkonstruktion und Edelstahl-Abgasleitungen für zwei Hackschnitzelkessel – geliefert und vollständig montiert als Nachunternehmer eines Heizungsbauunternehmens.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/heizzentrale-heinersreuth/heizzentrale-heinersreuth-aussen.webp"
+            alt="Zwei hohe Keramikschornsteine an einer Heizzentrale in Heinersreuth bei Bayreuth"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectContent sections={contentSections} />
+  <ProjectFacts facts={facts} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Einblicke</p>
+        <h2 id="project-gallery-title">Die Anlage im Detail.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        <figure class="project-gallery-custom__item project-gallery-custom__item--portrait">
+          <div class="project-gallery-custom__image project-gallery-custom__image--portrait">
+            <img src={galleryImages[0].src} alt={galleryImages[0].alt} loading="lazy" decoding="async" />
+          </div>
+          <figcaption>{galleryImages[0].caption}</figcaption>
+        </figure>
+
+        <figure class="project-gallery-custom__item">
+          <div class="project-gallery-custom__image project-gallery-custom__image--landscape">
+            <img src={galleryImages[1].src} alt={galleryImages[1].alt} loading="lazy" decoding="async" />
+          </div>
+          <figcaption>{galleryImages[1].caption}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Sie benötigen eine Abgasanlage für eine Heizzentrale oder Biomasseanlage?"
+    text="Wir liefern und montieren Schornstein- und Abgassysteme für Heizungsbauer, Kommunen, Gewerbe und Industrie – fachgerecht nach den Vorgaben der technischen Planung."
+    buttonText="Projekt besprechen"
+    buttonHref="/projekt-starten/?projekt=heizzentrale"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 640px; }
+  .reference-hero-portrait__category { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(3rem, 5.2vw, 5.5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 590px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+  .project-gallery-custom { padding: 6rem 0; }
+  .project-gallery-custom__header { margin-bottom: 3.5rem; }
+  .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.5rem, 4.5vw, 4.5rem); line-height: 1; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; gap: 3rem; }
+  .project-gallery-custom__item { margin: 0; }
+  .project-gallery-custom__image { overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .project-gallery-custom__image--portrait { width: min(100%, 680px); aspect-ratio: 2 / 3; }
+  .project-gallery-custom__image--landscape { width: 100%; aspect-ratio: 16 / 9; }
+  .project-gallery-custom__image img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+  .project-gallery-custom figcaption { margin-top: 0.9rem; color: #6b6b6b; font-size: 0.95rem; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .reference-hero-portrait { padding-bottom: 4.5rem; }
+    .reference-hero-portrait__breadcrumb { margin-bottom: 2.75rem; }
+    .reference-hero-portrait__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .reference-hero-portrait__media { width: min(100%, 430px); }
+    .project-gallery-custom { padding: 4.5rem 0; }
+  }
+</style>

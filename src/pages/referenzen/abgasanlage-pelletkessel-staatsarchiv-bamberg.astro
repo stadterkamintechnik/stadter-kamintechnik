@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Ausgangssituation",
+    title: "Vier neue Pelletkessel benötigten eine vollständig neue Abgasführung.",
+    paragraphs: [
+      "Im Zuge einer öffentlichen Ausschreibung wurde die Heizungsanlage des Staatsarchivs Bamberg erneuert. Für insgesamt vier Pelletkessel war eine neue, dauerhaft sichere Abgasführung herzustellen.",
+      "Stadter Kamintechnik war bei diesem Projekt als Nachunternehmer für den ausführenden Heizungsbauer tätig. Die beengten Platzverhältnisse im Gebäude und die langen Wege bis zu den außenliegenden Schornsteinen erforderten eine präzise abgestimmte Leitungsführung.",
+    ],
+  },
+  {
+    kicker: "Die Planung",
+    title: "Zwei getrennte Kaminzüge für insgesamt vier Pelletkessel.",
+    paragraphs: [
+      "Geplant wurden zwei doppelwandige Edelstahlkamine an der Außenfassade. Im Gebäude wurden die vier Pelletkessel über doppelwandige Abgasleitungen an die beiden Kaminzüge angebunden.",
+      "Ein wesentlicher Bestandteil der Lösung waren die langen waagrechten Verbindungsleitungen. Ihre Führung musste mit der vorhandenen Gebäudetechnik, den Rohrleitungen und den baulichen Gegebenheiten abgestimmt werden.",
+    ],
+  },
+  {
+    kicker: "Die Umsetzung",
+    title: "Doppelwandige Verbindungsleitungen vom Heizraum bis zur Außenfassade.",
+    paragraphs: [
+      "Zunächst wurden die doppelwandigen Anschlüsse an den vier Pelletkesseln hergestellt. Anschließend montierte das Team die waagrechten Verbindungsleitungen durch den Technikbereich bis zu den beiden außenliegenden Edelstahlkaminen.",
+      "Die beiden Schornsteine wurden an der Fassade senkrecht bis über das Dach geführt. Der untere Leitungsbereich verläuft in einer bauseitigen Betonrinne und wird in die Außenanlage integriert.",
+    ],
+    points: [
+      "Montage von zwei doppelwandigen Edelstahlkaminen",
+      "Doppelwandige Anbindung von insgesamt vier Pelletkesseln",
+      "Lange waagrechte Verbindungsleitungen im Gebäude",
+      "Abgestimmte Leitungsführung im vorhandenen Technikraum",
+      "Ausführung als Nachunternehmer für den Heizungsbauer",
+      "Gesamte Montagezeit: fünf Arbeitstage",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine kompakte Gesamtanlage für den zuverlässigen Betrieb der Pelletheizung.",
+    paragraphs: [
+      "Die vier Pelletkessel sind nun über zwei getrennte, doppelwandige Abgassysteme an die außenliegenden Edelstahlkamine angeschlossen.",
+      "Trotz der anspruchsvollen Leitungswege entstand eine klar strukturierte und gut zugängliche Anlage. Die komplette Montage der Abgasführung wurde innerhalb von fünf Arbeitstagen abgeschlossen.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Projekt", value: "Neue Abgasanlage für vier Pelletkessel" },
+  { label: "Gebäude", value: "Staatsarchiv Bamberg" },
+  { label: "Standort", value: "Bamberg" },
+  { label: "Auftragsform", value: "Öffentliche Ausschreibung" },
+  { label: "Ausführung", value: "Nachunternehmer für einen Heizungsbauer" },
+  { label: "Feuerstätten", value: "Vier Pelletkessel" },
+  { label: "System", value: "Zwei doppelwandige Edelstahlkamine" },
+  { label: "Verbindungsleitungen", value: "Lang, waagrecht und doppelwandig" },
+  { label: "Montagezeit", value: "5 Arbeitstage" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/staatsarchiv-bamberg-pelletkessel/staatsarchiv-bamberg-aussenanlage.webp",
+    alt: "Zwei doppelwandige Edelstahlkamine mit Anschlussleitungen am Staatsarchiv Bamberg",
+    caption: "Die beiden außenliegenden Edelstahlkamine führen die Abgase der vier Pelletkessel sicher über das Dachniveau ab.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/staatsarchiv-bamberg-pelletkessel/staatsarchiv-bamberg-verbindungsleitungen.webp",
+    alt: "Doppelwandige Edelstahl-Verbindungsleitungen im Heizraum des Staatsarchivs Bamberg",
+    caption: "Lange waagrechte Verbindungsleitungen verbinden die Pelletkessel mit den beiden außenliegenden Kaminzügen.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/staatsarchiv-bamberg-pelletkessel/staatsarchiv-bamberg-innen-abgasleitungen.webp",
+    alt: "Doppelwandige Abgasleitungen zwischen Rohrinstallationen im Technikraum",
+    caption: "Die Leitungsführung wurde präzise mit den vorhandenen Rohrleitungen und der Gebäudetechnik abgestimmt.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Abgasanlage für vier Pelletkessel im Staatsarchiv Bamberg | Stadter Kamintechnik"
+  description="Zwei doppelwandige Edelstahlkamine mit langen waagrechten Verbindungsleitungen für vier Pelletkessel im Staatsarchiv Bamberg – Montage in fünf Arbeitstagen."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a><span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a><span aria-hidden="true">/</span>
+        <span>Pelletkessel im Staatsarchiv Bamberg</span>
+      </nav>
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Gewerbe</p>
+          <h1>Zwei Edelstahl-Abgasanlagen für vier Pelletkessel im Staatsarchiv Bamberg</h1>
+          <p class="reference-hero-portrait__location">Bamberg</p>
+          <p class="reference-hero-portrait__intro">Im Rahmen einer öffentlichen Ausschreibung montierten wir als Nachunternehmer zwei doppelwandige Edelstahlkamine mit langen waagrechten Verbindungsleitungen und doppelwandiger Anbindung an insgesamt vier Pelletkessel.</p>
+        </div>
+        <figure class="reference-hero-portrait__media">
+          <img src="/images/referenzen/staatsarchiv-bamberg-pelletkessel/staatsarchiv-bamberg-hero.webp" alt="Zwei doppelwandige Edelstahlkamine am Staatsarchiv Bamberg" loading="eager" decoding="async" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Abgastechnik für vier Pelletkessel</p>
+        <h2 id="project-gallery-title">Zwei Kaminzüge, lange Leitungswege und eine präzise Einbindung in die vorhandene Gebäudetechnik.</h2>
+      </div>
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA title="Planen Sie eine Abgasanlage für eine größere Heizungsanlage?" text="Wir unterstützen Heizungsbauer, öffentliche Auftraggeber und Betreiber bei der Planung und Montage anspruchsvoller Schornstein- und Abgassysteme." buttonText="Gewerbliche Abgasanlage anfragen" buttonHref="/projekt-starten/?projekt=gewerbe" />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 760px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 650px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+  .project-gallery-custom__item { margin: 0; }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 10px; background: #e9e9e7; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { margin-top: 0.9rem; color: #666; font-size: 0.92rem; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .reference-hero-portrait__grid { grid-template-columns: 1fr; }
+    .reference-hero-portrait__media { max-width: 520px; }
+    .project-gallery-custom__items { grid-template-columns: 1fr; }
+    .project-gallery-custom__media--portrait { aspect-ratio: 4 / 5; }
+  }
+</style>

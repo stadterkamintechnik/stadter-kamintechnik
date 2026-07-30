@@ -1,0 +1,178 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Ausgangssituation",
+    title: "Versotteter Schornstein an einer bestehenden Holzheizung.",
+    paragraphs: [
+      "Bei einem Wohnhaus in Nürnberg war der bestehende gemauerte Schornstein versottet. Für den weiteren Betrieb der vorhandenen Holzheizung musste die Abgasführung dauerhaft saniert werden.",
+      "Zusätzlich waren am Schornstein im Dachboden sowie am Anschlussbereich im Heizraum handwerkliche Anpassungen erforderlich.",
+    ],
+  },
+  {
+    kicker: "Die Lösung",
+    title: "Edelstahlrohr im Bestand und saubere Wiederherstellung der Oberflächen.",
+    paragraphs: [
+      "In den bestehenden Schornstein wurde ein Edelstahlrohr eingebaut. Damit erhielt die Holzheizung eine neue, dauerhaft geeignete Abgasführung innerhalb des vorhandenen Kaminschachts.",
+      "Im Dachboden wurde der Putz am Schornstein erneuert. Im Heizraum wurden die vorhandenen Fliesen für die erforderlichen Öffnungen sauber ausgeschnitten und die Anschlussbereiche anschließend fachgerecht verputzt.",
+    ],
+  },
+  {
+    kicker: "Die Umsetzung",
+    title: "Komplette Kaminsanierung innerhalb eines Arbeitstages.",
+    paragraphs: [
+      "Die Sanierung umfasste den Einbau des Edelstahlrohrs, die Herstellung der erforderlichen Anschluss- und Reinigungsbereiche sowie die Wiederherstellung der Oberflächen im Dachboden und Heizraum.",
+      "Alle Arbeiten konnten innerhalb eines Arbeitstages abgeschlossen werden.",
+    ],
+    points: [
+      "Sanierung des versotteten gemauerten Schornsteins",
+      "Einbau eines Edelstahlrohrs",
+      "Erneuerung des Putzes am Schornstein im Dachboden",
+      "Sauberes Ausschneiden der Fliesen im Heizraum",
+      "Fachgerechtes Verputzen der Anschlussbereiche",
+      "Ausführung innerhalb eines Arbeitstages",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Der vorhandene Schornstein kann für die Holzheizung weiter genutzt werden.",
+    paragraphs: [
+      "Durch das eingebaute Edelstahlrohr wurde die Abgasführung der bestehenden Holzheizung erneuert, ohne den gemauerten Schornstein ersetzen zu müssen.",
+      "Der neu verputzte Schornstein im Dachboden und die sauber ausgeführten Öffnungen im gefliesten Heizraum sorgen zugleich für einen fachgerechten Abschluss der Sanierungsarbeiten.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Projekt", value: "Sanierung eines versotteten Schornsteins" },
+  { label: "Gebäude", value: "Wohnhaus / Bestand" },
+  { label: "Standort", value: "Nürnberg" },
+  { label: "Feuerstätte", value: "Bestehende Holzheizung" },
+  { label: "System", value: "Edelstahlrohr im gemauerten Schornstein" },
+  { label: "Zusatzarbeiten", value: "Putz- und Fliesenarbeiten an den Anschlussbereichen" },
+  { label: "Montagezeit", value: "1 Arbeitstag" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/ kaminsanierung-versotteter-schornstein-nuernberg/kaminsanierung-nuernberg-dachboden-vorher.webp".replace("/ ", "/"),
+    alt: "Unverputzter gemauerter Schornstein im Dachboden vor der Sanierung in Nürnberg",
+    caption: "Ausgangszustand des gemauerten Schornsteins im Dachboden vor der Erneuerung des Putzes.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/kaminsanierung-versotteter-schornstein-nuernberg/kaminsanierung-nuernberg-dachboden-nachher.webp",
+    alt: "Neu verputzter Schornstein im Dachboden nach der Kaminsanierung",
+    caption: "Nach der Sanierung wurde der Schornstein im Dachboden vollständig neu verputzt.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/kaminsanierung-versotteter-schornstein-nuernberg/kaminsanierung-nuernberg-heizraum.webp",
+    alt: "Edelstahlanschluss und Reinigungsöffnung im gefliesten Heizraum",
+    caption: "Die Fliesen wurden für Anschluss und Reinigungsöffnung sauber ausgeschnitten und anschließend fachgerecht angearbeitet.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Kaminsanierung eines versotteten Schornsteins in Nürnberg | Stadter Kamintechnik"
+  description="Versotteten Schornstein einer bestehenden Holzheizung in Nürnberg saniert: Edelstahlrohr eingebaut, Putz erneuert und Fliesen im Heizraum sauber angepasst."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a><span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a><span aria-hidden="true">/</span>
+        <span>Kaminsanierung in Nürnberg</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Privat</p>
+          <h1>Kaminsanierung eines versotteten Schornsteins für eine bestehende Holzheizung</h1>
+          <p class="reference-hero-portrait__location">Nürnberg</p>
+          <p class="reference-hero-portrait__intro">
+            Ein versotteter gemauerter Schornstein wurde mit einem Edelstahlrohr saniert. Zusätzlich erneuerten wir den Putz im Dachboden und stellten die Anschlussbereiche im gefliesten Heizraum sauber wieder her.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/kaminsanierung-versotteter-schornstein-nuernberg/kaminsanierung-nuernberg-aussen.webp"
+            alt="Sanierter Schornsteinkopf auf einem Wohnhaus in Nürnberg"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Vom Bestand bis zum fertigen Anschluss</p>
+        <h2 id="project-gallery-title">Edelstahlrohr eingebaut und alle Anschlussbereiche sauber wiederhergestellt.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Ist Ihr Schornstein feucht oder versottet?"
+    text="Wir prüfen den vorhandenen Schornstein und planen eine fachgerechte Sanierung passend zur bestehenden oder neuen Feuerstätte."
+    buttonText="Kaminsanierung anfragen"
+    buttonHref="/projekt-starten/?projekt=kaminsanierung"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 760px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 650px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+  .project-gallery-custom__item { width: min(100%, 430px); margin: 0; }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 10px; background: #e9e9e6; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { margin-top: 1rem; color: #696969; font-size: 0.94rem; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .reference-hero-portrait__grid { grid-template-columns: 1fr; }
+    .reference-hero-portrait__media { width: min(100%, 440px); }
+  }
+  @media (max-width: 700px) {
+    .reference-hero-portrait { padding-bottom: 4.5rem; }
+    .reference-hero-portrait__breadcrumb { margin-bottom: 2.5rem; }
+    .project-gallery-custom { padding: 5rem 0; }
+    .project-gallery-custom__items { grid-template-columns: 1fr; gap: 3rem; }
+    .project-gallery-custom__item { width: 100%; }
+  }
+</style>

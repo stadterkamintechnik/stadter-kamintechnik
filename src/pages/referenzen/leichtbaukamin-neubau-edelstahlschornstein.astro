@@ -1,0 +1,179 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Ausgangssituation",
+    title: "Für den geplanten Pelletofen fehlte im Neubau eine geeignete Abgasführung.",
+    paragraphs: [
+      "In diesem Wohngebäude sollte nachträglich ein Pelletofen installiert werden. Da kein Schornstein vorhanden war, musste eine vollständige Abgasanlage neu geplant und umgesetzt werden.",
+      "Die Herausforderung bestand darin, den Kamin innerhalb des Gebäudes über mehrere Geschosse zu führen und dabei die vorhandene Dachkonstruktion sicher zu berücksichtigen.",
+    ],
+  },
+  {
+    kicker: "Die Planung",
+    title: "Leichtbaukamin im Gebäude und Systemwechsel über dem Dach.",
+    paragraphs: [
+      "Für das Projekt wurde ein Leichtbaukamin-System gewählt, das sich in den Gebäudegrundriss integrieren lässt. Über dem Dach erfolgt der Systemwechsel auf einen doppelwandigen Edelstahlschornstein in RAL-Farbe.",
+      "Zur Planung gehörten außerdem die Schornsteinhöhenberechnung nach VDI 3781 sowie die Abstimmung der Ausführung mit dem zuständigen Schornsteinfeger.",
+    ],
+  },
+  {
+    kicker: "Die Besonderheit",
+    title: "Ein gezielter Versatz führt den Kamin sicher an den Dachbalken vorbei.",
+    paragraphs: [
+      "Im Bereich des Dachbodens mussten vorhandene Holzbalken der Dachkonstruktion berücksichtigt werden. Deshalb wurde ein kleiner Versatz in den Kaminverlauf integriert.",
+      "So konnte der Leichtbaukamin an der tragenden Konstruktion vorbeigeführt werden, ohne in die Dachbalken eingreifen zu müssen.",
+    ],
+    points: [
+      "Leichtbaukamin über mehrere Geschosse",
+      "Anschlussmöglichkeit für einen Pelletofen",
+      "Versatz im Dachboden wegen vorhandener Holzbalken",
+      "Systemwechsel auf doppelwandigen Edelstahlschornstein",
+      "Ausführung über Dach in RAL-Farbe",
+      "Schornsteinhöhenberechnung nach VDI 3781",
+      "Abstimmung mit dem zuständigen Schornsteinfeger",
+    ],
+  },
+  {
+    kicker: "Die Ausführung",
+    title: "Das komplette Kaminsystem wurde innerhalb von rund 1,5 Arbeitstagen montiert.",
+    paragraphs: [
+      "Nach der Vorbereitung der erforderlichen Durchführungen wurde der Leichtbaukamin im Gebäude aufgebaut. Im Dachbereich entstand anschließend der Übergang zum doppelwandigen Edelstahlschornsteinsystem.",
+      "Der schwarz ausgeführte Edelstahlschornstein wurde durch das Dach geführt und die gesamte Anlage für den späteren Anschluss des Pelletofens vorbereitet.",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine sichere Abgasführung, die sich sauber in den Neubau integriert.",
+    paragraphs: [
+      "Der neu installierte Kamin schafft die Voraussetzung für den sicheren Betrieb des geplanten Pelletofens. Der Leichtbaukamin verläuft platzsparend durch das Gebäude, während der doppelwandige Edelstahlschornstein die Abgase zuverlässig über das Dach führt.",
+      "Durch den geplanten Versatz konnte die bestehende Dachkonstruktion unverändert bleiben. Die dunkle RAL-Ausführung fügt sich zugleich unauffällig in die Dachfläche ein.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Projekt", value: "Nachrüstung eines Kamins für einen Pelletofen" },
+  { label: "Gebäude", value: "Wohngebäude / Neubau" },
+  { label: "System", value: "Leichtbaukamin mit Systemwechsel auf Edelstahlschornstein" },
+  { label: "Besonderheit", value: "Versatz im Dachboden wegen vorhandener Dachbalken" },
+  { label: "Ausführung über Dach", value: "Doppelwandiger Edelstahlschornstein in RAL-Farbe" },
+  { label: "Planung", value: "Schornsteinhöhenberechnung nach VDI 3781 und Abstimmung mit dem Schornsteinfeger" },
+  { label: "Montagedauer", value: "ca. 1,5 Arbeitstage" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/leichtbaukamin-neubau/leichtbaukamin-wohnbereich.webp",
+    alt: "Leichtbaukamin mit zwei Reinigungsöffnungen im Innenbereich eines Neubaus",
+    caption: "Der schlanke Leichtbaukamin wurde über mehrere Geschosse in den Grundriss des Neubaus integriert.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/leichtbaukamin-neubau/leichtbaukamin-versatz-dachboden.webp",
+    alt: "Leichtbaukamin mit Versatz zwischen den Dachbalken eines Neubaus",
+    caption: "Der Versatz im Dachboden führt den Kamin sicher an den vorhandenen Holzbalken vorbei.",
+    format: "portrait",
+  },
+  {
+    src: "/images/referenzen/leichtbaukamin-neubau/edelstahlschornstein-schwarz-dach.webp",
+    alt: "Schwarzer doppelwandiger Edelstahlschornstein auf dem Dach eines Wohngebäudes",
+    caption: "Über dem Dach wurde das System als doppelwandiger Edelstahlschornstein in dunkler RAL-Farbe weitergeführt.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Leichtbaukamin im Neubau mit Edelstahlschornstein | Stadter Kamintechnik"
+  description="Nachrüstung eines Kamins im Neubau: Leichtbaukamin über mehrere Geschosse, Versatz im Dachboden und schwarzer doppelwandiger Edelstahlschornstein über Dach."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a><span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a><span aria-hidden="true">/</span>
+        <span>Leichtbaukamin im Neubau</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Privat</p>
+          <h1>Nachrüstung eines Kamins im Neubau – Leichtbaukamin mit Edelstahlschornstein</h1>
+          <p class="reference-hero-portrait__location">Wohngebäude / Neubau</p>
+          <p class="reference-hero-portrait__intro">
+            Ein Leichtbaukamin führt die Abgase des geplanten Pelletofens sicher durch das Gebäude. Über dem Dach geht das System in einen doppelwandigen Edelstahlschornstein in dunkler RAL-Farbe über.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/leichtbaukamin-neubau/edelstahlschornstein-schwarz-dach.webp"
+            alt="Schwarzer doppelwandiger Edelstahlschornstein auf dem Dach eines Neubaus"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Vom Innenraum bis über das Dach</p>
+        <h2 id="project-gallery-title">Ein durchgängig geplantes Kaminsystem für den nachträglichen Pelletofen.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Sie möchten einen Kamin im Gebäude nachrüsten?"
+    text="Wir planen die passende Abgasführung für Ihre Feuerstätte und stimmen die Ausführung auf Gebäude, Dachkonstruktion und Schornsteinhöhe ab."
+    buttonText="Kamin nachrüsten anfragen"
+    buttonHref="/projekt-starten/?projekt=schornstein-im-gebaeude-nachruesten"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 760px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 650px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+  .project-gallery-custom__item { width: min(100%, 430px); margin: 0; }
+  .project-gallery-custom__item:nth-child(even) { justify-self: end; }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 12px; background: #e9e9e7; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { margin-top: 1.1rem; color: #666; font-size: 0.98rem; line-height: 1.65; }
+  @media (max-width: 980px) { .reference-hero-portrait { padding-bottom: 4rem; } .reference-hero-portrait__breadcrumb { margin-bottom: 2.75rem; } .reference-hero-portrait__grid { grid-template-columns: 1fr; gap: 2.75rem; } .reference-hero-portrait__media { width: min(100%, 420px); } .project-gallery-custom { padding: 5rem 0; } }
+  @media (max-width: 720px) { .project-gallery-custom__items { grid-template-columns: 1fr; gap: 3rem; } .project-gallery-custom__item { width: 100%; justify-self: stretch !important; } }
+</style>

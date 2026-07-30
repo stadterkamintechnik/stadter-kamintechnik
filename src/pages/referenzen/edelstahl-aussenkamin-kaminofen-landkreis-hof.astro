@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectContent from "../../components/reference/ProjectContent.astro";
+import ProjectFacts from "../../components/reference/ProjectFacts.astro";
+import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+
+const contentSections = [
+  {
+    kicker: "Die Ausgangssituation",
+    title: "Für den geplanten Kaminofen fehlte ein geeigneter Schornstein.",
+    paragraphs: [
+      "An einem bestehenden Wohnhaus im Landkreis Hof sollte ein Kaminofen nachgerüstet werden. Da am Gebäude kein geeigneter Schornstein zur Verfügung stand, musste eine neue Abgasanlage außen an der Fassade geplant und montiert werden.",
+      "Neben der sicheren Befestigung an der Außenwand war insbesondere die erforderliche Mündungshöhe nach den aktuellen Ableitbedingungen zu berücksichtigen.",
+    ],
+  },
+  {
+    kicker: "Die Planung",
+    title: "Doppelwandiger Edelstahlkamin mit Auslegung nach § 19 der 1. BImSchV.",
+    paragraphs: [
+      "Als Lösung wurde ein doppelwandiger Edelstahl-Außenkamin vorgesehen. Die erforderliche Schornsteinhöhe wurde nach § 19 der 1. BImSchV und den dafür maßgeblichen Ableitbedingungen geplant.",
+      "Auf Wunsch des Kunden wurde der Kamin auf der Dachfläche bis zum First hochgeführt. So entstand eine klare, geradlinige Abgasführung mit ausreichend hoher Mündung.",
+    ],
+  },
+  {
+    kicker: "Die Umsetzung",
+    title: "Montage entlang der Fassade bis auf Firsthöhe.",
+    paragraphs: [
+      "Der Edelstahlkamin wurde auf einer tragfähigen Wandkonsole aufgebaut und mit abgestimmten Wandhaltern an der Fassade befestigt. Der Anschluss für den späteren Kaminofen wurde durch die Außenwand geführt und an das doppelwandige System angebunden.",
+      "Die komplette Montage konnte innerhalb eines Arbeitstages abgeschlossen werden.",
+    ],
+    points: [
+      "Planung des doppelwandigen Edelstahl-Außenkamins",
+      "Auslegung der Schornsteinhöhe nach § 19 der 1. BImSchV",
+      "Führung des Kamins auf der Dachfläche bis zum First",
+      "Montage auf einer tragfähigen Wandkonsole",
+      "Befestigung mit abgestimmten Wandhaltern",
+      "Vorbereitung für den Anschluss eines Kaminofens",
+    ],
+  },
+  {
+    kicker: "Das Ergebnis",
+    title: "Eine vollständige Abgasanlage für den nachgerüsteten Kaminofen.",
+    paragraphs: [
+      "Mit dem neuen doppelwandigen Edelstahl-Außenkamin steht für den geplanten Kaminofen eine dauerhaft nutzbare Abgasanlage zur Verfügung.",
+      "Die bis zum First geführte Schornsteinanlage berücksichtigt die aktuelle Höhenauslegung und fügt sich als schlanke Edelstahlkonstruktion in die vorhandene Gebäudefassade ein.",
+    ],
+  },
+];
+
+const facts = [
+  { label: "Projekt", value: "Nachrüstung eines Edelstahl-Außenkamins" },
+  { label: "Gebäude", value: "Wohnhaus / Bestand" },
+  { label: "Standort", value: "Landkreis Hof" },
+  { label: "Feuerstätte", value: "Kaminofen" },
+  { label: "System", value: "Doppelwandiger Edelstahl-Außenkamin" },
+  { label: "Höhenauslegung", value: "§ 19 der 1. BImSchV" },
+  { label: "Besonderheit", value: "Führung bis zum First" },
+  { label: "Montagezeit", value: "1 Arbeitstag" },
+];
+
+const galleryImages = [
+  {
+    src: "/images/referenzen/edelstahl-aussenkamin-landkreis-hof/edelstahl-aussenkamin-landkreis-hof-seitenansicht.webp",
+    alt: "Seitliche Ansicht des doppelwandigen Edelstahl-Außenkamins an einem Wohnhaus im Landkreis Hof",
+    caption: "Die Wandhalter und die geradlinige Führung entlang der Fassade bilden eine kompakte Außenlösung.",
+    format: "portrait",
+  },
+];
+---
+
+<BaseLayout
+  title="Edelstahl-Außenkamin für Kaminofen im Landkreis Hof | Stadter Kamintechnik"
+  description="Nachrüstung eines doppelwandigen Edelstahl-Außenkamins für einen Kaminofen im Landkreis Hof. Schornsteinhöhe nach § 19 der 1. BImSchV, Montage bis zum First in einem Arbeitstag."
+>
+  <section class="reference-hero-portrait">
+    <div class="container">
+      <nav class="reference-hero-portrait__breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a><span aria-hidden="true">/</span>
+        <a href="/referenzen/">Referenzen</a><span aria-hidden="true">/</span>
+        <span>Edelstahl-Außenkamin im Landkreis Hof</span>
+      </nav>
+
+      <div class="reference-hero-portrait__grid">
+        <div class="reference-hero-portrait__content">
+          <p class="reference-hero-portrait__category">Privat</p>
+          <h1>Edelstahl-Außenkamin für einen Kaminofen nach den aktuellen Ableitbedingungen</h1>
+          <p class="reference-hero-portrait__location">Landkreis Hof</p>
+          <p class="reference-hero-portrait__intro">
+            Für die Nachrüstung eines Kaminofens wurde ein doppelwandiger Edelstahl-Außenkamin montiert. Die Schornsteinhöhe wurde nach § 19 der 1. BImSchV ausgelegt und auf Wunsch des Kunden bis zum First geführt.
+          </p>
+        </div>
+
+        <figure class="reference-hero-portrait__media">
+          <img
+            src="/images/referenzen/edelstahl-aussenkamin-landkreis-hof/edelstahl-aussenkamin-landkreis-hof-frontal.webp"
+            alt="Doppelwandiger Edelstahl-Außenkamin an einem Wohnhaus im Landkreis Hof"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <ProjectFacts facts={facts} />
+  <ProjectContent sections={contentSections} />
+
+  <section class="project-gallery-custom" aria-labelledby="project-gallery-title">
+    <div class="container">
+      <div class="project-gallery-custom__header">
+        <p class="project-gallery-custom__kicker">Außenkamin am Bestandsgebäude</p>
+        <h2 id="project-gallery-title">Schlanke Edelstahlkonstruktion mit Führung bis zum First.</h2>
+      </div>
+
+      <div class="project-gallery-custom__items project-gallery-custom__items--single">
+        {galleryImages.map((image) => (
+          <figure class:list={["project-gallery-custom__item", `project-gallery-custom__item--${image.format}`]}>
+            <div class:list={["project-gallery-custom__media", `project-gallery-custom__media--${image.format}`]}>
+              <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProjectCTA
+    title="Möchten Sie einen Kaminofen nachrüsten?"
+    text="Wir prüfen die Gebäudesituation und planen Außenkamin, Wanddurchführung und erforderliche Schornsteinhöhe als vollständige Lösung."
+    buttonText="Außenkamin anfragen"
+    buttonHref="/projekt-starten/?projekt=aussenkamin"
+  />
+</BaseLayout>
+
+<style>
+  .reference-hero-portrait { padding: 2rem 0 6rem; }
+  .reference-hero-portrait__breadcrumb { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 4rem; color: #777; font-size: 0.9rem; }
+  .reference-hero-portrait__breadcrumb a { color: inherit; text-decoration: none; }
+  .reference-hero-portrait__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
+  .reference-hero-portrait__content { max-width: 760px; }
+  .reference-hero-portrait__category, .project-gallery-custom__kicker { margin: 0 0 1rem; color: #9d1f24; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .reference-hero-portrait h1 { margin: 0; font-size: clamp(2.7rem, 4.8vw, 5rem); line-height: 0.98; letter-spacing: -0.055em; }
+  .reference-hero-portrait__location { margin: 1.65rem 0 0; color: #9d1f24; font-weight: 700; }
+  .reference-hero-portrait__intro { max-width: 650px; margin: 1.5rem 0 0; color: #626262; font-size: 1.12rem; line-height: 1.7; }
+  .reference-hero-portrait__media { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 12px; background: #f2f2f2; }
+  .reference-hero-portrait__media img, .project-gallery-custom__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .project-gallery-custom { padding: 7rem 0; background: #f5f5f3; }
+  .project-gallery-custom__header { max-width: 920px; margin-bottom: 3.5rem; }
+  .project-gallery-custom h2 { margin: 0; font-size: clamp(2.35rem, 4vw, 4.4rem); line-height: 1.03; letter-spacing: -0.045em; }
+  .project-gallery-custom__items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem clamp(2rem, 5vw, 5rem); align-items: start; }
+  .project-gallery-custom__items--single { grid-template-columns: minmax(0, 430px); }
+  .project-gallery-custom__item { width: min(100%, 430px); margin: 0; }
+  .project-gallery-custom__media { overflow: hidden; border-radius: 10px; background: #e9e9e6; }
+  .project-gallery-custom__media--portrait { aspect-ratio: 2 / 3; }
+  .project-gallery-custom figcaption { margin-top: 1rem; color: #696969; font-size: 0.94rem; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .reference-hero-portrait__grid { grid-template-columns: 1fr; }
+    .reference-hero-portrait__media { width: min(100%, 440px); }
+  }
+  @media (max-width: 700px) {
+    .reference-hero-portrait { padding-bottom: 4.5rem; }
+    .reference-hero-portrait__breadcrumb { margin-bottom: 2.5rem; }
+    .project-gallery-custom { padding: 5rem 0; }
+    .project-gallery-custom__items { grid-template-columns: 1fr; gap: 3rem; }
+    .project-gallery-custom__item { width: 100%; }
+  }
+</style>
