@@ -1,0 +1,362 @@
+---
+import "../../styles/pages/abgassysteme.css";
+
+const applications = [
+  {
+    number: "01",
+    title: "BHKW & Großmotoren",
+    text: "Abgasführungen für Verbrennungsmotoren mit abgestimmter Integration von Kompensatoren, Katalysatoren, Wärmetauschern und Schalldämpfern.",
+  },
+  {
+    number: "02",
+    title: "Kessel- & Heizzentralen",
+    text: "Abgasstrecken für Gas-, Öl- und Biomasseanlagen – von der Kesselanbindung über Verbindungsleitungen bis zum Schornstein.",
+  },
+  {
+    number: "03",
+    title: "Produktions- & Prozessanlagen",
+    text: "Individuelle Abgas- und Abluftführungen für Maschinen, Öfen und industrielle Prozesse mit projektspezifischen Leitungswegen und Komponenten.",
+  },
+  {
+    number: "04",
+    title: "Bestand & Modernisierung",
+    text: "Umbau, Erweiterung und Erneuerung vorhandener Abgasanlagen – abgestimmt auf neue Wärmeerzeuger, geänderte Betriebsweisen und bestehende Gebäude.",
+  },
+];
+
+const engineeringTopics = [
+  ["Temperatur", "Werkstoff, Dämmung und Ausführung richten sich nach den tatsächlichen Abgastemperaturen und Betriebszuständen."],
+  ["Druck", "Unterdruck, Überdruck und mögliche Druckspitzen bestimmen Dichtheit, Verbindungstechnik und Komponentenwahl."],
+  ["Betriebsweise", "Trockene oder feuchte Betriebsweise, Kondensatanfall und Stillstandszeiten werden bei der Systemwahl berücksichtigt."],
+  ["Längenausdehnung", "Kompensatoren, Festpunkte und Gleitpunkte sorgen dafür, dass thermische Bewegungen kontrolliert aufgenommen werden."],
+  ["Schallschutz", "Schalldämpfer werden passend zur Schallquelle und den Anforderungen der Gesamtanlage in die Abgasstrecke integriert."],
+  ["Zugänglichkeit", "Revisionsöffnungen, Messstellen und Wartungsbereiche müssen auch nach der Montage praktisch erreichbar bleiben."],
+];
+
+const components = [
+  "Geschweißte Abgasleitungen",
+  "Ein- und doppelwandige Systemabgasleitungen",
+  "Kompensatoren und flexible Anschlüsse",
+  "Katalysatoren und Abgasnachbehandlung",
+  "Abgaswärmetauscher",
+  "Industrielle Schalldämpfer",
+  "Revisions- und Messöffnungen",
+  "Formteile, Übergänge und Sonderbauteile",
+  "Tragkonstruktionen und Befestigungen",
+  "Anbindung an Schornstein oder Mündung",
+];
+
+const process = [
+  ["01", "Anlagendaten & Unterlagen", "Kesseldaten, Motor- oder Prozessdaten, Pläne, Ausschreibung und vorhandene Berechnungen bilden die technische Grundlage."],
+  ["02", "Abgasweg & Schnittstellen", "Wir klären Leitungsführung, Platzverhältnisse, Komponenten, Anschlüsse und die Schnittstellen zu den beteiligten Gewerken."],
+  ["03", "System & Ausführung", "Auf Basis der Betriebsbedingungen wird festgelegt, ob eine geschweißte Leitung, ein Systemabgasweg oder eine Kombination sinnvoll ist."],
+  ["04", "Detailabstimmung", "Kompensatoren, Schalldämpfer, Wärmetauscher, Katalysatoren, Messstellen, Befestigungen und Wartungszugänge werden abgestimmt."],
+  ["05", "Montage vor Ort", "Unsere Teams montieren die Abgasstrecke, passen Bauteile an die tatsächliche Situation an und führen vereinbarte Schweißarbeiten aus."],
+  ["06", "Übergabe", "Nach Abschluss wird die ausgeführte Anlage dokumentiert und für die weiteren Schritte im Gesamtprojekt übergeben."],
+];
+
+const faqs = [
+  {
+    q: "Welche Abgassysteme realisiert Stadter Kamintechnik?",
+    a: "Wir realisieren projektspezifische Abgasführungen für unter anderem BHKW, Großmotoren, Kessel- und Biomasseanlagen, Heizzentralen sowie industrielle Produktions- und Prozessanlagen.",
+  },
+  {
+    q: "Arbeiten Sie mit geschweißten Abgasleitungen oder mit Systemabgasleitungen?",
+    a: "Beides ist möglich. Welche Ausführung sinnvoll ist, hängt von Temperatur, Druck, Leitungsweg, Einbausituation und den Anforderungen der Anlage ab. Bei komplexen Industrieprojekten kommen häufig auch kombinierte Lösungen zum Einsatz.",
+  },
+  {
+    q: "Können Wärmetauscher, Katalysatoren und Schalldämpfer integriert werden?",
+    a: "Ja. Solche Komponenten werden als Teil der gesamten Abgasstrecke berücksichtigt und in Leitungsführung, Befestigung und Montagekonzept integriert.",
+  },
+  {
+    q: "Wie werden temperaturbedingte Bewegungen der Rohrleitungen berücksichtigt?",
+    a: "Thermische Längenänderungen müssen kontrolliert aufgenommen werden. Dafür werden je nach Anlage unter anderem Kompensatoren sowie geeignete Fest- und Gleitpunkte vorgesehen.",
+  },
+  {
+    q: "Übernehmen Sie auch Umbauten bestehender Abgasanlagen?",
+    a: "Ja. Ein wesentlicher Teil unserer Arbeit sind Modernisierungen und Anpassungen im Bestand, etwa bei neuen Wärmeerzeugern, geänderten Betriebsbedingungen oder einer vollständig neuen Abgasführung.",
+  },
+  {
+    q: "Welche Unterlagen sollten wir für eine Anfrage senden?",
+    a: "Ideal sind Ausschreibung oder Leistungsverzeichnis, Grundrisse und Schnitte, Daten der angeschlossenen Anlage, Abgasparameter, vorhandene Berechnungen sowie Angaben zu Standort und Terminrahmen.",
+  },
+];
+---
+
+<main class="as-page">
+  <section class="as-hero" aria-labelledby="as-hero-title">
+    <img
+      class="as-hero__image"
+      src="/images/referenzen/jenbacher-bhkw/abgasleitung-anlagenraum.webp"
+      alt="Geschweißte industrielle Abgasleitung in einer BHKW-Anlage"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="as-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container as-hero__inner">
+      <div class="as-hero__content">
+        <p class="as-eyebrow as-eyebrow--light">Gewerbe & Industrie · Abgassysteme</p>
+        <h1 id="as-hero-title">Abgassysteme.<br />Vom Anlagenanschluss bis zur sicheren Ableitung.</h1>
+        <p class="as-hero__lead">
+          Abgasleitungen und komplette Abgasstrecken für BHKW, Kesselanlagen,
+          Energiezentralen und industrielle Prozesse – technisch abgestimmt,
+          projektspezifisch ausgeführt und vollständig montiert.
+        </p>
+        <div class="as-hero__actions">
+          <a class="as-button as-button--primary" href="/projekt-starten/?projekt=abgassystem">
+            Projektunterlagen senden <span aria-hidden="true">→</span>
+          </a>
+          <a class="as-button as-button--ghost" href="#referenz">BHKW-Referenz ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="as-audience">
+    <div class="container as-audience__inner">
+      <p>Für</p>
+      <ul aria-label="Typische Auftraggeber">
+        <li>Heizungsbauer</li>
+        <li>TGA-Planer</li>
+        <li>Anlagenbauer</li>
+        <li>Motoren- & BHKW-Projekte</li>
+        <li>Gewerbe</li>
+        <li>Industrie</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="as-section">
+    <div class="container">
+      <div class="as-intro as-intro--split">
+        <div>
+          <p class="as-eyebrow">Gesamtsystem</p>
+          <h2>Eine Abgasleitung muss mehr können als Abgas transportieren.</h2>
+        </div>
+        <div>
+          <p>
+            Temperatur, Druck, Kondensat, Schwingungen, thermische Ausdehnung,
+            Schallemissionen und räumliche Zwänge wirken gleichzeitig auf die Abgasstrecke.
+            Deshalb beginnt eine belastbare Lösung nicht beim Rohrdurchmesser, sondern bei
+            den Betriebsdaten der angeschlossenen Anlage.
+          </p>
+          <p>
+            Unser Ansatz verbindet Leitungsführung, Komponenten, Befestigung,
+            Zugänglichkeit und Montage zu einem technisch abgestimmten System.
+          </p>
+        </div>
+      </div>
+
+      <div class="as-flow" aria-label="Planungskette">
+        <span>Anlagendaten</span><i>→</i>
+        <span>Abgasparameter</span><i>→</i>
+        <span>Leitungsweg</span><i>→</i>
+        <span>Komponenten</span><i>→</i>
+        <span>Befestigung</span><i>→</i>
+        <span>Montage</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="as-section as-applications">
+    <div class="container">
+      <div class="as-intro">
+        <p class="as-eyebrow">Anwendungen</p>
+        <h2>Abgaslösungen für unterschiedliche Anlagen.</h2>
+        <p>
+          Die technische Aufgabe bestimmt das System – nicht umgekehrt. Deshalb
+          unterscheiden sich Abgasstrecken für einen Großmotor deutlich von denen
+          einer Biomasseanlage oder einer Produktionsmaschine.
+        </p>
+      </div>
+
+      <div class="as-card-grid">
+        {applications.map((item) => (
+          <article class="as-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="as-section as-engineering">
+    <div class="container">
+      <div class="as-intro">
+        <p class="as-eyebrow">Technische Auslegung</p>
+        <h2>Die Betriebsbedingungen entscheiden über die Ausführung.</h2>
+        <p>
+          Ein professionelles Abgassystem wird aus den tatsächlichen Anforderungen
+          der Anlage entwickelt. Die folgenden Punkte beeinflussen Material,
+          Verbindungstechnik, Dämmung, Befestigung und Komponentenwahl.
+        </p>
+      </div>
+
+      <div class="as-topic-list">
+        {engineeringTopics.map(([title, text], index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="as-components">
+    <div class="container as-components__inner">
+      <div>
+        <p class="as-eyebrow as-eyebrow--light">Bauteile & Schnittstellen</p>
+        <h2>Wir denken die komplette Abgasstrecke.</h2>
+        <p>
+          Je nach Projekt kombinieren wir Rohrleitungen, Komponenten und
+          Tragkonstruktionen zu einer montierbaren Gesamtlösung.
+        </p>
+      </div>
+      <ul>
+        {components.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="as-section as-case" id="referenz">
+    <div class="container">
+      <div class="as-case__grid">
+        <figure class="as-case__image">
+          <img
+            src="/images/referenzen/jenbacher-bhkw/jenbacher-motor-abgasanschluss.webp"
+            alt="Jenbacher-Gasmotor mit geschweißtem Abgasanschluss"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <div class="as-case__content">
+          <p class="as-eyebrow">Referenz · Industrie</p>
+          <h2>Vom 12-Zylinder-Gasmotor bis zur Mündung über Dach.</h2>
+          <p>
+            Für ein Jenbacher-Blockheizkraftwerk realisierten wir eine vollständig
+            geschweißte Abgasführung. Katalysator, Abgaswärmetauscher,
+            industrieller Schalldämpfer und Kompensatoren wurden als funktionale
+            Bestandteile der Abgasstrecke integriert.
+          </p>
+
+          <dl class="as-case__facts">
+            <div><dt>Anlage</dt><dd>Jenbacher 12-Zylinder-BHKW</dd></div>
+            <div><dt>Abgasführung</dt><dd>vollständig geschweißt</dd></div>
+            <div><dt>Nachbehandlung</dt><dd>Katalysator</dd></div>
+            <div><dt>Wärmenutzung</dt><dd>Abgaswärmetauscher</dd></div>
+            <div><dt>Schallschutz</dt><dd>industrieller Schalldämpfer</dd></div>
+            <div><dt>Bewegungsaufnahme</dt><dd>Kompensatoren</dd></div>
+          </dl>
+
+          <a class="as-text-link" href="/referenzen/abgasanlage-jenbacher-blockheizkraftwerk">
+            Komplettes Projekt ansehen <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="as-section as-secondary-case">
+    <div class="container">
+      <div class="as-secondary-case__grid">
+        <div>
+          <p class="as-eyebrow">Abgasführung im Bestand</p>
+          <h2>Drei neue Abgaszüge im historischen Mauerwerkskamin.</h2>
+          <p>
+            Auch im Bestand muss die technische Lösung zur vorhandenen Bausubstanz
+            passen. In Marktredwitz wurden drei druckdicht verschweißte
+            Edelstahl-Abgasrohre in einen denkmalgeschützten Mauerwerkskamin integriert.
+          </p>
+          <a class="as-text-link" href="/referenzen/neues-abgassystem-denkmalgeschuetzter-mauerwerkskamin">
+            Referenz ansehen <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <figure>
+          <img
+            src="/images/referenzen/denkmalgeschuetzter-mauerwerkskamin/mauerwerkskamin-marktredwitz.jpg"
+            alt="Denkmalgeschützter Mauerwerkskamin mit modernem Abgassystem"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="as-section as-process">
+    <div class="container">
+      <div class="as-intro">
+        <p class="as-eyebrow">Projektablauf</p>
+        <h2>Von den Anlagendaten zur montierten Abgasstrecke.</h2>
+      </div>
+
+      <ol>
+        {process.map(([number, title, text]) => (
+          <li>
+            <span>{number}</span>
+            <div><h3>{title}</h3><p>{text}</p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="as-proof">
+    <div class="container as-proof__inner">
+      <div>
+        <p class="as-eyebrow as-eyebrow--light">Warum Stadter Kamintechnik</p>
+        <h2>Technische Planung trifft Montagepraxis.</h2>
+      </div>
+      <div class="as-proof__grid">
+        <div><strong>Geschweißte Systeme</strong><span>für anspruchsvolle Industrieanwendungen</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage und Anpassung auf der Baustelle</span></div>
+        <div><strong>Komponenten integriert</strong><span>Schallschutz, Wärmenutzung und Nachbehandlung</span></div>
+        <div><strong>Bestand & Neubau</strong><span>projektspezifisch statt Standardlösung</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="as-section as-faq">
+    <div class="container as-faq__inner">
+      <div>
+        <p class="as-eyebrow">Technische Anfrage</p>
+        <h2>Häufige Fragen zu industriellen Abgassystemen.</h2>
+      </div>
+      <div class="as-faq__list">
+        {faqs.map((item) => (
+          <details>
+            <summary><span>{item.q}</span><span aria-hidden="true">+</span></summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="as-cta">
+    <div class="container as-cta__inner">
+      <div>
+        <p class="as-eyebrow as-eyebrow--light">Projekt anfragen</p>
+        <h2>Sie planen eine neue oder geänderte Abgasstrecke?</h2>
+        <p>
+          Senden Sie uns Pläne, Ausschreibung, Anlagendaten und vorhandene
+          Abgasparameter. Wir prüfen die Aufgabenstellung und klären die
+          technischen Schnittstellen mit Ihnen.
+        </p>
+      </div>
+      <div class="as-cta__actions">
+        <a class="as-button as-button--white" href="/projekt-starten/?projekt=abgassystem">
+          Projektunterlagen senden <span aria-hidden="true">→</span>
+        </a>
+        <a class="as-text-link as-text-link--light" href="/referenzen/">Referenzen ansehen</a>
+      </div>
+    </div>
+  </section>
+</main>

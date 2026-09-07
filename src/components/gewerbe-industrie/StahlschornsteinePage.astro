@@ -1,0 +1,325 @@
+---
+import "../../styles/pages/stahlschornsteine.css";
+
+const systemTypes = [
+  {
+    number: "01",
+    title: "Einzügige Stahlschornsteine",
+    text: "Freistehende Konstruktionen für einen Abgasweg – projektspezifisch ausgelegt auf Anlage, Abgasparameter, Höhe und Standort.",
+  },
+  {
+    number: "02",
+    title: "Mehrzügige Stahlschornsteine",
+    text: "Ein gemeinsames Tragwerk mit mehreren getrennten Abgaszügen, wenn mehrere Wärmeerzeuger oder Abgasströme sicher über eine Konstruktion geführt werden sollen.",
+  },
+  {
+    number: "03",
+    title: "Abgas- und Rauchgasleitungen",
+    text: "Die Verbindung zwischen Wärmeerzeuger oder Prozessanlage und Schornstein wird als Teil des Gesamtsystems geplant und projektspezifisch ausgeführt.",
+  },
+  {
+    number: "04",
+    title: "Sonderkonstruktionen",
+    text: "Für besondere Anlagen- und Gebäudesituationen entwickeln wir die Abgasführung gemeinsam mit Auftraggeber, Planung und Systemhersteller projektspezifisch.",
+  },
+];
+
+const scope = [
+  "Technische Klärung der Aufgabenstellung und Schnittstellen",
+  "Abstimmung von Schornstein, Abgasleitungen und Wärmeerzeugern",
+  "Einbindung von Schalldämpfern und erforderlichen Komponenten",
+  "Koordination von Zugänglichkeit, Leitern, Bühnen und Messstellen",
+  "Montage- und Hebekonzept für die Baustelle",
+  "Lieferung und vollständige Montage der Anlage",
+];
+
+const interfaces = [
+  ["Anlage", "Kessel, BHKW, Biomasseanlage oder industrieller Prozess bilden den Ausgangspunkt der Auslegung."],
+  ["Abgasweg", "Querschnitte, Leitungsführung, Druckverhältnisse und Betriebsweise müssen als Gesamtsystem funktionieren."],
+  ["Schallschutz", "Bei entsprechenden Anforderungen werden Schalldämpfer in die Abgasstrecke integriert."],
+  ["Tragwerk", "Schornsteinkonstruktion, Befestigung, Lastabtragung und bauliche Schnittstellen werden projektbezogen koordiniert."],
+  ["Zugänglichkeit", "Messstellen, Revisionsbereiche, Sicherheitsleitern und Bühnen werden für Betrieb und Wartung mitgedacht."],
+  ["Montage", "Transport, Kranstellung, Segmentierung und Montagefolge müssen zur Baustelle und zum Terminplan passen."],
+];
+
+const process = [
+  ["01", "Projektunterlagen", "Sie senden uns Ausschreibung, Pläne, Anlagendaten oder die vorhandene technische Planung."],
+  ["02", "Technische Prüfung", "Wir prüfen Aufgabenstellung, Abgasweg, Schnittstellen und den vorgesehenen Leistungsumfang."],
+  ["03", "Lösung & Angebot", "Wir definieren die passende Ausführung und erstellen ein nachvollziehbares Angebot für das Projekt."],
+  ["04", "Ausführungsabstimmung", "Details zu Konstruktion, Leitungswegen, Komponenten, Zugänglichkeit und Montage werden abgestimmt."],
+  ["05", "Lieferung & Montage", "Unsere Montageteams setzen die Anlage auf der Baustelle um – einschließlich der vereinbarten Abgasstrecken und Komponenten."],
+  ["06", "Projektabschluss", "Nach Fertigstellung werden die ausgeführten Leistungen dokumentiert und die Anlage für die weiteren Schritte im Gesamtprojekt übergeben."],
+];
+
+const faqs = [
+  {
+    q: "Für welche Anlagen realisieren Sie Stahlschornsteine?",
+    a: "Typische Anwendungen sind Heizzentralen, Dampfkessel, BHKW, Biomasseanlagen sowie gewerbliche und industrielle Anlagen mit projektspezifischer Abgasführung.",
+  },
+  {
+    q: "Realisieren Sie auch mehrzügige Stahlschornsteine?",
+    a: "Ja. Je nach Projekt können mehrere getrennte Abgaszüge in einer gemeinsamen tragenden Konstruktion geführt werden. Ein realisiertes Projekt von Stadter Kamintechnik umfasst beispielsweise einen 32 Meter hohen Stahlschornstein mit vier getrennten Abgaszügen.",
+  },
+  {
+    q: "Übernehmen Sie auch die Abgasleitungen zwischen Anlage und Schornstein?",
+    a: "Ja. Unser Ansatz betrachtet die Abgasstrecke als Gesamtsystem. Abhängig vom Projekt gehören auch geschweißte Abgasleitungen, Formteile und weitere Komponenten zum Leistungsumfang.",
+  },
+  {
+    q: "Können Schalldämpfer integriert werden?",
+    a: "Ja. Bei entsprechenden schalltechnischen Anforderungen können industrielle Abgasschalldämpfer in die Abgasstrecke integriert werden.",
+  },
+  {
+    q: "Welche Unterlagen benötigen Sie für eine Anfrage?",
+    a: "Hilfreich sind Ausschreibung oder Leistungsverzeichnis, Grundrisse und Schnitte, Daten der Wärmeerzeuger beziehungsweise Prozessanlage, vorhandene Abgasberechnungen sowie Angaben zum Standort und zum gewünschten Termin.",
+  },
+  {
+    q: "Arbeiten Sie auch als Nachunternehmer für Heizungs- und Anlagenbauer?",
+    a: "Ja. Wir realisieren Projekte unter anderem für Heizungsbauer und Anlagenbauer und übernehmen dabei den abgestimmten Leistungsumfang rund um Schornstein und Abgasführung.",
+  },
+];
+---
+
+<main class="is-page">
+  <section class="is-hero" aria-labelledby="is-hero-title">
+    <div class="is-hero__media">
+      <img
+        src="/images/gewerbe-industrie/stahlschornsteine-hero.webp"
+        alt="Industrielle Heizzentrale mit freistehendem Stahlschornstein und Abgasleitungen"
+        width="1600"
+        height="1000"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+    <div class="is-hero__shade" aria-hidden="true"></div>
+
+    <div class="container is-hero__inner">
+      <div class="is-hero__content">
+        <p class="is-eyebrow is-eyebrow--light">Gewerbe & Industrie · Stahlschornsteine</p>
+        <h1 id="is-hero-title">Freistehende Stahlschornsteine.<br />Geplant für Ihre Anlage.</h1>
+        <p class="is-hero__lead">
+          Ein- und mehrzügige Stahlschornsteine für Heizzentralen, BHKW,
+          Kesselanlagen und industrielle Prozesse – einschließlich Abgasleitungen,
+          Schalldämpfern, Zugängen und Montage.
+        </p>
+        <div class="is-hero__actions">
+          <a class="is-button is-button--primary" href="/projekt-starten/?projekt=stahlschornstein">
+            Projektunterlagen senden <span aria-hidden="true">→</span>
+          </a>
+          <a class="is-button is-button--ghost" href="#referenz">Referenz ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="is-audience">
+    <div class="container is-audience__inner">
+      <p>Für</p>
+      <ul aria-label="Typische Auftraggeber">
+        <li>Heizungsbauer</li>
+        <li>TGA-Planer</li>
+        <li>Anlagenbauer</li>
+        <li>Generalunternehmer</li>
+        <li>Kommunen</li>
+        <li>Gewerbe & Industrie</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="is-section">
+    <div class="container">
+      <div class="is-intro is-intro--split">
+        <div>
+          <p class="is-eyebrow">Komplette Abgasstrecke</p>
+          <h2>Der Stahlschornstein ist nur ein Teil des Systems.</h2>
+        </div>
+        <div>
+          <p>
+            Entscheidend ist, dass Wärmeerzeuger oder Prozessanlage, Abgasleitungen,
+            Schallschutz, Schornstein und bauliche Schnittstellen zusammen funktionieren.
+            Deshalb betrachten wir nicht nur ein einzelnes Bauteil, sondern die technische
+            Aufgabe vom Anlagenanschluss bis zur Schornsteinmündung.
+          </p>
+          <p>
+            Wir arbeiten auf Basis der Projektanforderungen und stimmen die Ausführung
+            mit Auftraggebern, Fachplanern, Anlagenbauern und beteiligten Systempartnern ab.
+          </p>
+        </div>
+      </div>
+
+      <div class="is-flow" aria-label="Leistungskette">
+        <span>Auslegung</span><i>→</i>
+        <span>Abgasführung</span><i>→</i>
+        <span>Konstruktion</span><i>→</i>
+        <span>Schallschutz</span><i>→</i>
+        <span>Zugänglichkeit</span><i>→</i>
+        <span>Montage</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="is-section is-types">
+    <div class="container">
+      <div class="is-intro">
+        <p class="is-eyebrow">Konstruktionsprinzipien</p>
+        <h2>Die Ausführung folgt der technischen Aufgabe.</h2>
+        <p>
+          Leistung, Anzahl der Abgasströme, Standort, Bauhöhe und Betriebsweise bestimmen,
+          welche Konstruktion für das jeweilige Projekt sinnvoll ist.
+        </p>
+      </div>
+      <div class="is-type-grid">
+        {systemTypes.map((item) => (
+          <article class="is-type-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="is-section is-engineering">
+    <div class="container">
+      <div class="is-intro">
+        <p class="is-eyebrow">Schnittstellen im Projekt</p>
+        <h2>Technisch sauber geplant. Auf der Baustelle umsetzbar.</h2>
+        <p>
+          Bei Industrieprojekten entscheidet nicht ein Einzelprodukt über die Qualität
+          der Lösung, sondern das Zusammenspiel aller Schnittstellen.
+        </p>
+      </div>
+      <div class="is-interface-list">
+        {interfaces.map(([title, text], index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="is-scope">
+    <div class="container is-scope__inner">
+      <div>
+        <p class="is-eyebrow is-eyebrow--light">Unser Leistungsumfang</p>
+        <h2>Von der technischen Klärung bis zur Montage.</h2>
+        <p>
+          Wir übernehmen den abgestimmten Leistungsumfang rund um Stahlschornstein und
+          Abgasführung und sorgen dafür, dass aus Planung eine montierbare Anlage wird.
+        </p>
+      </div>
+      <ul>
+        {scope.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="is-section is-case" id="referenz">
+    <div class="container">
+      <div class="is-case__grid">
+        <figure class="is-case__image">
+          <img
+            src="/images/referenzen/stahlschornstein-dampfkessel/stahlschornstein-heizzentrale-hero.webp"
+            alt="32 Meter hoher mehrzügiger Stahlschornstein einer 20-MW-Heizzentrale"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="is-case__content">
+          <p class="is-eyebrow">Referenz · Industrie</p>
+          <h2>20 MW. 32 Meter. Vier getrennte Abgaszüge.</h2>
+          <p>
+            Für eine industrielle Heizzentrale mit zwei Dampfkesseln realisierten wir
+            die komplette Abgasanlage mit einem 32 Meter hohen freistehenden
+            Stahlschornstein.
+          </p>
+          <dl class="is-case__facts">
+            <div><dt>Wärmeerzeuger</dt><dd>2 Dampfkessel</dd></div>
+            <div><dt>Leistung</dt><dd>8 MW + 12 MW</dd></div>
+            <div><dt>Schornsteinhöhe</dt><dd>32 m</dd></div>
+            <div><dt>Abgaszüge</dt><dd>Ø 800 / 630 / 180 / 180 mm</dd></div>
+            <div><dt>Abgasleitungen</dt><dd>ca. 35 m, geschweißt</dd></div>
+            <div><dt>Ausstattung</dt><dd>Schalldämpfer, 2 × 360°-Kopfbühne, Sicherheitsleiter</dd></div>
+          </dl>
+          <a class="is-text-link" href="/referenzen/freistehender-stahlschornstein-dampfkessel-heizzentrale">
+            Komplettes Projekt ansehen <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="is-section is-process">
+    <div class="container">
+      <div class="is-intro">
+        <p class="is-eyebrow">Projektablauf</p>
+        <h2>Direkt von technischen Unterlagen zur umsetzbaren Lösung.</h2>
+      </div>
+      <ol>
+        {process.map(([number, title, text]) => (
+          <li>
+            <span>{number}</span>
+            <div><h3>{title}</h3><p>{text}</p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="is-proof">
+    <div class="container is-proof__inner">
+      <div>
+        <p class="is-eyebrow is-eyebrow--light">Warum Stadter Kamintechnik</p>
+        <h2>Planung verstehen. Baustelle beherrschen.</h2>
+      </div>
+      <div class="is-proof__grid">
+        <div><strong>Seit 2009</strong><span>Schornstein- und Abgastechnik</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage durch Stadter Kamintechnik</span></div>
+        <div><strong>Komplett gedacht</strong><span>Schornstein und Abgasstrecke als System</span></div>
+        <div><strong>Projektbezogen</strong><span>Abstimmung statt Standardpaket</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="is-section is-faq">
+    <div class="container is-faq__inner">
+      <div>
+        <p class="is-eyebrow">Technische Anfrage</p>
+        <h2>Häufige Fragen zu Industrie-Stahlschornsteinen.</h2>
+      </div>
+      <div class="is-faq__list">
+        {faqs.map((item) => (
+          <details>
+            <summary><span>{item.q}</span><span aria-hidden="true">+</span></summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="is-cta">
+    <div class="container is-cta__inner">
+      <div>
+        <p class="is-eyebrow is-eyebrow--light">Projekt anfragen</p>
+        <h2>Sie haben bereits Planungsunterlagen?</h2>
+        <p>
+          Senden Sie uns Ausschreibung, Pläne, Kessel- oder Anlagendaten und vorhandene
+          Berechnungen. Wir prüfen die Aufgabenstellung und klären die technischen
+          Schnittstellen mit Ihnen.
+        </p>
+      </div>
+      <div class="is-cta__actions">
+        <a class="is-button is-button--white" href="/projekt-starten/?projekt=stahlschornstein">
+          Projektunterlagen senden <span aria-hidden="true">→</span>
+        </a>
+        <a class="is-text-link is-text-link--light" href="/referenzen/">Industrie-Referenzen ansehen</a>
+      </div>
+    </div>
+  </section>
+</main>
