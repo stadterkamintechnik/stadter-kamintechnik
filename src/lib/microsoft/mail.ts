@@ -17,6 +17,9 @@ type SendMailOptions = {
   attachments?: MailAttachment[];
 };
 
+const GRAPH_TIMEOUT_MS = 15_000;
+const MAX_GRAPH_ERROR_BODY_CHARS = 1_000;
+
 const recipient = (address: string): Recipient => ({
   emailAddress: { address },
 });
@@ -69,17 +72,20 @@ export async function sendMicrosoftMail({
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        message,
-        saveToSentItems: true,
-      }),
+      body: JSON.stringify({ message, saveToSentItems: true }),
+      signal: AbortSignal.timeout(GRAPH_TIMEOUT_MS),
     },
   );
 
   if (!response.ok) {
-    const body = await response.text();
-    throw new Error(
-      `Microsoft Graph Mailversand fehlgeschlagen: HTTP ${response.status} ${response.statusText} ${body}`,
+    const rawBody = await response.text();
+    const body = rawBody.slice(0, MAX_GRAPH_ERROR_BODY_CHARS);
+
+    console.error(
+      `Microsoft Graph Mailversand fehlgeschlagen: HTTP ${response.status} ${response.statusText}`,
+      body,
     );
+
+    throw new Error(`Microsoft Graph Mailversand fehlgeschlagen: HTTP ${response.status}`);
   }
 }

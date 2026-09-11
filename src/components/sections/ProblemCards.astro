@@ -1,414 +1,238 @@
 ---
-const solutions = [
+const privateSolutions = [
   {
-    title: "Schornstein nachrüsten",
+    title: "Außenkamin nachrüsten",
     description:
-      "Sie möchten einen Kamin oder Ofen installieren und benötigen den passenden Schornstein? Wir planen und realisieren die geeignete Lösung.",
+      "Sie möchten einen Kaminofen nachrüsten? Wir planen und montieren den passenden Außenkamin – einschließlich Brandschutz und erforderlicher Schornsteinhöhe.",
     href: "/aussenkamin",
     icon: "chimney",
   },
   {
-    title: "Schornstein sanieren",
+    title: "Schornstein im Gebäude nachrüsten",
     description:
-      "Feuchtigkeit, Versottung oder Schäden? Wir sanieren bestehende Schornsteine dauerhaft und fachgerecht.",
+      "Wenn der Schornstein innerhalb des Gebäudes verlaufen soll, planen wir eine sichere und baulich passende Lösung vom Aufstellraum bis über Dach.",
+    href: "/schornstein-im-gebaeude-nachruesten",
+    icon: "planning",
+  },
+  {
+    title: "Kaminsanierung",
+    description:
+      "Feuchtigkeit, Versottung, Querschnittsanpassung oder eine neue Heizungsanlage: Wir sanieren bestehende Schornsteine dauerhaft und fachgerecht.",
     href: "/kaminsanierung",
     icon: "renovation",
   },
   {
-    title: "Vorgaben des Schornsteinfegers umsetzen",
+    title: "Kaminverlängerung",
     description:
-      "Ihr Schornsteinfeger fordert Änderungen oder Nachrüstungen? Wir setzen die erforderlichen Maßnahmen fachgerecht um.",
-    href: "/leistungen/schornsteinfeger-vorgaben",
-    icon: "checklist",
-  },
-  {
-    title: "Zugprobleme beheben",
-    description:
-      "Der Schornstein zieht nicht richtig oder Rauch tritt aus? Wir analysieren die Ursache und entwickeln eine dauerhafte Lösung.",
-    href: "/leistungen/zugprobleme",
+      "Wenn die vorhandene Mündungshöhe nicht ausreicht, planen und montieren wir eine passende Schornsteinverlängerung nach den geltenden Anforderungen.",
+    href: "/kaminverlaengerung",
     icon: "airflow",
   },
   {
-    title: "Bauliche Herausforderungen lösen",
+    title: "Kaminkopf sanieren",
     description:
-      "Schwierige Dachführungen, wenig Platz oder besondere Anforderungen? Wir entwickeln Lösungen auch für komplexe Einbausituationen.",
-    href: "/leistungen/bauliche-herausforderungen",
-    icon: "planning",
+      "Witterungsschäden, Risse oder lose Bauteile am Schornsteinkopf? Wir setzen den Kaminkopf fachgerecht instand und schützen ihn dauerhaft.",
+    href: "/kaminkopfsanieren",
+    icon: "checklist",
   },
   {
-    title: "Gewerbe & Industrie",
+    title: "Bauliche Mängel",
     description:
-      "Abgasanlagen für Heizungsanlagen, BHKW, Produktionsbetriebe und individuelle gewerbliche oder industrielle Anwendungen.",
-    href: "/gewerbe-industrie",
-    icon: "industry",
+      "Risse, Feuchtigkeit, Undichtigkeiten oder unklare Schäden am Schornstein? Wir klären die Ursache und entwickeln die passende fachgerechte Lösung.",
+    href: "/bauliche-maengel-schornstein",
+    icon: "damage",
   },
 ];
+
+const commercialSolutions = [
+  {
+    title: "Stahlschornsteine",
+    description:
+      "Freistehende ein- und mehrzügige Stahlschornsteine für Heizzentralen, BHKW, Kesselanlagen und industrielle Prozesse.",
+    href: "/gewerbe-industrie/stahlschornsteine",
+    icon: "steel",
+  },
+  {
+    title: "Abgassysteme",
+    description:
+      "Komplette Abgasstrecken vom Anlagenanschluss bis zur sicheren Ableitung – einschließlich Komponenten, Befestigungen und Montage.",
+    href: "/gewerbe-industrie/abgassysteme",
+    icon: "exhaust",
+  },
+  {
+    title: "Sonderanlagen",
+    description:
+      "Individuelle Lösungen für Prüfstände, Produktionsanlagen und technische Aufgaben, bei denen Standardlösungen nicht ausreichen.",
+    href: "/gewerbe-industrie/sonderanlagen",
+    icon: "special",
+  },
+  {
+    title: "Zustandsüberwachung",
+    description:
+      "Dokumentierte Zustandsüberwachung freistehender Industrieschornsteine als Grundlage für planbare Instandhaltung und Lebensdauermanagement.",
+    href: "/gewerbe-industrie/zustandsueberwachung",
+    icon: "monitoring",
+  },
+];
+
 ---
 
 <section class="solutions-section" aria-labelledby="solutions-heading">
   <div class="solutions-container">
     <header class="solutions-header">
-      <p class="solutions-kicker">Lösungen</p>
-
-      <h2 id="solutions-heading">
-        Die passende Lösung für Ihr Projekt.
-      </h2>
-
+      <p class="solutions-kicker">Lösungen für Privatkunden</p>
+      <h2 id="solutions-heading">Die passende Lösung für Ihr Projekt.</h2>
       <p class="solutions-intro">
-        Ob Neubau, Sanierung oder besondere bauliche Anforderungen:
-        Wir planen und realisieren Schornstein- und Abgasanlagen für
-        unterschiedlichste Ausgangssituationen.
+        Nachrüstung, Sanierung oder Anpassung: Wir planen und realisieren
+        Schornsteinlösungen passend zu Gebäude, Feuerstätte und technischen Anforderungen.
       </p>
     </header>
 
-    <div class="solutions-grid">
-      {
-        solutions.map((solution) => (
-          <a class="solutions-card" href={solution.href}>
-            <span class="solutions-card-icon" aria-hidden="true">
-              {
-                solution.icon === "chimney" && (
-                  <svg viewBox="0 0 64 64">
-                    <path d="M24 54V25h16v29" />
-                    <path d="M20 25h24" />
-                    <path d="M26 25V13h12v12" />
-                    <path d="M23 13h18" />
-                    <path d="M18 41 8 47" />
-                    <path d="M46 41 56 47" />
-                    <path d="M14 47v7" />
-                    <path d="M50 47v7" />
-                    <path d="M22 54h20" />
-                  </svg>
-                )
-              }
+    <div class="solutions-grid solutions-grid--private">
+      {privateSolutions.map((solution) => (
+        <a class="solutions-card" href={solution.href}>
+          <span class="solutions-card-icon" aria-hidden="true">
+            {solution.icon === "chimney" && (
+              <svg viewBox="0 0 64 64">
+                <path d="M24 54V25h16v29" />
+                <path d="M20 25h24" />
+                <path d="M26 25V13h12v12" />
+                <path d="M23 13h18" />
+                <path d="M18 41 8 47" />
+                <path d="M46 41 56 47" />
+                <path d="M14 47v7" />
+                <path d="M50 47v7" />
+                <path d="M22 54h20" />
+              </svg>
+            )}
+            {solution.icon === "renovation" && (
+              <svg viewBox="0 0 64 64">
+                <path d="M24 54V24h16v30" />
+                <path d="M20 24h24" />
+                <path d="M26 24V12h12v12" />
+                <path d="M23 12h18" />
+                <path d="M27 33h10" />
+                <path d="M27 40h10" />
+                <path d="M28 47h8" />
+              </svg>
+            )}
+            {solution.icon === "checklist" && (
+              <svg viewBox="0 0 64 64">
+                <path d="M20 14h24v36H20z" />
+                <path d="M27 10h10a3 3 0 0 1 3 3v3H24v-3a3 3 0 0 1 3-3Z" />
+                <path d="m25 25 3 3 5-6" />
+                <path d="m25 35 3 3 5-6" />
+                <path d="m25 45 3 3 5-6" />
+              </svg>
+            )}
+            {solution.icon === "airflow" && (
+              <svg viewBox="0 0 64 64">
+                <path d="M8 20h27c7 0 7-10 0-10-4 0-6 2-6 5" />
+                <path d="M8 31h39c8 0 8 12 0 12-4 0-6-2-6-5" />
+                <path d="M8 42h24c8 0 8 12 0 12-4 0-6-2-6-5" />
+              </svg>
+            )}
+            {solution.icon === "damage" && (
+              <svg viewBox="0 0 64 64">
+                <path d="M23 54V18h18v36" />
+                <path d="M19 18h26" />
+                <path d="M27 18V9h10v9" />
+                <path d="m32 26-4 7 7 4-5 9" />
+                <path d="M20 54h24" />
+              </svg>
+            )}
+            {solution.icon === "planning" && (
+              <svg viewBox="0 0 64 64">
+                <path d="M10 34 32 14l22 20" />
+                <path d="M16 31v23h32V31" />
+                <path d="M24 54V38h16v16" />
+                <path d="M10 56h44" />
+              </svg>
+            )}
+          </span>
+          <div class="solutions-card-content">
+            <h3>{solution.title}</h3>
+            <p>{solution.description}</p>
+            <span class="solutions-card-link">Mehr erfahren <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
 
-              {
-                solution.icon === "renovation" && (
-                  <svg viewBox="0 0 64 64">
-                    <path d="M24 54V24h16v30" />
-                    <path d="M20 24h24" />
-                    <path d="M26 24V12h12v12" />
-                    <path d="M23 12h18" />
-                    <path d="M18 41 8 47" />
-                    <path d="M46 41 56 47" />
-                    <path d="M14 47v7" />
-                    <path d="M50 47v7" />
-                    <path d="M27 33h10" />
-                    <path d="M27 40h10" />
-                    <path d="M28 47h8" />
-                    <path d="M14 22l2 2" />
-                    <path d="M12 28h4" />
-                    <path d="M50 22l-2 2" />
-                    <path d="M48 28h4" />
-                  </svg>
-                )
-              }
+    <div class="commercial-block">
+      <header class="solutions-header solutions-header--commercial">
+        <p class="solutions-kicker">Gewerbe & Industrie</p>
+        <h2>Technische Lösungen für Anlagen, Gebäude und Prozesse.</h2>
+        <p class="solutions-intro">
+          Für Heizungsbauer, Planer, Anlagenbauer und Betreiber: von Stahlschornsteinen
+          und kompletten Abgasstrecken bis zu Sonderanlagen und Zustandsüberwachung.
+        </p>
+      </header>
 
-              {
-                solution.icon === "checklist" && (
-                  <svg viewBox="0 0 64 64">
-                    <path d="M20 14h24v36H20z" />
-                    <path d="M27 10h10a3 3 0 0 1 3 3v3H24v-3a3 3 0 0 1 3-3Z" />
-                    <path d="m25 25 3 3 5-6" />
-                    <path d="M36 25h5" />
-                    <path d="m25 35 3 3 5-6" />
-                    <path d="M36 35h5" />
-                    <path d="m25 45 3 3 5-6" />
-                    <path d="M36 45h5" />
-                    <circle cx="46" cy="46" r="10" />
-                    <path d="m42 46 3 3 5-6" />
-                  </svg>
-                )
-              }
-
-              {
-                solution.icon === "airflow" && (
-                  <svg viewBox="0 0 64 64">
-                    <path d="M8 20h27c7 0 7-10 0-10-4 0-6 2-6 5" />
-                    <path d="M8 31h39c8 0 8 12 0 12-4 0-6-2-6-5" />
-                    <path d="M8 42h24c8 0 8 12 0 12-4 0-6-2-6-5" />
-                  </svg>
-                )
-              }
-
-              {
-                solution.icon === "planning" && (
-                  <svg viewBox="0 0 64 64">
-                    <path d="M10 34 32 14l22 20" />
-                    <path d="M16 31v23h32V31" />
-                    <path d="M24 54V38h16v16" />
-                    <path class="solutions-dashed-line" d="M20 42h24" />
-                    <path d="M52 16v12" />
-                    <path d="M48 16h8" />
-                    <path d="M48 28h8" />
-                    <path d="M10 56h44" />
-                  </svg>
-                )
-              }
-
-              {
-                solution.icon === "industry" && (
-                  <svg viewBox="0 0 64 64">
-                    <path d="M10 54V31l14 8V31l14 8V20h8v34" />
-                    <path d="M8 54h48" />
-                    <path d="M17 46h6v8h-6z" />
-                    <path d="M30 46h6v8h-6z" />
-                    <path d="M43 43h7v11h-7z" />
-                    <path d="M42 20v-8h6v8" />
-                    <path d="M45 12V8" />
-                  </svg>
-                )
-              }
-            </span>
-
-            <div class="solutions-card-content">
-              <h3>{solution.title}</h3>
-
-              <p>{solution.description}</p>
-
-              <span class="solutions-card-link">
-                Mehr erfahren
-
-                <svg viewBox="0 0 20 20" aria-hidden="true">
-                  <path d="M4 10h11" />
-                  <path d="m11 6 4 4-4 4" />
+      <div class="commercial-grid">
+        {commercialSolutions.map((solution) => (
+          <a class="commercial-card" href={solution.href}>
+            <span class="commercial-card__icon" aria-hidden="true">
+              {solution.icon === "steel" && (
+                <svg viewBox="0 0 64 64">
+                  <path d="M25 55 28 10h8l3 45" />
+                  <path d="M22 55h20" />
+                  <path d="M27 21h10" />
+                  <path d="M26 34h12" />
+                  <path d="M25 47h14" />
+                  <path d="M39 18h7v28h-7" />
+                  <path d="M46 24h5" />
+                  <path d="M46 40h5" />
                 </svg>
-              </span>
+              )}
+              {solution.icon === "exhaust" && (
+                <svg viewBox="0 0 64 64">
+                  <path d="M9 46h15V30h16V16h15" />
+                  <path d="M9 52h21V36h16V22h9" />
+                  <path d="M18 46v6" />
+                  <path d="M40 16v20" />
+                  <path d="M55 11v16" />
+                </svg>
+              )}
+              {solution.icon === "special" && (
+                <svg viewBox="0 0 64 64">
+                  <path d="M10 48h44" />
+                  <path d="M14 48V30h14v18" />
+                  <path d="M28 37h12v11" />
+                  <path d="M40 48V20h8v28" />
+                  <path d="M44 20V11" />
+                  <path d="M19 30v-8h9" />
+                  <circle cx="28" cy="22" r="3" />
+                </svg>
+              )}
+              {solution.icon === "monitoring" && (
+                <svg viewBox="0 0 64 64">
+                  <path d="M17 54 21 12h9l4 42" />
+                  <path d="M14 54h23" />
+                  <path d="M20 26h12" />
+                  <path d="M19 40h14" />
+                  <circle cx="45" cy="35" r="10" />
+                  <path d="m52 42 7 7" />
+                  <path d="m40 35 3 3 6-7" />
+                </svg>
+              )}
+            </span>
+            <div class="commercial-card__content">
+              <h3>{solution.title}</h3>
+              <p>{solution.description}</p>
+              <span class="commercial-card__link">Mehr erfahren <span aria-hidden="true">→</span></span>
             </div>
           </a>
-        ))
-      }
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .solutions-section {
-    padding: clamp(5rem, 9vw, 8rem) 1.25rem;
-    background: var(--color-surface, #f7f7f7);
-  }
-
-  .solutions-container {
-    width: min(100%, 1240px);
-    margin: 0 auto;
-  }
-
-  .solutions-header {
-    max-width: 760px;
-    margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
-  }
-
-  .solutions-kicker {
-    margin: 0 0 1rem;
-    color: var(--color-primary, #971f25);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-
-  .solutions-header h2 {
-    margin: 0;
-    color: var(--color-text, #1f1f1f);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 1.08;
-  }
-
-  .solutions-intro {
-    max-width: 680px;
-    margin: 1.5rem 0 0;
-    color: #5c5c5c;
-    font-size: clamp(1rem, 1.5vw, 1.125rem);
-    line-height: 1.75;
-  }
-
-  .solutions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    align-items: stretch;
-  }
-
-  .solutions-card {
-    display: flex;
-    min-width: 0;
-    min-height: 370px;
-    flex-direction: column;
-    padding: clamp(1.75rem, 3vw, 2.25rem);
-    border: 0;
-    border-radius: 10px;
-    background: var(--color-primary, #971f25);
-    color: #ffffff;
-    text-decoration: none;
-    box-shadow: none;
-    transition:
-      background-color 180ms ease,
-      box-shadow 180ms ease,
-      transform 180ms ease;
-  }
-
-  .solutions-card:hover {
-    background: var(--color-primary-hover, #7c181d);
-    box-shadow: 0 16px 38px rgba(31, 31, 31, 0.16);
-    transform: translateY(-3px);
-  }
-
-  .solutions-card:focus-visible {
-    outline: 3px solid rgba(151, 31, 37, 0.3);
-    outline-offset: 4px;
-  }
-
-  .solutions-card-icon {
-    display: flex;
-    width: 58px;
-    height: 58px;
-    flex: 0 0 58px;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent !important;
-    color: #ffffff;
-  }
-
-  .solutions-card-icon svg {
-    display: block;
-    width: 58px;
-    height: 58px;
-    overflow: visible;
-    fill: none !important;
-    stroke: #ffffff !important;
-    stroke-width: 1.9;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .solutions-card-icon svg path,
-  .solutions-card-icon svg circle,
-  .solutions-card-icon svg rect,
-  .solutions-card-icon svg line,
-  .solutions-card-icon svg polyline,
-  .solutions-card-icon svg polygon {
-    fill: none !important;
-    stroke: #ffffff !important;
-    stroke-width: 1.9 !important;
-    stroke-linecap: round !important;
-    stroke-linejoin: round !important;
-  }
-
-  .solutions-dashed-line {
-    stroke-dasharray: 4 4 !important;
-  }
-
-  .solutions-card-content {
-    display: flex;
-    min-width: 0;
-    flex: 1;
-    flex-direction: column;
-    margin-top: 1.4rem;
-  }
-
-  .solutions-card h3 {
-    margin: 0;
-    color: #ffffff;
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.25;
-  }
-
-  .solutions-card-content > p {
-    margin: 1rem 0 0;
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.98rem;
-    line-height: 1.65;
-  }
-
-  .solutions-card-link {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
-    gap: 0.45rem;
-    margin-top: auto;
-    padding-top: 1.75rem;
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
-    color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: 700;
-  }
-
-  .solutions-card-link svg {
-    display: block;
-    width: 18px;
-    height: 18px;
-    overflow: visible;
-    fill: none !important;
-    stroke: #ffffff !important;
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: transform 180ms ease;
-  }
-
-  .solutions-card-link svg path {
-    fill: none !important;
-    stroke: #ffffff !important;
-  }
-
-  .solutions-card:hover .solutions-card-link svg {
-    transform: translateX(3px);
-  }
-
-  @media (max-width: 900px) {
-    .solutions-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .solutions-card {
-      min-height: 350px;
-    }
-  }
-
-  @media (max-width: 620px) {
-    .solutions-section {
-      padding-right: 1rem;
-      padding-left: 1rem;
-    }
-
-    .solutions-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .solutions-card {
-      min-height: 330px;
-    }
-
-    .solutions-card-icon {
-      width: 54px;
-      height: 54px;
-      flex-basis: 54px;
-    }
-
-    .solutions-card-icon svg {
-      width: 54px;
-      height: 54px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .solutions-card,
-    .solutions-card-link svg {
-      transition: none;
-    }
-
-    .solutions-card:hover {
-      transform: none;
-    }
-  }
+.solutions-section{padding:clamp(5rem,9vw,8rem) 1.25rem;background:#f5f4f2}.solutions-container{width:min(100%,1240px);margin:0 auto}.solutions-header{max-width:760px;margin-bottom:clamp(2.75rem,5vw,4.5rem)}.solutions-kicker{margin:0 0 1rem;color:var(--color-primary,#971f25);font-size:.8rem;font-weight:700;letter-spacing:.14em;line-height:1.4;text-transform:uppercase}.solutions-header h2{margin:0;color:var(--color-text,#1f1f1f);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;letter-spacing:-.04em;line-height:1.08}.solutions-intro{max-width:700px;margin:1.5rem 0 0;color:#606060;font-size:clamp(1rem,1.5vw,1.125rem);line-height:1.75}
+.solutions-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;align-items:stretch}.solutions-card{display:flex;min-width:0;min-height:330px;flex-direction:column;padding:clamp(1.65rem,2.6vw,2rem);border:1px solid #dedbd7;border-radius:12px;background:#fff;color:var(--color-text,#1f1f1f);text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.solutions-card:hover,.commercial-card:hover{transform:translateY(-3px);border-color:rgba(151,31,37,.42);box-shadow:0 16px 36px rgba(31,31,31,.09)}.solutions-card-icon,.commercial-card__icon{display:flex;width:56px;height:56px;align-items:center;justify-content:center;color:var(--color-primary,#971f25);flex:0 0 auto}.solutions-card-icon svg,.commercial-card__icon svg{width:56px;height:56px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.solutions-card-content{display:flex;flex:1;flex-direction:column;margin-top:1.35rem}.solutions-card h3{margin:0;color:var(--color-text,#1f1f1f);font-size:clamp(1.25rem,2vw,1.5rem);letter-spacing:-.025em;line-height:1.25}.solutions-card-content>p{margin:1rem 0 0;color:#666;font-size:.98rem;line-height:1.65}.solutions-card-link,.commercial-card__link{display:inline-flex;width:fit-content;gap:.45rem;margin-top:auto;padding-top:1.75rem;padding-bottom:.18rem;border-bottom:1px solid rgba(151,31,37,.35);color:var(--color-primary,#971f25);font-size:.95rem;font-weight:700}
+.commercial-block{margin-top:clamp(5rem,8vw,7rem);padding-top:clamp(4rem,6vw,5.5rem);border-top:1px solid #d8d4cf}.solutions-header--commercial{margin-bottom:2.5rem}.commercial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.commercial-card{display:flex;min-width:0;min-height:300px;flex-direction:column;padding:clamp(1.65rem,2.6vw,2rem);border:1px solid #dedbd7;border-radius:12px;background:#fff;color:inherit;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.commercial-card__content{display:flex;flex:1;flex-direction:column;margin-top:1.35rem}.commercial-card h3{margin:0;font-size:clamp(1.25rem,2vw,1.5rem);letter-spacing:-.025em;line-height:1.25}.commercial-card p{margin:1rem 0 0;color:#666;font-size:.98rem;line-height:1.65}
+@media(max-width:980px){.solutions-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.commercial-grid{grid-template-columns:1fr}.commercial-card{min-height:0}}
+@media(max-width:620px){.solutions-section{padding-right:1rem;padding-left:1rem}.solutions-grid,.commercial-grid{grid-template-columns:1fr}.solutions-card,.commercial-card{min-height:0}}
 </style>

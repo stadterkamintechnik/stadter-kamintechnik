@@ -215,18 +215,35 @@
   font-weight: 700;
 }
 
+/*
+ * Kein Scroll-Lock der gesamten Seite.
+ * Das mobile Menü kann bei Bedarf selbst scrollen.
+ */
 html.menu-open,
 html.menu-open body {
-  overflow: hidden;
+  overflow: auto;
 }
 
 @media (max-width: 1080px) {
-  .site-header__inner {
-    min-height: 82px;
+  /*
+   * Der mobile Header bleibt dauerhaft im sichtbaren Viewport.
+   */
+  .site-header,
+  .site-header.is-scrolled {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
   }
 
+  body {
+    padding-top: 82px;
+  }
+
+  .site-header__inner,
   .site-header.is-scrolled .site-header__inner {
-    min-height: 70px;
+    min-height: 82px;
   }
 
   .site-header__logo img,
@@ -243,19 +260,55 @@ html.menu-open body {
     display: flex;
     margin-left: auto;
   }
+
+  /*
+   * Menü direkt unter dem festen Header.
+   * Höhe richtet sich nach dem Inhalt.
+   * Nur bei Platzmangel wird das Menü scrollbar.
+   */
+  .site-header__mobile {
+    position: fixed;
+    z-index: 999;
+    top: 82px;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    max-height: calc(100dvh - 82px);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
+    background: var(--color-primary, #971f25);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.16);
+  }
+
+  .site-header__mobile-nav {
+    min-height: auto;
+    padding-bottom: calc(28px + env(safe-area-inset-bottom));
+  }
 }
 
 @media (max-width: 640px) {
-  .site-header__inner {
-    min-height: 72px;
+  body {
+    padding-top: 72px;
   }
 
+  .site-header__inner,
   .site-header.is-scrolled .site-header__inner {
-    min-height: 64px;
+    min-height: 72px;
   }
 
   .site-header__logo img,
   .site-header.is-scrolled .site-header__logo img {
     height: 43px;
+  }
+
+  .site-header__mobile {
+    top: 72px;
+    max-height: calc(100dvh - 72px);
   }
 }

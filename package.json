@@ -8,12 +8,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:staging": "STAGING=true astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "start": "node ./dist/server/entry.mjs"
   },
   "dependencies": {
     "@astrojs/node": "^11.0.2",
-    "astro": "^7.1.0",
+    "astro": "^5.7.1",
     "zod": "^4.4.3"
   }
 }

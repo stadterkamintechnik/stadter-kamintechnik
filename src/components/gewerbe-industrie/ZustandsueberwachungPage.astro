@@ -1,0 +1,284 @@
+---
+import "../../styles/pages/zustandsueberwachung.css";
+
+const areas = [
+  {
+    number: "01",
+    title: "Tragwerk & Außenkonstruktion",
+    text: "Sichtbare Veränderungen, Korrosion, Beschichtungszustand und konstruktive Auffälligkeiten werden systematisch erfasst und dokumentiert.",
+  },
+  {
+    number: "02",
+    title: "Innenrohre & Abgasführung",
+    text: "Zugängliche Bereiche der abgasführenden Bauteile werden auf erkennbare Veränderungen, Korrosionsspuren und betriebsbedingte Auffälligkeiten beurteilt.",
+  },
+  {
+    number: "03",
+    title: "Zugänge & Sicherheitseinrichtungen",
+    text: "Leitern, Bühnen, Geländer und weitere zugängliche Bauteile werden im Rahmen des vereinbarten Umfangs in die Zustandsaufnahme einbezogen.",
+  },
+  {
+    number: "04",
+    title: "Anschlüsse & Schnittstellen",
+    text: "Befestigungen, Übergänge, Revisionsbereiche und angrenzende Bauteile werden dort betrachtet, wo ihr Zustand für das Gesamtsystem relevant ist.",
+  },
+];
+
+const benefits = [
+  ["Früh erkennen", "Auffälligkeiten werden dokumentiert, bevor aus kleinen Veränderungen ungeplante Stillstände oder größere Schäden werden."],
+  ["Vergleichbar machen", "Wiederkehrende Zustandsaufnahmen schaffen eine belastbare Grundlage, um Entwicklungen über die Zeit zu erkennen."],
+  ["Priorisieren", "Nicht jede Auffälligkeit erfordert sofort eine große Maßnahme. Befunde werden nachvollziehbar eingeordnet und Maßnahmen können priorisiert werden."],
+  ["Planbar halten", "Instandhaltung lässt sich besser in Wartungsfenster, Betriebsunterbrechungen und Investitionsplanung integrieren."],
+];
+
+const process = [
+  ["01", "Anlagendaten & Unterlagen", "Vorhandene Pläne, frühere Prüfberichte, Fotos und Angaben zur Anlage schaffen die Grundlage für die Zustandsaufnahme."],
+  ["02", "Vor-Ort-Termin", "Der Schornstein und die vereinbarten Bauteile werden systematisch aufgenommen. Zugänglichkeit und Betriebsbedingungen werden berücksichtigt."],
+  ["03", "Dokumentation", "Festgestellte Auffälligkeiten werden fotografisch und schriftlich dokumentiert und den jeweiligen Bereichen der Anlage zugeordnet."],
+  ["04", "Bewertung", "Die Befunde werden technisch eingeordnet und nach Dringlichkeit beziehungsweise weiterem Klärungsbedarf strukturiert."],
+  ["05", "Maßnahmenempfehlung", "Falls Handlungsbedarf besteht, erhalten Sie eine klare Grundlage für Wartung, weiterführende Untersuchung oder Instandsetzung."],
+  ["06", "Wiederholungsprüfung", "Bei wiederkehrender Zustandsüberwachung lassen sich Veränderungen mit früheren Aufnahmen vergleichen und Entwicklungen besser beurteilen."],
+];
+
+const faq = [
+  {
+    q: "Was ist der Unterschied zwischen Zustandsüberwachung und einer einmaligen Prüfung?",
+    a: "Die Zustandsüberwachung ist auf die nachvollziehbare Entwicklung einer Anlage über ihre Nutzungsdauer ausgerichtet. Wiederkehrende Aufnahmen ermöglichen den Vergleich früherer und aktueller Befunde und unterstützen damit das Lebensdauermanagement.",
+  },
+  {
+    q: "Für welche Schornsteine ist die Zustandsüberwachung sinnvoll?",
+    a: "Vor allem bei freistehenden Industrieschornsteinen und technisch anspruchsvollen Anlagen, bei denen Korrosion, Witterung, thermische Belastung und Betriebsbedingungen langfristig auf Tragwerk und Abgasführung wirken.",
+  },
+  {
+    q: "Welche Bauteile werden betrachtet?",
+    a: "Der genaue Umfang wird projektbezogen festgelegt. Typisch sind Tragkonstruktion, zugängliche Außenflächen, abgasführende Bauteile, Befestigungen, Zugänge, Bühnen sowie relevante Schnittstellen.",
+  },
+  {
+    q: "Erhalte ich eine Dokumentation?",
+    a: "Ja. Ziel der Zustandsüberwachung ist eine nachvollziehbare Dokumentation der festgestellten Befunde. Sie bildet die Grundlage für spätere Vergleiche und weitere technische Entscheidungen.",
+  },
+  {
+    q: "Können aus den Befunden direkt Sanierungsmaßnahmen abgeleitet werden?",
+    a: "Wenn der Zustand einen Handlungsbedarf erkennen lässt, können daraus konkrete nächste Schritte abgeleitet werden – von Wartungsmaßnahmen über weiterführende Untersuchungen bis hin zu einer Instandsetzung.",
+  },
+  {
+    q: "Welche Norm ist für das Lebensdauermanagement freistehender Industrieschornsteine relevant?",
+    a: "DIN EN 13084-9 behandelt das Lebensdauermanagement freistehender Industrieschornsteine und umfasst unter anderem Überwachung, Inspektion, Wartung, Sanierungsmaßnahmen und Dokumentation.",
+  },
+];
+---
+
+<main class="zu-page">
+  <section class="zu-hero" aria-labelledby="zu-hero-title">
+    <img
+      class="zu-hero__image"
+      src="/images/referenzen/stahlschornstein-dampfkessel/stahlschornstein-heizzentrale-hero.webp"
+      alt="Freistehender Industrieschornstein mit Wartungsbühnen und Sicherheitsleiter"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="zu-hero__shade" aria-hidden="true"></div>
+
+    <div class="container zu-hero__inner">
+      <div class="zu-hero__content">
+        <p class="zu-eyebrow zu-eyebrow--light">Gewerbe & Industrie · Zustandsüberwachung</p>
+        <h1 id="zu-hero-title">Wissen, wie es Ihrem Schornstein wirklich geht.</h1>
+        <p class="zu-hero__lead">
+          Systematische Zustandsüberwachung freistehender Industrieschornsteine –
+          dokumentiert, vergleichbar und als Grundlage für planbare Instandhaltung.
+        </p>
+        <div class="zu-hero__actions">
+          <a class="zu-button zu-button--primary" href="/projekt-starten/?projekt=zustandsueberwachung">
+            Zustandsüberwachung anfragen <span aria-hidden="true">→</span>
+          </a>
+          <a class="zu-button zu-button--ghost" href="#lebensdauer">Lebensdauermanagement ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="zu-audience">
+    <div class="container zu-audience__inner">
+      <p>Für</p>
+      <ul aria-label="Typische Auftraggeber">
+        <li>Industriebetriebe</li>
+        <li>Betreiber</li>
+        <li>Facility Management</li>
+        <li>TGA-Planer</li>
+        <li>Kommunen</li>
+        <li>Instandhaltung</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="zu-section" id="lebensdauer">
+    <div class="container">
+      <div class="zu-intro zu-intro--split">
+        <div>
+          <p class="zu-eyebrow">Lebensdauermanagement</p>
+          <h2>Ein Industrieschornstein ist kein Bauteil, das man nach der Montage vergessen sollte.</h2>
+        </div>
+        <div>
+          <p>
+            Witterung, Abgas, Temperaturwechsel und mechanische Belastungen wirken über Jahre
+            auf Tragwerk und abgasführende Bauteile. Veränderungen entstehen oft schleichend
+            und sind im normalen Anlagenbetrieb nicht unmittelbar sichtbar.
+          </p>
+          <p>
+            Eine strukturierte Zustandsüberwachung schafft deshalb eine belastbare Grundlage:
+            Was ist unverändert? Wo zeigen sich Auffälligkeiten? Und welche Bereiche sollten
+            weiter beobachtet oder instand gesetzt werden?
+          </p>
+        </div>
+      </div>
+
+      <div class="zu-norm">
+        <span>DIN EN 13084-9</span>
+        <p>
+          Die Norm behandelt das Lebensdauermanagement freistehender Industrieschornsteine –
+          einschließlich Überwachung, Inspektion, Wartung, Sanierungsmaßnahmen und Dokumentation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="zu-section zu-areas">
+    <div class="container">
+      <div class="zu-intro">
+        <p class="zu-eyebrow">Was wir betrachten</p>
+        <h2>Der Zustand entsteht aus dem Zusammenspiel vieler Bauteile.</h2>
+        <p>
+          Der genaue Umfang wird für jede Anlage festgelegt. Entscheidend ist eine
+          strukturierte Betrachtung der Bereiche, die für Betrieb, Tragfähigkeit,
+          Zugänglichkeit und langfristige Nutzbarkeit relevant sind.
+        </p>
+      </div>
+
+      <div class="zu-card-grid">
+        {areas.map((item) => (
+          <article class="zu-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="zu-section zu-benefits">
+    <div class="container">
+      <div class="zu-intro">
+        <p class="zu-eyebrow">Mehr als ein Prüfbericht</p>
+        <h2>Aus Zustandsdaten werden Entscheidungen.</h2>
+        <p>
+          Der Wert der Überwachung entsteht nicht durch möglichst viele Fotos,
+          sondern durch eine nachvollziehbare Einordnung und die Entwicklung über die Zeit.
+        </p>
+      </div>
+
+      <div class="zu-benefit-list">
+        {benefits.map(([title, text], index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="zu-dark">
+    <div class="container zu-dark__inner">
+      <div>
+        <p class="zu-eyebrow zu-eyebrow--light">Wiederkehrende Überwachung</p>
+        <h2>Der Vergleich macht Veränderungen sichtbar.</h2>
+        <p>
+          Besonders wertvoll wird die Zustandsüberwachung, wenn Aufnahmen über mehrere
+          Zeitpunkte miteinander verglichen werden. So lassen sich Entwicklungen erkennen
+          und Instandhaltungsmaßnahmen besser planen.
+        </p>
+      </div>
+
+      <div class="zu-timeline">
+        <div><span>01</span><strong>Ausgangszustand erfassen</strong><p>Dokumentierter Referenzpunkt für die Anlage.</p></div>
+        <div><span>02</span><strong>Wiederholt aufnehmen</strong><p>Gleiche Bereiche werden erneut bewertet und dokumentiert.</p></div>
+        <div><span>03</span><strong>Veränderungen vergleichen</strong><p>Neue oder fortschreitende Auffälligkeiten werden erkennbar.</p></div>
+        <div><span>04</span><strong>Maßnahmen planen</strong><p>Wartung und Instandsetzung werden auf den tatsächlichen Zustand abgestimmt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="zu-section zu-process">
+    <div class="container">
+      <div class="zu-intro">
+        <p class="zu-eyebrow">Ablauf</p>
+        <h2>Vom Anlagenbestand zur nachvollziehbaren Zustandsdokumentation.</h2>
+      </div>
+
+      <ol>
+        {process.map(([number, title, text]) => (
+          <li>
+            <span>{number}</span>
+            <div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="zu-proof">
+    <div class="container zu-proof__inner">
+      <div>
+        <p class="zu-eyebrow zu-eyebrow--light">Warum Stadter Kamintechnik</p>
+        <h2>Wir kennen die Anlagen nicht nur aus Prüfberichten – wir bauen sie.</h2>
+      </div>
+      <div class="zu-proof__grid">
+        <div><strong>Praxiswissen</strong><span>Schornstein- und Abgastechnik aus Planung und Montage</span></div>
+        <div><strong>Systemverständnis</strong><span>Tragwerk, Abgasführung und Zugänglichkeit zusammen betrachten</span></div>
+        <div><strong>Dokumentiert</strong><span>Befunde nachvollziehbar festhalten und strukturieren</span></div>
+        <div><strong>Umsetzungsstark</strong><span>Bei Handlungsbedarf können daraus konkrete Maßnahmen entstehen</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="zu-section zu-faq">
+    <div class="container zu-faq__inner">
+      <div>
+        <p class="zu-eyebrow">Technische Anfrage</p>
+        <h2>Häufige Fragen zur Zustandsüberwachung.</h2>
+      </div>
+      <div class="zu-faq__list">
+        {faq.map((item) => (
+          <details>
+            <summary><span>{item.q}</span><span aria-hidden="true">+</span></summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="zu-cta">
+    <div class="container zu-cta__inner">
+      <div>
+        <p class="zu-eyebrow zu-eyebrow--light">Bestand bewerten</p>
+        <h2>Sie möchten den Zustand Ihres Industrieschornsteins belastbar dokumentieren?</h2>
+        <p>
+          Senden Sie uns vorhandene Pläne, frühere Prüfberichte, Fotos und Angaben zur Anlage.
+          Wir klären mit Ihnen den sinnvollen Umfang der Zustandsüberwachung.
+        </p>
+      </div>
+      <div class="zu-cta__actions">
+        <a class="zu-button zu-button--white" href="/projekt-starten/?projekt=zustandsueberwachung">
+          Zustandsüberwachung anfragen <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,154 @@
+---
+import "../../styles/pages/sonderanlagen.css";
+
+const situations = [
+  {number:"01",title:"Prüfstände & Versuchsanlagen",text:"Abgaslösungen für wechselnde Betriebszustände, mehrere Ansaugstellen und besondere Anforderungen an Druckregelung, Schallschutz und Brandschutz."},
+  {number:"02",title:"Produktionsmaschinen",text:"Maschinennahe Erfassung und individuelle Leitungsführung durch bestehende Produktionsgebäude bis zur sicheren Ableitung über Dach."},
+  {number:"03",title:"Komplexe Bestandsanlagen",text:"Wenn vorhandene Gebäude, Tragwerke oder technische Anlagen keine Standardführung zulassen, entwickeln wir eine auf die reale Einbausituation abgestimmte Lösung."},
+  {number:"04",title:"Technische Sonderlösungen",text:"Gebläse, Klappen, Schalldämpfer, Kompensatoren, Sonderbauteile und individuelle Tragkonstruktionen werden zu einem funktionierenden Gesamtsystem kombiniert."},
+];
+
+const questions=[
+ ["Prozess","Was entsteht an der Anlage – Abgas, Temperatur, Volumenstrom, Druck, Schall und wechselnde Betriebszustände?"],
+ ["Aufnahme","Wo und wie können die Abgase an Maschine, Prüfstand oder Prozess zuverlässig erfasst werden?"],
+ ["Leitungsweg","Wie lässt sich die Abgasstrecke durch Gebäude und technische Infrastruktur tatsächlich führen?"],
+ ["Funktion","Welche Komponenten sind für Druckregelung, Bewegungsaufnahme, Schallschutz oder Abgasnachbehandlung erforderlich?"],
+ ["Gebäude","Welche Anforderungen ergeben sich aus Brandschutz, Durchführungen, Tragwerk und vorhandener Bausubstanz?"],
+ ["Montage","Wie kann die Anlage mit möglichst geringer Beeinträchtigung des laufenden Betriebs umgesetzt werden?"],
+];
+
+const scope=[
+ "Technische Aufnahme und Klärung der Aufgabenstellung",
+ "Entwicklung einer projektspezifischen Abgasführung",
+ "Dimensionierung und Abstimmung der erforderlichen Komponenten",
+ "Integration von Gebläsen, Klappen, Schalldämpfern und Kompensatoren",
+ "Abstimmung von Brandschutz und Gebäudedurchführungen",
+ "Planung von Befestigungen und Tragkonstruktionen",
+ "Montage- und Hebekonzept für die reale Baustellensituation",
+ "Lieferung, Montage und Anpassungsarbeiten vor Ort",
+];
+
+const process=[
+ ["01","Aufgabenstellung","Sie senden uns Anlagenbeschreibung, Pläne, Betriebsdaten und die bisher bekannten technischen Anforderungen."],
+ ["02","Technische Analyse","Wir betrachten Prozess, Abgasparameter, Einbausituation, Leitungsweg und die relevanten Schnittstellen als Gesamtsystem."],
+ ["03","Lösungskonzept","Aus den Randbedingungen entwickeln wir eine technisch umsetzbare Lösung – ohne ein Standardsystem erzwingen zu müssen."],
+ ["04","Detailplanung","Komponenten, Befestigungen, Brandschutz, Zugänglichkeit und Montagefolge werden mit den Projektbeteiligten abgestimmt."],
+ ["05","Umsetzung","Unsere Montageteams realisieren die Anlage und können erforderliche Anpassungen an die tatsächliche Baustellensituation vornehmen."],
+ ["06","Projektabschluss","Die ausgeführte Sonderanlage wird dokumentiert und für den weiteren Anlagenbetrieb beziehungsweise die Inbetriebnahme übergeben."],
+];
+
+const faqs=[
+ {q:"Was verstehen Sie unter einer Sonderanlage?",a:"Eine Sonderanlage ist für uns eine Schornstein- oder Abgasaufgabe, die sich nicht sinnvoll mit einer einfachen Standardlösung abbilden lässt. Ursache können der Prozess, wechselnde Betriebszustände, die Gebäudesituation oder besondere Anforderungen an Druck, Schall, Brandschutz und Leitungsführung sein."},
+ {q:"Übernehmen Sie auch die technische Konzeption?",a:"Ja. Wir klären die Aufgabenstellung und entwickeln gemeinsam mit Auftraggeber, Fachplanung und weiteren Projektbeteiligten eine umsetzbare Abgaslösung. Der konkrete Leistungsumfang wird projektbezogen festgelegt."},
+ {q:"Können Gebläse und Regelklappen Teil der Anlage sein?",a:"Ja. Beim von uns realisierten Motorprüfstand gehören beispielsweise ein Abgasgebläse und Abgassperrklappen für mehrere Ansaugstellen zum Gesamtsystem."},
+ {q:"Berücksichtigen Sie auch Schallschutz und Brandschutz?",a:"Ja. Bei Sonderanlagen sind diese Schnittstellen häufig entscheidend. Im Motorprüfstand wurden unter anderem ein Kanalschalldämpfer sowie eine Brandschutzummauerung mit abgestimmtem Brandschutzkonzept umgesetzt."},
+ {q:"Realisieren Sie Sonderanlagen auch in bestehenden Produktionsgebäuden?",a:"Ja. Gerade im Bestand sind individuelle Leitungswege häufig notwendig. Ein realisiertes Projekt führt die Abgase einer Produktionsmaschine innerhalb des Gebäudes nach außen, anschließend über eine lange horizontale Flachdachstrecke bis zum vertikalen Schornstein."},
+ {q:"Welche Unterlagen benötigen Sie für eine erste Prüfung?",a:"Hilfreich sind Anlagen- und Prozessdaten, Abgasparameter, Grundrisse und Schnitte, Fotos der Einbausituation, vorhandene Planungen sowie Angaben zu Betriebszeiten und dem gewünschten Terminrahmen."},
+];
+---
+
+<main class="sa-page">
+<section class="sa-hero">
+  <img class="sa-hero__image" src="/images/referenzen/motorpruefstand/motorpruefstand-abgasanlage.jpg" alt="Technisch anspruchsvolle Abgasanlage eines Motorprüfstands" loading="eager" fetchpriority="high" decoding="async" />
+  <div class="sa-hero__shade"></div>
+  <div class="container sa-hero__inner">
+    <div class="sa-hero__content">
+      <p class="sa-eyebrow sa-eyebrow--light">Gewerbe & Industrie · Sonderanlagen</p>
+      <h1>Wenn Standard nicht funktioniert.</h1>
+      <p class="sa-hero__lead">Individuelle Schornstein- und Abgaslösungen für Prüfstände, Produktionsanlagen und besondere technische Aufgaben – von der Aufgabenstellung bis zur Montage.</p>
+      <div class="sa-hero__actions">
+        <a class="sa-button sa-button--primary" href="/projekt-starten/?projekt=sonderanlage">Technische Aufgabe senden →</a>
+        <a class="sa-button sa-button--ghost" href="#referenzen">Sonderprojekte ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sa-audience"><div class="container sa-audience__inner"><p>Für</p><ul><li>Anlagenbauer</li><li>TGA-Planer</li><li>Industrie</li><li>Prüfstandstechnik</li><li>Produktionsbetriebe</li><li>Generalunternehmer</li></ul></div></section>
+
+<section class="sa-section">
+ <div class="container">
+  <div class="sa-intro sa-intro--split">
+   <div><p class="sa-eyebrow">Problemlösung statt Produkt</p><h2>Die technische Aufgabe kommt zuerst.</h2></div>
+   <div><p>Bei Sonderanlagen gibt es selten eine fertige Lösung aus dem Katalog. Prozess, Gebäude, Betriebsweise und vorhandene Technik geben die Randbedingungen vor.</p><p>Genau dort setzen wir an: Wir betrachten die komplette Aufgabe, definieren die notwendigen Schnittstellen und entwickeln daraus eine Abgaslösung, die technisch funktioniert und auf der Baustelle umsetzbar ist.</p></div>
+  </div>
+  <div class="sa-flow"><span>Aufgabe</span><i>→</i><span>Randbedingungen</span><i>→</i><span>Konzept</span><i>→</i><span>Komponenten</span><i>→</i><span>Montageplanung</span><i>→</i><span>Umsetzung</span></div>
+ </div>
+</section>
+
+<section class="sa-section sa-situations"><div class="container">
+ <div class="sa-intro"><p class="sa-eyebrow">Typische Aufgaben</p><h2>Sonderlösungen entstehen dort, wo Systeme an Grenzen kommen.</h2><p>Wir kombinieren Schornstein- und Abgastechnik mit den Komponenten und konstruktiven Lösungen, die das konkrete Projekt verlangt.</p></div>
+ <div class="sa-card-grid">{situations.map(item=><article class="sa-card"><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+</div></section>
+
+<section class="sa-section"><div class="container">
+ <div class="sa-intro"><p class="sa-eyebrow">Engineering der Schnittstellen</p><h2>Sechs Fragen, bevor aus Technik eine Anlage wird.</h2><p>Je ungewöhnlicher die Aufgabenstellung, desto wichtiger ist die systematische Klärung der Randbedingungen.</p></div>
+ <div class="sa-topic-list">{questions.map(([title,text],i)=><article><span>{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+</div></section>
+
+<section class="sa-scope"><div class="container sa-scope__inner">
+ <div><p class="sa-eyebrow sa-eyebrow--light">Unser Leistungsumfang</p><h2>Von der Idee zur montierbaren Sonderlösung.</h2><p>Wir übernehmen genau die Schnittstellen, die für das Projekt erforderlich sind – von der technischen Klärung bis zur Montage vor Ort.</p></div>
+ <ul>{scope.map(item=><li>{item}</li>)}</ul>
+</div></section>
+
+<section class="sa-section sa-references" id="referenzen"><div class="container">
+ <div class="sa-intro"><p class="sa-eyebrow">Referenzen</p><h2>Drei Aufgaben, für die es keine Standardantwort gab.</h2><p>Unsere Sonderprojekte zeigen, wie unterschiedlich technische Randbedingungen sein können – und warum die Lösung beim Verständnis der Anlage beginnt.</p></div>
+ <div class="sa-ref-grid">
+  <a class="sa-ref-card" href="/referenzen/abgassystem-motorpruefstand">
+   <div class="sa-ref-card__media">
+    <img src="/images/referenzen/motorpruefstand/motorpruefstand-abgasanlage.jpg" alt="Abgassystem eines Motorprüfstands" loading="lazy" decoding="async" />
+   </div>
+   <div class="sa-ref-card__body">
+    <p class="sa-eyebrow">Industrie · Motorprüfstand</p>
+    <h3>Mehrere Prüfzellen. Geregelte Ansaugstellen. Eine Abgaslösung.</h3>
+    <p>Freistehende Kaminanlage im Gebäude mit Brandschutzummauerung, Abgasgebläse, Kanalschalldämpfer und Abgassperrklappen zur Druckregelung.</p>
+    <span>Projekt ansehen →</span>
+   </div>
+  </a>
+
+  <a class="sa-ref-card" href="/referenzen/abgasanlage-produktionsmaschine">
+   <div class="sa-ref-card__media">
+    <img src="/images/referenzen/produktionsmaschine/produktionsmaschine-aussen.webp" alt="Abgasanlage einer technischen Produktionsmaschine" loading="lazy" decoding="async" />
+   </div>
+   <div class="sa-ref-card__body">
+    <p class="sa-eyebrow">Industrie · Produktionsmaschine</p>
+    <h3>Vom Maschinenanschluss über das Flachdach bis zum Schornstein.</h3>
+    <p>Doppelwandiges Edelstahl-Abgassystem mit Gebäudedurchführung, langer horizontaler Dachverbindung und vertikaler Ableitung.</p>
+    <span>Projekt ansehen →</span>
+   </div>
+  </a>
+
+  <a class="sa-ref-card" href="/referenzen/abgasanlagen-baustoffhersteller">
+   <div class="sa-ref-card__media">
+    <img src="/images/referenzen/abgasanlagen-baustoffhersteller/abgasanlage-fertig.jpg" alt="Neue 20 Meter hohe Industrie-Abgasanlage eines Baustoffherstellers" loading="lazy" decoding="async" />
+   </div>
+   <div class="sa-ref-card__body">
+    <p class="sa-eyebrow">Industrie · Baustoffhersteller</p>
+    <h3>Kompletter Anlagenwechsel in nur einem Tag Produktionsstillstand.</h3>
+    <p>Rückbau der Bestandsanlage und Montage einer neuen 20 Meter hohen Abluftanlage mit Stahlkamin, Deflektorhaube und Kulissenschalldämpfer.</p>
+    <span>Projekt ansehen →</span>
+   </div>
+  </a>
+ </div>
+</div></section>
+
+<section class="sa-section sa-process"><div class="container">
+ <div class="sa-intro"><p class="sa-eyebrow">Projektablauf</p><h2>Komplexität reduzieren. Lösung umsetzen.</h2></div>
+ <ol>{process.map(([n,t,x])=><li><span>{n}</span><div><h3>{t}</h3><p>{x}</p></div></li>)}</ol>
+</div></section>
+
+<section class="sa-proof"><div class="container sa-proof__inner">
+ <div><p class="sa-eyebrow sa-eyebrow--light">Warum Stadter Kamintechnik</p><h2>Wir lösen das Projekt. Nicht nur den Schornstein.</h2></div>
+ <div class="sa-proof__grid"><div><strong>Technisches Verständnis</strong><span>Prozess und Abgasweg zusammen denken</span></div><div><strong>Eigene Montageteams</strong><span>Planung mit Blick auf die Baustelle</span></div><div><strong>Systemoffen</strong><span>Komponenten passend zur Aufgabe kombinieren</span></div><div><strong>Bestandserfahren</strong><span>Lösungen für reale Gebäudesituationen</span></div></div>
+</div></section>
+
+<section class="sa-section sa-faq"><div class="container sa-faq__inner">
+ <div><p class="sa-eyebrow">Technische Anfrage</p><h2>Häufige Fragen zu Sonderanlagen.</h2></div>
+ <div class="sa-faq__list">{faqs.map(item=><details><summary><span>{item.q}</span><span>+</span></summary><p>{item.a}</p></details>)}</div>
+</div></section>
+
+<section class="sa-cta"><div class="container sa-cta__inner">
+ <div><p class="sa-eyebrow sa-eyebrow--light">Ihre Aufgabe</p><h2>Sie haben ein Abgasproblem, für das es noch keine fertige Lösung gibt?</h2><p>Senden Sie uns Anlagenbeschreibung, Pläne, Betriebsdaten und Fotos. Wir prüfen die technische Aufgabenstellung und klären mit Ihnen, wie daraus eine umsetzbare Lösung wird.</p></div>
+ <div class="sa-cta__actions"><a class="sa-button sa-button--white" href="/projekt-starten/?projekt=sonderanlage">Technische Aufgabe senden →</a><a class="sa-text-link sa-text-link--light" href="/referenzen/">Industrie-Referenzen ansehen</a></div>
+</div></section>
+</main>

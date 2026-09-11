@@ -1,0 +1,161 @@
+---
+import "../../styles/pages/bauliche-maengel.css";
+
+const problems = [
+  ["01", "Risse & beschädigtes Mauerwerk", "Risse, lose Steine, Abplatzungen oder beschädigte Schornsteinwangen können unterschiedliche Ursachen haben. Entscheidend ist, nicht nur die sichtbare Stelle zu reparieren, sondern den Schaden richtig einzuordnen."],
+  ["02", "Feuchtigkeit & Versottung", "Feuchte Stellen, Verfärbungen oder Geruch können auf einen ungeeigneten Querschnitt, Kondensat, Schäden an der Abgasführung oder eindringende Feuchtigkeit hinweisen."],
+  ["03", "Undichte Anschlüsse & Durchführungen", "Fehlerhafte Anschlüsse an Feuerstätten, Decken, Dach oder Abgasleitungen können technische und bauliche Probleme verursachen und müssen passend zur jeweiligen Konstruktion gelöst werden."],
+  ["04", "Schäden nach Umbauten", "Neue Heizung, neuer Kaminofen, Dachumbau oder geänderte Raumnutzung: Bestehende Schornsteine passen nach Veränderungen nicht immer automatisch zur neuen Situation."],
+  ["05", "Mängel oberhalb des Daches", "Schadhafte Fugen, Risse, Abplatzungen oder undichte Abdeckungen am Kaminkopf sind dauerhaft der Witterung ausgesetzt und sollten fachgerecht instand gesetzt werden."],
+  ["06", "Unklare Bestandssituation", "Nicht immer ist auf den ersten Blick klar, ob eine Reparatur genügt, eine Sanierung erforderlich ist oder der Schornstein technisch angepasst werden muss. Genau hier beginnt unsere Arbeit."],
+];
+
+const routes = [
+  ["Kaminsanierung", "Wenn der bestehende Schornstein technisch an eine Feuerstätte oder Heizungsanlage angepasst werden muss.", "/kaminsanierung"],
+  ["Kaminkopf sanieren", "Wenn Mauerwerk, Fugen oder Abdeckung oberhalb des Daches geschädigt sind.", "/kaminkopfsanieren"],
+  ["Kaminverlängerung", "Wenn die vorhandene Mündungshöhe nicht mehr den erforderlichen Ableitbedingungen entspricht.", "/kaminverlaengerung"],
+  ["Schornstein im Gebäude nachrüsten", "Wenn der Bestand nicht sinnvoll nutzbar ist und eine neue Schornsteinlösung im Gebäude benötigt wird.", "/schornstein-im-gebaeude-nachruesten"],
+  ["Außenkamin nachrüsten", "Wenn eine neue Abgasführung außen am Gebäude die technisch und baulich sinnvollere Lösung ist.", "/aussenkamin"],
+];
+
+const process = [
+  ["01", "Problem aufnehmen", "Fotos, vorhandene Unterlagen und eine kurze Beschreibung helfen uns bei der ersten Einordnung."],
+  ["02", "Ursache klären", "Wir betrachten nicht nur das sichtbare Schadensbild, sondern die technische und bauliche Situation dahinter."],
+  ["03", "Lösungsweg festlegen", "Reparieren, sanieren, anpassen oder neu bauen: Wir empfehlen die Maßnahme, die zur tatsächlichen Ursache passt."],
+  ["04", "Schnittstellen abstimmen", "Falls Schornsteinfeger, Dachdecker, Heizungsbauer oder andere Gewerke beteiligt sind, werden die relevanten Punkte berücksichtigt."],
+  ["05", "Fachgerecht ausführen", "Unsere eigenen Montageteams setzen die geplante Maßnahme sauber und zuverlässig um."],
+];
+
+const faqs = [
+  ["Was sind typische bauliche Mängel an einem Schornstein?", "Dazu gehören unter anderem Risse, beschädigtes Mauerwerk, Feuchtigkeit, Versottung, schadhafte Anschlüsse, Probleme am Kaminkopf oder Mängel, die nach Umbauten und Änderungen an der Feuerungsanlage sichtbar werden."],
+  ["Kann man einen Riss am Schornstein einfach verputzen?", "Das hängt von der Ursache ab. Ein oberflächlicher Putzriss ist etwas anderes als ein Schaden am Mauerwerk oder eine Bewegung im Bauteil. Deshalb sollte zuerst geklärt werden, wodurch der Riss entstanden ist."],
+  ["Was bedeutet Versottung?", "Versottung zeigt sich häufig durch braune oder gelbliche Flecken, Feuchtigkeit und Geruch am Schornstein. Ursache können unter anderem Kondensat und eine nicht zur Feuerstätte passende Abgasführung sein. Eine reine Oberflächenbehandlung beseitigt die Ursache nicht."],
+  ["Werden auch Schäden am Kaminkopf bearbeitet?", "Ja. Für Schäden an Fugen, Mauerwerk und Abdeckung oberhalb des Daches haben wir zusätzlich eine eigene Leistungsseite zur Kaminkopfsanierung."],
+  ["Muss der Schornsteinfeger eingebunden werden?", "Wenn Abgasführung, Querschnitt, Feuerstätte oder Mündung verändert werden, ist eine Abstimmung mit dem bevollmächtigten Bezirksschornsteinfeger in vielen Fällen sinnvoll beziehungsweise erforderlich. Bei rein baulichen Reparaturen kann die Situation anders sein."],
+  ["Was soll ich für eine erste Einschätzung senden?", "Am hilfreichsten sind mehrere Fotos des Schadens, Fotos des gesamten Schornsteins beziehungsweise der Feuerstätte, eine kurze Beschreibung und – falls vorhanden – Pläne, frühere Befunde oder Angaben zur angeschlossenen Anlage."],
+];
+---
+
+<main class="bm-page">
+  <section class="bm-hero" aria-labelledby="bm-title">
+    <img class="bm-hero__image" src="/images/referenzen/kaminsanierung-gemauerter-schornstein/alter-schornstein-innen.webp" alt="Blick in einen bestehenden Schornstein mit gerissenen und beschädigten Schamotterohren" loading="eager" fetchpriority="high" decoding="async" />
+    <div class="bm-hero__overlay" aria-hidden="true"></div>
+    <div class="container bm-hero__inner">
+      <div class="bm-hero__content">
+        <p class="bm-eyebrow bm-eyebrow--light">Bauliche Mängel am Schornstein</p>
+        <h1 id="bm-title">Ihr Schornstein hat einen Schaden? Wir klären, was wirklich zu tun ist.</h1>
+        <p class="bm-hero__lead">Risse, Feuchtigkeit, Undichtigkeiten oder eine unklare Bestandssituation: Wir prüfen die Ursache und entwickeln daraus die fachgerechte Lösung – statt nur das sichtbare Problem zu überdecken.</p>
+        <div class="bm-actions">
+          <a class="bm-button bm-button--primary" href="/projekt-starten/?projekt=bauliche-maengel">Schaden prüfen lassen <span aria-hidden="true">→</span></a>
+          <a class="bm-button bm-button--ghost" href="#typische-maengel">Typische Mängel ansehen</a>
+        </div>
+        <ul class="bm-facts">
+          <li><strong>Ursache</strong> statt Symptombehandlung</li>
+          <li><strong>Seit 2009</strong> Meisterbetrieb</li>
+          <li><strong>Eigene Teams</strong> für die Umsetzung</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-orientation">
+    <div class="container bm-orientation__inner">
+      <div>
+        <p class="bm-eyebrow">Erst verstehen. Dann sanieren.</p>
+        <h2>Nicht jeder Schaden braucht dieselbe Lösung.</h2>
+      </div>
+      <p>Ein Fleck an der Wand kann von außen eindringende Feuchtigkeit bedeuten – oder von Kondensat im Schornstein. Ein Riss kann oberflächlich sein – oder auf einen tiefergehenden Schaden hinweisen. Deshalb beginnt eine sinnvolle Sanierung mit der Ursache.</p>
+    </div>
+  </section>
+
+  <section class="bm-section bm-problems" id="typische-maengel">
+    <div class="container">
+      <div class="bm-intro">
+        <p class="bm-eyebrow">Typische Schadensbilder</p>
+        <h2>Wenn am Schornstein etwas nicht stimmt.</h2>
+        <p>Die folgenden Situationen begegnen uns regelmäßig. Sie sehen ähnlich aus, können technisch aber völlig unterschiedliche Maßnahmen erfordern.</p>
+      </div>
+      <div class="bm-grid">
+        {problems.map(([number,title,text]) => (
+          <article class="bm-card"><span>{number}</span><h3>{title}</h3><p>{text}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-dark">
+    <div class="container bm-dark__inner">
+      <div>
+        <p class="bm-eyebrow bm-eyebrow--light">Der entscheidende Unterschied</p>
+        <h2>Wir reparieren nicht einfach die sichtbare Stelle.</h2>
+      </div>
+      <div>
+        <p>Ein Schornstein ist Teil eines technischen Gesamtsystems. Feuerstätte, Abgastemperatur, Querschnitt, Betriebsweise, Gebäude und Witterung wirken zusammen. Wird nur die Oberfläche repariert, ohne die Ursache zu beseitigen, kommt der Schaden häufig zurück.</p>
+        <p>Deshalb klären wir zuerst, ob das Problem baulich, abgastechnisch oder eine Kombination aus beidem ist. Erst daraus ergibt sich die richtige Maßnahme.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-section">
+    <div class="container">
+      <div class="bm-intro">
+        <p class="bm-eyebrow">Vom Problem zur passenden Leistung</p>
+        <h2>Manchmal ist Reparatur richtig. Manchmal braucht es eine andere Lösung.</h2>
+        <p>Diese Seite ist bewusst der Einstieg für Fälle, bei denen noch nicht klar ist, welche Maßnahme benötigt wird.</p>
+      </div>
+      <div class="bm-route-list">
+        {routes.map(([title,text,href]) => (
+          <a href={href}><div><h3>{title}</h3><p>{text}</p></div><span aria-hidden="true">→</span></a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-section bm-process">
+    <div class="container">
+      <div class="bm-intro">
+        <p class="bm-eyebrow">So gehen wir vor</p>
+        <h2>Vom Schadensbild zur belastbaren Lösung.</h2>
+      </div>
+      <ol>
+        {process.map(([number,title,text]) => (
+          <li><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="bm-proof">
+    <div class="container bm-proof__inner">
+      <div><p class="bm-eyebrow bm-eyebrow--light">Stadter Kamintechnik</p><h2>Probleme lösen statt Produkte verkaufen.</h2></div>
+      <div class="bm-proof__grid">
+        <div><strong>Meisterbetrieb</strong><span>Schornstein- und Abgastechnik seit 2009</span></div>
+        <div><strong>Systemverständnis</strong><span>Bauliche und abgastechnische Ursachen zusammen betrachten</span></div>
+        <div><strong>Klare Empfehlung</strong><span>Die Maßnahme richtet sich nach dem tatsächlichen Problem</span></div>
+        <div><strong>Eigene Umsetzung</strong><span>Planung und Montage aus einer Hand</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-section bm-faq">
+    <div class="container bm-faq__inner">
+      <div><p class="bm-eyebrow">Häufige Fragen</p><h2>Bauliche Mängel am Schornstein.</h2></div>
+      <div class="bm-faq__list">
+        {faqs.map(([q,a]) => (
+          <details><summary><span>{q}</span><span aria-hidden="true">+</span></summary><p>{a}</p></details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-cta">
+    <div class="container bm-cta__inner">
+      <div>
+        <p class="bm-eyebrow bm-eyebrow--light">Schaden einschätzen lassen</p>
+        <h2>Sie wissen, dass etwas nicht stimmt – aber noch nicht, welche Sanierung nötig ist?</h2>
+        <p>Senden Sie uns Fotos und eine kurze Beschreibung. Wir ordnen die Situation ein und klären mit Ihnen den nächsten sinnvollen Schritt.</p>
+      </div>
+      <a class="bm-button bm-button--white" href="/projekt-starten/?projekt=bauliche-maengel">Projekt anfragen <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>

@@ -7,6 +7,7 @@ type GraphTokenResponse = {
 };
 
 let cachedToken: { value: string; expiresAt: number } | undefined;
+const GRAPH_TOKEN_TIMEOUT_MS = 10_000;
 
 function requireEnv(name: string): string {
   const value = import.meta.env[name];
@@ -33,16 +34,25 @@ export async function getMicrosoftGraphToken(): Promise<string> {
 
   const response = await fetch(
     `https://login.microsoftonline.com/${encodeURIComponent(tenantId)}/oauth2/v2.0/token`,
-    { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body },
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body,
+      signal: AbortSignal.timeout(GRAPH_TOKEN_TIMEOUT_MS),
+    },
   );
 
   const data = (await response.json()) as GraphTokenResponse;
   if (!response.ok || !data.access_token) {
     const details = data.error_description || data.error || `HTTP ${response.status} ${response.statusText}`;
-    throw new Error(`Microsoft-Authentifizierung fehlgeschlagen: ${details}`);
+    console.error("Microsoft Graph Authentifizierung fehlgeschlagen:", details);
+    throw new Error("Microsoft Graph Authentifizierung fehlgeschlagen.");
   }
 
-  cachedToken = { value: data.access_token, expiresAt: now + (data.expires_in ?? 3600) * 1000 };
+  cachedToken = {
+    value: data.access_token,
+    expiresAt: now + (data.expires_in ?? 3600) * 1000,
+  };
   return data.access_token;
 }
 

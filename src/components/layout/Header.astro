@@ -9,11 +9,11 @@ const privateServices = [
   { label: "Kaminsanierung", href: "/kaminsanierung" },
   { label: "Kaminverlängerung", href: "/kaminverlaengerung" },
   { label: "Kaminkopf sanieren", href: "/kaminkopfsanieren" },
+  { label: "Bauliche Mängel", href: "/bauliche-maengel-schornstein" },
 ];
 
 const commercialServices = [
   { label: "Stahlschornsteine", href: "/gewerbe-industrie/stahlschornsteine" },
-  { label: "Schalldämpfer", href: "/gewerbe-industrie/schalldaempfer" },
   { label: "Abgassysteme", href: "/gewerbe-industrie/abgassysteme" },
   { label: "Sonderanlagen", href: "/gewerbe-industrie/sonderanlagen" },
   { label: "Zustandsüberwachung", href: "/gewerbe-industrie/zustandsueberwachung" },
@@ -237,7 +237,6 @@ const servicesAreActive = [...privateServices, ...commercialServices].some((item
     display: none !important;
     content: none !important;
   }
-
 
   .site-header__dropdown-panel {
     position: absolute;

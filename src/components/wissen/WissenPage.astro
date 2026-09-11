@@ -1,0 +1,178 @@
+---
+import "../../styles/pages/wissen.css";
+
+const worlds = [
+  {
+    number:"01", title:"Schornstein planen & nachrüsten",
+    text:"Welcher Schornstein passt zu meinem Gebäude? Was ist bei Standort, Höhe, Querschnitt und Nachrüstung zu beachten?",
+    topics:["Außenkamin nachrüsten","Schornstein im Gebäude","Schornsteinhöhe & Mündung","Planung & Dimensionierung"],
+    href:"#planen"
+  },
+  {
+    number:"02", title:"Schäden erkennen & sanieren",
+    text:"Versottung, Feuchtigkeit, Risse oder beschädigte Schamotterohre: Schadensbilder verstehen und die richtige Lösung finden.",
+    topics:["Versottung","Feuchtigkeit & Risse","Kaminsanierung","Bauliche Mängel"],
+    href:"#schaeden"
+  },
+  {
+    number:"03", title:"Heizung & Feuerstätte",
+    text:"Was passiert mit dem Schornstein bei einer neuen Heizung oder Feuerstätte? Wir erklären die technischen Zusammenhänge.",
+    topics:["Neue Heizung – alter Schornstein","Pellet- & Holzheizung","Kaminofen","Abgastemperatur & Kondensat"],
+    href:"#heizung"
+  },
+  {
+    number:"04", title:"Vorschriften & Technik",
+    text:"BImSchV, Feuerungsverordnung, Mündungshöhen und Brandschutz – die wichtigsten Regeln verständlich eingeordnet.",
+    topics:["1. BImSchV","VDI 3781 Blatt 4","Brandschutz","Schornsteinfeger"],
+    href:"#vorschriften"
+  },
+  {
+    number:"05", title:"Gewerbe & Industrie",
+    text:"Technisches Wissen zu Stahlschornsteinen, Abgassystemen, Sonderanlagen und der langfristigen Zustandsüberwachung.",
+    topics:["Stahlschornsteine","Abgassysteme","Schalldämpfung","DIN EN 13084"],
+    href:"#industrie"
+  },
+];
+
+const questions = [
+  ["Mein Schornstein ist feucht oder hat braune Flecken.","Was steckt hinter Versottung – und wann muss saniert werden?","/kaminsanierung"],
+  ["Im Schornstein sind Risse oder Schäden sichtbar.","Wie lässt sich klären, ob Reparatur, Sanierung oder Ersatz nötig ist?","/bauliche-maengel-schornstein"],
+  ["Ich möchte einen Kaminofen, habe aber keinen Schornstein.","Welche Möglichkeiten gibt es für eine Nachrüstung außen oder im Gebäude?","/aussenkamin"],
+  ["Meine Heizungsanlage wird erneuert.","Kann der vorhandene Schornstein weiter genutzt werden?","/kaminsanierung"],
+  ["Der Kaminkopf ist verwittert oder beschädigt.","Wann reichen neue Fugen und wann muss neu aufgemauert werden?","/kaminkopfsanieren"],
+  ["Die vorhandene Schornsteinhöhe reicht nicht aus.","Wann ist eine Kaminverlängerung erforderlich?","/kaminverlaengerung"],
+];
+
+const principles = [
+  ["Verständlich","Wir übersetzen Normen, Technik und Fachbegriffe in Antworten, mit denen Bauherren und Betreiber etwas anfangen können."],
+  ["Praxisnah","Unser Wissen kommt nicht nur aus Unterlagen. Wir planen, sanieren und bauen Schornstein- und Abgasanlagen selbst."],
+  ["Ohne Produktverkauf","Nicht das Produkt steht am Anfang, sondern die technische Frage und die passende Lösung."],
+];
+---
+
+<main class="w-page">
+  <section class="w-hero">
+    <div class="container w-hero__inner">
+      <p class="w-kicker">Wissen · Stadter Kamintechnik</p>
+      <h1>Schornstein verstehen.<br/><span>Die richtige Lösung finden.</span></h1>
+      <p class="w-hero__lead">Fachwissen zu Schornsteinen und Abgastechnik – verständlich erklärt, technisch sauber und direkt aus der Praxis.</p>
+      <div class="w-search" role="search">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+        </span>
+        <input id="wissen-search" type="search" placeholder="Wonach suchen Sie? z. B. Versottung, Außenkamin, BImSchV …" aria-label="Wissen durchsuchen"/>
+      </div>
+      <div class="w-quick">
+        <span>Häufig gesucht:</span>
+        <a href="/kaminsanierung">Kaminsanierung</a>
+        <a href="/aussenkamin">Außenkamin</a>
+        <a href="/bauliche-maengel-schornstein">Versottung</a>
+        <a href="#vorschriften">Schornsteinhöhe</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-worlds">
+    <div class="container">
+      <div class="w-head">
+        <p class="w-kicker">Themenwelten</p>
+        <h2>Nicht nach Produkten suchen.<br/>Nach Antworten.</h2>
+        <p>Wählen Sie das Thema, das zu Ihrer Situation passt. Von dort führen wir Sie von der technischen Frage zur möglichen Lösung.</p>
+      </div>
+      <div class="w-world-grid">
+        {worlds.map((item) => (
+          <a class="w-world" href={item.href} data-search={`${item.title} ${item.text} ${item.topics.join(" ")}`.toLowerCase()}>
+            <div class="w-world__top"><span>{item.number}</span><span aria-hidden="true">↗</span></div>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <ul>{item.topics.map(topic => <li>{topic}</li>)}</ul>
+          </a>
+        ))}
+      </div>
+      <p class="w-empty" hidden>Zu diesem Begriff haben wir in den Themenwelten noch keinen passenden Einstieg gefunden.</p>
+    </div>
+  </section>
+
+  <section class="w-situation">
+    <div class="container">
+      <div class="w-head w-head--light">
+        <p class="w-kicker w-kicker--light">Sie müssen den Fachbegriff nicht kennen</p>
+        <h2>Was ist Ihr Problem?</h2>
+        <p>Viele Kunden wissen nicht, ob sie eine Sanierung, einen neuen Schornstein oder nur eine Reparatur brauchen. Das müssen Sie auch nicht.</p>
+      </div>
+      <div class="w-question-list">
+        {questions.map(([problem,question,href],i) => (
+          <a href={href}>
+            <span class="w-question__number">{String(i+1).padStart(2,"0")}</span>
+            <div><strong>{problem}</strong><span>{question}</span></div>
+            <span class="w-question__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="w-feature" id="schaeden">
+    <div class="container w-feature__grid">
+      <figure>
+        <img src="/images/referenzen/kaminsanierung-gemauerter-schornstein/alter-schornstein-innen.webp" alt="Beschädigte Schamotterohre in einem bestehenden gemauerten Schornstein" loading="lazy" decoding="async"/>
+      </figure>
+      <div>
+        <p class="w-kicker">Aus der Praxis</p>
+        <h2>Warum geht ein Schornstein überhaupt kaputt?</h2>
+        <p class="w-feature__lead">Feuchtigkeit, Kondensat, falsche Betriebsbedingungen, Witterung und jahrzehntelange Nutzung hinterlassen Spuren. Entscheidend ist, das Schadensbild richtig zu lesen.</p>
+        <p>Ein gerissenes Schamotterohr ist beispielsweise nicht einfach nur „ein Riss“. Die Frage ist: Was hat ihn verursacht, welche Funktion ist beeinträchtigt und wie muss der Schornstein für die zukünftige Nutzung ausgelegt sein?</p>
+        <a class="w-link" href="/bauliche-maengel-schornstein">Bauliche Mängel verstehen <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-knowledge" id="planen">
+    <div class="container">
+      <div class="w-head">
+        <p class="w-kicker">Grundlagen</p>
+        <h2>Die Fragen hinter einem guten Schornstein.</h2>
+      </div>
+      <div class="w-knowledge-grid">
+        <article><span>01</span><h3>Wo darf der Schornstein stehen?</h3><p>Gebäude, Feuerstätte, Dachgeometrie, Nachbarbebauung und Mündungshöhe beeinflussen die Planung.</p><a href="/aussenkamin">Außenkamin planen →</a></article>
+        <article><span>02</span><h3>Welcher Querschnitt ist richtig?</h3><p>Der Querschnitt muss zur Feuerstätte, Abgasmenge, Temperatur, wirksamen Höhe und Betriebsweise passen.</p><a href="/kaminsanierung">Mehr zur Sanierung →</a></article>
+        <article id="vorschriften"><span>03</span><h3>Welche Vorschriften gelten?</h3><p>Brandschutz, Ableitbedingungen, Landesrecht und Vorgaben für die Feuerungsanlage greifen ineinander.</p><a href="/projekt-starten/">Frage zum Projekt stellen →</a></article>
+        <article id="heizung"><span>04</span><h3>Passt der alte Kamin zur neuen Heizung?</h3><p>Moderne Feuerstätten verändern Temperatur und Feuchte der Abgase. Der Bestand muss dafür geeignet sein.</p><a href="/kaminsanierung">Kaminsanierung ansehen →</a></article>
+        <article id="industrie"><span>05</span><h3>Was ändert sich bei Industrieanlagen?</h3><p>Leistung, Betriebsweise, Druck, Werkstoffe, Schall und Anlagenintegration machen die Abgastechnik zum Systemprojekt.</p><a href="/gewerbe-industrie/abgassysteme">Abgassysteme ansehen →</a></article>
+        <article><span>06</span><h3>Wann muss der Schornsteinfeger dazu?</h3><p>Bei neuen oder geänderten Feuerungsanlagen ist eine frühzeitige Abstimmung häufig ein wichtiger Teil der Planung.</p><a href="/projekt-starten/">Projekt starten →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-principles">
+    <div class="container w-principles__grid">
+      <div><p class="w-kicker w-kicker--light">Unser Anspruch</p><h2>Wissen, das bei einer Entscheidung hilft.</h2></div>
+      <div class="w-principles__items">
+        {principles.map(([title,text]) => <article><h3>{title}</h3><p>{text}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="w-cta">
+    <div class="container w-cta__inner">
+      <div><p class="w-kicker">Keine passende Antwort gefunden?</p><h2>Dann schauen wir uns Ihr konkretes Projekt an.</h2><p>Beschreiben Sie kurz Ihre Situation und senden Sie uns bei Bedarf Fotos oder Unterlagen. Wir klären, welcher nächste Schritt sinnvoll ist.</p></div>
+      <a href="/projekt-starten/">Projekt starten <span>→</span></a>
+    </div>
+  </section>
+
+  <script is:inline>
+    const input = document.getElementById("wissen-search");
+    const cards = [...document.querySelectorAll(".w-world")];
+    const empty = document.querySelector(".w-empty");
+    input?.addEventListener("input", () => {
+      const term = input.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const show = !term || card.dataset.search.includes(term);
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      if (empty) empty.hidden = visible !== 0;
+    });
+  </script>
+</main>
