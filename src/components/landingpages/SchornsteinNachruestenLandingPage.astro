@@ -1,0 +1,98 @@
+---
+import "../../styles/pages/lp-kaminbauer.css";
+
+const situations = [
+  ["Kaminofen geplant", "Sie möchten einen Kaminofen, aber es fehlt der passende Schornstein?", "/projekt-starten/?projekt=schornstein-nachruesten"],
+  ["Außenkamin", "Ein Edelstahlkamin an der Fassade ist für viele Bestandsgebäude die direkte Lösung.", "/projekt-starten/?projekt=aussenkamin"],
+  ["Schornstein im Gebäude", "Die Abgasführung soll innerhalb des Gebäudes nachgerüstet werden?", "/projekt-starten/?projekt=schornstein-nachruesten"],
+  ["Neue Heizung", "Für die neue Heizungsanlage fehlt eine geeignete Abgasführung?", "/projekt-starten/?projekt=schornstein-nachruesten"],
+];
+
+const steps = [
+  ["1", "Gebäude zeigen", "Projekt kurz beschreiben und Fotos von Gebäude, Dach und geplanter Feuerstätte senden."],
+  ["2", "Variante prüfen", "Wir klären, ob Außenkamin oder eine Führung im Gebäude technisch sinnvoll ist."],
+  ["3", "Planen & anbieten", "Höhe, Querschnitt, Verlauf und Befestigung werden passend zum Projekt geplant."],
+  ["4", "Montieren", "Unsere eigenen Teams setzen den neuen Schornstein fachgerecht um."],
+];
+---
+
+<article class="kb">
+  <section class="kb-hero">
+    <div class="container">
+      <p class="kb-kicker">Schornstein nachrüsten · Nordbayern · Meisterbetrieb</p>
+      <h1>Kein Schornstein vorhanden?<span>Wir bauen die passende Lösung.</span></h1>
+      <p class="kb-lead">Für Kaminofen, neue Heizung oder eine andere Feuerstätte: Wir planen den passenden Schornstein – außen an der Fassade oder im Gebäude.</p>
+
+      <div class="kb-actions">
+        <a class="kb-primary" href="/projekt-starten/?projekt=schornstein-nachruesten">Nachrüstung prüfen lassen <span>→</span></a>
+        <a class="kb-phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+
+      <figure class="kb-hero-image">
+        <img src="/images/referenzen/zwei-edelstahl-aussenkamine/zwei-edelstahl-aussenkamine-fassade.webp" alt="Zwei nachgerüstete Edelstahlschornsteine an einer Backsteinfassade" width="1600" height="1067" decoding="async" fetchpriority="high" />
+        <figcaption>Reales Projekt · Nachgerüstete Außenkamine</figcaption>
+      </figure>
+
+      <div class="kb-trust">
+        <div><strong>10.000+</strong><span>Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>Fachplanung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-solutions">
+    <div class="container">
+      <p class="kb-kicker">Was möchten Sie nachrüsten?</p>
+      <h2>Der neue Schornstein muss zum Gebäude passen.</h2>
+      <div class="kb-solution-grid">
+        {situations.map(([title,text,href]) => (
+          <a class="kb-solution" href={href}>
+            <div><h3>{title}</h3><p>{text}</p></div><span>→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-proof">
+    <div class="container">
+      <figure>
+        <img src="/images/referenzen/zwei-edelstahl-aussenkamine/wanddurchfuehrungen-heizraum.webp" alt="Vorbereitete Wanddurchführungen und Anschlüsse im Heizungsraum eines Bestandsgebäudes" width="1200" height="900" loading="lazy" decoding="async" />
+      </figure>
+      <div class="kb-proof-copy">
+        <p class="kb-kicker">Probleme lösen statt Produkte verkaufen.</p>
+        <h2>Außen oder innen?<br />Das entscheidet das Projekt.</h2>
+        <p>Gebäude, Feuerstätte, möglicher Verlauf, Brandschutz und erforderliche Schornsteinhöhe bestimmen die Ausführung. Deshalb planen wir zuerst – und wählen danach das passende System.</p>
+        <a href="/wissen/schornstein-nachruesten-aussen-oder-innen/">Außen oder innen vergleichen <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-process">
+    <div class="container">
+      <p class="kb-kicker">Vom Wunsch zum neuen Schornstein</p>
+      <h2>So starten Sie.</h2>
+      <ol>
+        {steps.map(([n,title,text]) => (
+          <li><span>{n}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="kb-final">
+    <div class="container">
+      <p class="kb-kicker">Bayreuth · Kulmbach · Bamberg · Coburg · Nordbayern</p>
+      <h2>Zeigen Sie uns Ihr Gebäude.</h2>
+      <p>Ein paar Fotos und Angaben zur geplanten Feuerstätte reichen für den Einstieg. Wir prüfen, welche Nachrüstung sinnvoll ist.</p>
+      <a class="kb-primary kb-primary--light" href="/projekt-starten/?projekt=schornstein-nachruesten">Projekt &amp; Fotos senden <span>→</span></a>
+      <a class="kb-final-phone" href="tel:+4992289989000">Oder anrufen: 09228 998900-0</a>
+    </div>
+  </section>
+
+  <nav class="kb-sticky" aria-label="Schnellkontakt">
+    <a href="tel:+4992289989000">Anrufen</a>
+    <a href="/projekt-starten/?projekt=schornstein-nachruesten">Nachrüstung anfragen <span>→</span></a>
+  </nav>
+</article>

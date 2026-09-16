@@ -1,0 +1,245 @@
+---
+import "../../styles/pages/wissen-aussenkamin-kosten.css";
+
+const pageUrl = "https://www.stadter-kamin.de/wissen/aussenkamin-kosten/";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Was kostet ein Außenkamin? Kosten einer Schornsteinnachrüstung im Überblick",
+  description:
+    "Typische Bruttopreise für komplett montierte Außenkamine und die wichtigsten Kostenfaktoren – Erfahrungswerte aus der Praxis von Stadter Kamintechnik.",
+  inLanguage: "de-DE",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+  author: {
+    "@type": "Person",
+    name: "Johannes Stadter",
+    jobTitle: "Kaminkehrermeister",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Stadter Kamintechnik GmbH",
+    url: "https://www.stadter-kamin.de/",
+  },
+};
+
+const prices = [
+  ["Einfache Nachrüstung", "Übliche Höhe, gute Zugänglichkeit und einfache Befestigungssituation", "ca. 3.600 €"],
+  ["Typischer Außenkamin", "Normale Gebäudehöhe und üblicher Montage- und Befestigungsaufwand", "ca. 4.200–4.800 €"],
+  ["Komplexe Ausführung", "Hoher Montageaufwand, schwierige Zugänglichkeit oder besondere Befestigungs- und Gebäudesituation", "ab ca. 5.400 €"],
+];
+
+const factors = [
+  ["01", "Höhe des Außenkamins", "Mit der erforderlichen Schornsteinhöhe steigen Materialmenge und Montageaufwand."],
+  ["02", "Durchmesser", "Der notwendige Querschnitt hängt von Feuerstätte, Brennstoff, Leistung und wirksamer Höhe ab."],
+  ["03", "Mündungshöhe", "Die erforderliche Höhe über dem Gebäude ergibt sich nicht nur aus der gewünschten Optik. Dachgeometrie, First und das Umfeld können die Ausführung beeinflussen."],
+  ["04", "Wandabstand und Befestigung", "Dachüberstände, Fassadenaufbau und größere Wandabstände können zusätzliche Konsolen oder statisch aufwendigere Befestigungen erforderlich machen."],
+  ["05", "Zugänglichkeit", "Montagehöhe, Gelände, Gerüst- oder Hubarbeitsbühnenbedarf und die Erreichbarkeit der Fassade beeinflussen den Aufwand."],
+  ["06", "Feuerstättenanschluss", "Wanddurchführung, Verbindungsleitung und die konkrete Einbindung der Feuerstätte gehören zur Planung des Gesamtsystems."],
+];
+
+const faqs = [
+  ["Was kostet ein Außenkamin komplett mit Montage?", "Bei einem typischen Einfamilienhaus kostet ein komplett montierter Außenkamin in unserer Praxis meist etwa 3.600 bis 4.800 Euro inklusive 19 % Mehrwertsteuer. Komplexe Projekte beginnen bei etwa 5.400 Euro."],
+  ["Was kostet es, einen Schornstein außen nachzurüsten?", "Für eine einfache Nachrüstung sollte man als Größenordnung mit rund 3.600 Euro inklusive Mehrwertsteuer rechnen. Typische Projekte liegen häufig zwischen etwa 4.200 und 4.800 Euro."],
+  ["Sind die Preise inklusive Montage?", "Die genannten Größenordnungen beziehen sich auf typische komplett montierte Außenkamin-Projekte aus unserer Praxis. Welche Leistungen ein konkretes Angebot umfasst, hängt immer vom jeweiligen Projekt ab."],
+  ["Warum unterscheiden sich Angebote für Außenkamine so stark?", "Ein Außenkamin ist kein reines Meterprodukt. Höhe, Durchmesser, Befestigung, Wandabstand, Dachüberstand, Mündungshöhe, Feuerstättenanschluss und Zugänglichkeit können den Montageaufwand deutlich verändern."],
+  ["Braucht jeder Außenkamin die gleiche Höhe?", "Nein. Die erforderliche Mündungshöhe hängt unter anderem von Feuerstätte, Dachgeometrie und den geltenden Anforderungen ab. Bei neuen Festbrennstoffanlagen sind insbesondere die Vorgaben des § 19 der 1. BImSchV zu beachten."],
+  ["Ist ein Außenkamin günstiger als ein Schornstein im Gebäude?", "Nicht zwingend. Ein Außenkamin vermeidet zwar Deckendurchbrüche und eine innenliegende Schachtführung, kann aber durch große Höhen, Dachüberstände, Befestigung oder schwierige Montage ebenfalls aufwendig werden. Entscheidend ist das konkrete Gebäude."],
+];
+
+const toc = [
+  ["preis", "Preis auf einen Blick"],
+  ["beispiele", "Typische Projekte"],
+  ["kostenfaktoren", "Kostenfaktoren"],
+  ["meterpreis", "Warum kein Meterpreis?"],
+  ["hoehe", "Schornsteinhöhe"],
+  ["innen-oder-aussen", "Innen oder außen?"],
+  ["faq", "Häufige Fragen"],
+];
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+
+<article class="ak">
+  <header class="ak-hero">
+    <div class="container">
+      <div class="ak-breadcrumb"><a href="/wissen/">Wissen</a><span>→</span><span>Außenkamin Kosten</span></div>
+      <p class="ak-kicker">Kosten · Außenkamin · Schornstein nachrüsten</p>
+      <h1>Was kostet ein Außenkamin?<span>Kosten einer Schornsteinnachrüstung im Überblick.</span></h1>
+      <p class="ak-lead">
+        Ein komplett montierter Außenkamin kostet bei einem typischen Einfamilienhaus
+        in unserer Praxis meist <strong>etwa 3.600 bis 4.800 Euro inklusive Mehrwertsteuer.</strong>
+        Komplexe Ausführungen beginnen bei etwa 5.400 Euro.
+      </p>
+      <div class="ak-meta">
+        <div><span>Fachlich eingeordnet von</span><strong>Johannes Stadter · Kaminkehrermeister</strong></div>
+        <div><span>Preisstand</span><strong>September 2026</strong></div>
+        <div><span>Preise</span><strong>inkl. 19 % MwSt.</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="ak-answer" id="preis">
+    <div class="container ak-answer-grid">
+      <div>
+        <p class="ak-kicker ak-kicker-light">Die Kurzantwort</p>
+        <h2>Mit welchen Kosten muss ich rechnen?</h2>
+      </div>
+      <div>
+        <p class="ak-answer-lead">
+          Eine einfache Außenkamin-Nachrüstung beginnt in unserer Praxis bei rund
+          <strong>3.600 € brutto</strong>. Typische Projekte liegen häufig bei
+          <strong>4.200 bis 4.800 € brutto</strong>. Bei komplexen Gebäude- oder
+          Montagesituationen beginnen die Kosten bei etwa <strong>5.400 € brutto</strong>.
+        </p>
+        <p>
+          Entscheidend sind vor allem Höhe, Durchmesser, Mündungshöhe, Wandabstand,
+          Befestigung, Feuerstättenanschluss und Zugänglichkeit.
+        </p>
+        <aside><strong>Wichtig:</strong> Die Preise sind typische Erfahrungswerte aus unseren Projekten und keine Pauschal- oder Festpreise.</aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="container ak-layout">
+    <aside class="ak-toc">
+      <p>Auf dieser Seite</p>
+      <nav>{toc.map(([id,label]) => <a href={`#${id}`}>{label}</a>)}</nav>
+    </aside>
+
+    <div class="ak-content">
+      <section id="beispiele">
+        <p class="ak-kicker">Praxiswerte</p>
+        <h2>Was kostet ein Außenwandkamin mit Montage?</h2>
+        <p>
+          Die folgenden Größenordnungen beziehen sich auf typische Außenkamine an
+          Einfamilienhäusern. Wir nennen bewusst Gesamtpreise statt unrealistischer
+          reiner Material- oder Meterpreise.
+        </p>
+        <div class="ak-prices">
+          {prices.map(([title,text,price],i) => (
+            <article>
+              <span>{String(i + 1).padStart(2,"0")}</span>
+              <div><h3>{title}</h3><p>{text}</p></div>
+              <strong>{price}</strong>
+            </article>
+          ))}
+        </div>
+        <small>Alle Preisangaben inklusive 19 % Mehrwertsteuer.</small>
+      </section>
+
+      <section id="kostenfaktoren">
+        <p class="ak-kicker">Kostenfaktoren</p>
+        <h2>Warum kostet nicht jeder Außenkamin gleich viel?</h2>
+        <div class="ak-cards">
+          {factors.map(([number,title,text]) => (
+            <article><span>{number}</span><h3>{title}</h3><p>{text}</p></article>
+          ))}
+        </div>
+      </section>
+
+      <section id="meterpreis">
+        <p class="ak-kicker">Gesamtsystem</p>
+        <h2>Warum ein Preis pro Meter wenig aussagt.</h2>
+        <p>
+          Ein doppelwandiger Edelstahlschornstein besteht nicht nur aus geraden
+          Rohrelementen. Für ein funktionsfähiges System werden unter anderem
+          Anschluss-, Reinigungs-, Befestigungs- und Mündungselemente benötigt.
+          Dazu kommen Planung und Montage.
+        </p>
+        <div class="ak-checks">
+          <div><strong>Schornsteinsystem</strong><span>Rohre, Formteile und erforderliche Systemkomponenten.</span></div>
+          <div><strong>Befestigung</strong><span>Wandhalter, Konsolen und gegebenenfalls zusätzliche Abstützungen.</span></div>
+          <div><strong>Feuerstättenanschluss</strong><span>Einbindung des Ofens oder der Heizungsanlage in das Abgassystem.</span></div>
+          <div><strong>Montage</strong><span>Fachgerechter Aufbau an der konkreten Gebäudesituation.</span></div>
+        </div>
+        <p>
+          Zwei Außenkamine mit gleicher Rohrlänge können deshalb unterschiedliche
+          Gesamtkosten verursachen.
+        </p>
+      </section>
+
+      <section id="hoehe">
+        <p class="ak-kicker">Planung</p>
+        <h2>Die Schornsteinhöhe beeinflusst Preis und Ausführung.</h2>
+        <p>
+          Ein häufiger Planungsfehler ist, die gewünschte Höhe des Außenkamins allein
+          nach der Dachkante zu bestimmen. Gerade bei Festbrennstoffanlagen können
+          Firstlage, Dachgeometrie, Öffnungen und die Umgebung entscheidend für die
+          erforderliche Mündungshöhe sein.
+        </p>
+        <a class="ak-feature-link" href="/wissen/schornsteinhoehe-bimschv-vdi-3781-4/">
+          <span>Fachartikel</span>
+          <strong>Wie hoch muss ein Schornstein sein? 1. BImSchV &amp; VDI 3781 Blatt 4 →</strong>
+        </a>
+      </section>
+
+      <section id="innen-oder-aussen">
+        <p class="ak-kicker">Alternative</p>
+        <h2>Außenkamin oder Schornstein im Gebäude?</h2>
+        <p>
+          Ein Außenkamin ist häufig eine sehr direkte Möglichkeit, einen Schornstein
+          nachzurüsten. Er wird an der Fassade geführt und vermeidet dadurch eine
+          Schachtführung durch mehrere Geschosse. Das bedeutet aber nicht, dass er
+          für jedes Gebäude automatisch die beste oder günstigste Lösung ist.
+        </p>
+        <p>
+          Soll der Schornstein im Gebäude verlaufen, gelten andere konstruktive und
+          brandschutztechnische Anforderungen. Deshalb sollten beide Varianten anhand
+          des Gebäudes und der geplanten Feuerstätte verglichen werden.
+        </p>
+        <div class="ak-links">
+          <a href="/aussenkamin/"><span>Außen</span><strong>Außenkamin nachrüsten →</strong></a>
+          <a href="/schornstein-im-gebaeude-nachruesten/"><span>Innen</span><strong>Schornstein im Gebäude nachrüsten →</strong></a>
+        </div>
+      </section>
+
+      <section class="ak-author">
+        <p class="ak-kicker">Aus unserer Praxis</p>
+        <h2>Warum wir konkrete Gesamtpreise nennen.</h2>
+        <p>
+          Wer wissen möchte, was eine Schornsteinnachrüstung kostet, braucht keine
+          theoretischen Materialpreise, sondern eine realistische Größenordnung für
+          ein fertig montiertes Projekt. Deshalb basieren diese Werte auf typischen
+          Außenkamin-Projekten aus unserer eigenen Praxis.
+        </p>
+        <strong>Johannes Stadter · Kaminkehrermeister</strong>
+      </section>
+
+      <section id="faq">
+        <p class="ak-kicker">Häufige Fragen</p>
+        <h2>Außenkamin-Kosten kurz beantwortet.</h2>
+        <div class="ak-faq">
+          {faqs.map(([q,a]) => (
+            <details><summary>{q}</summary><p>{a}</p></details>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p class="ak-kicker">Weiterlesen</p>
+        <h2>Passende Themen.</h2>
+        <div class="ak-related">
+          <a href="/wissen/schornsteinhoehe-bimschv-vdi-3781-4/"><span>Vorschriften &amp; Planung</span><strong>Wie hoch muss ein Schornstein sein? →</strong></a>
+          <a href="/wissen/kaminsanierung-kosten/"><span>Kosten</span><strong>Was kostet eine Kaminsanierung? →</strong></a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="ak-cta">
+    <div class="container ak-cta-grid">
+      <div>
+        <p class="ak-kicker ak-kicker-light">Konkretes Projekt</p>
+        <h2>Was kostet der Außenkamin an Ihrem Haus?</h2>
+        <p>
+          Senden Sie uns Angaben zur Feuerstätte und Fotos der geplanten Fassade.
+          Damit lässt sich die mögliche Ausführung deutlich konkreter beurteilen.
+        </p>
+      </div>
+      <a href="/projekt-starten/?projekt=aussenkamin">Außenkamin anfragen <span>→</span></a>
+    </div>
+  </section>
+</article>

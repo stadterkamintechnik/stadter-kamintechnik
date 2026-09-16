@@ -1,0 +1,407 @@
+---
+import "../../styles/pages/wissen-schornsteinhoehe.css";
+
+const pageUrl =
+  "https://www.stadter-kamin.de/wissen/schornsteinhoehe-bimschv-vdi-3781-4/";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline:
+    "Wie hoch muss ein Schornstein sein? 1. BImSchV und VDI 3781 Blatt 4 verständlich erklärt",
+  description:
+    "Praxisleitfaden zur Schornsteinhöhe mit § 19 der 1. BImSchV, VDI 3781 Blatt 4, Mündungshöhen, Fensterabständen und typischen Planungsfehlern.",
+  inLanguage: "de-DE",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
+  author: {
+    "@type": "Person",
+    name: "Johannes Stadter",
+    jobTitle: "Kaminkehrermeister",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Stadter Kamintechnik GmbH",
+    url: "https://www.stadter-kamin.de/",
+  },
+};
+
+const toc = [
+  ["kurzantwort", "Kurzantwort"],
+  ["bimschv", "Was § 19 der 1. BImSchV verlangt"],
+  ["firstnah", "Was „firstnah“ bedeutet"],
+  ["fenster", "Fenster, Türen und Lüftungsöffnungen"],
+  ["vdi", "Wann VDI 3781 Blatt 4 ins Spiel kommt"],
+  ["bayern", "Zusätzliche Regeln in Bayern"],
+  ["planung", "Was bei der Planung wirklich geprüft wird"],
+  ["fehler", "Typische Planungsfehler"],
+  ["faq", "Häufige Fragen"],
+];
+
+const planningPoints = [
+  ["01", "Brennstoff und Feuerstätte", "Für feste Brennstoffe greifen andere Anforderungen als für viele Gas- oder Ölanlagen. Leistung, Betriebsweise und Abgasführung bestimmen mit, welche Regeln relevant sind."],
+  ["02", "Dachgeometrie", "Dachneigung, Firstlage, Traufe und die Position des Schornsteins sind entscheidend. Bei flachen Dächern kann zusätzlich ein fiktiver First maßgeblich werden."],
+  ["03", "Öffnungen im Umfeld", "Fenster, Türen und Lüftungsöffnungen im relevanten Umkreis können eine größere Mündungshöhe erforderlich machen."],
+  ["04", "Nachbarbebauung", "Ein höheres Nachbargebäude oder eine ungünstige Bebauung kann die freie Abströmung beeinflussen. Dann reicht die Betrachtung des eigenen Daches allein nicht."],
+  ["05", "Hanglage und Topografie", "Bei schwierigen Lagen kann die Umgebung entscheidend werden. § 19 verweist für solche Fälle ausdrücklich auf die VDI 3781 Blatt 4."],
+  ["06", "Statik und Befestigung", "Eine höhere Mündung ist nicht nur eine Frage des Immissionsschutzes. Freie Längen, Windlasten, Abspannungen und Befestigung müssen technisch beherrscht werden."],
+];
+
+const errors = [
+  ["Schornsteinposition erst nach dem Grundriss festlegen", "Ein Schornstein kann baulich perfekt passen und trotzdem an einer ungünstigen Stelle zur Dachgeometrie oder zu schutzbedürftigen Öffnungen liegen."],
+  ["Nur „40 cm über First“ merken", "Die 40 cm sind keine universelle Komplettregel. Je nach Anlagenart, Baujahr, Leistung, Dachform und Umgebung gelten weitere Anforderungen."],
+  ["Fenster nur am eigenen Haus betrachten", "Für die immissionsschutzrechtliche Bewertung können auch Öffnungen in der Umgebung relevant sein."],
+  ["Nachbarbebauung ignorieren", "Höhere oder vorgelagerte Gebäude können die Strömungsverhältnisse so verändern, dass eine weitergehende Betrachtung erforderlich wird."],
+  ["Verlängerung ohne Statik planen", "Je höher die freie Schornsteinlänge über Dach wird, desto wichtiger werden Windlast, Befestigung und gegebenenfalls Abspannung."],
+  ["Erst montieren, dann Schornsteinfeger fragen", "Bei neuen oder wesentlich geänderten Feuerungsanlagen sollte die technische Abstimmung früh erfolgen – nicht erst nach der Montage."],
+];
+
+const faqs = [
+  {
+    question: "Muss ein neuer Holzofen-Schornstein immer über den First?",
+    answer:
+      "Bei Feuerungsanlagen für feste Brennstoffe, die nach dem 31. Dezember 2021 errichtet werden, verlangt § 19 Absatz 1 der 1. BImSchV grundsätzlich eine firstnahe Austrittsöffnung, die den First um mindestens 40 cm überragt. Eine Abweichung ist möglich, wenn die erforderliche Höhe für das Einzelgebäude nach VDI 3781 Blatt 4 bestimmt wurde.",
+  },
+  {
+    question: "Was bedeutet „firstnah“ genau?",
+    answer:
+      "Nach § 19 Absatz 1 ist die Mündung firstnah, wenn ihr horizontaler Abstand zum First kleiner ist als ihr horizontaler Abstand zur Traufe und ihr vertikaler Abstand vom First größer ist als ihr horizontaler Abstand vom First.",
+  },
+  {
+    question: "Was gilt bei einem Flachdach oder sehr flachen Dach?",
+    answer:
+      "Bei einer Dachneigung unter 20 Grad bezieht § 19 Absatz 1 die erforderliche Höhe auf einen fiktiven Dachfirst, der mit einer Dachneigung von 20 Grad berechnet wird.",
+  },
+  {
+    question: "Wie weit muss ein Schornstein von Fenstern entfernt sein?",
+    answer:
+      "Für neue Feuerungsanlagen für feste Brennstoffe bis 50 kW verlangt § 19 Absatz 1, dass die Mündung innerhalb eines Umkreises von 15 m die Oberkanten von Lüftungsöffnungen, Fenstern und Türen um mindestens 1 m überragt. Mit steigender Gesamtwärmeleistung wachsen Umkreis und erforderliche Überhöhung.",
+  },
+  {
+    question: "Gilt die 1. BImSchV auch für Gas- und Ölheizungen?",
+    answer:
+      "Die speziellen firstnahen Anforderungen des § 19 Absatz 1 betreffen neue Feuerungsanlagen für feste Brennstoffe. Für Gas- und Ölanlagen sind je nach Anlage unter anderem Landesfeuerungsverordnung, Bauordnungsrecht und technische Regeln relevant. In Bayern enthält § 9 FeuV eigene Anforderungen an die Mündungen von Abgasanlagen.",
+  },
+  {
+    question: "Kann ich die erforderliche Schornsteinhöhe selbst berechnen?",
+    answer:
+      "Einfache Randbedingungen lassen sich grundsätzlich nachvollziehen. Sobald Dachgeometrie, Nachbarbebauung, Hanglage, mehrere Öffnungen oder Sonderfälle eine Rolle spielen, sollte die Auslegung fachlich geprüft werden. Eine reine Online-Faustregel ersetzt keine projektbezogene Planung.",
+  },
+  {
+    question: "Wer bestätigt die Einhaltung der Anforderungen?",
+    answer:
+      "Bei neuen oder wesentlich geänderten Feuerungsanlagen muss der Betreiber die Einhaltung der Anforderungen des § 19 vor der Inbetriebnahme von einer Schornsteinfegerin oder einem Schornsteinfeger feststellen lassen.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+<article class="sh-page">
+  <header class="sh-hero">
+    <div class="container sh-hero__inner">
+      <div class="sh-breadcrumb">
+        <a href="/wissen/">Wissen</a>
+        <span aria-hidden="true">→</span>
+        <span>Schornsteinhöhe</span>
+      </div>
+
+      <p class="sh-kicker">Planung · Vorschriften · Mündungshöhe</p>
+
+      <h1>
+        Wie hoch muss ein Schornstein sein?
+        <span>1. BImSchV &amp; VDI 3781 Blatt 4.</span>
+      </h1>
+
+      <p class="sh-hero__lead">
+        Die richtige Schornsteinhöhe entsteht nicht aus einer einzelnen Faustregel.
+        Brennstoff, Dachgeometrie, First, Fenster, Nachbargebäude und die Umgebung
+        können gemeinsam darüber entscheiden, wo die Mündung liegen muss.
+      </p>
+
+      <div class="sh-meta">
+        <div><span>Fachlich eingeordnet von</span><strong>Johannes Stadter · Kaminkehrermeister</strong></div>
+        <div><span>Stand</span><strong>September 2026</strong></div>
+        <div><span>Lesedauer</span><strong>ca. 10 Minuten</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sh-answer" id="kurzantwort">
+    <div class="container sh-answer__grid">
+      <div>
+        <p class="sh-kicker">Die Kurzantwort</p>
+        <h2>Wie hoch muss ein Schornstein sein?</h2>
+      </div>
+
+      <div class="sh-answer__copy">
+        <p class="sh-answer__lead">
+          Bei einer neuen Feuerungsanlage für feste Brennstoffe muss die
+          Schornsteinmündung nach § 19 Absatz 1 der 1. BImSchV grundsätzlich
+          <strong>firstnah angeordnet sein und den First um mindestens 40 cm überragen.</strong>
+        </p>
+
+        <p>
+          Damit ist die Planung aber noch nicht abgeschlossen. Zusätzlich können
+          Fenster, Türen und Lüftungsöffnungen im Umfeld eine größere Höhe erforderlich
+          machen. Bei ungünstiger Bebauung, Hanglage oder wenn von der firstnahen
+          Ausführung abgewichen werden soll, kommt die <strong>VDI 3781 Blatt 4</strong>
+          ins Spiel.
+        </p>
+
+        <p>
+          Für bestehende Anlagen, wesentlich geänderte Anlagen sowie Gas- und
+          Ölanlagen gelten teilweise andere Randbedingungen. In Bayern sind
+          zusätzlich die Anforderungen der Feuerungsverordnung zu beachten.
+        </p>
+
+        <div class="sh-note">
+          <strong>Wichtig:</strong>
+          Die häufig gehörte Aussage „40 cm über First reicht immer“ ist fachlich
+          zu pauschal. Die erforderliche Höhe ist eine Projektentscheidung.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container sh-layout">
+    <aside class="sh-toc" aria-label="Inhaltsverzeichnis">
+      <p>Auf dieser Seite</p>
+      <nav>
+        {toc.map(([href, label]) => <a href={`#${href}`}>{label}</a>)}
+      </nav>
+    </aside>
+
+    <div class="sh-content">
+      <section id="bimschv" class="sh-section">
+        <p class="sh-kicker">Bundesrecht</p>
+        <h2>Was § 19 der 1. BImSchV für neue Festbrennstoffanlagen verlangt.</h2>
+        <p>
+          § 19 der Ersten Verordnung zur Durchführung des
+          Bundes-Immissionsschutzgesetzes regelt die Ableitbedingungen für Abgase.
+          Für Feuerungsanlagen für feste Brennstoffe, die nach dem 31. Dezember 2021
+          errichtet werden, ist die Grundanforderung klar: Die Austrittsöffnung muss
+          firstnah angeordnet sein und den First um mindestens 40 cm überragen.
+        </p>
+
+        <div class="sh-rule">
+          <span class="sh-rule__number">01</span>
+          <div><strong>Firstnah anordnen</strong><p>Die Position der Mündung soll sich am höchsten Bereich des Daches orientieren – nicht einfach dort liegen, wo der Schornstein konstruktiv am bequemsten ist.</p></div>
+        </div>
+        <div class="sh-rule">
+          <span class="sh-rule__number">02</span>
+          <div><strong>Mindestens 40 cm über First</strong><p>Bei der regulären Ausführung muss die Austrittsöffnung den First um mindestens 40 cm überragen.</p></div>
+        </div>
+        <div class="sh-rule">
+          <span class="sh-rule__number">03</span>
+          <div><strong>Weitere Schutzabstände prüfen</strong><p>Fenster, Türen und Lüftungsöffnungen können unabhängig davon zusätzliche Anforderungen an die Mündungshöhe auslösen.</p></div>
+        </div>
+      </section>
+
+      <section id="firstnah" class="sh-section">
+        <p class="sh-kicker">Begriff erklärt</p>
+        <h2>Was bedeutet „firstnah“?</h2>
+        <p>„Firstnah“ ist in § 19 konkret definiert. Die Austrittsöffnung gilt als firstnah, wenn zwei Bedingungen gleichzeitig erfüllt sind:</p>
+
+        <div class="sh-definition">
+          <div><span>A</span><p>Der <strong>horizontale Abstand zum First</strong> ist kleiner als der horizontale Abstand zur Traufe.</p></div>
+          <div><span>B</span><p>Der <strong>vertikale Abstand vom First</strong> ist größer als der horizontale Abstand vom First.</p></div>
+        </div>
+
+        <p>
+          Bei Dachneigungen unter 20 Grad wird die Höhe nicht einfach von der realen
+          Dachfläche aus beurteilt. § 19 verlangt dann die Bezugnahme auf einen
+          <strong>fiktiven Dachfirst mit 20 Grad Dachneigung</strong>. Gerade bei
+          Flach- und Pultdächern kann das zu deutlich höheren Mündungen führen, als
+          man auf den ersten Blick erwartet.
+        </p>
+      </section>
+
+      <section id="fenster" class="sh-section">
+        <p class="sh-kicker">Schutz der Umgebung</p>
+        <h2>Fenster, Türen und Lüftungsöffnungen können die Höhe bestimmen.</h2>
+        <p>
+          Für neue Feuerungsanlagen für feste Brennstoffe fordert § 19 Absatz 1
+          zusätzlich Mindestüberhöhungen gegenüber Lüftungsöffnungen, Fenstern und
+          Türen. Entscheidend sind Gesamtwärmeleistung und Entfernung.
+        </p>
+
+        <div class="sh-table-wrap">
+          <table class="sh-table">
+            <thead>
+              <tr><th>Gesamtwärmeleistung</th><th>Prüfumkreis</th><th>Mündung über Oberkante der Öffnungen</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>bis 50 kW</td><td>15 m</td><td>mindestens 1 m</td></tr>
+              <tr><td>&gt; 50 bis 100 kW</td><td>17 m</td><td>mindestens 2 m</td></tr>
+              <tr><td>&gt; 100 bis 150 kW</td><td>19 m</td><td>mindestens 3 m</td></tr>
+              <tr><td>&gt; 150 bis 200 kW</td><td>21 m</td><td>mindestens 3 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Oberhalb von 200 kW verweist die Verordnung für Umkreis und Mindestüberhöhung auf Tabelle 3 der VDI 3781 Blatt 4.</p>
+
+        <div class="sh-note sh-note--light">
+          <strong>Praxisfolge:</strong> Ein Schornstein kann den eigenen First korrekt
+          überragen und trotzdem zu niedrig sein, wenn sich im maßgeblichen Umkreis
+          höher gelegene Fenster oder Lüftungsöffnungen befinden.
+        </div>
+      </section>
+
+      <section id="vdi" class="sh-section">
+        <p class="sh-kicker">Berechnung statt Faustregel</p>
+        <h2>Wann braucht man die VDI 3781 Blatt 4?</h2>
+        <p>
+          Die VDI 3781 Blatt 4 dient zur Bestimmung der Mindesthöhe von
+          Abgas-Austrittsöffnungen. Ziel ist ein ungestörter Abtransport mit der freien
+          Luftströmung und eine ausreichende Verdünnung der Abgase.
+        </p>
+        <ul class="sh-checklist">
+          <li><strong>Abweichung von der firstnahen Standardausführung:</strong> Die Höhe für das Einzelgebäude kann nach Abschnitt 6.2.1 der VDI 3781 Blatt 4 bestimmt werden.</li>
+          <li><strong>Standardausführung verhindert schädliche Umwelteinwirkungen nicht:</strong> Dann verlangt § 19 eine Ausführung nach VDI 3781 Blatt 4 unter Berücksichtigung der vorgelagerten Bebauung und der Hanglage.</li>
+        </ul>
+        <p>Die Richtlinie ist deshalb besonders wichtig, wenn die reale Gebäudesituation nicht in eine einfache Standardgeometrie passt.</p>
+      </section>
+
+      <section id="bayern" class="sh-section">
+        <p class="sh-kicker">Nordbayern</p>
+        <h2>Zusätzlich wichtig: die Bayerische Feuerungsverordnung.</h2>
+        <p>
+          Die 1. BImSchV ist nicht die einzige Regel, die bei einer Abgasanlage eine
+          Rolle spielt. In Bayern enthält § 9 der Feuerungsverordnung zusätzliche
+          Anforderungen an die Mündungen von Abgasanlagen. Dort werden unter anderem
+          Abstände zur Dachfläche, Dachaufbauten, Gebäudeteilen und Öffnungen geregelt.
+        </p>
+        <p>
+          Das ist insbesondere wichtig, weil die speziellen firstnahen Anforderungen
+          des § 19 Absatz 1 der 1. BImSchV auf neue Feuerungsanlagen für
+          <strong>feste Brennstoffe</strong> zielen. Bei Gas- und Ölanlagen muss deshalb
+          geprüft werden, welche landesrechtlichen und technischen Anforderungen für
+          die konkrete Anlage gelten.
+        </p>
+        <div class="sh-note">
+          <strong>Für unsere Projekte in Bayern heißt das:</strong> Wir betrachten die
+          Mündungshöhe nicht isoliert nach nur einer Vorschrift, sondern ordnen
+          Bundesrecht, Landesrecht, technische Regeln und die reale Gebäudesituation
+          zusammen ein.
+        </div>
+      </section>
+
+      <section id="planung" class="sh-section">
+        <p class="sh-kicker">Planung in der Praxis</p>
+        <h2>Diese sechs Punkte entscheiden über eine belastbare Lösung.</h2>
+        <div class="sh-planning-grid">
+          {planningPoints.map(([number, title, text]) => (
+            <article><span>{number}</span><h3>{title}</h3><p>{text}</p></article>
+          ))}
+        </div>
+      </section>
+
+      <section class="sh-section sh-example">
+        <p class="sh-kicker">Beispiel</p>
+        <h2>Warum eine einfache Höhenangabe oft nicht reicht.</h2>
+        <div class="sh-example__grid">
+          <div class="sh-example__case"><span>Ausgangslage</span><p>Ein Einfamilienhaus soll einen neuen Kaminofen mit neuem Außenkamin erhalten. Der technisch einfachste Montageort liegt seitlich an der Fassade – weit entfernt vom First.</p></div>
+          <div class="sh-example__case"><span>Was geprüft werden muss</span><p>Nicht nur die freie Länge über Dach, sondern auch die firstnahe Anordnung, Dachgeometrie, Fenster im Umfeld, Nachbargebäude sowie die statische Befestigung des Außenkamins.</p></div>
+          <div class="sh-example__case sh-example__case--accent"><span>Die Konsequenz</span><p>Es kann sinnvoller sein, den Schornsteinverlauf früh zu ändern, statt später eine unnötig hohe und statisch aufwendige Verlängerung über Dach zu bauen.</p></div>
+        </div>
+      </section>
+
+      <section id="fehler" class="sh-section">
+        <p class="sh-kicker">Erfahrung aus Projekten</p>
+        <h2>Typische Fehler bei der Schornsteinhöhe.</h2>
+        <div class="sh-error-list">
+          {errors.map(([title, text], index) => (
+            <article><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{text}</p></div></article>
+          ))}
+        </div>
+      </section>
+
+      <section class="sh-section sh-author">
+        <div class="sh-author__label">Fachliche Einordnung</div>
+        <div>
+          <h2>Technik verständlich erklären – ohne die Details wegzulassen.</h2>
+          <p>Stadter Kamintechnik plant und realisiert Schornstein- und Abgasanlagen in Nordbayern. Die Inhalte dieser Wissensseite verbinden gesetzliche Anforderungen mit der praktischen Planungserfahrung aus realen Projekten.</p>
+          <p><strong>Fachlich eingeordnet von Johannes Stadter, Kaminkehrermeister.</strong></p>
+        </div>
+      </section>
+
+      <section id="faq" class="sh-section">
+        <p class="sh-kicker">Häufige Fragen</p>
+        <h2>Schornsteinhöhe kurz beantwortet.</h2>
+        <div class="sh-faq">
+          {faqs.map((item) => (
+            <details><summary>{item.question}</summary><p>{item.answer}</p></details>
+          ))}
+        </div>
+      </section>
+
+      <section class="sh-section sh-sources">
+        <p class="sh-kicker">Primärquellen</p>
+        <h2>Worauf sich dieser Artikel stützt.</h2>
+        <div class="sh-source-list">
+          <article>
+            <h3>§ 19 der 1. BImSchV</h3>
+            <p>Ableitbedingungen für Abgase – insbesondere die Anforderungen für neue und wesentlich geänderte Feuerungsanlagen für feste Brennstoffe.</p>
+            <a href="https://www.gesetze-im-internet.de/bimschv_1_2010/__19.html" target="_blank" rel="noopener noreferrer">Gesetzestext öffnen ↗</a>
+          </article>
+          <article>
+            <h3>VDI 3781 Blatt 4</h3>
+            <p>Umweltmeteorologie – Ableitbedingungen für Abgase – Kleine und mittlere Feuerungsanlagen sowie andere als Feuerungsanlagen, Ausgabe Juli 2017.</p>
+            <a href="https://www.vdi.de/mitgliedschaft/vdi-richtlinien/details/vdi-3781-blatt-4-umweltmeteorologie-ableitbedingungen-fuer-abgase-kleine-und-mittlere-feuerungsanlagen-sowie-andere-als-feuerungsanlagen" target="_blank" rel="noopener noreferrer">VDI-Richtlinie ansehen ↗</a>
+          </article>
+          <article>
+            <h3>Bayerische Feuerungsverordnung</h3>
+            <p>§ 9 FeuV regelt in Bayern zusätzliche Anforderungen an die Abführung von Abgasen und die Mündungen von Abgasanlagen.</p>
+            <a href="https://www.gesetze-bayern.de/Content/Document/BayFeuV2008-9" target="_blank" rel="noopener noreferrer">Bayerische FeuV öffnen ↗</a>
+          </article>
+        </div>
+        <p class="sh-sources__note">Dieser Beitrag dient der fachlichen Orientierung. Die konkrete Ausführung einer Abgasanlage muss immer anhand des jeweiligen Gebäudes, der Feuerstätte und der örtlichen Randbedingungen geprüft werden.</p>
+      </section>
+    </div>
+  </div>
+
+  <section class="sh-related">
+    <div class="container">
+      <div class="sh-related__head">
+        <p class="sh-kicker">Passende Lösungen</p>
+        <h2>Wenn aus der Höhenfrage ein konkretes Projekt wird.</h2>
+      </div>
+      <div class="sh-related__grid">
+        <a href="/kaminverlaengerung/"><span>01</span><h3>Kaminverlängerung</h3><p>Wenn die bestehende Mündungshöhe angepasst werden muss.</p><strong>Leistung ansehen →</strong></a>
+        <a href="/aussenkamin/"><span>02</span><h3>Außenkamin nachrüsten</h3><p>Standort und Mündung von Anfang an richtig planen.</p><strong>Leistung ansehen →</strong></a>
+        <a href="/schornstein-im-gebaeude-nachruesten/"><span>03</span><h3>Schornstein im Gebäude</h3><p>Eine Alternative, wenn die Außenführung ungünstig wäre.</p><strong>Leistung ansehen →</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-cta">
+    <div class="container sh-cta__inner">
+      <div>
+        <p class="sh-kicker sh-kicker--light">Konkretes Projekt?</p>
+        <h2>Wir prüfen, welche Schornsteinhöhe bei Ihrem Gebäude sinnvoll ist.</h2>
+        <p>Senden Sie uns Fotos, Pläne und Angaben zur geplanten Feuerstätte. Unser Projektteam kann die Ausgangssituation einordnen und den nächsten sinnvollen Schritt festlegen.</p>
+      </div>
+      <a href="/projekt-starten/?projekt=schornsteinhoehe">Projekt prüfen lassen <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</article>

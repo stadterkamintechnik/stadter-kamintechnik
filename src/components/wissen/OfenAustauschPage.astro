@@ -1,0 +1,368 @@
+---
+import "../../styles/pages/wissen-ofen-austauschen.css";
+
+const pageUrl =
+  "https://www.stadter-kamin.de/wissen/kaminofen-kachelofen-austauschen/";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline:
+    "Kaminofen oder Kachelofen austauschen: Was ist beim Schornstein zu beachten?",
+  description:
+    "Praxisleitfaden zu Ofentausch, Schornsteinquerschnitt, Anschluss, Verbrennungsluft, Kachelofeneinsatz und Schornsteinfeger.",
+  inLanguage: "de-DE",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+  author: {
+    "@type": "Person",
+    name: "Johannes Stadter",
+    jobTitle: "Kaminkehrermeister",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Stadter Kamintechnik GmbH",
+    url: "https://www.stadter-kamin.de/",
+  },
+};
+
+const checks = [
+  ["01", "Passt der Schornsteinquerschnitt?", "Der neue Ofen kann andere Abgaswerte, einen anderen Förderdruck oder einen anderen Anschlussdurchmesser benötigen als die alte Feuerstätte."],
+  ["02", "Passt der vorhandene Anschluss?", "Anschlusshöhe, Durchmesser und Position des Rauchrohrs ändern sich beim Gerätetausch häufig. Ein vorhandener Wandanschluss kann deshalb angepasst werden müssen."],
+  ["03", "Ist die Verbrennungsluft gesichert?", "Bei dichten Gebäuden, Lüftungsanlagen oder Ablufthauben muss geprüft werden, ob die Feuerstätte ausreichend Verbrennungsluft erhält und ob Unterdruckprobleme entstehen können."],
+  ["04", "Ist die Mündungshöhe ausreichend?", "Beim Austausch einer Feuerstätte für feste Brennstoffe kann § 19 Absatz 2 der 1. BImSchV Anforderungen an die Schornsteinmündung auslösen. Die konkrete Bestandssituation ist zu prüfen."],
+  ["05", "Ist Mehrfachbelegung zulässig?", "Wenn weitere Feuerstätten am selben Schornstein angeschlossen sind, muss geprüft werden, ob die gemeinsame Belegung mit dem neuen Gerät technisch und zulässig bleibt."],
+  ["06", "Ist der Schornstein baulich in Ordnung?", "Risse, Versottung, beschädigte Innenflächen oder ein ungeeigneter Querschnitt können unabhängig vom Ofentausch eine Sanierung erforderlich machen."],
+];
+
+const faqs = [
+  ["Kann ich meinen alten Kaminofen einfach durch einen neuen ersetzen?", "Nicht immer. Vor dem Austausch sollte geprüft werden, ob Schornsteinquerschnitt, Höhe, Anschluss, Förderdruck und Verbrennungsluft zum neuen Gerät passen."],
+  ["Muss beim Ofentausch der Schornstein neu berechnet werden?", "Wenn sich die Feuerstätte und damit die Abgasdaten ändern, sollte die Eignung des vorhandenen Schornsteins für das neue Gerät fachlich geprüft werden. Ob eine vollständige Berechnung erforderlich ist, hängt vom konkreten Fall ab."],
+  ["Gilt die neue Schornsteinhöhenregel auch beim Austausch eines Kaminofens?", "§ 19 Absatz 2 der 1. BImSchV sagt ausdrücklich, dass die dort genannten Anforderungen für den Austausch der Feuerstätte entsprechend gelten. Für Bestandsanlagen ist deshalb die konkrete Mündungssituation zu prüfen."],
+  ["Was ist bei einem Kachelofen anders?", "Bei einem Kachelofen ist zu unterscheiden, ob nur ein eingemauerter Heizeinsatz getauscht wird oder die gesamte Feuerstätte verändert wird. Für eingemauerte Kamineinsätze, Kachelofeneinsätze und vergleichbare Ofeneinsätze enthält § 26 Absatz 4 der 1. BImSchV eine besondere Ausnahme von der dortigen Austauschfrist."],
+  ["Muss der Schornsteinfeger vor dem Kauf gefragt werden?", "Es ist sehr sinnvoll, die geplante Feuerstätte und die vorhandene Abgasanlage frühzeitig abzustimmen. So lässt sich vermeiden, dass ein Gerät gekauft wird, das nicht sinnvoll an den vorhandenen Schornstein angeschlossen werden kann."],
+  ["Was passiert, wenn der Schornstein zu groß ist?", "Ein zu großer Querschnitt kann bei bestimmten Feuerstätten zu ungünstigen Strömungs- und Temperaturverhältnissen führen. Ob eine Querschnittsanpassung nötig ist, hängt von den Abgasdaten und der wirksamen Höhe ab."],
+];
+
+const toc = [
+  ["kurzantwort", "Kurzantwort"],
+  ["pruefen", "Was vor dem Austausch geprüft wird"],
+  ["anschluss", "Rauchrohr & Anschluss"],
+  ["hoehe", "Schornsteinhöhe beim Austausch"],
+  ["kachelofen", "Besonderheit Kachelofen"],
+  ["luft", "Verbrennungsluft & Unterdruck"],
+  ["sanierung", "Wann eine Sanierung nötig wird"],
+  ["faq", "Häufige Fragen"],
+];
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+
+<article class="oa">
+  <header class="oa-hero">
+    <div class="container">
+      <div class="oa-breadcrumb">
+        <a href="/wissen/">Wissen</a>
+        <span>→</span>
+        <span>Ofen austauschen</span>
+      </div>
+
+      <p class="oa-kicker">Kaminofen · Kachelofen · Schornstein</p>
+
+      <h1>
+        Kaminofen oder Kachelofen austauschen:
+        <span>Was ist beim Schornstein zu beachten?</span>
+      </h1>
+
+      <p class="oa-lead">
+        Ein neuer Ofen lässt sich nicht automatisch 1:1 an den vorhandenen
+        Schornstein anschließen. Abgaswerte, Anschluss, Förderdruck,
+        Verbrennungsluft und die vorhandene Schornsteinhöhe müssen zum neuen
+        Gerät passen.
+      </p>
+
+      <div class="oa-meta">
+        <div>
+          <span>Fachlich eingeordnet von</span>
+          <strong>Johannes Stadter · Kaminkehrermeister</strong>
+        </div>
+        <div>
+          <span>Stand</span>
+          <strong>September 2026</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="oa-answer" id="kurzantwort">
+    <div class="container oa-answer-grid">
+      <div>
+        <p class="oa-kicker oa-kicker-light">Die Kurzantwort</p>
+        <h2>Kann ich meinen alten Ofen einfach ersetzen?</h2>
+      </div>
+
+      <div>
+        <p class="oa-answer-lead">
+          <strong>Nicht immer.</strong> Vor dem Austausch sollte geprüft werden,
+          ob der vorhandene Schornstein hinsichtlich Querschnitt, Höhe,
+          Anschluss, Förderdruck und Verbrennungsluft zum neuen Kaminofen oder
+          Kachelofeneinsatz passt.
+        </p>
+
+        <p>
+          Gerade moderne Feuerstätten können andere Abgastemperaturen,
+          Abgasmassenströme und Anschlussbedingungen haben als ältere Geräte.
+          Deshalb ist der Ofentausch auch immer eine Prüfung des vorhandenen
+          Abgassystems.
+        </p>
+
+        <aside>
+          <strong>Praxisregel:</strong> Erst Ofen und Schornstein gemeinsam
+          prüfen – dann das neue Gerät kaufen.
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="container oa-layout">
+    <aside class="oa-toc">
+      <p>Auf dieser Seite</p>
+      <nav>
+        {toc.map(([id,label]) => <a href={`#${id}`}>{label}</a>)}
+      </nav>
+    </aside>
+
+    <div class="oa-content">
+      <section id="pruefen">
+        <p class="oa-kicker">Vor dem Austausch</p>
+        <h2>Diese sechs Punkte sollten vor dem Ofentausch geklärt sein.</h2>
+
+        <div class="oa-card-grid">
+          {checks.map(([number,title,text]) => (
+            <article>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="anschluss">
+        <p class="oa-kicker">Rauchrohr & Wandanschluss</p>
+        <h2>Der vorhandene Anschluss passt nicht automatisch zum neuen Ofen.</h2>
+
+        <p>
+          Schon bei einem scheinbar einfachen Gerätetausch ändern sich häufig
+          Anschlussdurchmesser, Höhe und Lage des Rauchrohrstutzens. Der alte
+          Wandanschluss kann deshalb zu hoch, zu niedrig oder im Durchmesser
+          ungeeignet sein.
+        </p>
+
+        <p>
+          Wichtig ist außerdem, dass Verbindungsstücke zugänglich bleiben und
+          nicht durch Decken, Wände oder unzugängliche Hohlräume geführt werden.
+          Die Bayerische Feuerungsverordnung enthält hierzu konkrete
+          Anforderungen.
+        </p>
+
+        <div class="oa-note">
+          <strong>Nicht improvisieren:</strong> Ein Anschluss sollte technisch
+          passend hergestellt werden – nicht nur so, dass das Rauchrohr
+          irgendwie in die vorhandene Öffnung passt.
+        </div>
+      </section>
+
+      <section id="hoehe">
+        <p class="oa-kicker">Bestandsschornstein</p>
+        <h2>Auch beim Austausch kann die Schornsteinhöhe relevant werden.</h2>
+
+        <p>
+          Für Feuerungsanlagen für feste Brennstoffe, die vor dem 1. Januar 2022
+          errichtet und betrieben wurden und später wesentlich geändert werden,
+          regelt § 19 Absatz 2 der 1. BImSchV die Anforderungen an die
+          Austrittsöffnung. Der Gesetzestext sagt ausdrücklich, dass diese
+          Anforderungen <strong>für den Austausch der Feuerstätte entsprechend gelten.</strong>
+        </p>
+
+        <p>
+          Das bedeutet nicht automatisch, dass bei jedem Ofentausch der
+          komplette Schornstein neu gebaut werden muss. Es bedeutet aber, dass
+          die vorhandene Mündungssituation vor dem Austausch geprüft werden
+          sollte.
+        </p>
+
+        <a class="oa-feature" href="/wissen/schornsteinhoehe-bimschv-vdi-3781-4/">
+          <span>Vertiefung</span>
+          <strong>Wie hoch muss ein Schornstein sein? →</strong>
+        </a>
+      </section>
+
+      <section id="kachelofen">
+        <p class="oa-kicker">Sonderfall Kachelofen</p>
+        <h2>Heizeinsatz tauschen oder ganzen Kachelofen verändern?</h2>
+
+        <p>
+          Beim Kachelofen muss genauer unterschieden werden als beim frei
+          stehenden Kaminofen. Wird lediglich ein eingemauerter Heizeinsatz
+          ersetzt, ist das etwas anderes als ein kompletter Umbau oder Neubau
+          der Feuerstätte.
+        </p>
+
+        <p>
+          § 26 Absatz 4 der 1. BImSchV enthält für eingemauerte Kamineinsätze,
+          Kachelofeneinsätze und vergleichbare Ofeneinsätze eine Besonderheit:
+          Die in § 26 Absatz 2 geregelten Austauschfristen gelten für diese
+          Einsätze nicht.
+        </p>
+
+        <p>
+          Unabhängig davon muss ein neuer Einsatz technisch zum vorhandenen
+          Schornstein und zur gesamten Feuerstättenanlage passen.
+        </p>
+
+        <div class="oa-split">
+          <div>
+            <span>A</span>
+            <h3>Nur Heizeinsatz</h3>
+            <p>
+              Abgasdaten, Anschluss und Eignung des Schornsteins für den neuen
+              Einsatz prüfen.
+            </p>
+          </div>
+          <div>
+            <span>B</span>
+            <h3>Umbau der gesamten Feuerstätte</h3>
+            <p>
+              Zusätzlich Konstruktion, Brandschutz und Gesamtanlage neu
+              bewerten.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="luft">
+        <p class="oa-kicker">Verbrennungsluft</p>
+        <h2>Der neue Ofen braucht nicht nur einen passenden Schornstein.</h2>
+
+        <p>
+          Feuerstätten dürfen nur so aufgestellt und betrieben werden, dass
+          Gefahren nicht entstehen. In modernen oder sanierten Gebäuden ist
+          deshalb die Verbrennungsluftversorgung besonders wichtig.
+        </p>
+
+        <ul class="oa-list">
+          <li>sehr dichte Fenster und Gebäudehülle</li>
+          <li>kontrollierte Wohnraumlüftung</li>
+          <li>Dunstabzugshauben im Abluftbetrieb</li>
+          <li>Abluftventilatoren oder andere luftabsaugende Einrichtungen</li>
+          <li>raumluftabhängiger oder raumluftunabhängiger Betrieb</li>
+        </ul>
+
+        <p>
+          Ob zusätzliche Maßnahmen erforderlich sind, hängt von Feuerstätte,
+          Gebäude und vorhandener Lüftungstechnik ab.
+        </p>
+      </section>
+
+      <section id="sanierung">
+        <p class="oa-kicker">Wenn der Bestand nicht passt</p>
+        <h2>Wann muss der Schornstein beim Ofentausch saniert werden?</h2>
+
+        <p>
+          Eine Kaminsanierung kann sinnvoll oder erforderlich werden, wenn der
+          vorhandene Schornstein technisch nicht zum neuen Gerät passt.
+          Typische Gründe sind ein ungeeigneter Querschnitt, ungünstige
+          thermische Verhältnisse, Schäden oder Versottung.
+        </p>
+
+        <div class="oa-related">
+          <a href="/wissen/versottung-schornstein-ursachen-sanierung/">
+            <span>Schadensbild</span>
+            <strong>Versottung am Schornstein verstehen →</strong>
+          </a>
+
+          <a href="/wissen/kaminsanierung-kosten/">
+            <span>Kosten</span>
+            <strong>Was kostet eine Kaminsanierung? →</strong>
+          </a>
+
+          <a href="/kaminsanierung/">
+            <span>Leistung</span>
+            <strong>Kaminsanierung ansehen →</strong>
+          </a>
+        </div>
+      </section>
+
+      <section class="oa-author">
+        <p class="oa-kicker">Aus unserer Praxis</p>
+        <h2>Der häufigste Fehler ist, zuerst den Ofen auszuwählen.</h2>
+
+        <p>
+          Bei einem Gerätetausch sollte zuerst geklärt werden, welche
+          technischen Randbedingungen der vorhandene Schornstein vorgibt.
+          Danach kann ein Ofen gewählt werden, der zu Gebäude, Abgasweg und
+          gewünschter Nutzung passt. Das verhindert unnötige Umbauten und
+          Überraschungen bei der Abnahme.
+        </p>
+
+        <strong>Johannes Stadter · Kaminkehrermeister</strong>
+      </section>
+
+      <section id="faq">
+        <p class="oa-kicker">Häufige Fragen</p>
+        <h2>Ofentausch kurz beantwortet.</h2>
+
+        <div class="oa-faq">
+          {faqs.map(([q,a]) => (
+            <details>
+              <summary>{q}</summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p class="oa-kicker">Weiterlesen</p>
+        <h2>Passende Fachartikel.</h2>
+
+        <div class="oa-related">
+          <a href="/wissen/neue-heizung-schornstein-sanieren/">
+            <span>Heizungstausch</span>
+            <strong>Neue Heizung: Muss der Schornstein saniert werden? →</strong>
+          </a>
+
+          <a href="/wissen/schornsteinhoehe-bimschv-vdi-3781-4/">
+            <span>Vorschriften</span>
+            <strong>Schornsteinhöhe richtig planen →</strong>
+          </a>
+
+          <a href="/wissen/kaminsanierung-kosten/">
+            <span>Kosten</span>
+            <strong>Was kostet eine Kaminsanierung? →</strong>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="oa-cta">
+    <div class="container oa-cta-grid">
+      <div>
+        <p class="oa-kicker oa-kicker-light">Ofentausch geplant?</p>
+        <h2>Prüfen Sie den Schornstein, bevor der neue Ofen bestellt wird.</h2>
+        <p>
+          Senden Sie uns Angaben zum vorhandenen Schornstein und zum geplanten
+          Gerät. Dann lässt sich früh klären, ob Anschluss und Abgasanlage
+          zusammenpassen.
+        </p>
+      </div>
+
+      <a href="/projekt-starten/?projekt=ofentausch">
+        Projekt prüfen lassen →
+      </a>
+    </div>
+  </section>
+</article>

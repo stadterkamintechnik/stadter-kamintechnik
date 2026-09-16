@@ -1,0 +1,104 @@
+---
+import "../../styles/pages/lp-kaminbauer.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const situations = [
+  ["Braune Flecken", "Am Schornstein zeigen sich gelbliche oder braune Verfärbungen an Putz, Tapete oder Mauerwerk?", "/projekt-starten/?projekt=kaminsanierung"],
+  ["Unangenehmer Geruch", "Der Schornstein riecht teerig, rauchig oder säuerlich – besonders bei feuchtem Wetter?", "/projekt-starten/?projekt=kaminsanierung"],
+  ["Feuchter Schornstein", "Im Schacht, am Anschluss oder am Kaminkopf ist sichtbar Feuchtigkeit vorhanden?", "/projekt-starten/?projekt=kaminsanierung"],
+  ["Neue Heiztechnik", "Seit dem Heizungstausch entstehen Kondensat, Feuchtigkeit oder Ablagerungen im bestehenden Schornstein?", "/projekt-starten/?projekt=kaminsanierung"],
+];
+
+const steps = [
+  ["1", "Schadensbild zeigen", "Senden Sie Fotos der Flecken oder feuchten Stellen sowie Angaben zu Feuerstätte, Brennstoff und Schornstein."],
+  ["2", "Ursache eingrenzen", "Wir betrachten Abgastemperatur, Querschnitt, Betriebsweise, Verbrennung, Schachtzustand und möglichen Wassereintritt."],
+  ["3", "Lösung planen", "Erst nach der Ursachenklärung legen wir fest, welches Sanierungssystem und welcher Querschnitt technisch sinnvoll sind."],
+  ["4", "Schornstein sanieren", "Unser eigenes Montageteam setzt die geplante Lösung fachgerecht und passend zum vorhandenen Gebäude um."],
+];
+---
+
+<BaseLayout
+  title="Schornstein feucht oder versottet? | Stadter Kamintechnik"
+  description="Feuchte Flecken, Geruch oder Versottung am Schornstein? Wir prüfen die Ursache und planen die passende Kaminsanierung in Nordbayern."
+>
+<article class="kb">
+  <section class="kb-hero">
+    <div class="container">
+      <p class="kb-kicker">Schornstein feucht oder versottet · Nordbayern</p>
+      <h1>Feuchte Flecken oder Versottungsgeruch?<span>Wir klären die Ursache.</span></h1>
+      <p class="kb-lead">Ein feuchter oder versotteter Schornstein ist zunächst ein Schadensbild. Ob Kondensat, ungeeigneter Querschnitt, niedrige Abgastemperatur, Verbrennungsrückstände oder eindringendes Wasser dahinterstecken, muss technisch geprüft werden.</p>
+
+      <div class="kb-actions">
+        <a class="kb-primary" href="/projekt-starten/?projekt=kaminsanierung">Schaden prüfen lassen <span>→</span></a>
+        <a class="kb-phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+
+      <figure class="kb-hero-image">
+        <img src="/images/kaminsanierung-versottung.webp" alt="Versotteter gemauerter Schornstein mit Feuchtigkeit und Verfärbungen im Dachgeschoss" width="900" height="675" decoding="async" fetchpriority="high" />
+        <figcaption>Versottung · Feuchtigkeit und Verfärbungen am Schornstein</figcaption>
+      </figure>
+
+      <div class="kb-trust">
+        <div><strong>10.000+</strong><span>Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>Fachplanung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-solutions">
+    <div class="container">
+      <p class="kb-kicker">Was sehen oder riechen Sie?</p>
+      <h2>Feuchtigkeit und Versottung können verschiedene Ursachen haben.</h2>
+      <div class="kb-solution-grid">
+        {situations.map(([title,text,href]) => (
+          <a class="kb-solution" href={href}>
+            <div><h3>{title}</h3><p>{text}</p></div><span>→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-proof">
+    <div class="container">
+      <figure>
+        <img src="/images/referenzen/kaminsanierung-gemauerter-schornstein/alter-schornstein-innen.webp" alt="Blick in den gemauerten Schacht eines feuchten Schornsteins vor der Sanierung" width="900" height="675" loading="lazy" decoding="async" />
+      </figure>
+      <div class="kb-proof-copy">
+        <p class="kb-kicker">Probleme lösen statt Produkte verkaufen.</p>
+        <h2>Gleiches Schadensbild. Unterschiedliche Auslöser.</h2>
+        <p>Bei Holz und anderen Festbrennstoffen können Ruß, Teer und Kondensat zusammenspielen. Bei Öl-, Gas- oder Brennwertanlagen stehen häufig niedrige Abgastemperaturen und säurehaltiges Kondensat im Vordergrund. Auch Regenwasser oder Schäden am Kaminkopf kommen als Ursache infrage. Deshalb sanieren wir nicht nach Schema F.</p>
+        <a href="/kaminsanierung">Mehr zur Kaminsanierung <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-process">
+    <div class="container">
+      <p class="kb-kicker">Vom Schadensbild zur passenden Sanierung</p>
+      <h2>So gehen wir vor.</h2>
+      <ol>
+        {steps.map(([n,title,text]) => (
+          <li><span>{n}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="kb-final">
+    <div class="container">
+      <p class="kb-kicker">Bayreuth · Kulmbach · Bamberg · Coburg · Nordbayern</p>
+      <h2>Zeigen Sie uns die feuchten Stellen.</h2>
+      <p>Fotos des Schadensbildes sowie Angaben zu Heizung, Ofen und verwendetem Brennstoff helfen uns bei der ersten Einordnung. Danach klären wir mit Ihnen die sinnvollen nächsten Schritte.</p>
+      <a class="kb-primary kb-primary--light" href="/projekt-starten/?projekt=kaminsanierung">Fotos &amp; Angaben senden <span>→</span></a>
+      <a class="kb-final-phone" href="tel:+4992289989000">Oder anrufen: 09228 998900-0</a>
+    </div>
+  </section>
+
+  <nav class="kb-sticky" aria-label="Schnellkontakt">
+    <a href="tel:+4992289989000">Anrufen</a>
+    <a href="/projekt-starten/?projekt=kaminsanierung">Schaden prüfen lassen <span>→</span></a>
+  </nav>
+</article>
+</BaseLayout>

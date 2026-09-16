@@ -1,0 +1,95 @@
+---
+import "../../styles/pages/lp-kaminbauer.css";
+
+const situations = [
+  ["Rauch kommt zurück", "Beim Anheizen oder Nachlegen gelangt Rauch in den Aufstellraum?", "/projekt-starten/?projekt=kaminproblem"],
+  ["Kamin zieht schlecht", "Das Feuer kommt schlecht in Gang oder der Abbrand wirkt instabil?", "/projekt-starten/?projekt=kaminproblem"],
+  ["Schornstein zu niedrig", "Die vorhandene Mündungshöhe kann Teil des Problems sein.", "/projekt-starten/?projekt=kaminproblem"],
+  ["Seit Umbau problematisch", "Neue Fenster, Lüftung, Dunstabzug oder eine geänderte Feuerstätte können die Bedingungen verändern.", "/projekt-starten/?projekt=kaminproblem"],
+];
+
+const steps = [
+  ["1", "Problem zeigen", "Beschreiben Sie, wann das Problem auftritt, und senden Sie Fotos von Ofen, Anschluss und Schornstein."],
+  ["2", "Ursache eingrenzen", "Wir betrachten Feuerstätte, Verbrennungsluft, Abgasweg, Querschnitt und Schornsteinhöhe gemeinsam."],
+  ["3", "Lösung festlegen", "Erst wenn die Ursache klar ist, planen wir die technisch sinnvolle Maßnahme."],
+  ["4", "Problem beheben", "Wenn bauliche Arbeiten nötig sind, setzen unsere eigenen Teams die passende Lösung um."],
+];
+---
+
+<article class="kb">
+  <section class="kb-hero">
+    <div class="container">
+      <p class="kb-kicker">Kamin zieht nicht · Nordbayern · Meisterbetrieb</p>
+      <h1>Rauch statt Schornsteinzug?<span>Wir suchen die Ursache.</span></h1>
+      <p class="kb-lead">Wenn der Kaminofen schlecht zieht oder Rauch zurück in den Raum kommt, kann das verschiedene Ursachen haben. Wir prüfen das System als Ganzes – statt auf Verdacht Teile auszutauschen.</p>
+      <div class="kb-actions">
+        <a class="kb-primary" href="/projekt-starten/?projekt=kaminproblem">Problem prüfen lassen <span>→</span></a>
+        <a class="kb-phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+
+      <figure class="kb-hero-image">
+        <img src="/images/referenzen/kaminverlaengerung-kaminofen-pegnitz/kaminofen-pegnitz.webp" alt="Bestehender Kaminofen in einem Wohnhaus in Pegnitz" width="900" height="1350" decoding="async" fetchpriority="high" />
+        <figcaption>Reales Projekt · bestehender Kaminofen</figcaption>
+      </figure>
+
+      <div class="kb-trust">
+        <div><strong>10.000+</strong><span>Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>Fachplanung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-solutions">
+    <div class="container">
+      <p class="kb-kicker">Was passiert bei Ihnen?</p>
+      <h2>Schlechter Zug ist ein Symptom – keine Diagnose.</h2>
+      <div class="kb-solution-grid">
+        {situations.map(([title,text,href]) => (
+          <a class="kb-solution" href={href}><div><h3>{title}</h3><p>{text}</p></div><span>→</span></a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-proof">
+    <div class="container">
+      <figure>
+        <img src="/images/referenzen/kaminverlaengerung-kaminofen-pegnitz/kaminverlaengerung-pegnitz-hero.webp" alt="Kaminverlängerung auf einem bestehenden Schornstein in Pegnitz" width="900" height="1350" loading="lazy" decoding="async" />
+      </figure>
+      <div class="kb-proof-copy">
+        <p class="kb-kicker">Probleme lösen statt Produkte verkaufen.</p>
+        <h2>Manchmal liegt die Lösung ganz oben.</h2>
+        <p>Bei diesem realen Projekt war die vorhandene Schornsteinhöhe für den sicheren Betrieb des Kaminofens nicht ausreichend. Die erforderliche Höhe wurde berechnet und der bestehende Schornstein passend verlängert.</p>
+        <a href="/referenzen/kaminverlaengerung-kaminofen-pegnitz/">Projekt ansehen <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-process">
+    <div class="container">
+      <p class="kb-kicker">Nicht raten. Prüfen.</p>
+      <h2>So gehen wir vor.</h2>
+      <ol>
+        {steps.map(([n,title,text]) => (
+          <li><span>{n}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="kb-final">
+    <div class="container">
+      <p class="kb-kicker">Bayreuth · Kulmbach · Bamberg · Coburg · Nordbayern</p>
+      <h2>Zeigen Sie uns, was Ihr Kamin macht.</h2>
+      <p>Beschreiben Sie, wann Rauch oder Zugprobleme auftreten, und senden Sie Fotos von Feuerstätte, Anschluss und Schornstein. Damit können wir das Problem gezielter einordnen.</p>
+      <a class="kb-primary kb-primary--light" href="/projekt-starten/?projekt=kaminproblem">Problem &amp; Fotos senden <span>→</span></a>
+      <a class="kb-final-phone" href="tel:+4992289989000">Oder anrufen: 09228 998900-0</a>
+    </div>
+  </section>
+
+  <nav class="kb-sticky" aria-label="Schnellkontakt">
+    <a href="tel:+4992289989000">Anrufen</a>
+    <a href="/projekt-starten/?projekt=kaminproblem">Problem senden <span>→</span></a>
+  </nav>
+</article>

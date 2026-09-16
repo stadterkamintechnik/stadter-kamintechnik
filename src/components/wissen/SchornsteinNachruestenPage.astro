@@ -1,0 +1,97 @@
+---
+import "../../styles/pages/wissen-schornstein-nachruesten.css";
+
+const pageUrl="https://www.stadter-kamin.de/wissen/schornstein-nachruesten-aussen-oder-innen/";
+const schema={
+ "@context":"https://schema.org","@type":"Article",
+ headline:"Schornstein nachrüsten: außen oder im Gebäude?",
+ description:"Außenkamin und innenliegende Schornsteinnachrüstung im direkten Vergleich.",
+ inLanguage:"de-DE",datePublished:"2026-09-11",dateModified:"2026-09-11",
+ mainEntityOfPage:{"@type":"WebPage","@id":pageUrl},
+ author:{"@type":"Person",name:"Johannes Stadter",jobTitle:"Kaminkehrermeister"},
+ publisher:{"@type":"Organization",name:"Stadter Kamintechnik GmbH",url:"https://www.stadter-kamin.de/"}
+};
+const compare=[
+ ["Montageweg","An der Außenfassade","Durch das Gebäude und die Geschosse"],
+ ["Eingriff ins Gebäude","Meist geringer","Deckendurchführungen und Führung im Gebäude erforderlich"],
+ ["Brandschutz","Abstände und Wanddurchführung beachten","Besonders wichtig bei Geschoss- und Deckendurchführungen"],
+ ["Platzbedarf innen","Gering","Schornstein benötigt dauerhaft Platz im Gebäude"],
+ ["Optik","An der Fassade sichtbar","Außen weitgehend unsichtbar, innen sichtbar bzw. verkleidet"],
+ ["Montageaufwand","Stark von Höhe, Wandabstand und Zugänglichkeit abhängig","Stark von Geschossen, Deckenaufbau, Dachführung und Einbausituation abhängig"],
+ ["Mündungshöhe","Für beide Varianten nach denselben maßgeblichen Anforderungen zu planen","Für beide Varianten nach denselben maßgeblichen Anforderungen zu planen"],
+];
+const situations=[
+ ["Außenkamin ist häufig sinnvoll, wenn …",["ein kurzer Weg von der Feuerstätte zur Außenwand möglich ist","im Gebäude keine geeignete senkrechte Trasse vorhanden ist","Deckendurchbrüche vermieden werden sollen","ein sichtbarer Edelstahlkamin gestalterisch akzeptiert wird"]],
+ ["Innenliegender Schornstein ist häufig sinnvoll, wenn …",["eine geeignete senkrechte Trasse durch das Gebäude vorhanden ist","die Fassade frei von einem sichtbaren Außenkamin bleiben soll","die Feuerstätte günstig zu einer innenliegenden Schornsteinposition steht","die notwendigen Geschoss- und Dachdurchführungen konstruktiv gut lösbar sind"]]
+];
+const faqs=[
+ ["Was ist besser: Außenkamin oder Schornstein im Gebäude?","Das lässt sich nicht pauschal beantworten. Entscheidend sind Gebäude, Position der Feuerstätte, mögliche Trasse, Brandschutz, erforderliche Mündungshöhe, Optik und Montageaufwand."],
+ ["Ist ein Außenkamin immer günstiger?","Nein. Ein Außenkamin kann durch die Montage an der Fassade sehr direkt sein. Große Höhen, Dachüberstände, Wandabstände, besondere Befestigungen oder schwierige Zugänglichkeit können den Aufwand jedoch erhöhen."],
+ ["Kann ein Edelstahlschornstein einfach durch mehrere Geschosse geführt werden?","Eine Führung innerhalb des Gebäudes muss die dafür geltenden brandschutztechnischen Anforderungen erfüllen. In Bayern müssen Schornsteine, die Geschosse überbrücken, grundsätzlich mindestens 90 Minuten Feuerwiderstand aufweisen oder in entsprechend feuerwiderstandsfähigen durchgehenden Schächten angeordnet sein."],
+ ["Wo sollte ein nachgerüsteter Schornstein stehen?","Die Position sollte nicht allein nach dem kürzesten Montageweg gewählt werden. Feuerstätte, Gebäudestruktur, Dachgeometrie, Mündungshöhe, Reinigungsmöglichkeiten und das Umfeld müssen gemeinsam betrachtet werden."],
+ ["Muss die Schornsteinhöhe vor der Entscheidung außen oder innen geklärt werden?","Ja, sie gehört früh in die Planung. Besonders bei neuen Feuerungsanlagen für feste Brennstoffe können die Vorgaben zur firstnahen Mündung und die Situation des Gebäudes die mögliche Trasse entscheidend beeinflussen."],
+];
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+<article class="sn">
+<header class="sn-hero"><div class="container">
+<div class="sn-breadcrumb"><a href="/wissen/">Wissen</a><span>→</span><span>Schornstein nachrüsten</span></div>
+<p class="sn-kicker">Planung · Nachrüstung · Entscheidungshilfe</p>
+<h1>Schornstein nachrüsten:<span>außen oder im Gebäude?</span></h1>
+<p class="sn-lead">Beide Varianten können technisch richtig sein. Entscheidend ist nicht, welches System grundsätzlich „besser“ ist, sondern <strong>welcher Verlauf zu Gebäude, Feuerstätte, Brandschutz und erforderlicher Schornsteinhöhe passt.</strong></p>
+<div class="sn-meta"><div><span>Fachlich eingeordnet von</span><strong>Johannes Stadter · Kaminkehrermeister</strong></div><div><span>Aktualisiert</span><strong>September 2026</strong></div></div>
+</div></header>
+
+<section class="sn-answer"><div class="container sn-answer-grid"><div><p class="sn-kicker light">Die Kurzantwort</p><h2>Außen oder innen?</h2></div><div>
+<p class="sn-answer-lead"><strong>Ein Außenkamin</strong> ist häufig die direkte Lösung, wenn ein Schornstein nachträglich an der Fassade geführt werden kann und Eingriffe in Decken und Innenräume vermieden werden sollen. <strong>Ein Schornstein im Gebäude</strong> kann sinnvoller sein, wenn eine geeignete senkrechte Trasse vorhanden ist und der Schornstein außen nicht sichtbar sein soll.</p>
+<p>Die Entscheidung sollte vor der Bestellung eines Systems fallen – nach Prüfung von Feuerstätte, Verlauf, Mündungshöhe, Brandschutz und Zugänglichkeit.</p>
+</div></div></section>
+
+<div class="container sn-content">
+<section><p class="sn-kicker">Direkter Vergleich</p><h2>Außenkamin und Innenschornstein im Vergleich.</h2>
+<div class="sn-table"><div class="head"><strong>Kriterium</strong><strong>Außenkamin</strong><strong>Im Gebäude</strong></div>{compare.map(([a,b,c])=><div><strong>{a}</strong><span>{b}</span><span>{c}</span></div>)}</div>
+</section>
+
+<section><p class="sn-kicker">Außen nachrüsten</p><h2>Wann spricht viel für einen Außenkamin?</h2>
+<p>Beim Außenkamin wird der Schornstein an der Fassade nach oben geführt. Im Gebäude ist im Wesentlichen der Weg von der Feuerstätte durch die Außenwand zu lösen. Dadurch lässt sich ein neuer Schornstein häufig nachrüsten, ohne eine Trasse durch mehrere Geschosse schaffen zu müssen.</p>
+<p>Das macht die Lösung besonders interessant, wenn im Bestand innen kein sinnvoller Platz vorhanden ist. Gleichzeitig bleiben Höhe, Wandabstand, Befestigung, Dachüberstand und die spätere Schornsteinmündung wichtige Planungsfaktoren.</p>
+<a class="sn-feature" href="/wissen/aussenkamin-kosten/"><span>Kosten aus unserer Praxis</span><strong>Was kostet ein Außenkamin? →</strong></a>
+</section>
+
+<section><p class="sn-kicker">Im Gebäude nachrüsten</p><h2>Wann ist die innenliegende Lösung besser?</h2>
+<p>Eine innenliegende Nachrüstung kann architektonisch die bessere Lösung sein, wenn eine geeignete senkrechte Trasse vorhanden ist. Dafür muss der Schornstein sicher durch das Gebäude und gegebenenfalls durch mehrere Geschosse und das Dach geführt werden.</p>
+<p>Hier ist der Brandschutz ein wesentlicher Unterschied: Nach der Bayerischen Feuerungsverordnung müssen Schornsteine, die innerhalb eines Gebäudes Geschosse überbrücken, grundsätzlich eine Feuerwiderstandsfähigkeit von mindestens 90 Minuten besitzen oder in einem durchgehenden Schacht mit mindestens 90 Minuten Feuerwiderstand angeordnet sein. Die konkrete Ausführung hängt vom Gebäude und System ab.</p>
+<div class="sn-note"><strong>Wichtig:</strong> Ein doppelwandiger Edelstahl-Außenkamin ist deshalb nicht einfach automatisch dasselbe System, das man ohne weitere konstruktive Maßnahmen durch mehrere Geschosse im Gebäude führen kann.</div>
+<a class="sn-feature" href="/schornstein-im-gebaeude-nachruesten/"><span>Leistung</span><strong>Schornstein im Gebäude nachrüsten →</strong></a>
+</section>
+
+<section><p class="sn-kicker">Typische Situationen</p><h2>Welche Variante passt eher zu meinem Haus?</h2>
+<div class="sn-situations">{situations.map(([title,items])=><article><h3>{title}</h3><ul>{items.map(item=><li>{item}</li>)}</ul></article>)}</div>
+<p class="sn-small">Das sind Entscheidungshilfen, keine pauschalen technischen Regeln. Eine ungünstige Mündungshöhe oder Gebäudesituation kann die zunächst naheliegende Variante verändern.</p>
+</section>
+
+<section><p class="sn-kicker">Oft unterschätzt</p><h2>Die Mündungshöhe kann die ganze Planung verändern.</h2>
+<p>Gerade bei einem neuen Kaminofen oder einer anderen neuen Feuerungsanlage für feste Brennstoffe darf der Schornstein nicht einfach dort enden, wo die Montage am bequemsten ist. Für nach dem 31. Dezember 2021 errichtete Festbrennstoffanlagen verlangt § 19 der 1. BImSchV grundsätzlich eine firstnahe Austrittsöffnung, die den First mindestens 40 cm überragt. Unter bestimmten Voraussetzungen wird die Höhe nach VDI 3781 Blatt 4 bestimmt; für bestimmte Bestandsgebäude enthält § 19 eine Verhältnismäßigkeitsregel.</p>
+<p>Deshalb sollte die erforderliche Mündungshöhe geklärt werden, <strong>bevor</strong> man sich allein aufgrund von Optik oder einem vermeintlich kurzen Montageweg für außen oder innen entscheidet.</p>
+<a class="sn-feature" href="/wissen/schornsteinhoehe-bimschv-vdi-3781-4/"><span>Vertiefung</span><strong>Wie hoch muss ein Schornstein sein? →</strong></a>
+</section>
+
+<section><p class="sn-kicker">Planungsfehler vermeiden</p><h2>Fünf Fehler, die wir bei Nachrüstungen vermeiden würden.</h2>
+<ol class="sn-errors"><li><strong>Erst den Kamin kaufen, dann den Verlauf planen.</strong><span>Feuerstätte und Abgasanlage müssen als System betrachtet werden.</span></li><li><strong>Nur den kürzesten Weg wählen.</strong><span>Die spätere Mündung kann für die Trassenwahl entscheidender sein als einige Meter Rohr.</span></li><li><strong>Brandschutz erst auf der Baustelle klären.</strong><span>Besonders bei einer Führung durch das Gebäude muss die Konstruktion vorher feststehen.</span></li><li><strong>Den Schornstein nach Optik dimensionieren.</strong><span>Querschnitt und Höhe richten sich nach den technischen Anforderungen.</span></li><li><strong>Außenkamin und Innenschornstein nur über den Preis vergleichen.</strong><span>Eine dauerhaft gute Lösung muss zum Gebäude und zur geplanten Nutzung passen.</span></li></ol>
+</section>
+
+<section class="sn-author"><p class="sn-kicker">Aus unserer Praxis</p><h2>Die beste Trasse ist selten nur eine Geschmacksfrage.</h2>
+<p>Bei einer Schornsteinnachrüstung betrachten wir zuerst Feuerstätte, Gebäude und mögliche Mündung. Erst daraus ergibt sich, ob die Führung an der Fassade oder durch das Gebäude technisch und wirtschaftlich sinnvoller ist. Genau diese Reihenfolge verhindert, dass eine vermeintlich einfache Lösung später unnötig kompliziert wird.</p><strong>Johannes Stadter · Kaminkehrermeister</strong></section>
+
+<section><p class="sn-kicker">Häufige Fragen</p><h2>Schornstein nachrüsten – kurz beantwortet.</h2><div class="sn-faq">{faqs.map(([q,a])=><details><summary>{q}</summary><p>{a}</p></details>)}</div></section>
+
+<section><p class="sn-kicker">Weiterlesen</p><h2>Von der Entscheidung zur konkreten Planung.</h2><div class="sn-related">
+<a href="/aussenkamin/"><span>Außenkamin</span><strong>Schornstein außen nachrüsten →</strong></a>
+<a href="/schornstein-im-gebaeude-nachruesten/"><span>Innenliegende Lösung</span><strong>Schornstein im Gebäude nachrüsten →</strong></a>
+<a href="/wissen/aussenkamin-kosten/"><span>Kosten</span><strong>Was kostet ein Außenkamin? →</strong></a>
+<a href="/wissen/schornsteinhoehe-bimschv-vdi-3781-4/"><span>Vorschriften</span><strong>Schornsteinhöhe richtig planen →</strong></a>
+</div></section>
+</div>
+
+<section class="sn-cta"><div class="container sn-cta-grid"><div><p class="sn-kicker light">Noch unsicher?</p><h2>Wir planen die passende Trasse für Ihr Gebäude.</h2><p>Schicken Sie uns Fotos, Grundriss oder vorhandene Unterlagen und beschreiben Sie die geplante Feuerstätte.</p></div><a href="/projekt-starten/?projekt=schornstein-nachruesten">Projekt starten →</a></div></section>
+</article>

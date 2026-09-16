@@ -1,0 +1,508 @@
+---
+import "../../styles/pages/wissen-versottung.css";
+
+const pageUrl =
+  "https://www.stadter-kamin.de/wissen/versottung-schornstein-ursachen-sanierung/";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline:
+    "Versottung am Schornstein: Ursachen, Anzeichen und richtige Sanierung",
+  description:
+    "Praxisleitfaden zu Versottung, Kondensat, Abgastemperaturen, Querschnitt, Feuchtigkeit und geeigneten Sanierungswegen.",
+  inLanguage: "de-DE",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-11",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
+  author: {
+    "@type": "Person",
+    name: "Johannes Stadter",
+    jobTitle: "Kaminkehrermeister",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Stadter Kamintechnik GmbH",
+    url: "https://www.stadter-kamin.de/",
+  },
+};
+
+const toc = [
+  ["kurzantwort", "Kurzantwort"],
+  ["anzeichen", "Typische Anzeichen"],
+  ["ursachen", "Warum Versottung entsteht"],
+  ["diagnose", "Versottung oder andere Feuchtigkeit?"],
+  ["sanierung", "Wann eine Sanierung nötig ist"],
+  ["systeme", "Welche Sanierungswege es gibt"],
+  ["fehler", "Typische Fehler"],
+  ["faq", "Häufige Fragen"],
+];
+
+const signs = [
+  ["01", "Braune oder gelbliche Flecken", "Verfärbungen an Schornsteinwangen oder angrenzenden Bauteilen können darauf hinweisen, dass Feuchtigkeit und Verbrennungsbestandteile in das Mauerwerk eingedrungen sind."],
+  ["02", "Unangenehmer Geruch", "Teerartige oder stechende Gerüche können auftreten, wenn Kondensat und Verbrennungsrückstände in poröse Bauteile eingedrungen sind."],
+  ["03", "Feuchte Stellen", "Ein sichtbar feuchter Schornstein kann auf Kondensat im Zug hindeuten – aber auch auf eindringendes Regenwasser oder einen baulichen Schaden."],
+  ["04", "Abplatzungen und beschädigter Putz", "Durchfeuchtetes Mauerwerk kann Putz und Beschichtungen schädigen. Der sichtbare Schaden ist dabei meist nur die Folge."],
+  ["05", "Teerartige Ablagerungen", "Bei ungünstiger Verbrennung und niedrigen Temperaturen können sich teerartige Stoffe ablagern. Das ist technisch anders zu bewerten als reine Oberflächenfeuchte."],
+  ["06", "Wiederkehrende Flecken nach Renovierung", "Wenn Verfärbungen nach Streichen oder Verputzen zurückkommen, ist die Ursache in der Regel nicht beseitigt."],
+];
+
+const causes = [
+  ["Zu niedrige Abgastemperaturen", "Kühlt das Abgas auf seinem Weg durch den Schornstein zu stark ab, kann Wasserdampf kondensieren und sich an den Innenflächen niederschlagen."],
+  ["Zu großer Querschnitt", "Ist der Zug für die angeschlossene Feuerstätte zu groß, können Abgase langsamer strömen, stärker auskühlen und dadurch eher kondensieren."],
+  ["Ungeeignete Abgasführung", "Lange kalte Abschnitte, Außenwandlagen, unbeheizte Dachräume oder ungünstige Querschnittswechsel können die Abkühlung begünstigen."],
+  ["Feuchter Brennstoff", "Bei Holzfeuerungen erhöht zu feuchtes Brennmaterial die Feuchte im Abgas und verschlechtert gleichzeitig die Verbrennungsqualität."],
+  ["Unvollständige oder ungünstige Verbrennung", "Zu wenig Verbrennungsluft oder dauerhaft sehr gedrosselter Betrieb kann Abgastemperatur und Verbrennungsqualität verschlechtern."],
+  ["Fehlende Abstimmung nach Heizungstausch", "Eine moderne Feuerstätte kann deutlich andere Abgaswerte haben als die alte Anlage. Der vorhandene Schornstein passt dann nicht automatisch weiter."],
+];
+
+const errors = [
+  ["Nur überstreichen", "Sperrfarbe kann Flecken optisch verdecken, beseitigt aber keine technische Ursache im Schornstein."],
+  ["Nur von außen abdichten", "Nicht jede Feuchtigkeit kommt von Regen. Eine reine Außenabdichtung hilft nicht, wenn Kondensat aus dem Abgaszug die Ursache ist."],
+  ["Schornstein verkleinern ohne Berechnung", "Eine Querschnittsanpassung muss zur Feuerstätte, wirksamen Höhe, Abgastemperatur und Betriebsweise passen."],
+  ["Material nach Gefühl auswählen", "Edelstahl, Keramik und andere Systeme unterscheiden sich in Eignung und Einsatzbereich. Entscheidend ist die konkrete Feuerungsanlage."],
+  ["Brennstoff als alleinige Ursache annehmen", "Feuchtes Holz kann eine Rolle spielen, aber auch Querschnitt, Bauweise, Abgasführung und Anlagenbetrieb können ausschlaggebend sein."],
+  ["Schaden erst kosmetisch behandeln", "Je länger durchfeuchtetes Mauerwerk unbehandelt bleibt, desto größer kann der bauliche Folgeschaden werden."],
+];
+
+const faqs = [
+  {
+    question: "Was ist Versottung am Schornstein?",
+    answer:
+      "Versottung bezeichnet die Durchfeuchtung von Schornsteinbauteilen durch Kondensat aus dem Abgas, häufig zusammen mit Verbrennungsrückständen. Typisch sind Verfärbungen, Geruch und dauerhaft feuchte Bereiche.",
+  },
+  {
+    question: "Ist jeder braune Fleck am Schornstein Versottung?",
+    answer:
+      "Nein. Braune oder gelbliche Flecken können zu Versottung passen, aber auch andere Ursachen wie eindringendes Regenwasser, beschädigte Anschlüsse oder bauliche Mängel sind möglich. Die Ursache sollte vor einer Sanierung geklärt werden.",
+  },
+  {
+    question: "Warum entsteht Versottung nach einem Heizungstausch?",
+    answer:
+      "Moderne Heizgeräte arbeiten häufig mit niedrigeren Abgastemperaturen als ältere Anlagen. Wenn der vorhandene Schornstein für diese Betriebsweise zu groß oder zu kalt ist, kann Kondensat entstehen und in das Mauerwerk eindringen.",
+  },
+  {
+    question: "Kann man einen versotteten Schornstein einfach trocknen?",
+    answer:
+      "Trocknung kann Teil der Instandsetzung sein, reicht aber nicht aus, wenn die Ursache weiter besteht. Entscheidend ist, zuerst Kondensatbildung, Abgasführung, Querschnitt und Anlagenbetrieb zu klären.",
+  },
+  {
+    question: "Hilft ein Edelstahlrohr gegen Versottung?",
+    answer:
+      "Ein passendes Innenrohr kann Teil einer fachgerechten Sanierung sein. Ob Edelstahl geeignet ist, hängt aber von Brennstoff, Feuerstätte, Temperatur, Betriebsweise und den technischen Anforderungen ab. Das System sollte nicht pauschal ausgewählt werden.",
+  },
+  {
+    question: "Ist feuchtes Holz eine Ursache für Versottung?",
+    answer:
+      "Ja, bei Holzfeuerungen kann zu feuchter Brennstoff die Feuchte im Abgas erhöhen und die Verbrennungsqualität verschlechtern. Er ist aber nicht die einzige mögliche Ursache.",
+  },
+  {
+    question: "Wann sollte der Schornsteinfeger eingebunden werden?",
+    answer:
+      "Wenn Feuerstätte, Abgasführung oder Querschnitt geändert werden, sollte die Abstimmung frühzeitig erfolgen. Die 1. BImSchV sieht für neue und wesentlich geänderte Feuerungsanlagen Prüf- und Überwachungspflichten durch Schornsteinfeger vor.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+<article class="vs-page">
+  <header class="vs-hero">
+    <div class="container vs-hero__inner">
+      <div class="vs-breadcrumb">
+        <a href="/wissen/">Wissen</a>
+        <span aria-hidden="true">→</span>
+        <span>Versottung am Schornstein</span>
+      </div>
+
+      <p class="vs-kicker">Schadensbild · Feuchtigkeit · Kaminsanierung</p>
+
+      <h1>
+        Versottung am Schornstein.
+        <span>Ursachen erkennen statt Flecken überdecken.</span>
+      </h1>
+
+      <p class="vs-hero__lead">
+        Braune Flecken, feuchte Stellen oder unangenehmer Geruch sind Warnzeichen.
+        Entscheidend ist nicht nur, dass der Schornstein feucht ist – sondern warum
+        Kondensat und Verbrennungsrückstände überhaupt in das Bauteil gelangen.
+      </p>
+
+      <div class="vs-meta">
+        <div><span>Fachlich eingeordnet von</span><strong>Johannes Stadter · Kaminkehrermeister</strong></div>
+        <div><span>Stand</span><strong>September 2026</strong></div>
+        <div><span>Lesedauer</span><strong>ca. 9 Minuten</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="vs-answer" id="kurzantwort">
+    <div class="container vs-answer__grid">
+      <div>
+        <p class="vs-kicker">Die Kurzantwort</p>
+        <h2>Was bedeutet Versottung?</h2>
+      </div>
+
+      <div class="vs-answer__copy">
+        <p class="vs-answer__lead">
+          Versottung entsteht, wenn sich Feuchtigkeit aus dem Abgas im Schornstein
+          niederschlägt und zusammen mit Verbrennungsbestandteilen in das Mauerwerk
+          oder andere poröse Bauteile eindringt.
+        </p>
+
+        <p>
+          Typische Auslöser sind zu niedrige Abgastemperaturen, ein zu großer
+          Schornsteinquerschnitt, ungünstige Abgasführung, feuchter Brennstoff oder
+          eine Feuerstätte, die nicht zum vorhandenen Schornstein passt.
+        </p>
+
+        <p>
+          Eine dauerhafte Lösung besteht deshalb nicht darin, Flecken zu überstreichen,
+          sondern die technische Ursache zu beseitigen. Je nach Anlage kann das eine
+          Querschnittsanpassung, ein geeignetes Innenrohr, eine geänderte Betriebsweise
+          oder eine Kombination mehrerer Maßnahmen sein.
+        </p>
+
+        <div class="vs-note">
+          <strong>Merksatz:</strong>
+          Versottung ist ein Symptom. Die eigentliche Aufgabe ist, herauszufinden,
+          warum der Schornstein dauerhaft zu feucht oder zu kalt wird.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container vs-layout">
+    <aside class="vs-toc" aria-label="Inhaltsverzeichnis">
+      <p>Auf dieser Seite</p>
+      <nav>
+        {toc.map(([href, label]) => <a href={`#${href}`}>{label}</a>)}
+      </nav>
+    </aside>
+
+    <div class="vs-content">
+      <section id="anzeichen" class="vs-section">
+        <p class="vs-kicker">Schadensbild</p>
+        <h2>Woran erkennt man einen versotteten Schornstein?</h2>
+        <p>
+          Kein einzelnes Zeichen beweist automatisch eine Versottung. Treten mehrere
+          der folgenden Merkmale zusammen auf, sollte die Ursache technisch geprüft
+          werden.
+        </p>
+
+        <div class="vs-card-grid">
+          {signs.map(([number, title, text]) => (
+            <article>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="ursachen" class="vs-section">
+        <p class="vs-kicker">Technischer Zusammenhang</p>
+        <h2>Warum entsteht Versottung überhaupt?</h2>
+
+        <p>
+          Abgase enthalten Wasserdampf. Solange Temperatur und Strömungsverhältnisse
+          passen, wird dieser mit dem Abgas nach außen abgeführt. Kühlt das Abgas im
+          Schornstein jedoch stark ab, kann der Wasserdampf kondensieren. Das Kondensat
+          lagert sich an den Innenflächen ab und kann bei ungeeigneten oder geschädigten
+          Konstruktionen in das Bauteil eindringen.
+        </p>
+
+        <div class="vs-cause-list">
+          {causes.map(([title, text], index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="vs-note vs-note--light">
+          <strong>Typischer Fall:</strong>
+          Eine alte Heizung wird durch eine effizientere Anlage ersetzt. Die neue
+          Feuerstätte liefert niedrigere Abgastemperaturen. Der große gemauerte
+          Bestandsschornstein kühlt die Abgase stärker aus – Kondensat entsteht.
+        </div>
+      </section>
+
+      <section id="diagnose" class="vs-section">
+        <p class="vs-kicker">Nicht jede Feuchtigkeit ist Versottung</p>
+        <h2>Regenwasser, Kondensat oder baulicher Schaden?</h2>
+
+        <p>
+          Gerade bei Flecken am Kaminkopf oder in Dachnähe ist eine saubere
+          Ursachenklärung wichtig. Eindringendes Regenwasser kann optisch ähnlich
+          aussehen wie Kondensat aus dem Abgaszug. Auch beschädigte Abdeckungen,
+          Anschlüsse oder Mauerwerksfugen kommen als Ursache infrage.
+        </p>
+
+        <div class="vs-diagnosis">
+          <div>
+            <span>A</span>
+            <h3>Kondensat aus dem Abgas</h3>
+            <p>
+              Häufig verbunden mit zu niedrigen Abgastemperaturen, ungeeignetem
+              Querschnitt oder geänderter Feuerstätte.
+            </p>
+          </div>
+          <div>
+            <span>B</span>
+            <h3>Feuchtigkeit von außen</h3>
+            <p>
+              Möglich bei beschädigtem Kaminkopf, undichten Anschlüssen,
+              fehlender Abdeckung oder schadhaften Fugen.
+            </p>
+          </div>
+          <div>
+            <span>C</span>
+            <h3>Kombination aus beidem</h3>
+            <p>
+              In älteren Schornsteinen können mehrere Ursachen gleichzeitig
+              vorliegen. Dann reicht eine Einzelmaßnahme oft nicht aus.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sanierung" class="vs-section">
+        <p class="vs-kicker">Wann handeln?</p>
+        <h2>Wann ist eine Kaminsanierung sinnvoll?</h2>
+
+        <p>
+          Eine Sanierung wird dann sinnvoll, wenn der vorhandene Schornstein technisch
+          nicht mehr zu Feuerstätte und Betriebsweise passt oder wenn das bestehende
+          Material durch Feuchtigkeit und Ablagerungen seine Funktion nicht zuverlässig
+          erfüllt.
+        </p>
+
+        <ul class="vs-checklist">
+          <li><strong>Wiederkehrende Feuchtigkeit:</strong> Flecken oder Geruch kommen trotz Renovierung zurück.</li>
+          <li><strong>Heizungstausch:</strong> Die neue Feuerstätte hat deutlich niedrigere Abgastemperaturen als die alte Anlage.</li>
+          <li><strong>Zu großer Bestandsschornstein:</strong> Der vorhandene Querschnitt passt nicht zur neuen Abgasmenge.</li>
+          <li><strong>Beschädigte Innenflächen:</strong> Schamotte, Fugen oder Mauerwerk sind angegriffen.</li>
+          <li><strong>Technische Änderung geplant:</strong> Brennstoff, Feuerstätte oder Betriebsweise ändern sich.</li>
+        </ul>
+
+        <p>
+          Ob tatsächlich saniert werden muss und welches System geeignet ist, lässt
+          sich nur anhand der konkreten Feuerstätte, des Schornsteins und der
+          geplanten Betriebsweise entscheiden.
+        </p>
+      </section>
+
+      <section id="systeme" class="vs-section">
+        <p class="vs-kicker">Lösungswege</p>
+        <h2>Welche Sanierungswege kommen infrage?</h2>
+
+        <div class="vs-system-grid">
+          <article>
+            <span>01</span>
+            <h3>Querschnitt anpassen</h3>
+            <p>
+              Ein kleinerer, zur Feuerstätte passender Querschnitt kann Strömung und
+              thermische Verhältnisse verbessern.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Geeignetes Innenrohr einbauen</h3>
+            <p>
+              Je nach Anlage kommen unterschiedliche Werkstoffe und Systeme infrage.
+              Entscheidend sind Brennstoff, Temperatur, Kondensat und Betriebsweise.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Bauliche Schäden instand setzen</h3>
+            <p>
+              Sind zusätzlich Mauerwerk, Fugen oder Kaminkopf geschädigt, müssen diese
+              Bereiche separat fachgerecht instand gesetzt werden.
+            </p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Anlage und Betrieb abstimmen</h3>
+            <p>
+              Feuerstätte, Verbrennungsluft, Brennstoff und Betriebsweise müssen zum
+              sanierten Schornsteinsystem passen.
+            </p>
+          </article>
+        </div>
+
+        <a class="vs-inline-link" href="/kaminsanierung/">
+          Unsere Leistung Kaminsanierung ansehen <span>→</span>
+        </a>
+      </section>
+
+      <section id="fehler" class="vs-section">
+        <p class="vs-kicker">Was oft nicht funktioniert</p>
+        <h2>Typische Fehler bei versotteten Schornsteinen.</h2>
+
+        <div class="vs-error-list">
+          {errors.map(([title, text], index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="vs-section vs-author">
+        <div class="vs-author__label">Fachliche Einordnung</div>
+        <div>
+          <h2>Versottung lässt sich nicht sinnvoll nach Foto allein behandeln.</h2>
+          <p>
+            Verfärbung und Geruch zeigen, dass etwas nicht stimmt. Für die richtige
+            Maßnahme muss aber geklärt werden, ob die Ursache im Abgasbetrieb,
+            im Schornsteinquerschnitt, im Brennstoff, in der Feuerstätte oder in
+            einem baulichen Feuchteeintrag liegt.
+          </p>
+          <p>
+            <strong>Fachlich eingeordnet von Johannes Stadter,
+            Kaminkehrermeister.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section id="faq" class="vs-section">
+        <p class="vs-kicker">Häufige Fragen</p>
+        <h2>Versottung kurz beantwortet.</h2>
+
+        <div class="vs-faq">
+          {faqs.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section class="vs-section vs-sources">
+        <p class="vs-kicker">Fachliche Grundlagen</p>
+        <h2>Worauf sich dieser Artikel stützt.</h2>
+
+        <div class="vs-source-list">
+          <article>
+            <h3>1. BImSchV</h3>
+            <p>
+              Die Verordnung enthält Anforderungen und Überwachungspflichten für
+              kleine und mittlere Feuerungsanlagen. Bei Messungen werden unter
+              anderem Abgastemperatur, Sauerstoffgehalt und Druckdifferenz erfasst.
+            </p>
+            <a
+              href="https://www.gesetze-im-internet.de/bimschv_1_2010/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gesetzestext öffnen ↗
+            </a>
+          </article>
+
+          <article>
+            <h3>Schornsteinfeger-Handwerk</h3>
+            <p>
+              Neue und wesentlich geänderte Feuerungsanlagen unterliegen je nach
+              Fall Prüf- und Überwachungspflichten durch Schornsteinfeger.
+            </p>
+            <a
+              href="https://www.gesetze-im-internet.de/bimschv_1_2010/__14.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              § 14 1. BImSchV öffnen ↗
+            </a>
+          </article>
+        </div>
+
+        <p class="vs-sources__note">
+          Dieser Beitrag dient der fachlichen Orientierung. Eine belastbare
+          Sanierungsentscheidung erfordert die konkrete Bewertung von Feuerstätte,
+          Schornstein, Betriebsweise und Schadensbild.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <section class="vs-related">
+    <div class="container">
+      <div class="vs-related__head">
+        <p class="vs-kicker">Passende Themen</p>
+        <h2>Wenn aus dem Schadensbild ein konkretes Projekt wird.</h2>
+      </div>
+
+      <div class="vs-related__grid">
+        <a href="/kaminsanierung/">
+          <span>01</span>
+          <h3>Kaminsanierung</h3>
+          <p>Wenn der vorhandene Schornstein technisch an die Feuerstätte angepasst werden muss.</p>
+          <strong>Leistung ansehen →</strong>
+        </a>
+
+        <a href="/bauliche-maengel-schornstein/">
+          <span>02</span>
+          <h3>Bauliche Mängel</h3>
+          <p>Wenn zusätzlich Risse, Feuchtigkeit oder beschädigtes Mauerwerk vorhanden sind.</p>
+          <strong>Schadensbilder ansehen →</strong>
+        </a>
+
+        <a href="/kaminkopfsanieren/">
+          <span>03</span>
+          <h3>Kaminkopf sanieren</h3>
+          <p>Wenn die Feuchtigkeit möglicherweise von außen oder aus dem Dachbereich kommt.</p>
+          <strong>Leistung ansehen →</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-cta">
+    <div class="container vs-cta__inner">
+      <div>
+        <p class="vs-kicker vs-kicker--light">Unsicher bei der Ursache?</p>
+        <h2>Wir prüfen, warum Ihr Schornstein feucht oder verfärbt ist.</h2>
+        <p>
+          Senden Sie uns Fotos des Schadens, Angaben zur Feuerstätte und – wenn
+          vorhanden – Informationen zur bisherigen Nutzung. Wir können die Situation
+          einordnen und den nächsten sinnvollen Schritt festlegen.
+        </p>
+      </div>
+
+      <a href="/projekt-starten/?projekt=versottung">
+        Schaden prüfen lassen <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</article>

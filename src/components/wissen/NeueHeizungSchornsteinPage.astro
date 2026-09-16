@@ -1,0 +1,85 @@
+---
+import "../../styles/pages/wissen-neue-heizung-schornstein.css";
+
+const pageUrl="https://www.stadter-kamin.de/wissen/neue-heizung-schornstein-sanieren/";
+const schema={
+  "@context":"https://schema.org",
+  "@type":"Article",
+  headline:"Neue Heizung: Muss der Schornstein saniert werden?",
+  description:"Praxisleitfaden dazu, wann ein vorhandener Schornstein nach einem Heizungstausch weiter genutzt werden kann und wann eine Sanierung erforderlich ist.",
+  inLanguage:"de-DE",
+  datePublished:"2026-09-11",
+  dateModified:"2026-09-11",
+  mainEntityOfPage:{"@type":"WebPage","@id":pageUrl},
+  author:{"@type":"Person",name:"Johannes Stadter",jobTitle:"Kaminkehrermeister"},
+  publisher:{"@type":"Organization",name:"Stadter Kamintechnik GmbH",url:"https://www.stadter-kamin.de/"}
+};
+
+const cases=[
+  ["01","Bestehender Schornstein passt weiter","Wenn Querschnitt, Höhe, Material, Dichtheit und Betriebsweise zur neuen Feuerstätte passen, kann der vorhandene Schornstein weiter nutzbar sein."],
+  ["02","Querschnittsanpassung nötig","Moderne Feuerstätten können deutlich andere Abgaswerte haben. Ein zu großer oder thermisch ungünstiger Bestand kann Kondensat und Betriebsprobleme begünstigen."],
+  ["03","Innenrohr oder neues Abgassystem sinnvoll","Wenn der Bestand technisch nicht geeignet ist, kann ein passendes Innenrohr oder ein neues Abgassystem die dauerhaft sichere Lösung sein."],
+  ["04","Bauliche Schäden müssen zusätzlich gelöst werden","Risse, Feuchtigkeit oder Schäden am Kaminkopf sind keine reine Querschnittsfrage und müssen separat bewertet werden."],
+];
+
+const fuelTypes=[
+  ["Pellet- oder Holzheizung","Bei festen Brennstoffen muss die Abgasanlage zum Temperatur- und Betriebsverhalten passen. Außerdem gelten für neue Anlagen besondere Anforderungen an Schornstein und Mündung."],
+  ["Gas- oder Ölheizung","Bei niedrigen Abgastemperaturen und kondensierendem Betrieb ist eine feuchteunempfindliche, zur Anlage passende Abgasführung besonders wichtig."],
+  ["Brennwertgerät","Brennwerttechnik erzeugt planmäßig Kondensat. Deshalb muss die Abgasführung für diesen Betrieb geeignet und entsprechend ausgeführt sein."],
+  ["Wärmepumpe","Eine reine Wärmepumpe benötigt keine Abgasanlage. Wird ein vorhandener Schornstein dadurch frei, kann er je nach Gebäude anderweitig genutzt, stillgelegt oder baulich angepasst werden."],
+];
+
+const errors=[
+  ["Neue Heizung bestellen, bevor der Schornstein geprüft ist","Die Feuerstätte und die Abgasanlage bilden technisch ein System. Eine frühe Prüfung verhindert Überraschungen nach der Bestellung."],
+  ["Nur den Durchmesser anschauen","Auch wirksame Höhe, Material, Dichtheit, Temperatur, Kondensat und Betriebsweise sind relevant."],
+  ["Alten Schornstein automatisch weiterverwenden","Nur weil eine alte Anlage funktioniert hat, passt der Bestand nicht zwingend zur neuen Technik."],
+  ["Versottung nur kosmetisch behandeln","Wenn Kondensat die Ursache ist, muss die Abgasführung technisch angepasst werden – nicht nur die sichtbare Oberfläche."],
+  ["Schornsteinfeger erst nach der Montage einbinden","In Bayern darf eine Feuerstätte erst in Betrieb genommen werden, wenn die Tauglichkeit und sichere Benutzbarkeit der Abgasanlage bescheinigt ist."],
+];
+
+const faqs=[
+  ["Muss bei jeder neuen Heizung der Schornstein saniert werden?","Nein. Wenn der vorhandene Schornstein technisch zur neuen Feuerstätte passt, kann er weiter genutzt werden. Entscheidend sind unter anderem Querschnitt, Höhe, Material, Dichtheit und Betriebsweise."],
+  ["Warum kann eine moderne Heizung Probleme mit einem alten Schornstein verursachen?","Moderne Geräte arbeiten oft effizienter und mit anderen Abgastemperaturen und Abgasmengen. Dadurch können sich die Strömungs- und Feuchteverhältnisse im vorhandenen Schornstein verändern."],
+  ["Braucht ein Brennwertgerät einen sanierten Schornstein?","Ein Brennwertgerät benötigt eine für kondensierenden Betrieb geeignete Abgasführung. Ob der vorhandene Schornstein dafür genutzt, mit einem geeigneten System saniert oder anders gelöst wird, hängt vom Bestand ab."],
+  ["Was passiert mit dem Schornstein bei einer Wärmepumpe?","Eine reine Wärmepumpe erzeugt keine Verbrennungsabgase und benötigt deshalb keinen Schornstein. Ein bestehender Schornstein kann je nach Gebäude stillgelegt, anderweitig genutzt oder zurückgebaut werden."],
+  ["Wer prüft, ob der vorhandene Schornstein geeignet ist?","Die Eignung wird im Rahmen der technischen Planung geprüft. In Bayern muss vor Inbetriebnahme einer Feuerstätte zudem die Tauglichkeit und sichere Benutzbarkeit der Abgasanlage durch den bevollmächtigten Bezirksschornsteinfeger bescheinigt werden."],
+];
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+<article class="nh">
+<header class="nh-hero"><div class="container">
+<div class="nh-breadcrumb"><a href="/wissen/">Wissen</a><span>→</span><span>Neue Heizung & Schornstein</span></div>
+<p class="nh-kicker">Heizungstausch · Kaminsanierung · Abgastechnik</p>
+<h1>Neue Heizung:<span>Muss der Schornstein saniert werden?</span></h1>
+<p class="nh-lead">Nicht automatisch. Aber die neue Feuerstätte kann völlig andere Abgasbedingungen erzeugen als die alte Anlage. Deshalb muss geprüft werden, ob <strong>Querschnitt, Höhe, Material und Betriebsweise des bestehenden Schornsteins noch passen.</strong></p>
+<div class="nh-meta"><div><span>Fachlich eingeordnet von</span><strong>Johannes Stadter · Kaminkehrermeister</strong></div><div><span>Aktualisiert</span><strong>September 2026</strong></div></div>
+</div></header>
+
+<section class="nh-answer"><div class="container nh-grid"><div><p class="nh-kicker light">Die Kurzantwort</p><h2>Muss der Kamin bei einer neuen Heizung saniert werden?</h2></div><div>
+<p class="nh-answer-lead"><strong>Nur wenn der vorhandene Schornstein technisch nicht mehr zur neuen Feuerstätte passt.</strong> Typische Gründe sind ein ungeeigneter Querschnitt, zu niedrige Abgastemperaturen, Kondensat, fehlende Feuchtebeständigkeit oder bauliche Schäden.</p>
+<p>Vor dem Heizungstausch sollte deshalb nicht nur der Wärmeerzeuger betrachtet werden, sondern immer auch die Abgasanlage.</p>
+<aside><strong>Praxisregel:</strong> Erst Feuerstätte und Schornstein gemeinsam prüfen, dann bestellen und umbauen.</aside>
+</div></div></section>
+
+<div class="container nh-content">
+<section><p class="nh-kicker">Vier typische Fälle</p><h2>Was nach einem Heizungstausch passieren kann.</h2><div class="nh-cards">{cases.map(([n,t,x])=><article><span>{n}</span><h3>{t}</h3><p>{x}</p></article>)}</div></section>
+
+<section><p class="nh-kicker">Warum sich die Bedingungen ändern</p><h2>Neue Technik verändert das Abgas.</h2><p>Wird eine alte Heizungsanlage ersetzt, ändern sich häufig Abgastemperatur, Abgasmenge, Feuchtegehalt und Betriebsweise. Genau diese Größen beeinflussen, wie sich das Abgas im Schornstein verhält.</p><p>Ist der vorhandene Zug beispielsweise sehr groß und die neue Anlage arbeitet mit niedrigeren Abgastemperaturen, kann das Abgas stärker auskühlen. Dadurch kann Kondensat entstehen. Bei ungeeigneten Bestandskonstruktionen sind Feuchtigkeit und Versottung mögliche Folgen.</p><a class="nh-feature" href="/wissen/versottung-schornstein-ursachen-sanierung/"><span>Passender Fachartikel</span><strong>Versottung am Schornstein: Ursachen und Sanierung →</strong></a></section>
+
+<section><p class="nh-kicker">Nach Heizsystem</p><h2>Was ändert sich bei Pellet, Holz, Gas, Öl oder Wärmepumpe?</h2><div class="nh-fuels">{fuelTypes.map(([t,x])=><article><h3>{t}</h3><p>{x}</p></article>)}</div></section>
+
+<section><p class="nh-kicker">Recht & Betriebssicherheit</p><h2>Die Abgasanlage muss zur Feuerstätte passen.</h2><p>Die Bayerische Feuerungsverordnung verlangt, dass Abgasanlagen nach lichtem Querschnitt und Höhe sowie – soweit erforderlich – nach Wärmedurchlasswiderstand und Beschaffenheit der inneren Oberfläche so bemessen sind, dass die Abgase in allen bestimmungsgemäßen Betriebszuständen sicher ins Freie abgeführt werden.</p><p>Für feste Brennstoffe müssen die Abgase in Schornsteine eingeleitet werden. Für flüssige und gasförmige Brennstoffe sind auch Abgasleitungen zulässig. Welche konkrete Ausführung passt, hängt von der Feuerstätte und dem Gebäude ab.</p><div class="nh-note"><strong>Für Bayern wichtig:</strong> Eine Feuerstätte darf erst in Betrieb genommen werden, wenn der bevollmächtigte Bezirksschornsteinfeger die Tauglichkeit und sichere Benutzbarkeit der Abgasanlage bescheinigt hat.</div></section>
+
+<section><p class="nh-kicker">Kaminsanierung</p><h2>Wann wird eine Sanierung wahrscheinlich?</h2><ul class="nh-list"><li>der vorhandene Schornsteinquerschnitt passt nicht zur neuen Feuerstätte</li><li>es entsteht Kondensat oder der Bestand ist dafür nicht geeignet</li><li>der Schornstein ist bereits feucht oder versottet</li><li>Innenflächen oder Schamotterohre sind beschädigt</li><li>die neue Feuerstätte stellt andere Anforderungen an Temperatur, Druck oder Material</li><li>eine neue Mündungshöhe oder andere Abgasführung wird erforderlich</li></ul><a class="nh-feature" href="/wissen/kaminsanierung-kosten/"><span>Kosten aus unserer Praxis</span><strong>Was kostet eine Kaminsanierung? →</strong></a></section>
+
+<section><p class="nh-kicker">Typische Fehler</p><h2>Was wir beim Heizungstausch vermeiden würden.</h2><ol class="nh-errors">{errors.map(([t,x],i)=><li><span>0{i+1}</span><div><strong>{t}</strong><p>{x}</p></div></li>)}</ol></section>
+
+<section class="nh-author"><p class="nh-kicker">Aus unserer Praxis</p><h2>Der Schornstein ist Teil der Heizungsanlage.</h2><p>Ein moderner Wärmeerzeuger kann technisch hervorragend sein und trotzdem nicht zum vorhandenen Schornstein passen. Deshalb betrachten wir bei einem Heizungstausch nicht nur das neue Gerät, sondern immer die gesamte Abgasführung.</p><strong>Johannes Stadter · Kaminkehrermeister</strong></section>
+
+<section><p class="nh-kicker">Häufige Fragen</p><h2>Heizungstausch und Schornstein kurz beantwortet.</h2><div class="nh-faq">{faqs.map(([q,a])=><details><summary>{q}</summary><p>{a}</p></details>)}</div></section>
+
+<section><p class="nh-kicker">Weiterlesen</p><h2>Passende Themen.</h2><div class="nh-related"><a href="/wissen/versottung-schornstein-ursachen-sanierung/"><span>Schadensbild</span><strong>Versottung verstehen →</strong></a><a href="/wissen/kaminsanierung-kosten/"><span>Kosten</span><strong>Was kostet eine Kaminsanierung? →</strong></a><a href="/kaminsanierung/"><span>Leistung</span><strong>Kaminsanierung ansehen →</strong></a></div></section>
+</div>
+
+<section class="nh-cta"><div class="container nh-grid"><div><p class="nh-kicker light">Heizungstausch geplant?</p><h2>Wir prüfen, ob Ihr vorhandener Schornstein zur neuen Anlage passt.</h2><p>Senden Sie uns Angaben zur neuen Feuerstätte sowie Fotos und vorhandene Unterlagen zum Schornstein.</p></div><a href="/projekt-starten/?projekt=heizungstausch-schornstein">Projekt prüfen lassen →</a></div></section>
+</article>

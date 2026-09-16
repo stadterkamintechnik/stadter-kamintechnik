@@ -1,0 +1,98 @@
+---
+import "../../styles/pages/lp-kaminbauer.css";
+
+const solutions = [
+  ["Sanieren", "Feucht, versottet, beschädigt oder für die neue Heizung ungeeignet?", "/projekt-starten/?projekt=kaminsanierung"],
+  ["Nachrüsten", "Kein passender Schornstein für Kaminofen oder neue Feuerstätte vorhanden?", "/projekt-starten/?projekt=schornstein-nachruesten"],
+  ["Außenkamin", "Edelstahlkamin außen am Bestandsgebäude nachrüsten.", "/projekt-starten/?projekt=aussenkamin"],
+  ["Verlängern", "Die vorhandene Schornsteinmündung reicht nicht aus?", "/projekt-starten/?projekt=kaminverlaengerung"],
+];
+
+const steps = [
+  ["1", "Fotos senden", "Projekt kurz beschreiben und vorhandene Fotos mitsenden."],
+  ["2", "Wir prüfen", "Wir klären, welche technische Lösung zu Gebäude und Feuerstätte passt."],
+  ["3", "Angebot", "Sie erhalten ein nachvollziehbares Angebot für die passende Lösung."],
+  ["4", "Montage", "Unsere eigenen Teams setzen das Projekt fachgerecht um."],
+];
+---
+
+<article class="kb">
+  <section class="kb-hero">
+    <div class="container">
+      <p class="kb-kicker">Kaminbauer in Nordbayern · Meisterbetrieb</p>
+      <h1>Probleme mit dem Schornstein?<span>Wir lösen sie.</span></h1>
+      <p class="kb-lead">Sanieren, nachrüsten, verlängern oder neu bauen – wir finden die technisch passende Lösung für Ihr Gebäude.</p>
+
+      <div class="kb-actions">
+        <a class="kb-primary" href="/projekt-starten/?projekt=kaminbauer">Projekt prüfen lassen <span>→</span></a>
+        <a class="kb-phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+
+      <figure class="kb-hero-image">
+        <img src="/images/referenzen/zwei-edelstahl-aussenkamine/zwei-edelstahl-aussenkamine-fassade.webp" alt="Zwei parallel montierte schwarze Edelstahlschornsteine an einer Backsteinfassade" width="1600" height="1067" decoding="async" fetchpriority="high" />
+        <figcaption>Reales Projekt · Zwei Außenkamine für neue Heizungsanlagen</figcaption>
+      </figure>
+
+      <div class="kb-trust">
+        <div><strong>10.000+</strong><span>Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>Fachplanung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-solutions">
+    <div class="container">
+      <p class="kb-kicker">Was können wir für Sie lösen?</p>
+      <h2>Sie müssen die Fachlösung noch nicht kennen.</h2>
+      <div class="kb-solution-grid">
+        {solutions.map(([title,text,href]) => (
+          <a class="kb-solution" href={href}>
+            <div><h3>{title}</h3><p>{text}</p></div><span>→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-proof">
+    <div class="container">
+      <figure>
+        <img src="/images/referenzen/zwei-edelstahl-aussenkamine/neue-heizungsanlage.webp" alt="Neue Heizungsanlage mit nachgerüsteter Abgasführung in einem Bestandsgebäude" width="1200" height="900" loading="lazy" decoding="async" />
+      </figure>
+      <div class="kb-proof-copy">
+        <p class="kb-kicker">Probleme lösen statt Produkte verkaufen.</p>
+        <h2>Erst die Aufgabe.<br />Dann die Lösung.</h2>
+        <p>Wir betrachten Feuerstätte, Gebäude und Schornstein gemeinsam. So entsteht keine Standardlösung, sondern eine Anlage, die zur tatsächlichen Situation passt.</p>
+        <a href="/referenzen/">Echte Projekte ansehen <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-process">
+    <div class="container">
+      <p class="kb-kicker">Vom Problem zur Lösung</p>
+      <h2>So einfach starten Sie.</h2>
+      <ol>
+        {steps.map(([n,title,text]) => (
+          <li><span>{n}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="kb-final">
+    <div class="container">
+      <p class="kb-kicker">Bayreuth · Kulmbach · Bamberg · Coburg · Nordbayern</p>
+      <h2>Zeigen Sie uns Ihren Schornstein.</h2>
+      <p>Ein paar Angaben und Fotos reichen für den Einstieg. Wir kümmern uns um die technische Lösung.</p>
+      <a class="kb-primary kb-primary--light" href="/projekt-starten/?projekt=kaminbauer">Projekt &amp; Fotos senden <span>→</span></a>
+      <a class="kb-final-phone" href="tel:+4992289989000">Oder anrufen: 09228 998900-0</a>
+    </div>
+  </section>
+
+  <nav class="kb-sticky" aria-label="Schnellkontakt">
+    <a href="tel:+4992289989000">Anrufen</a>
+    <a href="/projekt-starten/?projekt=kaminbauer">Projekt starten <span>→</span></a>
+  </nav>
+</article>

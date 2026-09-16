@@ -1,0 +1,32 @@
+---
+import "../../styles/pages/wissen-kaminsanierung-kosten.css";
+const prices=[
+["Einfache Kaminsanierung","Übliche Länge, gute Zugänglichkeit und überschaubare Anschlussarbeiten","ca. 2.400 €"],
+["Längerer Schornstein / höherer Aufwand","Mehr Rohrlänge oder zusätzlicher Montage- und Anschlussaufwand","ca. 3.000–3.600 €"],
+["Komplexe Kaminsanierung","Aufwendige Zugänglichkeit sowie zusätzliche Anschluss-, Dach- oder Nebenarbeiten","ca. 3.600–6.000 €"]
+];
+const factors=[
+["Länge des Schornsteins","Mehr Länge bedeutet mehr Material und meist mehr Montageaufwand."],
+["Querschnitt","Der erforderliche Durchmesser richtet sich nach Feuerstätte, Brennstoff, wirksamer Höhe und Betriebsweise."],
+["Sanierungssystem","Werkstoff und Ausführung müssen zur Feuerungsanlage und den Abgasbedingungen passen."],
+["Zugänglichkeit","Schwierige Dach- oder Gebäudesituationen erhöhen den Montageaufwand."],
+["Anschlussarbeiten","Feuerstättenanschlüsse, Reinigungsöffnungen und Anpassungen beeinflussen den Gesamtpreis."],
+["Zusätzliche Arbeiten","Bauliche Schäden, Dacharbeiten oder besondere Einbausituationen können zusätzlichen Aufwand verursachen."]
+];
+const schema={"@context":"https://schema.org","@type":"Article",headline:"Was kostet eine Kaminsanierung? Preise, Beispiele und Kostenfaktoren",datePublished:"2026-09-11",dateModified:"2026-09-11",author:{"@type":"Person",name:"Johannes Stadter",jobTitle:"Kaminkehrermeister"},publisher:{"@type":"Organization",name:"Stadter Kamintechnik GmbH"}};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+<article class="kc">
+<header class="kc-hero"><div class="container"><p class="kc-kicker">Kosten · Kaminsanierung · Praxiswerte</p><h1>Was kostet eine Kaminsanierung?<span>Konkrete Preise statt „kommt darauf an“.</span></h1><p class="lead">Eine Kaminsanierung kostet bei einem typischen Einfamilienhaus häufig <strong>etwa 2.400 bis 3.600 Euro inklusive Mehrwertsteuer.</strong> Komplexe Projekte können bei etwa 3.600 bis 6.000 Euro liegen.</p><div class="meta"><span>Johannes Stadter · Kaminkehrermeister</span><span>Preisstand September 2026</span><span>Alle Preise inkl. 19 % MwSt.</span></div></div></header>
+<section class="answer"><div class="container grid"><div><p class="kc-kicker light">Die Kurzantwort</p><h2>Mit welchen Kosten muss ich rechnen?</h2></div><div><p class="big">Eine einfache Kaminsanierung beginnt in unserer Praxis bei rund <strong>2.400 € brutto</strong>. Bei längeren Schornsteinen oder höherem Montageaufwand liegen typische Projekte bei <strong>3.000 bis 3.600 € brutto</strong>. Komplexe Sanierungen können <strong>3.600 bis 6.000 € brutto</strong> kosten.</p><p>Entscheidend sind Länge, Querschnitt, Feuerstätte, Sanierungssystem, Anschlüsse und Zugänglichkeit.</p><aside><strong>Wichtig:</strong> Das sind typische Erfahrungswerte aus unseren Projekten und keine Pauschal- oder Festpreise.</aside></div></div></section>
+<div class="container content">
+<section><p class="kc-kicker">Orientierung</p><h2>Typische Kosten einer Kaminsanierung.</h2><p>Statt einer theoretischen Internet-Preisspanne zeigen wir Größenordnungen, die wir aus realen Sanierungsprojekten kennen.</p><div class="prices">{prices.map(([t,d,p],i)=><article><span>0{i+1}</span><div><h3>{t}</h3><p>{d}</p></div><strong>{p}</strong></article>)}</div><small>Alle Preisangaben inklusive 19 % Mehrwertsteuer.</small></section>
+<section><p class="kc-kicker">Kostenfaktoren</p><h2>Warum kostet nicht jede Kaminsanierung gleich viel?</h2><div class="cards">{factors.map(([t,d],i)=><article><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></article>)}</div></section>
+<section><p class="kc-kicker">Gesamtprojekt statt Meterpreis</p><h2>Was steckt hinter dem Preis?</h2><p>Eine Kaminsanierung besteht nicht nur aus einigen Metern Rohr. Zuerst muss geklärt werden, welches System technisch zur Feuerstätte und zum vorhandenen Schornstein passt. Danach wird es fachgerecht in den Bestand integriert.</p><div class="checks"><div><strong>Technische Auslegung</strong><span>System und Dimension passend zur Nutzung.</span></div><div><strong>Sanierungssystem</strong><span>Rohrsystem und erforderliche Formteile.</span></div><div><strong>Montage</strong><span>Einbau und Anpassung an den Bestand.</span></div><div><strong>Anschlussdetails</strong><span>Feuerstättenanschluss, Reinigungsöffnungen und Übergänge.</span></div></div></section>
+<section><p class="kc-kicker">Mehr Aufwand</p><h2>Wann wird es teurer?</h2><ul><li>sehr lange Schornsteinzüge</li><li>schwieriger Zugang zur Schornsteinmündung</li><li>aufwendige Feuerstättenanschlüsse</li><li>bauliche Schäden am vorhandenen Schornstein</li><li>Arbeiten im Dach- oder Kaminkopfbereich</li><li>besondere technische Anforderungen der Feuerstätte</li></ul></section>
+<section><p class="kc-kicker">Entscheidung</p><h2>Kaminsanierung oder neuer Schornstein?</h2><p>Ist der vorhandene Schornstein baulich geeignet, aber technisch nicht mehr passend zur Feuerstätte, ist eine Sanierung häufig die naheliegende Lösung. Bei stark geschädigtem oder grundsätzlich ungeeignetem Bestand kann ein neues Abgassystem sinnvoller sein.</p><div class="links"><a href="/kaminsanierung/">Kaminsanierung ansehen →</a><a href="/aussenkamin/">Außenkamin ansehen →</a></div></section>
+<section><p class="kc-kicker">Aus unserer Praxis</p><h2>Warum wir konkrete Preise nennen.</h2><p>Wer nach den Kosten einer Kaminsanierung sucht, braucht zuerst eine realistische Größenordnung. Diese Werte basieren auf typischen Projekten aus unserer Praxis. Sie ersetzen kein individuelles Angebot, zeigen privaten Bauherren aber, mit welcher Investition ungefähr zu rechnen ist.</p><strong>Johannes Stadter · Kaminkehrermeister</strong></section>
+<section><p class="kc-kicker">Weiterlesen</p><h2>Passende Fachartikel.</h2><div class="links"><a href="/wissen/versottung-schornstein-ursachen-sanierung/">Versottung: Ursachen und Sanierung →</a><a href="/wissen/schornsteinhoehe-bimschv-vdi-3781-4/">Wie hoch muss ein Schornstein sein? →</a></div></section>
+</div>
+<section class="cta"><div class="container grid"><div><p class="kc-kicker light">Konkretes Projekt</p><h2>Was kostet Ihre Kaminsanierung?</h2><p>Schicken Sie uns die wichtigsten Angaben und vorhandene Fotos oder Unterlagen. Dann können wir Ihr Projekt konkret beurteilen.</p></div><a href="/projekt-starten/?projekt=kaminsanierung">Projekt anfragen →</a></div></section>
+</article>
