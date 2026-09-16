@@ -172,6 +172,8 @@ const galleryImages = [
   }
 
   .reference-hero-portrait__content {
+    width: 100%;
+    min-width: 0;
     max-width: 680px;
   }
 
@@ -186,10 +188,13 @@ const galleryImages = [
   }
 
   .reference-hero-portrait h1 {
+    max-width: 100%;
     margin: 0;
     font-size: clamp(3rem, 5.2vw, 5.5rem);
     line-height: 0.98;
     letter-spacing: -0.055em;
+    overflow-wrap: anywhere;
+    hyphens: auto;
   }
 
   .reference-hero-portrait__location {
@@ -294,6 +299,14 @@ const galleryImages = [
 
     .project-gallery-custom__item {
       width: min(100%, 420px);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .reference-hero-portrait h1 {
+      font-size: clamp(2.25rem, 10.5vw, 2.75rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
     }
   }
 </style>

@@ -15,6 +15,34 @@ interface Props {
 }
 
 const { projects } = Astro.props as Props;
+
+const projectOrder = [
+  "/referenzen/aussenwandkamin-fertighaus-bayreuth",
+  "/referenzen/kaminsanierung-versotteter-schornstein-holzheizung-nuernberg",
+  "/referenzen/abgasanlage-pelletkessel-staatsarchiv-bamberg",
+  "/referenzen/freistehender-stahlschornstein-dampfkessel-heizzentrale",
+  "/referenzen/edelstahl-abgasanlagen-heisswasserkessel-muenchen",
+  "/referenzen/abgasanlage-automobilzulieferer-hof",
+  "/referenzen/kaminanlage-energiebox-michelau",
+  "/referenzen/heizzentrale-hackschnitzelkessel-heinersreuth",
+  "/referenzen/kaminsanierung-pelletheizung-forchheim",
+  "/referenzen/edelstahl-aussenkamin-kaminofen-landkreis-hof",
+  "/referenzen/leichtbaukamin-neubau-edelstahlschornstein",
+  "/referenzen/kaminsanierung-gemauerter-schornstein-heizungsanlage",
+  "/referenzen/kaminverlaengerung-kaminofen-pegnitz",
+];
+
+const priority = new Map(projectOrder.map((href, index) => [href, index]));
+const orderedProjects = projects
+  .map((project, originalIndex) => ({ project, originalIndex }))
+  .sort((a, b) => {
+    const aPriority = priority.get(a.project.href) ?? projectOrder.length + a.originalIndex;
+    const bPriority = priority.get(b.project.href) ?? projectOrder.length + b.originalIndex;
+    return aPriority - bPriority;
+  })
+  .map(({ project }) => project);
+
+const filters = ["Alle", "Privat", "Gewerbe", "Industrie"] as const;
 ---
 
 <section
@@ -43,10 +71,25 @@ const { projects } = Astro.props as Props;
       </div>
     </header>
 
-    <div class="stk-reference-overview__grid">
+    <nav class="stk-reference-filter" aria-label="Referenzen filtern">
       {
-        projects.map((project, index) => (
-          <article class="stk-reference-card">
+        filters.map((filter, index) => (
+          <button
+            class="stk-reference-filter__button"
+            type="button"
+            data-reference-filter={filter}
+            aria-pressed={index === 0 ? "true" : "false"}
+          >
+            {filter}
+          </button>
+        ))
+      }
+    </nav>
+
+    <div class="stk-reference-overview__grid" data-reference-grid>
+      {
+        orderedProjects.map((project, index) => (
+          <article class="stk-reference-card" data-reference-category={project.category}>
             <a
               class="stk-reference-card__link"
               href={project.href}
@@ -162,6 +205,47 @@ const { projects } = Astro.props as Props;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
+  }
+
+  .stk-reference-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+  }
+
+  .stk-reference-filter__button {
+    min-height: 2.75rem;
+    padding: 0.7rem 1.15rem;
+    border: 1px solid rgba(25, 25, 25, 0.14);
+    border-radius: 999px;
+    background: transparent;
+    color: #3f3c39;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 750;
+    cursor: pointer;
+    transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+  }
+
+  .stk-reference-filter__button:hover {
+    border-color: rgba(143, 29, 34, 0.45);
+    color: #8f1d22;
+  }
+
+  .stk-reference-filter__button[aria-pressed="true"] {
+    border-color: #8f1d22;
+    background: #8f1d22;
+    color: #ffffff;
+  }
+
+  .stk-reference-filter__button:focus-visible {
+    outline: 3px solid rgba(143, 29, 34, 0.28);
+    outline-offset: 3px;
+  }
+
+  .stk-reference-card[hidden] {
+    display: none;
   }
 
   .stk-reference-card {
@@ -365,3 +449,29 @@ const { projects } = Astro.props as Props;
     }
   }
 </style>
+
+<script>
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>(
+    "[data-reference-filter]",
+  );
+  const referenceCards = document.querySelectorAll<HTMLElement>(
+    "[data-reference-category]",
+  );
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedFilter = button.dataset.referenceFilter ?? "Alle";
+
+      filterButtons.forEach((item) => {
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+
+      referenceCards.forEach((card) => {
+        const isVisible =
+          selectedFilter === "Alle" ||
+          card.dataset.referenceCategory === selectedFilter;
+        card.hidden = !isVisible;
+      });
+    });
+  });
+</script>

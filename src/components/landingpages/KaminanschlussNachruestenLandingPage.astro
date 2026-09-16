@@ -1,0 +1,98 @@
+---
+import "../../styles/pages/lp-kaminbauer.css";
+
+const situations = [
+  ["Neuer Kaminofen", "Der geplante Kaminofen benötigt einen passenden Anschluss an den vorhandenen Schornstein?", "/projekt-starten/?projekt=kaminsanierung"],
+  ["Anschluss sitzt falsch", "Die vorhandene Öffnung passt in Höhe, Durchmesser oder Lage nicht zur neuen Feuerstätte?", "/projekt-starten/?projekt=kaminsanierung"],
+  ["Ofen wird versetzt", "Der Aufstellort ändert sich und der Schornsteinanschluss muss angepasst werden?", "/projekt-starten/?projekt=kaminsanierung"],
+  ["Alter Anschluss bleibt zurück", "Eine nicht mehr benötigte Öffnung soll fachgerecht verschlossen und ein neuer Anschluss hergestellt werden?", "/projekt-starten/?projekt=kaminsanierung"],
+];
+
+const steps = [
+  ["1", "Situation zeigen", "Senden Sie Fotos von Schornstein, geplantem Aufstellort und vorhandenen Anschlüssen sowie die Daten der Feuerstätte."],
+  ["2", "Eignung prüfen", "Wir klären Querschnitt, Anschlussmaß, Abstände, Verbrennungsluft und die technische Eignung des Schornsteins."],
+  ["3", "Anschluss planen", "Position, Höhe und Ausführung werden auf Feuerstätte, Rauchrohr und vorhandenen Schornstein abgestimmt."],
+  ["4", "Anschluss herstellen", "Unser eigenes Montageteam stellt den Anschluss fachgerecht her und verschließt nicht mehr benötigte Öffnungen."],
+];
+---
+
+<article class="kb">
+  <section class="kb-hero">
+    <div class="container">
+      <p class="kb-kicker">Kaminanschluss nachrüsten · Nordbayern · Meisterbetrieb</p>
+      <h1>Der Kaminanschluss passt nicht?<span>Wir schaffen die richtige Verbindung.</span></h1>
+      <p class="kb-lead">Für einen neuen Kaminofen oder einen geänderten Aufstellort muss der Anschluss zum vorhandenen Schornstein passen. Wir prüfen die Voraussetzungen und stellen die benötigte Anschlussöffnung fachgerecht her.</p>
+
+      <div class="kb-actions">
+        <a class="kb-primary" href="/projekt-starten/?projekt=kaminsanierung">Kaminanschluss prüfen lassen <span>→</span></a>
+        <a class="kb-phone" href="tel:+4992289989000">09228 998900-0</a>
+      </div>
+
+      <figure class="kb-hero-image">
+        <img src="/images/referenzen/kaminverlaengerung-kaminofen-pegnitz/kaminofen-pegnitz.webp" alt="Bestehender Kaminofen mit Anschluss an einen gemauerten Schornstein in Pegnitz" width="900" height="1350" decoding="async" fetchpriority="high" />
+        <figcaption>Reales Projekt · Kaminofen am bestehenden Schornstein</figcaption>
+      </figure>
+
+      <div class="kb-trust">
+        <div><strong>10.000+</strong><span>Projekte</span></div>
+        <div><strong>Meisterbetrieb</strong><span>Fachplanung</span></div>
+        <div><strong>Eigene Teams</strong><span>Montage</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-solutions">
+    <div class="container">
+      <p class="kb-kicker">Was soll verändert werden?</p>
+      <h2>Der Anschluss muss zu Feuerstätte und Schornstein passen.</h2>
+      <div class="kb-solution-grid">
+        {situations.map(([title,text,href]) => (
+          <a class="kb-solution" href={href}>
+            <div><h3>{title}</h3><p>{text}</p></div><span>→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-proof">
+    <div class="container">
+      <figure>
+        <img src="/images/referenzen/aussenwandkamin-fertighaus-bayreuth/aussenwandkamin-fertighaus-anschluss.webp" alt="Anschluss eines Kaminofens über eine abgestimmte Brandschutzdurchführung durch die Außenwand" width="900" height="1200" loading="lazy" decoding="async" />
+      </figure>
+      <div class="kb-proof-copy">
+        <p class="kb-kicker">Erst prüfen. Dann öffnen.</p>
+        <h2>Nicht einfach ein Loch in den Schornstein bohren.</h2>
+        <p>Anschlusshöhe und Durchmesser müssen zur Feuerstätte passen. Gleichzeitig sind Abstände zu brennbaren Bauteilen, der Zustand des Schornsteins und die spätere Reinigungsmöglichkeit zu berücksichtigen. Deshalb wird der Anschluss vor der Ausführung technisch festgelegt.</p>
+        <a href="/kaminsanierung">Anpassungen am Schornstein ansehen <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="kb-process">
+    <div class="container">
+      <p class="kb-kicker">Vom neuen Ofen zum passenden Anschluss</p>
+      <h2>So gehen wir vor.</h2>
+      <ol>
+        {steps.map(([n,title,text]) => (
+          <li><span>{n}</span><div><h3>{title}</h3><p>{text}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="kb-final">
+    <div class="container">
+      <p class="kb-kicker">Bayreuth · Kulmbach · Bamberg · Coburg · Nordbayern</p>
+      <h2>Zeigen Sie uns Ofen und Schornstein.</h2>
+      <p>Fotos vom geplanten Aufstellort, vorhandenen Anschluss und Schornstein sowie die technischen Daten der Feuerstätte reichen für den Einstieg.</p>
+      <a class="kb-primary kb-primary--light" href="/projekt-starten/?projekt=kaminsanierung">Fotos &amp; Ofendaten senden <span>→</span></a>
+      <a class="kb-final-phone" href="tel:+4992289989000">Oder anrufen: 09228 998900-0</a>
+    </div>
+  </section>
+
+  <nav class="kb-sticky" aria-label="Schnellkontakt">
+    <a href="tel:+4992289989000">Anrufen</a>
+    <a href="/projekt-starten/?projekt=kaminsanierung">Anschluss anfragen <span>→</span></a>
+  </nav>
+</article>
