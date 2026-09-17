@@ -91,8 +91,8 @@ const {
 
   .project-hero-layout {
     display: grid;
-    grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
-    gap: clamp(3rem, 7vw, 7rem);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
     align-items: center;
   }
 
@@ -111,13 +111,15 @@ const {
   }
 
   .project-hero h1 {
-    max-width: 720px;
+    max-width: 100%;
     margin: 0;
     color: var(--color-text, #1f1f1f);
-    font-size: clamp(2.5rem, 5.8vw, 5.25rem);
+    font-size: clamp(2.5rem, 4.8vw, 4.75rem);
     font-weight: 700;
-    letter-spacing: -0.055em;
-    line-height: 0.98;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    overflow-wrap: anywhere;
+    hyphens: auto;
   }
 
   .project-hero-location {
@@ -160,6 +162,11 @@ const {
     .project-hero-content {
       max-width: 760px;
     }
+
+    .project-hero h1 {
+      overflow-wrap: normal;
+      hyphens: none;
+    }
   }
 
   @media (max-width: 620px) {
@@ -170,6 +177,10 @@ const {
 
     .project-breadcrumb {
       margin-bottom: 2.25rem;
+    }
+
+    .project-hero h1 {
+      font-size: clamp(2.35rem, 11vw, 3.6rem);
     }
 
     .project-hero-media {

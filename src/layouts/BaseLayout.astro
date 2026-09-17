@@ -15,6 +15,7 @@ const {
 } = Astro.props;
 
 const isStaging = import.meta.env.STAGING === "true";
+const isDev = import.meta.env.DEV;
 
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -39,7 +40,12 @@ const contentSecurityPolicy = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta http-equiv="Content-Security-Policy" content={contentSecurityPolicy} />
+    {!isDev && (
+      <meta
+        http-equiv="Content-Security-Policy"
+        content={contentSecurityPolicy}
+      />
+    )}
     {isStaging && <meta name="robots" content="noindex, nofollow, noarchive" />}
     <FaviconHead />
     <title>{title}</title>

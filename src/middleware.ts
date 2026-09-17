@@ -27,7 +27,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
     "Permissions-Policy",
     "camera=(), microphone=(), geolocation=(), payment=()",
   );
-  response.headers.set("Content-Security-Policy", CONTENT_SECURITY_POLICY);
+
+  if (!import.meta.env.DEV) {
+    response.headers.set(
+      "Content-Security-Policy",
+      CONTENT_SECURITY_POLICY,
+    );
+  }
 
   if (context.url.protocol === "https:") {
     response.headers.set(
