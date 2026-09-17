@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Seite nicht gefunden | Stadter Kamintechnik"
+  description="Die angeforderte Seite wurde nicht gefunden."
+>
+  <main class="not-found">
+    <div class="not-found__inner">
+      <p class="not-found__kicker">404 · Seite nicht gefunden</p>
+
+      <h1>Diese Seite gibt es nicht.</h1>
+
+      <p class="not-found__text">
+        Der aufgerufene Link ist möglicherweise veraltet oder die Seite wurde verschoben.
+        Über die Startseite finden Sie schnell zurück zu unseren Leistungen, Referenzen und Fachinformationen.
+      </p>
+
+      <div class="not-found__actions">
+        <a class="not-found__primary" href="/">
+          Zur Startseite
+        </a>
+
+        <a class="not-found__secondary" href="/projekt-starten/">
+          Projekt anfragen
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: flex;
+    min-height: 62vh;
+    align-items: center;
+    padding: clamp(6rem, 11vw, 10rem) 1.5rem;
+    background: #ffffff;
+  }
+
+  .not-found__inner {
+    width: min(100%, 980px);
+    margin: 0 auto;
+  }
+
+  .not-found__kicker {
+    margin: 0 0 1.25rem;
+    color: var(--color-primary, #971f25);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .not-found h1 {
+    max-width: 850px;
+    margin: 0;
+    color: var(--color-text, #1f1f1f);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 650;
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+  }
+
+  .not-found__text {
+    max-width: 680px;
+    margin: clamp(2rem, 4vw, 2.75rem) 0 0;
+    color: #5f5f5f;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    line-height: 1.75;
+  }
+
+  .not-found__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .not-found__primary,
+  .not-found__secondary {
+    display: inline-flex;
+    min-height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.45rem;
+    text-decoration: none;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .not-found__primary {
+    color: #ffffff;
+    background: var(--color-primary, #971f25);
+    border: 1px solid var(--color-primary, #971f25);
+  }
+
+  .not-found__secondary {
+    color: var(--color-text, #1f1f1f);
+    background: transparent;
+    border: 1px solid #cfcfcf;
+  }
+
+  .not-found__primary:focus-visible,
+  .not-found__secondary:focus-visible {
+    outline: 3px solid rgba(151, 31, 37, 0.35);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 560px) {
+    .not-found__actions {
+      flex-direction: column;
+    }
+
+    .not-found__primary,
+    .not-found__secondary {
+      width: 100%;
+    }
+  }
+</style>
