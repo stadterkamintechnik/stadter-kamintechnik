@@ -15,6 +15,22 @@ const {
 } = Astro.props;
 
 const isStaging = import.meta.env.STAGING === "true";
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+  "frame-src 'none'",
+  "img-src 'self' data:",
+  "font-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline'",
+  "connect-src 'self'",
+  "manifest-src 'self'",
+  "media-src 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
 ---
 
 <!doctype html>
@@ -23,6 +39,7 @@ const isStaging = import.meta.env.STAGING === "true";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta http-equiv="Content-Security-Policy" content={contentSecurityPolicy} />
     {isStaging && <meta name="robots" content="noindex, nofollow, noarchive" />}
     <FaviconHead />
     <title>{title}</title>

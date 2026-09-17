@@ -1,3 +1,0 @@
-<IfModule mod_headers.c>
-  Header always set X-Stadter-Security-Test "active"
-</IfModule>
