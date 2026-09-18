@@ -236,6 +236,14 @@ const socialLinks = [
               <a href="/datenschutz/">Datenschutz</a>
             </li>
             <li>
+              <a
+                href="/datenschutz/"
+                data-cookie-settings
+              >
+                Cookie-Einstellungen
+              </a>
+            </li>
+            <li>
               <a href="/agb/">AGB</a>
             </li>
             <li>
@@ -247,3 +255,18 @@ const socialLinks = [
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  (() => {
+    const links = document.querySelectorAll("[data-cookie-settings]");
+
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (window.Cookiebot?.renew) {
+          event.preventDefault();
+          window.Cookiebot.renew();
+        }
+      });
+    });
+  })();
+</script>
