@@ -87,6 +87,7 @@ const titleId = `${id}-title`;
       if (!frame || !youtubeUrl) return;
 
       const iframe = document.createElement("iframe");
+      iframe.className = "project-video__iframe";
       iframe.src = youtubeUrl;
       iframe.title =
         section.querySelector("h2")?.textContent?.trim() || "YouTube-Video";
@@ -184,13 +185,6 @@ const titleId = `${id}-title`;
     border-radius: 12px;
     background: #111111;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.28);
-  }
-
-  .project-video__frame :global(iframe) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: 0;
   }
 
   .project-video__consent {
@@ -302,5 +296,14 @@ const titleId = `${id}-title`;
     .project-video__consent-text {
       font-size: 0.95rem;
     }
+  }
+</style>
+
+<style is:global>
+  .project-video__iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 </style>
