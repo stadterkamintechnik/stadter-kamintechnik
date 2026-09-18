@@ -17,6 +17,11 @@ const {
 const isStaging = import.meta.env.STAGING === "true";
 const isDev = import.meta.env.DEV;
 
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  "https://stadter-kamin.de",
+).toString();
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   "base-uri 'self'",
@@ -40,6 +45,7 @@ const contentSecurityPolicy = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
 
     {!isDev && (
       <meta
