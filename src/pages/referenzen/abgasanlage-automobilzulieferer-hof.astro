@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectContent from "../../components/reference/ProjectContent.astro";
 import ProjectFacts from "../../components/reference/ProjectFacts.astro";
 import ProjectCTA from "../../components/reference/ProjectCTA.astro";
+import ProjectVideo from "../../components/reference/ProjectVideo.astro";
 
 const contentSections = [
   {
@@ -130,34 +131,17 @@ const galleryImages = [
     </div>
   </section>
 
-  <section class="project-video-short" aria-labelledby="project-video-title">
-    <div class="container project-video-short__grid">
-      <div class="project-video-short__content">
-        <p class="project-video-short__kicker">Kundenstimme</p>
-        <h2 id="project-video-title">Der Projektleiter des Kunden über die Zusammenarbeit.</h2>
-        <p>
-          Im kurzen Interview berichtet der verantwortliche Projektleiter der Tenowo GmbH
-          über die Zusammenarbeit mit Stadter Kamintechnik und seine Zufriedenheit mit der
-          Planung und Umsetzung des Projekts.
-        </p>
-        <ul>
-          <li>Persönliche Einschätzung des Projektleiters</li>
-          <li>Erfahrung aus der gemeinsamen Projektumsetzung</li>
-          <li>Kundenstimme zur Zusammenarbeit mit Stadter Kamintechnik</li>
-        </ul>
-      </div>
-
-      <div class="project-video-short__player">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/syPLVkP72MY"
-          title="Kundenstimme des Projektleiters der Tenowo GmbH zur Zusammenarbeit mit Stadter Kamintechnik"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </section>
+  <ProjectVideo
+    id="kundenstimme"
+    title="Der Projektleiter des Kunden über die Zusammenarbeit."
+    text="Im kurzen Interview berichtet der verantwortliche Projektleiter der Tenowo GmbH über die Zusammenarbeit mit Stadter Kamintechnik und seine Zufriedenheit mit der Planung und Umsetzung des Projekts."
+    youtubeId="syPLVkP72MY"
+    facts={[
+      "Persönliche Einschätzung des Projektleiters",
+      "Erfahrung aus der gemeinsamen Projektumsetzung",
+      "Kundenstimme zur Zusammenarbeit mit Stadter Kamintechnik",
+    ]}
+  />
 
   <ProjectFacts facts={facts} />
   <ProjectContent sections={contentSections} />
