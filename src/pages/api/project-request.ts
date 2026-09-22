@@ -44,8 +44,11 @@ const fieldsSchema = z.object({
   ]),
   firstName: z.string().trim().min(2).max(80),
   lastName: z.string().trim().min(2).max(80),
-  phone: z.string().trim().min(6).max(40).regex(/^[0-9+()\/\s.-]+$/),
-  email: z.union([z.literal(""), z.email()]),
+  phone: z.union([
+    z.literal(""),
+    z.string().trim().min(6).max(40).regex(/^[0-9+()\/\s.-]+$/),
+  ]),
+  email: z.email(),
   postalCode: z.string().trim().regex(/^\d{5}$/),
   city: z.string().trim().min(2).max(120),
   message: z.string().trim().max(5000),
@@ -255,8 +258,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       projectType: input.projectType,
       firstName: input.firstName,
       lastName: input.lastName,
-      phone: input.phone,
-      email: input.email || undefined,
+      phone: input.phone || undefined,
+      email: input.email,
       postalCode: input.postalCode,
       city: input.city,
       message: input.message || undefined,
@@ -274,19 +277,17 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       to: [recipient],
       subject: `Neue Projektanfrage: ${getProjectTypeLabel(input.projectType)} – ${input.firstName} ${input.lastName}`,
       html: projectRequestInternalMail(mailData),
-      replyTo: input.email || undefined,
+      replyTo: input.email,
       attachments,
     });
 
-    if (input.email) {
-      await sendMicrosoftMail({
-        sender: mailbox,
-        to: [input.email],
-        subject: "Vielen Dank für Ihre Projektanfrage",
-        html: projectRequestConfirmationMail(mailData),
-        replyTo: recipient,
-      });
-    }
+    await sendMicrosoftMail({
+      sender: mailbox,
+      to: [input.email],
+      subject: "Vielen Dank für Ihre Projektanfrage",
+      html: projectRequestConfirmationMail(mailData),
+      replyTo: recipient,
+    });
 
     console.info(`Projektformular: Anfrage erfolgreich versendet (${attachments.length} Anhang/Anhänge).`);
     return redirect("/danke", 303);

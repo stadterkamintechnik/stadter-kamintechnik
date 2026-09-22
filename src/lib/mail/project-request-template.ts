@@ -2,8 +2,8 @@ export type ProjectRequestMailData = {
   projectType: string;
   firstName: string;
   lastName: string;
-  phone: string;
-  email?: string;
+  phone?: string;
+  email: string;
   postalCode: string;
   city: string;
   message?: string;
@@ -142,7 +142,9 @@ export function projectRequestInternalMail(data: ProjectRequestMailData): string
     ? `<a href="mailto:${escapeHtml(data.email.trim())}" style="color:${TEXT};text-decoration:none;">${escapeHtml(data.email.trim())}</a>`
     : `<span style="color:${MUTED};font-weight:400;">Nicht angegeben</span>`;
 
-  const phoneHref = normalizePhoneHref(data.phone);
+  const phoneValue = data.phone?.trim()
+    ? `<a href="tel:${escapeHtml(normalizePhoneHref(data.phone.trim()))}" style="color:${BRAND_RED};text-decoration:none;">${escapeHtml(data.phone.trim())}</a>`
+    : `<span style="color:${MUTED};font-weight:400;">Nicht angegeben</span>`;
 
   return shell(`
     <div style="
@@ -181,10 +183,7 @@ export function projectRequestInternalMail(data: ProjectRequestMailData): string
     ${eyebrow("Kontakt")}
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
       ${detailRow("Name", escapeHtml(customerName))}
-      ${detailRow(
-        "Telefon",
-        `<a href="tel:${escapeHtml(phoneHref)}" style="color:${BRAND_RED};text-decoration:none;">${escapeHtml(data.phone)}</a>`
-      )}
+      ${detailRow("Telefon", phoneValue)}
       ${detailRow("E-Mail", emailValue)}
     </table>
 

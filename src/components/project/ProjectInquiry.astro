@@ -72,14 +72,14 @@ const projectTypes = [
               <input type="text" name="lastName" autocomplete="family-name" required />
             </label>
             <label class="form-field">
-              <span>Telefonnummer <b>*</b></span>
-              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required />
-              <small>Wir besprechen jedes Projekt persönlich. Ein kurzes Telefonat ist der schnellste Weg zur passenden Lösung.</small>
+              <span>Telefonnummer <em>(optional)</em></span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" />
+              <small>Falls Sie eine telefonische Rückmeldung wünschen.</small>
             </label>
             <label class="form-field">
-              <span>E-Mail <em>(optional)</em></span>
-              <input type="email" name="email" autocomplete="email" inputmode="email" />
-              <small>Falls Sie zusätzlich eine schriftliche Rückmeldung wünschen.</small>
+              <span>E-Mail <b>*</b></span>
+              <input type="email" name="email" autocomplete="email" inputmode="email" required />
+              <small>An diese Adresse senden wir Ihnen auch die Bestätigung Ihrer Anfrage.</small>
             </label>
           </div>
         </fieldset>
