@@ -36,12 +36,18 @@ const servicesAreActive = [...privateServices, ...commercialServices].some((item
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="site-header__logo" href="/" aria-label="Stadter Kamintechnik – Startseite">
-      <img
-        src="/stadter_Kamintechnik_Logo_RGB_1c-520.png"
-        alt="Stadter Kamintechnik GmbH"
-        width="520"
-        height="189"
-      />
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="/stadter_Kamintechnik_Logo_RGB_1c-280.png"
+        />
+        <img
+          src="/stadter_Kamintechnik_Logo_RGB_1c-520.png"
+          alt="Stadter Kamintechnik GmbH"
+          width="520"
+          height="189"
+        />
+      </picture>
     </a>
 
     <nav class="site-header__nav" aria-label="Hauptnavigation">
