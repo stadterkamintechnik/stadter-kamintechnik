@@ -192,6 +192,10 @@
   grid-template-columns: minmax(140px, .35fr) minmax(0, 1fr);
 }
 
+.form-grid--location .form-field--street {
+  grid-column: 1 / -1;
+}
+
 .form-field {
   display: flex;
   flex-direction: column;
