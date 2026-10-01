@@ -281,7 +281,7 @@ export function projectRequestConfirmationMail(data: ProjectRequestMailData): st
       )}
       ${detailRow(
         "Website",
-        `<a href="https://www.stadter-kamin.de" style="color:${TEXT};text-decoration:none;">stadter-kamin.de</a>`
+        `<a href="https://stadter-kamin.de" style="color:${TEXT};text-decoration:none;">stadter-kamin.de</a>`
       )}
     </table>
 
