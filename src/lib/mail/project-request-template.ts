@@ -4,6 +4,7 @@ export type ProjectRequestMailData = {
   lastName: string;
   phone?: string;
   email: string;
+  street?: string;
   postalCode: string;
   city: string;
   message?: string;
@@ -196,7 +197,7 @@ export function projectRequestInternalMail(data: ProjectRequestMailData): string
       font-size:18px;
       line-height:1.55;
       font-weight:600;
-    ">${escapeHtml(data.postalCode)} ${escapeHtml(data.city)}</div>
+    ">${data.street?.trim() ? `${escapeHtml(data.street.trim())}<br>` : ""}${escapeHtml(data.postalCode)} ${escapeHtml(data.city)}</div>
 
     ${divider()}
 
