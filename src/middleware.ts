@@ -189,6 +189,20 @@ function applySecurityHeaders(response: Response, url: URL) {
 }
 
 export const onRequest = defineMiddleware(async (context, next) => {
+  if (context.url.hostname === "www.stadter-kamin.de") {
+    const targetUrl = new URL(context.url.toString());
+    targetUrl.hostname = "stadter-kamin.de";
+
+    const response = new Response(null, {
+      status: 301,
+      headers: {
+        Location: targetUrl.toString(),
+      },
+    });
+
+    return applySecurityHeaders(response, context.url);
+  }
+
   const pathname = normalizePath(context.url.pathname);
 
   const redirectTarget = REDIRECTS[pathname];
