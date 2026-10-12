@@ -7,7 +7,7 @@ const CONTENT_SECURITY_POLICY = [
   "frame-ancestors 'none'",
   "object-src 'none'",
   "frame-src 'self' https://www.youtube-nocookie.com https://consentcdn.cookiebot.com https://www.googletagmanager.com",
-  "img-src 'self' data: https://consent.cookiebot.com https://consentcdn.cookiebot.com https://imgsct.cookiebot.com https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com",
+  "img-src 'self' data: https://consent.cookiebot.com https://consentcdn.cookiebot.com https://imgsct.cookiebot.com https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com https://www.google.de",
   "font-src 'self'",
   "style-src 'self' 'unsafe-inline'",
   "script-src 'self' 'unsafe-inline' https://consent.cookiebot.com https://consentcdn.cookiebot.com https://www.googletagmanager.com https://googleads.g.doubleclick.net",
